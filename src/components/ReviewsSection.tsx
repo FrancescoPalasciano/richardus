@@ -5,7 +5,7 @@ export default function ReviewsSection() {
     <section
       id="recensioni"
       aria-labelledby="reviews-title"
-      className="mx-auto w-full max-w-7xl px-6 pb-16 md:px-10 md:pb-28"
+      className="mx-auto w-full min-w-0 max-w-7xl scroll-mt-28 px-6 pb-16 md:px-10 md:pb-28"
     >
       <h2
         id="reviews-title"

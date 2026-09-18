@@ -33,3 +33,9 @@ body {
   background: var(--foreground);
   color: var(--background);
 }
+
+/* Elfsight's owner toolbar can overlap the heading and widen mobile layouts.
+   Keep editing controls in the Elfsight dashboard, as documented by Elfsight. */
+#recensioni .eapps-widget-toolbar {
+  display: none !important;
+}
