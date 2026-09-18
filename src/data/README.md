@@ -80,4 +80,4 @@ Lo schema controlla la struttura, non l'esistenza degli ID collegati: gli ID di 
 
 I nomi sintetici delle tre insalate sono ricavati dagli ingredienti; le descrizioni conservano l'elenco completo. Nomi dialettali e diciture particolari delle altre voci sono mantenuti. Le note comuni alle insalate si leggono dalla categoria. La nota sui surgelati resta generale perché non è associabile in modo univoco ai singoli prodotti.
 
-Con un import statico, in produzione le modifiche al JSON richiedono una nuova build e un deploy su Coolify. Il file non è ancora collegato alla pagina del sito e non introduce API o pannelli di amministrazione.
+Con un import statico, in produzione le modifiche al JSON richiedono una nuova build e un deploy su Coolify. Il file alimenta la pagina `/menu` e le categorie del sottomenu nell'header. Non introduce API o pannelli di amministrazione. Gli allergeni indicativi non vengono pubblicati come dichiarazioni verificate: la pagina invita a rivolgersi al personale.
