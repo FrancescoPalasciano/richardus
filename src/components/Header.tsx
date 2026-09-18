@@ -132,11 +132,9 @@ export default function Header({ categorie }: HeaderProps) {
             strokeLinecap="round"
             aria-hidden="true"
           >
-            {navigationOpen ? (
-              <path d="m6 6 12 12M6 18 18 6" />
-            ) : (
-              <path d="M3 6h18M3 12h18M3 18h18" />
-            )}
+            <path className={styles.toggleTop} d="M3 6h18" />
+            <path className={styles.toggleMiddle} d="M3 12h18" />
+            <path className={styles.toggleBottom} d="M3 18h18" />
           </svg>
         </button>
 

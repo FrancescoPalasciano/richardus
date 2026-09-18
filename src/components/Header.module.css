@@ -5,7 +5,7 @@
   --header-border: rgb(255 255 255 / 14%);
   --header-muted: #c6c6c6;
   --header-focus: #e1c394;
-  --header-motion: 160ms;
+  --header-motion: var(--motion-feedback);
 
   position: sticky;
   top: 0;
@@ -49,6 +49,30 @@
   height: 48px;
   color: inherit;
   cursor: pointer;
+  transition: transform var(--motion-press) var(--ease-out-quart);
+}
+
+.toggle path {
+  transform-origin: 12px 12px;
+  transition:
+    transform var(--motion-enter) var(--ease-out-quart),
+    opacity var(--motion-feedback) var(--ease-out-quart);
+}
+
+.toggle[aria-expanded="true"] .toggleTop {
+  transform: rotate(45deg) translateY(6px);
+}
+
+.toggle[aria-expanded="true"] .toggleMiddle {
+  opacity: 0;
+}
+
+.toggle[aria-expanded="true"] .toggleBottom {
+  transform: rotate(-45deg) translateY(-6px);
+}
+
+.toggle:active {
+  transform: scale(0.96);
 }
 
 .navigation {
@@ -89,8 +113,8 @@
   text-decoration: none;
   cursor: pointer;
   transition:
-    color var(--header-motion),
-    background-color var(--header-motion);
+    color var(--header-motion) var(--ease-out-quart),
+    background-color var(--header-motion) var(--ease-out-quart);
 }
 
 .link[aria-current="page"],
@@ -101,7 +125,7 @@
 
 .chevron {
   flex-shrink: 0;
-  transition: transform var(--header-motion);
+  transition: transform var(--motion-enter) var(--ease-out-quart);
 }
 
 .chevron[data-open="true"] {
@@ -125,8 +149,39 @@
   line-height: 1.5;
   text-decoration: none;
   transition:
-    color var(--header-motion),
-    background-color var(--header-motion);
+    color var(--header-motion) var(--ease-out-quart),
+    background-color var(--header-motion) var(--ease-out-quart);
+}
+
+.link:active,
+.categories a:active {
+  color: #f7f4ed;
+  background: rgb(247 244 237 / 12%);
+  transition-duration: var(--motion-press);
+}
+
+/* Entry only: closing immediately removes links from keyboard navigation. */
+@media (prefers-reduced-motion: no-preference) {
+  .categories:not([hidden]) {
+    animation: panel-enter var(--motion-enter) var(--ease-out-quart);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) and (max-width: 767px) {
+  .navigation[data-open="true"] {
+    animation: panel-enter var(--motion-enter) var(--ease-out-quart);
+  }
+}
+
+@keyframes panel-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .overview {
@@ -205,5 +260,15 @@
 @media (prefers-reduced-motion: reduce) {
   .header {
     --header-motion: 0ms;
+  }
+
+  .toggle,
+  .toggle path,
+  .chevron {
+    transition: none;
+  }
+
+  .toggle:active {
+    transform: none;
   }
 }

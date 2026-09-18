@@ -5,6 +5,10 @@
   --foreground: #28362e;
   --accent: #86653c;
   --brand-green: #17271f;
+  --motion-press: 120ms;
+  --motion-feedback: 180ms;
+  --motion-enter: 260ms;
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 @theme inline {
