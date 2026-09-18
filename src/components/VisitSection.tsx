@@ -14,9 +14,8 @@ export default function VisitSection() {
       className={styles.section}
     >
       <div className={styles.intro} data-reveal>
-        <p className={styles.eyebrow}>Ti aspettiamo a Francavilla Fontana</p>
         <h2 id="visit-title" className={styles.title}>
-          Il tuo posto a tavola.
+          Ti aspettiamo a Francavilla.
         </h2>
       </div>
       <div className={styles.content}>
@@ -54,7 +53,6 @@ export default function VisitSection() {
                   </span>
                 </a>
               </address>
-              <GoogleMap />
             </dd>
           </div>
           <div className={styles.detail} data-reveal>
@@ -87,6 +85,7 @@ export default function VisitSection() {
             </dd>
           </div>
         </dl>
+        <GoogleMap />
       </div>
       <figure className={styles.picture} data-reveal>
         <div className={styles.imageFrame}>
