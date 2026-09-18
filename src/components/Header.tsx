@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import styles from "./Header.module.css";
+import { restaurant } from "@/lib/restaurant";
 
 type HeaderProps = {
   categorie: { id: string; nome: string }[];
@@ -108,6 +109,9 @@ export default function Header({ categorie }: HeaderProps) {
           />
         </Link>
 
+        <a className={styles.booking} href={restaurant.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="Prenota un tavolo su WhatsApp">
+          Prenota
+        </a>
         <button
           ref={toggleRef}
           type="button"
@@ -156,16 +160,19 @@ export default function Header({ categorie }: HeaderProps) {
               </Link>
             </li>
             <li className={styles.menuItem}>
+              <Link href="/menu" className={styles.link} aria-current={pathname === "/menu" ? "page" : undefined} onClick={closeNavigation}>
+                Menu
+              </Link>
               <button
                 ref={menuRef}
                 type="button"
-                className={styles.link}
+                className={styles.categoryToggle}
+                aria-label="Categorie del menu"
                 data-active={pathname === "/menu"}
                 aria-expanded={categoriesOpen}
                 aria-controls="menu-categories"
                 onClick={() => setCategoriesOpen(!categoriesOpen)}
               >
-                Menu
                 <svg
                   className={styles.chevron}
                   data-open={categoriesOpen}
