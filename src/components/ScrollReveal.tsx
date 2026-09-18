@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
-/** Progressive enhancement: content stays visible without JavaScript or motion. */
+/** Reveal offscreen content once; keep initial content and no-JS pages visible. */
 export default function ScrollReveal() {
   const pathname = usePathname();
 
@@ -16,50 +16,72 @@ export default function ScrollReveal() {
     )
       return;
 
+    const pending = new Set<HTMLElement>();
     const animations = new Map<HTMLElement, Animation>();
+    function show(element: HTMLElement) {
+      element.removeAttribute("data-reveal-state");
+      pending.delete(element);
+    }
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (!entry.isIntersecting) continue;
           const element = entry.target as HTMLElement;
           observer.unobserve(element);
-          if (preference.matches || element.contains(document.activeElement))
+          if (preference.matches || element.contains(document.activeElement)) {
+            show(element);
             continue;
-
+          }
           const animation = element.animate(
             [
-              { opacity: 0, transform: "translateY(14px)" },
+              { opacity: 0, transform: "translateY(28px)" },
               { opacity: 1, transform: "translateY(0)" },
             ],
-            { duration: 650, easing: "cubic-bezier(0.22, 1, 0.36, 1)" },
+            { duration: 850, easing: "ease", fill: "backwards" },
           );
+          show(element);
           animations.set(element, animation);
           animation.onfinish = () => animations.delete(element);
         }
       },
-      { threshold: 0, rootMargin: "0px 0px -24px 0px" },
+      { threshold: 0.08, rootMargin: "0px 0px -32px 0px" },
     );
 
-    document
-      .querySelectorAll<HTMLElement>("[data-reveal]")
-      .forEach((element) => {
-        // Keep initial content and direct anchor destinations immediately readable.
-        if (element.getBoundingClientRect().top >= window.innerHeight)
+    const frame = requestAnimationFrame(() => {
+      if (preference.matches) return;
+      document
+        .querySelectorAll<HTMLElement>("[data-reveal]")
+        .forEach((element) => {
+          if (
+            element.getBoundingClientRect().top < window.innerHeight ||
+            element.contains(document.activeElement)
+          )
+            return;
+          element.setAttribute("data-reveal-state", "pending");
+          pending.add(element);
           observer.observe(element);
-      });
+        });
+    });
 
-    function stopAnimations() {
+    function showAll() {
+      pending.forEach(show);
       animations.forEach((animation) => animation.cancel());
       animations.clear();
     }
     function handlePreferenceChange() {
       if (preference.matches) {
         observer.disconnect();
-        stopAnimations();
+        showAll();
       }
     }
     function handleFocus(event: FocusEvent) {
       if (!(event.target instanceof Node)) return;
+      for (const element of pending) {
+        if (element.contains(event.target)) {
+          observer.unobserve(element);
+          show(element);
+        }
+      }
       for (const [element, animation] of animations) {
         if (element.contains(event.target)) {
           animation.cancel();
@@ -70,8 +92,9 @@ export default function ScrollReveal() {
     preference.addEventListener("change", handlePreferenceChange);
     document.addEventListener("focusin", handleFocus);
     return () => {
+      cancelAnimationFrame(frame);
       observer.disconnect();
-      stopAnimations();
+      showAll();
       preference.removeEventListener("change", handlePreferenceChange);
       document.removeEventListener("focusin", handleFocus);
     };
