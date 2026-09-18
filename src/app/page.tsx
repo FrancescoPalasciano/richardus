@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import VisitSection from "@/components/VisitSection";
+import ReviewsSection from "@/components/ReviewsSection";
 import styles from "@/components/PageHero.module.css";
 
 export const metadata: Metadata = {
@@ -69,6 +70,7 @@ export default function Home() {
         </div>
       </PageHero>
       <VisitSection telefono={telefono} />
+      <ReviewsSection />
     </main>
   );
 }
