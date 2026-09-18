@@ -12,7 +12,7 @@ export default function VisitSection({ telefono }: { telefono: string }) {
       aria-labelledby="visit-title"
       className={styles.section}
     >
-      <div className={styles.intro}>
+      <div className={styles.intro} data-reveal>
         <p className={styles.eyebrow}>Ti aspettiamo a Francavilla Fontana</p>
         <h2 id="visit-title" className={styles.title}>
           Il tuo posto a tavola.
@@ -20,7 +20,7 @@ export default function VisitSection({ telefono }: { telefono: string }) {
       </div>
       <div className={styles.content}>
         <dl className={styles.details}>
-          <div className={styles.detail}>
+          <div className={styles.detail} data-reveal>
             <dt>
               <span className={styles.number} aria-hidden="true">
                 01
@@ -60,7 +60,7 @@ export default function VisitSection({ telefono }: { telefono: string }) {
               </address>
             </dd>
           </div>
-          <div className={styles.detail}>
+          <div className={styles.detail} data-reveal>
             <dt>
               <span className={styles.number} aria-hidden="true">
                 02
@@ -94,7 +94,7 @@ export default function VisitSection({ telefono }: { telefono: string }) {
               </dl>
             </dd>
           </div>
-          <div className={styles.detail}>
+          <div className={styles.detail} data-reveal>
             <dt>
               <span className={styles.number} aria-hidden="true">
                 03
@@ -120,7 +120,7 @@ export default function VisitSection({ telefono }: { telefono: string }) {
           </div>
         </dl>
       </div>
-      <figure className={styles.picture}>
+      <figure className={styles.picture} data-reveal>
         <div className={styles.imageFrame}>
           <Image
             src={winePhoto}

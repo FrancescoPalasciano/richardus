@@ -41,6 +41,14 @@ Le pagine `/privacy-policy` e `/cookie-policy` sono bozze con `noindex`: per ric
 
 Riferimenti consultati: [FAQ cookie del Garante](https://www.garanteprivacy.it/faq/cookie), [Elfsight e GDPR](https://help.elfsight.com/article/418-elfsight-and-gdpr), [informativa Elfsight](https://elfsight.com/privacy-policy/).
 
+## Animazioni allo scorrimento
+
+`src/components/ScrollReveal.tsx`, incluso nel layout, osserva i blocchi con attributo `data-reveal`. Al primo ingresso nello schermo applica una dissolvenza di 650 ms con un lieve spostamento verticale di 14 px, tramite IntersectionObserver e Web Animations API, senza dipendenze aggiuntive. L'effetto è attivo sui blocchi della sezione contatti, sulle recensioni e sulle parti principali del footer.
+
+Per aggiungerlo a un nuovo blocco basta usare `<section data-reveal>...</section>` (o l'elemento semantico appropriato). Evitare blocchi annidati entrambi animati. Il contenuto è sempre presente e visibile nell'HTML: senza JavaScript, con movimento ridotto o con API non disponibili rimane leggibile. I blocchi già visibili all'apertura non sono animati; il focus da tastiera interrompe eventuali animazioni sul blocco. L'observer viene ricreato al cambio pagina e ripulito insieme alle animazioni attive.
+
+Il verde comune a header, pannelli di navigazione e footer è `#17271f`; l'header conserva una leggera trasparenza.
+
 ## Tipografia
 
 La coppia scelta per Richardus è **EB Garamond + Work Sans**, consigliata nelle linee guida Markdown per ristoranti storici e cucina tradizionale:

@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
-        <div className={styles.social}>
+        <div className={styles.social} data-reveal>
           <div>
             <p className={styles.eyebrow}>Richardus, anche su Instagram</p>
             <h2>Seguici sui social!</h2>
@@ -50,7 +50,7 @@ export default function Footer() {
             </svg>
           </a>
         </div>
-        <div className={styles.columns}>
+        <div className={styles.columns} data-reveal>
           <div className={styles.brand}>
             <Link href="/" aria-label="Richardus, torna alla home">
               <Image
@@ -124,15 +124,6 @@ export default function Footer() {
               rel="noopener noreferrer"
             >
               made by <span>Senza Freno Digital</span>
-            </a>
-            <a
-              className={styles.facebook}
-              href="https://www.facebook.com/p/Senza-Freno-Digital-61568939816513/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Senza Freno Digital su Facebook"
-            >
-              Facebook
             </a>
           </div>
         </div>
