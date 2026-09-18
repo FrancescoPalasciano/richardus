@@ -1,76 +1,62 @@
 import type { Metadata } from "next";
-import PageHero from "@/components/PageHero";
+import Image from "next/image";
+import Link from "next/link";
 import VisitSection from "@/components/VisitSection";
 import ReviewsSection from "@/components/ReviewsSection";
-import styles from "@/components/PageHero.module.css";
+import Reservation, { BookingActions } from "@/components/Reservation";
+import homePhoto from "@/app/images/home.webp";
+import menu from "@/data/menu.json";
+import { restaurant } from "@/lib/restaurant";
+import styles from "./Home.module.css";
 
 export const metadata: Metadata = {
-  description:
-    "Richardus: pasta, brace e pizza nel cuore della Puglia. Prenota il tuo tavolo per telefono o su WhatsApp.",
+  description: "Pasta, brace e pizza da Richardus, in Via San Giovanni 15 a Francavilla Fontana. Scopri piatti e prezzi e prenota il tuo tavolo su WhatsApp o per telefono.",
 };
-
-const telefono = "+393290090918";
-const messaggio =
-  "Salve vorrei prenotare un tavolo per le x per x persone a nome di x";
-const whatsapp = `https://wa.me/${telefono.replace("+", "")}?text=${encodeURIComponent(messaggio)}`;
+const euro = new Intl.NumberFormat("it-IT", { style: "currency", currency: menu.valuta });
+const selection = ["orecchiette-cime-rapa", "arrosto-misto", "la-richardus"] as const;
 
 export default function Home() {
   return (
-    <main>
-      <PageHero
-        title="Richardus"
-        eyebrow="Pasta · Brace · Pizza"
-        description="La nostra gemma nel cuore di Francavilla"
-        fullHeight
-      >
-        <div className={styles.actions}>
-          <a
-            className={styles.cta}
-            href={`tel:${telefono}`}
-            aria-label="Chiama ora: 329 009 0918"
-          >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3.1 5.2 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.7a2 2 0 0 1-.5 2.1L9 10.8a16 16 0 0 0 4.2 4.2l1.3-1.3a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.7.7a2 2 0 0 1 1.7 2z" />
-            </svg>
-            Chiama ora
-          </a>
-          <a
-            className={styles.cta}
-            data-secondary="true"
-            href={whatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Scrivici su WhatsApp per prenotare un tavolo"
-          >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z" />
-            </svg>
-            Scrivici
-          </a>
+    <main id="contenuto">
+      <section className={styles.hero} aria-labelledby="home-title">
+        <div className={styles.heroCopy}>
+          <h1 id="home-title">Pasta, brace<br />e pizza.</h1>
+          <p className={styles.location}>Richardus · Francavilla Fontana</p>
+          <p className={styles.intro}>Le orecchiette, le bombette, una pizza da scegliere.<br className={styles.desktopBreak} /> Il piacere di ritrovarsi a tavola.</p>
+          <BookingActions showMenu />
+          <a className={styles.phone} href={`tel:${restaurant.phone}`}>Preferisci chiamare? {restaurant.phoneLabel}</a>
         </div>
-      </PageHero>
+        <figure className={styles.heroFigure}>
+          <div className={styles.heroPhoto}>
+            <Image src={homePhoto} alt="Una pizza di Richardus con mozzarella, prosciutto e basilico" fill preload sizes="(min-width: 900px) 48vw, 100vw" />
+          </div>
+          <figcaption>Una pizza, un tavolo. Richardus.</figcaption>
+        </figure>
+      </section>
+      <section className={styles.selection} aria-labelledby="selection-title">
+        <div className={styles.selectionIntro}>
+          <h2 id="selection-title">La Puglia,<br />nel piatto.</h2>
+          <p>Tre proposte dal nostro menu, tra pasta, brace e pizza. Per cominciare a scegliere, ancora prima di sedersi.</p>
+          <Link className={styles.textLink} href="/menu">Tutti i piatti e i prezzi</Link>
+        </div>
+        <ul className={styles.dishes}>
+          {selection.filter(id => menu.prodotti[id].visibile).map(id => {
+            const dish = menu.prodotti[id];
+            return (
+              <li key={id}>
+                <div className={styles.dishTitle}>
+                  <h3><Link href={`/menu#${dish.categoria}`}>{id === "la-richardus" ? "La Richardus" : dish.nome}</Link></h3>
+                  <span>{euro.format(dish.prezzo)}</span>
+                </div>
+                {dish.descrizione && <p>{dish.descrizione}</p>}
+              </li>
+            );
+          })}
+        </ul>
+      </section>
       <VisitSection />
       <ReviewsSection />
+      <Reservation />
     </main>
   );
 }

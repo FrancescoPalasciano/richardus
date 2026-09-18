@@ -8,8 +8,7 @@ export default function Footer() {
       <div className={styles.inner}>
         <div className={styles.social} data-reveal>
           <div>
-            <p className={styles.eyebrow}>Richardus, anche su Instagram</p>
-            <h2>Seguici sui social!</h2>
+            <h2>Richardus, anche su Instagram.</h2>
           </div>
           <a
             className={styles.socialLink}
@@ -61,7 +60,7 @@ export default function Footer() {
               />
             </Link>
             <p>Pasta · Brace · Pizza</p>
-            <p>La nostra gemma nel cuore di Francavilla.</p>
+            <p>A tavola, a Francavilla Fontana.</p>
           </div>
           <nav aria-label="Navigazione del footer">
             <h3>Esplora</h3>

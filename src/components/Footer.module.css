@@ -16,21 +16,13 @@
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem 3rem;
-  padding-bottom: 2.75rem;
+  padding-bottom: 1.5rem;
   border-bottom: 1px solid rgb(247 244 237 / 20%);
 }
 
-.eyebrow {
-  color: #d6bb95;
-  font-size: 0.75rem;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-}
-
 .social h2 {
-  margin-top: 0.75rem;
-  font-size: clamp(2.5rem, 4.5vw, 4rem);
-  line-height: 1.1;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  line-height: 1.2;
   text-wrap: balance;
 }
 
