@@ -1,0 +1,62 @@
+# Richardus
+
+Base per il sito di un ristorante con Next.js 16, React 19, TypeScript, Tailwind CSS 4 e App Router.
+La pagina iniziale è un segnaposto: nome, stile e contenuti sono da personalizzare.
+
+## Sviluppo locale
+
+Versione consigliata: Node.js 24 LTS, indicata anche in `.nvmrc` e usata nel Dockerfile.
+Le dipendenze sono gestite con npm e `package-lock.json`.
+
+```bash
+npm ci
+npm run dev
+```
+
+Apri [http://localhost:3000](http://localhost:3000).
+Docker non è necessario durante lo sviluppo locale.
+
+## File principali
+
+- `src/app/page.tsx`: pagina iniziale.
+- `src/app/layout.tsx`: layout, lingua e metadati.
+- `src/app/globals.css`: Tailwind, colori e font.
+- `public/`: immagini e altri file pubblici.
+- `next.config.ts`: configurazione Next.js e output standalone.
+
+Tailwind 4 è configurato con `@tailwindcss/postcss` e `@theme` nel CSS; non serve un `tailwind.config.js` per questa base.
+I font iniziali sono di sistema, quindi la build non richiede download da Google Fonts.
+
+## Verifiche
+
+```bash
+npm run lint
+npm run typecheck
+npm run build
+```
+
+## Pubblicazione su Coolify
+
+1. Carica il progetto in un repository Git, includendo `package-lock.json`, `Dockerfile` e `.dockerignore`.
+2. Crea un'applicazione in Coolify collegata al repository e al branch desiderato.
+3. Seleziona **Build Pack: Dockerfile**.
+4. Imposta **Base Directory: /** e **Dockerfile Location: /Dockerfile**.
+5. Imposta **Ports Exposes: 3000** e aggiungi il dominio.
+6. Avvia **Deploy** e verifica i log e il dominio.
+
+Il Dockerfile esegue installazione e build in stage separati. Il container finale contiene l'output standalone, gli asset statici e i file pubblici; parte con un utente non root e ascolta su `0.0.0.0:3000`.
+Non servono Docker Compose o un database per questa base. Se abiliti un health check HTTP in Coolify, usa il percorso `/` e la porta `3000`.
+
+Non sono richieste variabili d'ambiente applicative. Per aggiungerle in futuro, usa `.env.local` in sviluppo e la configurazione di Coolify in produzione. I file `.env*` sono esclusi da Git e dal contesto Docker.
+Le variabili `NEXT_PUBLIC_*` sono incorporate durante la build: con questo Dockerfile vanno dichiarate e utilizzate come `ARG`/`ENV` nello stage `builder`, configurate in Coolify e richiedono una nuova build quando cambiano. Non usarle per segreti.
+
+### Test Docker locale facoltativo
+
+Con Docker Desktop avviato e configurato per container Linux:
+
+```bash
+docker build -t richardus .
+docker run --rm -p 3000:3000 richardus
+```
+
+Riferimenti: [Next.js su Coolify](https://coolify.io/docs/applications/framework-examples/javascript/nextjs), [output standalone](https://nextjs.org/docs/app/api-reference/config/next-config-js/output).

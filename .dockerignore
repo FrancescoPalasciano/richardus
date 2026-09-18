@@ -1,0 +1,15 @@
+node_modules
+.next
+out
+build
+coverage
+.git
+.env*
+*.log
+*.tsbuildinfo
+.DS_Store
+.vscode
+.idea
+README.md
+AGENTS.md
+CLAUDE.md
