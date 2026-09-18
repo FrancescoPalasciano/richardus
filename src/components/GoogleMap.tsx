@@ -24,7 +24,9 @@ function MapFrame() {
 export default function GoogleMap() {
   const [visible, setVisible] = useState(false);
   return (
-    <details className="mt-4 border-b border-foreground/20 pb-2">
+    <details className="mt-4 border-b border-foreground/20 pb-2" onToggle={(event) => {
+      if (!event.currentTarget.open) setVisible(false);
+    }}>
       <summary className="w-fit cursor-pointer py-3 text-sm underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4">Mostra la mappa qui</summary>
       <div className="py-3">
         {visible ? (

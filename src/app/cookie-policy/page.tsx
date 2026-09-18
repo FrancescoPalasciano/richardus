@@ -49,7 +49,7 @@ export default function CookiePage() {
         <h2>Contenuti facoltativi: Elfsight</h2>
         <p>
           Il widget delle recensioni non viene caricato prima del consenso. Se
-          scegli “Consenti e mostra le recensioni”, il sito contatta Elfsight e
+          scegli “Consenti e carica le recensioni”, il sito contatta Elfsight e
           carica il contenuto esterno, con trasmissione dei dati tecnici
           necessari e possibile accesso a risorse di terze parti.
         </p>
@@ -88,7 +88,7 @@ export default function CookiePage() {
         <h2>Mappa Google</h2>
         <p>
           La mappa incorporata è un contenuto facoltativo separato dalle
-          recensioni. Si attiva solo con “Consenti e mostra la mappa”. Il
+          recensioni. Si attiva solo con “Consenti e carica la mappa”. Il
           caricamento trasmette a Google dati tecnici, tra cui l’indirizzo IP, e
           può comportare l’utilizzo di cookie secondo l’
           <a

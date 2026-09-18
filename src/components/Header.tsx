@@ -203,9 +203,17 @@ export default function Header({ categorie }: HeaderProps) {
           }
           aria-expanded={navigationOpen}
           aria-controls="site-navigation"
-          onClick={() => {
-            setNavigationOpen(!navigationOpen);
+          onClick={(event) => {
+            const opening = !navigationOpen;
+            setNavigationOpen(opening);
             setCategoriesOpen(false);
+            if (opening && event.detail === 0) {
+              requestAnimationFrame(() => {
+                headerRef.current
+                  ?.querySelector<HTMLAnchorElement>("#site-navigation a")
+                  ?.focus();
+              });
+            }
           }}
         >
           <svg
