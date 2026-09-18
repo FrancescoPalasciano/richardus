@@ -1,7 +1,7 @@
 # Richardus
 
 Base per il sito di un ristorante con Next.js 16, React 19, TypeScript, Tailwind CSS 4 e App Router.
-La pagina iniziale è un segnaposto: nome, stile e contenuti sono da personalizzare.
+La home presenta il ristorante con una foto e i pulsanti di contatto; sono disponibili anche le pagine Menu e Chi siamo.
 
 ## Sviluppo locale
 
@@ -21,11 +21,15 @@ Docker non è necessario durante lo sviluppo locale.
 - `src/app/page.tsx`: pagina iniziale.
 - `src/app/layout.tsx`: layout, lingua e metadati.
 - `src/app/globals.css`: Tailwind, colori e font.
+- `src/components/PageHero.tsx`: sezione fotografica condivisa dai titoli delle tre pagine.
+- `src/app/images/home.webp`: foto usata come sfondo, ottimizzata da `next/image`.
 - `public/`: immagini e altri file pubblici.
 - `next.config.ts`: configurazione Next.js e output standalone.
 
 Tailwind 4 è configurato con `@tailwindcss/postcss` e `@theme` nel CSS; non serve un `tailwind.config.js` per questa base.
 I font sono inclusi nel progetto, quindi la build non richiede download da Google Fonts.
+
+I collegamenti “Chiama ora” e “Scrivici” della home sono configurati in `src/app/page.tsx`: numero `+39 329 009 0918` e messaggio WhatsApp precompilato “Salve vorrei prenotare un tavolo per le x per x persone a nome di x”. Il visitatore può modificare e inviare il messaggio in WhatsApp; il sito non lo invia automaticamente.
 
 ## Tipografia
 
