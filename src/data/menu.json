@@ -1,0 +1,1184 @@
+{
+  "$schema": "./menu.schema.json",
+  "versione": 1,
+  "valuta": "EUR",
+  "fonte": {
+    "file": "menu.pdf",
+    "pagineProdotti": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "paginaAllergeni": 7
+  },
+  "noteAllergeni": "La pagina 7 riporta soltanto la legenda dei 14 allergeni, senza associazioni ai singoli prodotti. Le liste presenti nei prodotti sono indicative e non esaustive, dedotte dagli ingredienti e dalle preparazioni nominate; non sono dichiarazioni del ristorante. Vanno confermate con ricette e schede degli ingredienti. null indica informazione non disponibile, non assenza di allergeni. Nessun prodotto è attualmente verificato. Non usare questi dati per garantire l'idoneità a persone allergiche.",
+  "noteMenu": [
+    "*prodotto surgelato: nota presente a fondo pagina, senza un'associazione univoca alle singole voci."
+  ],
+  "costiAggiuntivi": {
+    "coperto": {
+      "nome": "Coperto",
+      "prezzo": 2,
+      "visibile": true,
+      "paginaFonte": 6
+    },
+    "aggiuntePizze": {
+      "descrizione": "Le aggiunte o le modifiche alle pizze possono subire variazione di € 1,00 o € 1,50.",
+      "importi": [
+        1,
+        1.5
+      ],
+      "paginaFonte": 5
+    }
+  },
+  "categorie": {
+    "antipasti": {
+      "nome": "Antipasti",
+      "ordine": 10,
+      "descrizione": ""
+    },
+    "frittura-della-casa": {
+      "nome": "Frittura della Casa",
+      "ordine": 20,
+      "descrizione": ""
+    },
+    "insalate": {
+      "nome": "Insalate",
+      "ordine": 30,
+      "descrizione": "Tutte le nostre insalate sono servite in coppa pane casereccio, cotto in forno a legna."
+    },
+    "primi-piatti": {
+      "nome": "Primi Piatti",
+      "ordine": 40,
+      "descrizione": ""
+    },
+    "secondi-piatti": {
+      "nome": "Secondi Piatti",
+      "ordine": 50,
+      "descrizione": ""
+    },
+    "pizze": {
+      "nome": "Pizze",
+      "ordine": 60,
+      "descrizione": ""
+    },
+    "bevande": {
+      "nome": "Bevande",
+      "ordine": 70,
+      "descrizione": ""
+    },
+    "dolci": {
+      "nome": "Dolci",
+      "ordine": 80,
+      "descrizione": ""
+    },
+    "amari": {
+      "nome": "Amari",
+      "ordine": 90,
+      "descrizione": ""
+    }
+  },
+  "allergeni": {
+    "arachidi": {
+      "nome": "Arachidi e derivati",
+      "ordine": 10
+    },
+    "frutta-a-guscio": {
+      "nome": "Frutta a guscio",
+      "ordine": 20
+    },
+    "latte": {
+      "nome": "Latte e derivati",
+      "ordine": 30
+    },
+    "molluschi": {
+      "nome": "Molluschi",
+      "ordine": 40
+    },
+    "pesce": {
+      "nome": "Pesce",
+      "ordine": 50
+    },
+    "sesamo": {
+      "nome": "Sesamo",
+      "ordine": 60
+    },
+    "soia": {
+      "nome": "Soia",
+      "ordine": 70
+    },
+    "crostacei": {
+      "nome": "Crostacei",
+      "ordine": 80
+    },
+    "glutine": {
+      "nome": "Glutine",
+      "ordine": 90
+    },
+    "lupini": {
+      "nome": "Lupini",
+      "ordine": 100
+    },
+    "senape": {
+      "nome": "Senape",
+      "ordine": 110
+    },
+    "sedano": {
+      "nome": "Sedano",
+      "ordine": 120
+    },
+    "solfiti": {
+      "nome": "Anidride solforosa e solfiti",
+      "ordine": 130
+    },
+    "uova": {
+      "nome": "Uova e derivati",
+      "ordine": 140
+    }
+  },
+  "prodotti": {
+    "antipasti-della-casa": {
+      "categoria": "antipasti",
+      "nome": "Antipasti della casa",
+      "prezzo": 15,
+      "prezzoMassimo": null,
+      "prezzoAPersona": true,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "10 portate.",
+      "allergeni": null,
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 10,
+      "paginaFonte": 3
+    },
+    "tagliere-salumi-formaggi": {
+      "categoria": "antipasti",
+      "nome": "Tagliere di salumi e formaggi locali",
+      "prezzo": 10,
+      "prezzoMassimo": null,
+      "prezzoAPersona": true,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": [
+        "latte"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 20,
+      "paginaFonte": 3
+    },
+    "tagliere-crudo-bufala": {
+      "categoria": "antipasti",
+      "nome": "Tagliere crudo e mozzarella di bufala",
+      "prezzo": 12,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": [
+        "latte"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 30,
+      "paginaFonte": 3
+    },
+    "tagliere-bresaola": {
+      "categoria": "antipasti",
+      "nome": "Tagliere bresaola, rucola e grana, olio evo, limone",
+      "prezzo": 12,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": [
+        "latte"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 40,
+      "paginaFonte": 3
+    },
+    "fave-verdura": {
+      "categoria": "antipasti",
+      "nome": "Fave e verdura di stagione",
+      "prezzo": 9,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": null,
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 50,
+      "paginaFonte": 3
+    },
+    "polpette-carne": {
+      "categoria": "frittura-della-casa",
+      "nome": "Polpette di carne",
+      "prezzo": 6,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": null,
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 10,
+      "paginaFonte": 3
+    },
+    "panzerottini": {
+      "categoria": "frittura-della-casa",
+      "nome": "Panzerottini",
+      "prezzo": 5,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": [
+        "glutine"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 20,
+      "paginaFonte": 3
+    },
+    "crocchette-patate": {
+      "categoria": "frittura-della-casa",
+      "nome": "Crocchette di patate",
+      "prezzo": 6,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": null,
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 30,
+      "paginaFonte": 3
+    },
+    "bocconcini-melanzane": {
+      "categoria": "frittura-della-casa",
+      "nome": "Bocconcini di melanzane",
+      "prezzo": 5,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": null,
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 40,
+      "paginaFonte": 3
+    },
+    "patatine-fritte": {
+      "categoria": "frittura-della-casa",
+      "nome": "Patatine fritte",
+      "prezzo": 5,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": null,
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 50,
+      "paginaFonte": 3
+    },
+    "pettole-verdura": {
+      "categoria": "frittura-della-casa",
+      "nome": "Pettole e verdura pastellata",
+      "prezzo": 8,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": [
+        "glutine"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 60,
+      "paginaFonte": 3
+    },
+    "insalata-acciughe-burrata": {
+      "categoria": "insalate",
+      "nome": "Insalata con acciughe e burrata",
+      "prezzo": 12,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "Insalata verde, rucola, pomodorini, olive leccine, acciughe, carciofi, burrata.",
+      "allergeni": [
+        "glutine",
+        "pesce",
+        "latte"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 10,
+      "paginaFonte": 3
+    },
+    "insalata-tonno-cacio-ricotta": {
+      "categoria": "insalate",
+      "nome": "Insalata con tonno e cacio ricotta",
+      "prezzo": 11,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "Insalata verde, rucola, pomodorini, tonno, cipolla, mix di verdurine caserecce in agrodolce e cacio ricotta.",
+      "allergeni": [
+        "glutine",
+        "pesce",
+        "latte"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 20,
+      "paginaFonte": 3
+    },
+    "insalata-bresaola-grana": {
+      "categoria": "insalate",
+      "nome": "Insalata con bresaola e grana",
+      "prezzo": 13,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "Insalata verde, rucola, pomodorini, bresaola, grana, limone, salsa di aceto balsamico.",
+      "allergeni": [
+        "glutine",
+        "latte"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 30,
+      "paginaFonte": 3
+    },
+    "orecchietta-sugo": {
+      "categoria": "primi-piatti",
+      "nome": "Orecchietta al sugo",
+      "prezzo": 9,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": [
+        "glutine"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 10,
+      "paginaFonte": 4
+    },
+    "orecchiette-cime-rapa": {
+      "categoria": "primi-piatti",
+      "nome": "Orecchiette con cime di rapa",
+      "prezzo": 10,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": [
+        "glutine"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 20,
+      "paginaFonte": 4
+    },
+    "raviolaccio-braciola": {
+      "categoria": "primi-piatti",
+      "nome": "Raviolaccio ripieno al ragù di braciola con pomodorini e cacio ricotta",
+      "prezzo": 16,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": [
+        "glutine",
+        "latte"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 30,
+      "paginaFonte": 4
+    },
+    "cortecce-grano-arso": {
+      "categoria": "primi-piatti",
+      "nome": "Cortecce al grano arso, salsiccia e funghi porcini",
+      "prezzo": 15,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": [
+        "glutine"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 40,
+      "paginaFonte": 4
+    },
+    "foglie-ulivo": {
+      "categoria": "primi-piatti",
+      "nome": "Foglie d’ulivo pomodoro tricolore con melanzane e caciocavallo",
+      "prezzo": 15,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": [
+        "glutine",
+        "latte"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 50,
+      "paginaFonte": 4
+    },
+    "pacchero-confit": {
+      "categoria": "primi-piatti",
+      "nome": "Pacchero in salsa di pomodori confit, stracciatella e chips di zucchine fritte",
+      "prezzo": 14,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": [
+        "glutine",
+        "latte"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 60,
+      "paginaFonte": 4
+    },
+    "cappellaccio-burrata": {
+      "categoria": "primi-piatti",
+      "nome": "Cappellaccio ripieno di burrata in salsa di pomodorini giallo e capocollo croccante",
+      "prezzo": 15,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": [
+        "glutine",
+        "latte"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 70,
+      "paginaFonte": 4
+    },
+    "arrosto-misto": {
+      "categoria": "secondi-piatti",
+      "nome": "Arrosto misto alla brace",
+      "prezzo": 16,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "Bombette, capocollo, salsiccia, fegatini.",
+      "allergeni": null,
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 10,
+      "paginaFonte": 4
+    },
+    "tagliata-rucola-grana": {
+      "categoria": "secondi-piatti",
+      "nome": "Tagliata di manzo rucola e grana",
+      "prezzo": 18,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": [
+        "latte"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 20,
+      "paginaFonte": 4
+    },
+    "tagliata-cacio-ricotta": {
+      "categoria": "secondi-piatti",
+      "nome": "Tagliata di manzo cacio ricotta e pomodorini",
+      "prezzo": 18,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": [
+        "latte"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 30,
+      "paginaFonte": 4
+    },
+    "tagliata-radicchio": {
+      "categoria": "secondi-piatti",
+      "nome": "Tagliata di manzo radicchio e caciocavallo",
+      "prezzo": 18,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": [
+        "latte"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 40,
+      "paginaFonte": 4
+    },
+    "entrecote-ferri": {
+      "categoria": "secondi-piatti",
+      "nome": "Entrecotè di manzo ai ferri",
+      "prezzo": 17,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": null,
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 50,
+      "paginaFonte": 4
+    },
+    "entrecote-chef": {
+      "categoria": "secondi-piatti",
+      "nome": "Entrecotè di manzo in salsa dello chef",
+      "prezzo": 20,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "Al primitivo o ai porcini.",
+      "allergeni": null,
+      "allergeniVerificati": false,
+      "varianti": [
+        "Al primitivo",
+        "Ai porcini"
+      ],
+      "ordine": 60,
+      "paginaFonte": 4
+    },
+    "stracci-diaframma": {
+      "categoria": "secondi-piatti",
+      "nome": "Stracci di diaframma di vitello",
+      "prezzo": 18,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": null,
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 70,
+      "paginaFonte": 4
+    },
+    "cotoletta-patatine": {
+      "categoria": "secondi-piatti",
+      "nome": "Cotoletta e patatine fritte",
+      "prezzo": 10,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": null,
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 80,
+      "paginaFonte": 4
+    },
+    "la-priora": {
+      "categoria": "pizze",
+      "nome": "LA PRIORA",
+      "prezzo": 7,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "Pomodoro, mozzarella, olio evo locale, basilico.",
+      "allergeni": [
+        "glutine",
+        "latte"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 10,
+      "paginaFonte": 5
+    },
+    "chianci-chianci": {
+      "categoria": "pizze",
+      "nome": "CHIANCI CHIANCI",
+      "prezzo": 9,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "Pomodoro, mozzarella, salame piccante, olio piccante, olio evo locale, basilico.",
+      "allergeni": [
+        "glutine",
+        "latte"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 20,
+      "paginaFonte": 5
+    },
+    "la-piliona": {
+      "categoria": "pizze",
+      "nome": "LA PILIONA",
+      "prezzo": 11,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "Pomodoro, mozzarella, cotto, funghi, olio, carciofi, salame piccante, olio evo locale, basilico.",
+      "allergeni": [
+        "glutine",
+        "latte"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 30,
+      "paginaFonte": 5
+    },
+    "lu-uerto": {
+      "categoria": "pizze",
+      "nome": "LU UERTO",
+      "prezzo": 9,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "Pomodoro, mozzarella, verdure di stagione grigliate, olio evo locale, basilico.",
+      "allergeni": [
+        "glutine",
+        "latte"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 40,
+      "paginaFonte": 5
+    },
+    "mancu-li-cani": {
+      "categoria": "pizze",
+      "nome": "MANCU LI CANI",
+      "prezzo": 9,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "Pomodoro, mozzarella, tonno, cipolla, olio evo locale, basilico.",
+      "allergeni": [
+        "glutine",
+        "latte",
+        "pesce"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 50,
+      "paginaFonte": 5
+    },
+    "nu-scigghiu": {
+      "categoria": "pizze",
+      "nome": "NU SCIGGHIU",
+      "prezzo": 12,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "Base piada, fuori cottura: bufala, pomodoro, prosciutto crudo, rucola, olio evo locale, basilico.",
+      "allergeni": [
+        "glutine",
+        "latte"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 60,
+      "paginaFonte": 5
+    },
+    "allu-piccinnu-mia": {
+      "categoria": "pizze",
+      "nome": "ALLU PICCINNU MIA",
+      "prezzo": 9,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "Pomodoro, mozzarella, würstel, patatine fritte, olio evo locale, basilico.",
+      "allergeni": [
+        "glutine",
+        "latte"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 70,
+      "paginaFonte": 5
+    },
+    "benedica": {
+      "categoria": "pizze",
+      "nome": "BENEDICA",
+      "prezzo": 9,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "Pomodoro, mozzarella di bufala, olio evo locale, basilico.",
+      "allergeni": [
+        "glutine",
+        "latte"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 80,
+      "paginaFonte": 5
+    },
+    "la-mamma-mea": {
+      "categoria": "pizze",
+      "nome": "LA MAMMA MEA",
+      "prezzo": 13,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "Pomodoro, mozzarella, capocollo, zucchine alla poverella, pomodori secchi, burrata, olio evo locale, basilico.",
+      "allergeni": [
+        "glutine",
+        "latte"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 90,
+      "paginaFonte": 5
+    },
+    "la-richardus": {
+      "categoria": "pizze",
+      "nome": "LA RICHARDUS",
+      "prezzo": 13,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "Mozzarella, pancetta coppata, pomodorini gialli, pepe, porcini, olio evo locale, basilico.",
+      "allergeni": [
+        "glutine",
+        "latte"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 100,
+      "paginaFonte": 5
+    },
+    "nu-chiancone": {
+      "categoria": "pizze",
+      "nome": "NU CHIANCONE",
+      "prezzo": 12,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "Mozzarella, mortadella, burrata, crema di pistacchio, pomodori secchi, olio evo locale, basilico.",
+      "allergeni": [
+        "glutine",
+        "latte",
+        "frutta-a-guscio"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 110,
+      "paginaFonte": 5
+    },
+    "la-zzia-rosa": {
+      "categoria": "pizze",
+      "nome": "LA ZZIA ROSA",
+      "prezzo": 13,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "Pomodoro, mozzarella, prosciutto cotto, pesto di rucola, crocchette, crema di formaggi, olio evo locale, basilico.",
+      "allergeni": [
+        "glutine",
+        "latte"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 120,
+      "paginaFonte": 5
+    },
+    "la-napulitana": {
+      "categoria": "pizze",
+      "nome": "LA NAPULITANA",
+      "prezzo": 9,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "Pomodoro in cottura, pomodorini fuori cottura, alici, capperi, origano, olio evo locale, basilico.",
+      "allergeni": [
+        "glutine",
+        "pesce"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 130,
+      "paginaFonte": 5
+    },
+    "anna-ca-l-acchi": {
+      "categoria": "pizze",
+      "nome": "ANNA CA L’ACCHI",
+      "prezzo": 11,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "Mozzarella, crema di formaggi, carciofi, scaglie di cacio cavallo, olio evo locale, basilico.",
+      "allergeni": [
+        "glutine",
+        "latte"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 140,
+      "paginaFonte": 5
+    },
+    "cori-ti-la-nonna": {
+      "categoria": "pizze",
+      "nome": "CORI TI LA NONNA",
+      "prezzo": 13,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "Pomodoro, mozzarella, melanzane fritte, polpette di carne, scaglie di cacio ricotta, olio evo locale, basilico.",
+      "allergeni": [
+        "glutine",
+        "latte"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 150,
+      "paginaFonte": 5
+    },
+    "l-altitaliana": {
+      "categoria": "pizze",
+      "nome": "L’ALTITALIANA",
+      "prezzo": 12,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "Pomodoro, mozzarella, rucola, grana, pomodorini, salsa di aceto balsamico, olio evo locale, basilico.",
+      "allergeni": [
+        "glutine",
+        "latte"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 160,
+      "paginaFonte": 5
+    },
+    "na-fiori-di-cucuzza": {
+      "categoria": "pizze",
+      "nome": "NA FIORI DI CUCUZZA",
+      "prezzo": 14,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "Mozzarella, fiori di zucca, acciughe, ricotta, olio evo locale, basilico.",
+      "allergeni": [
+        "glutine",
+        "latte",
+        "pesce"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 170,
+      "paginaFonte": 5
+    },
+    "na-maranciana": {
+      "categoria": "pizze",
+      "nome": "NA MARANCIANA",
+      "prezzo": 13,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "Mozzarella, melanzane fritte, pomodorini, cacio ricotta, olio evo locale, basilico.",
+      "allergeni": [
+        "glutine",
+        "latte"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 180,
+      "paginaFonte": 5
+    },
+    "la-muntanara": {
+      "categoria": "pizze",
+      "nome": "LA MUNTANARA",
+      "prezzo": 13,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "Pomodoro, mozzarella, bresaola, rucola, grana, pomodori secchi, olio evo locale, basilico.",
+      "allergeni": [
+        "glutine",
+        "latte"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 190,
+      "paginaFonte": 5
+    },
+    "acqua": {
+      "categoria": "bevande",
+      "nome": "Acqua",
+      "prezzo": 3,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "Naturale / Frizzante.",
+      "allergeni": null,
+      "allergeniVerificati": false,
+      "varianti": [
+        "Naturale",
+        "Frizzante"
+      ],
+      "ordine": 10,
+      "paginaFonte": 6
+    },
+    "vino-caraffa": {
+      "categoria": "bevande",
+      "nome": "Vino in caraffa della casa 1 lt",
+      "prezzo": 9,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": [
+        "solfiti"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 20,
+      "paginaFonte": 6
+    },
+    "coca-cola": {
+      "categoria": "bevande",
+      "nome": "Coca Cola 33 cl",
+      "prezzo": 3,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": null,
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 30,
+      "paginaFonte": 6
+    },
+    "fanta": {
+      "categoria": "bevande",
+      "nome": "Fanta 33 cl",
+      "prezzo": 3,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": null,
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 40,
+      "paginaFonte": 6
+    },
+    "birra-33": {
+      "categoria": "bevande",
+      "nome": "Birra 33 cl",
+      "prezzo": 3,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": [
+        "glutine"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 50,
+      "paginaFonte": 6
+    },
+    "birra-66": {
+      "categoria": "bevande",
+      "nome": "Birra 66 cl",
+      "prezzo": 5,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": [
+        "glutine"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 60,
+      "paginaFonte": 6
+    },
+    "birre-speciali": {
+      "categoria": "bevande",
+      "nome": "Birra speciali",
+      "prezzo": 5,
+      "prezzoMassimo": 7,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "Rosse e doppio malto.",
+      "allergeni": [
+        "glutine"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [
+        "Rossa",
+        "Doppio malto"
+      ],
+      "ordine": 70,
+      "paginaFonte": 6
+    },
+    "vini-imbottigliati": {
+      "categoria": "bevande",
+      "nome": "Vini imbottigliati",
+      "prezzo": 15,
+      "prezzoMassimo": 60,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": true,
+      "visibile": true,
+      "descrizione": "Prezzo da chiedere al personale di sala.",
+      "allergeni": [
+        "solfiti"
+      ],
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 80,
+      "paginaFonte": 6
+    },
+    "dessert": {
+      "categoria": "dolci",
+      "nome": "Dessert",
+      "prezzo": 6,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": null,
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 10,
+      "paginaFonte": 6
+    },
+    "caffe": {
+      "categoria": "dolci",
+      "nome": "Caffè",
+      "prezzo": 1.5,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": null,
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 20,
+      "paginaFonte": 6
+    },
+    "amari": {
+      "categoria": "amari",
+      "nome": "Amari",
+      "prezzo": 4,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": null,
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 10,
+      "paginaFonte": 6
+    },
+    "distillati-speciali": {
+      "categoria": "amari",
+      "nome": "Distillati speciali",
+      "prezzo": 8,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": null,
+      "allergeniVerificati": false,
+      "varianti": [],
+      "ordine": 20,
+      "paginaFonte": 6
+    },
+    "grappa": {
+      "categoria": "amari",
+      "nome": "Grappa Bianca o Barricata",
+      "prezzo": 4,
+      "prezzoMassimo": null,
+      "prezzoAPersona": false,
+      "prezzoSuRichiesta": false,
+      "visibile": true,
+      "descrizione": "",
+      "allergeni": null,
+      "allergeniVerificati": false,
+      "varianti": [
+        "Bianca",
+        "Barricata"
+      ],
+      "ordine": 30,
+      "paginaFonte": 6
+    }
+  }
+}

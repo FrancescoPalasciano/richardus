@@ -1,0 +1,331 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Menu Richardus",
+  "description": "Catalogo senza database: categorie, allergeni e prodotti indicizzati per ID. Importi in EUR.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "versione",
+    "valuta",
+    "fonte",
+    "noteAllergeni",
+    "noteMenu",
+    "costiAggiuntivi",
+    "categorie",
+    "allergeni",
+    "prodotti"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "versione": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "valuta": {
+      "const": "EUR"
+    },
+    "fonte": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "file",
+        "pagineProdotti",
+        "paginaAllergeni"
+      ],
+      "properties": {
+        "file": {
+          "type": "string"
+        },
+        "pagineProdotti": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "uniqueItems": true
+        },
+        "paginaAllergeni": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "noteAllergeni": {
+      "type": "string",
+      "minLength": 1
+    },
+    "noteMenu": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "costiAggiuntivi": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "coperto",
+        "aggiuntePizze"
+      ],
+      "properties": {
+        "coperto": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "nome",
+            "prezzo",
+            "visibile",
+            "paginaFonte"
+          ],
+          "properties": {
+            "nome": {
+              "type": "string"
+            },
+            "prezzo": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Importo in euro, senza simbolo. Usare il punto per i decimali."
+            },
+            "visibile": {
+              "type": "boolean"
+            },
+            "paginaFonte": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        },
+        "aggiuntePizze": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "descrizione",
+            "importi",
+            "paginaFonte"
+          ],
+          "properties": {
+            "descrizione": {
+              "type": "string"
+            },
+            "importi": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "number",
+                "minimum": 0,
+                "description": "Importo in euro, senza simbolo. Usare il punto per i decimali."
+              }
+            },
+            "paginaFonte": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        }
+      }
+    },
+    "categorie": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      },
+      "additionalProperties": {
+        "$ref": "#/definitions/categoria"
+      }
+    },
+    "allergeni": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      },
+      "additionalProperties": {
+        "$ref": "#/definitions/allergene"
+      }
+    },
+    "prodotti": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      },
+      "additionalProperties": {
+        "$ref": "#/definitions/prodotto"
+      }
+    }
+  },
+  "definitions": {
+    "categoria": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "nome",
+        "ordine",
+        "descrizione"
+      ],
+      "properties": {
+        "nome": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ordine": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "descrizione": {
+          "type": "string"
+        }
+      }
+    },
+    "allergene": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "nome",
+        "ordine"
+      ],
+      "properties": {
+        "nome": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ordine": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "prodotto": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "categoria",
+        "nome",
+        "prezzo",
+        "prezzoMassimo",
+        "prezzoAPersona",
+        "prezzoSuRichiesta",
+        "visibile",
+        "descrizione",
+        "allergeni",
+        "allergeniVerificati",
+        "varianti",
+        "ordine",
+        "paginaFonte"
+      ],
+      "properties": {
+        "categoria": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "description": "ID di una voce in categorie."
+        },
+        "nome": {
+          "type": "string",
+          "minLength": 1
+        },
+        "prezzo": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Importo in euro, senza simbolo. Usare il punto per i decimali."
+        },
+        "prezzoMassimo": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "description": "null per un prezzo fisso; limite superiore per un intervallo."
+        },
+        "prezzoAPersona": {
+          "type": "boolean"
+        },
+        "prezzoSuRichiesta": {
+          "type": "boolean"
+        },
+        "visibile": {
+          "type": "boolean"
+        },
+        "descrizione": {
+          "type": "string",
+          "description": "Ingredienti o descrizione del PDF. Stringa vuota quando non è presente una descrizione separata."
+        },
+        "allergeni": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "uniqueItems": true,
+          "description": "ID della legenda. null = non disponibili. Con allergeniVerificati:false gli elenchi sono indicativi, non esaustivi. [] è ammesso solo dopo verifica."
+        },
+        "allergeniVerificati": {
+          "type": "boolean",
+          "description": "true solo dopo verifica completa della ricetta e delle schede degli ingredienti da parte del ristorante."
+        },
+        "varianti": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "ordine": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "paginaFonte": {
+          "type": ["integer", "null"],
+          "minimum": 1,
+          "description": "Pagina del PDF; null per nuovi prodotti non presenti nel documento."
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "allergeniVerificati": {
+                "const": true
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "allergeni": {
+                "type": "array"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "allergeni": {
+                "type": "array",
+                "maxItems": 0
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "allergeniVerificati": {
+                "const": true
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
