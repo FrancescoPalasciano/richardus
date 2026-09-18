@@ -12,14 +12,21 @@ export default function VisitSection({ telefono }: { telefono: string }) {
       aria-labelledby="visit-title"
       className={styles.section}
     >
-      <div className={styles.content}>
+      <div className={styles.intro}>
         <p className={styles.eyebrow}>Ti aspettiamo a Francavilla Fontana</p>
         <h2 id="visit-title" className={styles.title}>
           Il tuo posto a tavola.
         </h2>
+      </div>
+      <div className={styles.content}>
         <dl className={styles.details}>
           <div className={styles.detail}>
-            <dt>Dove siamo</dt>
+            <dt>
+              <span className={styles.number} aria-hidden="true">
+                01
+              </span>
+              Dove siamo
+            </dt>
             <dd>
               <address className={styles.address}>
                 <a
@@ -54,7 +61,12 @@ export default function VisitSection({ telefono }: { telefono: string }) {
             </dd>
           </div>
           <div className={styles.detail}>
-            <dt>Orari di apertura</dt>
+            <dt>
+              <span className={styles.number} aria-hidden="true">
+                02
+              </span>
+              Orari di apertura
+            </dt>
             <dd>
               <dl className={styles.hours}>
                 <div>
@@ -83,24 +95,46 @@ export default function VisitSection({ telefono }: { telefono: string }) {
             </dd>
           </div>
           <div className={styles.detail}>
-            <dt>Chiamaci per prenotare</dt>
+            <dt>
+              <span className={styles.number} aria-hidden="true">
+                03
+              </span>
+              Chiamaci per prenotare
+            </dt>
             <dd>
               <a href={`tel:${telefono}`} className={styles.phone}>
                 329 009 0918
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  aria-hidden="true"
+                >
+                  <path d="m7 17 10-10M7 7h10v10" />
+                </svg>
               </a>
             </dd>
           </div>
         </dl>
       </div>
-      <div className={styles.picture}>
-        <Image
-          src={winePhoto}
-          alt="Un brindisi con due calici di vino rosato da Richardus"
-          fill
-          sizes="(min-width: 1280px) 560px, (min-width: 768px) 46vw, 100vw"
-          className={styles.photo}
-        />
-      </div>
+      <figure className={styles.picture}>
+        <div className={styles.imageFrame}>
+          <Image
+            src={winePhoto}
+            alt="Un brindisi con due calici di vino rosato da Richardus"
+            fill
+            sizes="(min-width: 1280px) 560px, (min-width: 900px) 46vw, 100vw"
+            className={styles.photo}
+          />
+        </div>
+        <figcaption className={styles.caption}>
+          <span>Richardus</span>
+          <span>Francavilla Fontana</span>
+        </figcaption>
+      </figure>
     </section>
   );
 }

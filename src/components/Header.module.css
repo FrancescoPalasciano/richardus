@@ -1,7 +1,7 @@
 .header {
   --header-height: 5.5rem;
-  --header-surface: rgb(0 0 0 / 94%);
-  --header-panel: #101010;
+  --header-surface: rgb(23 39 31 / 96%);
+  --header-panel: var(--brand-green);
   --header-border: rgb(255 255 255 / 14%);
   --header-muted: #c6c6c6;
   --header-focus: #e1c394;

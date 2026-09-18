@@ -116,14 +116,25 @@ export default function Footer() {
             <Link href="/privacy-policy">Privacy policy</Link>
             <Link href="/cookie-policy">Cookie policy</Link>
           </nav>
-          <a
-            className={styles.credit}
-            href="https://www.instagram.com/senzafrenodigital/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            made by <span>Senza Freno Digital</span>
-          </a>
+          <div className={styles.agency}>
+            <a
+              className={styles.credit}
+              href="https://www.instagram.com/senzafrenodigital/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              made by <span>Senza Freno Digital</span>
+            </a>
+            <a
+              className={styles.facebook}
+              href="https://www.facebook.com/p/Senza-Freno-Digital-61568939816513/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Senza Freno Digital su Facebook"
+            >
+              Facebook
+            </a>
+          </div>
         </div>
       </div>
     </footer>

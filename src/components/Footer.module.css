@@ -1,6 +1,6 @@
 .footer {
   margin-top: auto;
-  background: #17271f;
+  background: var(--brand-green);
   color: #f7f4ed;
 }
 
@@ -125,6 +125,16 @@
 .credit {
   gap: 0.35em;
   flex-wrap: wrap;
+}
+.agency {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0 1rem;
+}
+.facebook {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 .credit span {
   color: #f7f4ed;
