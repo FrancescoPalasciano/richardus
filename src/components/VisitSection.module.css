@@ -1,0 +1,142 @@
+.section {
+  display: grid;
+  align-items: center;
+  gap: 3rem;
+  width: min(100%, 80rem);
+  margin-inline: auto;
+  padding: clamp(4rem, 7vw, 7rem) 1.5rem;
+  scroll-margin-top: 7rem;
+}
+
+.content {
+  min-width: 0;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.title {
+  max-width: 12ch;
+  margin-top: 1rem;
+  font-size: clamp(2.75rem, 4.5vw, 4.5rem);
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.details {
+  margin-top: 2.5rem;
+}
+
+.detail {
+  padding-block: 1.5rem;
+  border-top: 1px solid rgb(40 54 46 / 18%);
+}
+
+.detail > dt {
+  margin-bottom: 0.625rem;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.address {
+  font-style: normal;
+}
+
+.addressLink {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-height: 44px;
+  font-size: clamp(1.125rem, 1.8vw, 1.375rem);
+  line-height: 1.5;
+}
+
+.mapLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.hours {
+  display: grid;
+  gap: 0.875rem;
+  font-size: 1rem;
+}
+
+.hours > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+}
+
+.hours dd {
+  display: flex;
+  flex-direction: column;
+  font-variant-numeric: tabular-nums;
+}
+
+.phone {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: clamp(1.375rem, 2vw, 1.75rem);
+  font-variant-numeric: tabular-nums;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+}
+
+.section a:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 5px;
+}
+
+.picture {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #ded6c8;
+}
+
+.photo {
+  object-fit: cover;
+  object-position: 50% 58%;
+}
+
+@media (hover: hover) {
+  .section a:hover {
+    color: var(--accent);
+  }
+}
+
+@media (min-width: 768px) {
+  .section {
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2.5rem, 6vw, 6rem);
+    padding-inline: 2.5rem;
+  }
+
+  .picture {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .content {
+    grid-column: 2;
+    grid-row: 1;
+  }
+}

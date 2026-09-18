@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
+import VisitSection from "@/components/VisitSection";
 import styles from "@/components/PageHero.module.css";
 
 export const metadata: Metadata = {
@@ -18,7 +19,7 @@ export default function Home() {
       <PageHero
         title="Richardus"
         eyebrow="Pasta · Brace · Pizza"
-        description="Nel cuore della Puglia, il piacere di ritrovarsi a tavola."
+        description="La nostra gemma nel cuore di Francavilla"
         fullHeight
       >
         <div className={styles.actions}>
@@ -67,6 +68,7 @@ export default function Home() {
           </a>
         </div>
       </PageHero>
+      <VisitSection telefono={telefono} />
     </main>
   );
 }

@@ -1,7 +1,7 @@
 .hero {
   --hero-ink: #fff;
-  --hero-button: #e3c49d;
-  --hero-button-ink: #191712;
+  --hero-button: #244338;
+  --hero-button-ink: #fff;
   position: relative;
   isolation: isolate;
   display: flex;
@@ -108,12 +108,12 @@
 
 @media (hover: hover) {
   .cta:hover {
-    background: #f0d9bb;
+    background: #325a4c;
   }
 
   .cta[data-secondary="true"]:hover {
     background: var(--hero-ink);
-    color: var(--hero-button-ink);
+    color: #191712;
   }
 }
 
