@@ -15,7 +15,7 @@ export default function ReviewsSection() {
       </h2>
       <div
         className="elfsight-app-59145d03-21a7-4841-a274-768fa2319eeb min-h-96"
-        data-elfsight-app-lazy
+        data-elfsight-app-lazy=""
       />
       <a
         href="https://share.google/mfaCnrlgZuCyMWie5"
@@ -25,7 +25,7 @@ export default function ReviewsSection() {
       >
         Leggi tutte le recensioni su Google
       </a>
-      <Script src="https://elfsightcdn.com/platform.js" strategy="lazyOnload" />
+      <Script src="https://elfsightcdn.com/platform.js" strategy="afterInteractive" />
     </section>
   );
 }
