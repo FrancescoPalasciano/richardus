@@ -1,4 +1,4 @@
-import Script from "next/script";
+import ExternalReviews from "./ExternalReviews";
 
 export default function ReviewsSection() {
   return (
@@ -13,10 +13,7 @@ export default function ReviewsSection() {
       >
         Le vostre parole
       </h2>
-      <div
-        className="elfsight-app-59145d03-21a7-4841-a274-768fa2319eeb min-h-96"
-        data-elfsight-app-lazy=""
-      />
+      <ExternalReviews />
       <a
         href="https://share.google/mfaCnrlgZuCyMWie5"
         target="_blank"
@@ -25,7 +22,6 @@ export default function ReviewsSection() {
       >
         Leggi tutte le recensioni su Google
       </a>
-      <Script src="https://elfsightcdn.com/platform.js" strategy="afterInteractive" />
     </section>
   );
 }

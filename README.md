@@ -31,6 +31,16 @@ I font sono inclusi nel progetto, quindi la build non richiede download da Googl
 
 I collegamenti “Chiama ora” e “Scrivici” della home sono configurati in `src/app/page.tsx`: numero `+39 329 009 0918` e messaggio WhatsApp precompilato “Salve vorrei prenotare un tavolo per le x per x persone a nome di x”. Il visitatore può modificare e inviare il messaggio in WhatsApp; il sito non lo invia automaticamente.
 
+## Footer, privacy e cookie
+
+Il footer condiviso (`src/components/Footer.tsx`) contiene contatti, orari, navigazione e i link diretti ai profili Instagram di Richardus e Senza Freno Digital.
+
+Le pagine `/privacy-policy` e `/cookie-policy` sono bozze con `noindex`: per richiesta del committente ragione sociale, partita IVA, sede legale e contatto privacy restano vuoti. Prima della pubblicazione vanno completati e verificati anche hosting, log, destinatari, conservazione e trasferimenti; poi può essere rimossa l'esclusione dall'indicizzazione. Queste bozze non attestano la conformità del sito.
+
+`ExternalReviews.tsx` carica Elfsight solo dopo la scelta esplicita del visitatore. `src/lib/reviews-consent.ts` conserva la preferenza in localStorage per 180 giorni; se la memoria è bloccata, usa solo la sessione della pagina. La cookie policy permette di revocare la scelta: quando lo script è già attivo, la pagina viene ricaricata per interromperlo. I cookie sui domini esterni vanno eventualmente eliminati dalle impostazioni del browser. I normali link a Instagram, WhatsApp e Maps non sono embed.
+
+Riferimenti consultati: [FAQ cookie del Garante](https://www.garanteprivacy.it/faq/cookie), [Elfsight e GDPR](https://help.elfsight.com/article/418-elfsight-and-gdpr), [informativa Elfsight](https://elfsight.com/privacy-policy/).
+
 ## Tipografia
 
 La coppia scelta per Richardus è **EB Garamond + Work Sans**, consigliata nelle linee guida Markdown per ristoranti storici e cucina tradizionale:
