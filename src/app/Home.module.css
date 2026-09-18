@@ -37,7 +37,7 @@
 .aboutBody { display: grid; gap: 3rem; margin-top: 3rem; padding-top: 2.5rem; border-top: 1px solid color-mix(in srgb, var(--foreground) 20%, transparent); }
 .aboutBody p { max-width: 58ch; margin-top: 1.5rem; line-height: 1.8; }
 .aboutBody h2 { font-size: clamp(2.25rem, 4vw, 3.5rem); }
-.aboutPhoto { position: relative; min-width: 0; aspect-ratio: 6 / 5; }
+.aboutPhoto { position: relative; min-width: 0; aspect-ratio: 6 / 5; order: 2; }
 .aboutPhoto img { object-fit: cover; }
 .desktopBreak { display: none; }
 @media (hover: hover) { .phone:hover, .textLink:hover, .dishTitle a:hover { color: var(--accent); } }
@@ -47,6 +47,6 @@
   .heroPhoto { aspect-ratio: 1 / 1.08; }
   .selection { grid-template-columns: 1fr 1.25fr; gap: clamp(3rem, 8vw, 8rem); }
   .aboutBody { grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-  .aboutPhoto { aspect-ratio: 5 / 6; }
+  .aboutPhoto { aspect-ratio: 5 / 6; order: 0; }
   .desktopBreak { display: initial; }
 }

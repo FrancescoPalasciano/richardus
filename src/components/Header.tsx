@@ -109,39 +109,6 @@ export default function Header({ categorie }: HeaderProps) {
           />
         </Link>
 
-        <a className={styles.booking} href={restaurant.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="Prenota un tavolo su WhatsApp">
-          Prenota
-        </a>
-        <button
-          ref={toggleRef}
-          type="button"
-          className={styles.toggle}
-          aria-label={
-            navigationOpen ? "Chiudi navigazione" : "Apri navigazione"
-          }
-          aria-expanded={navigationOpen}
-          aria-controls="site-navigation"
-          onClick={() => {
-            setNavigationOpen(!navigationOpen);
-            setCategoriesOpen(false);
-          }}
-        >
-          <svg
-            width="26"
-            height="26"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            aria-hidden="true"
-          >
-            <path className={styles.toggleTop} d="M3 6h18" />
-            <path className={styles.toggleMiddle} d="M3 12h18" />
-            <path className={styles.toggleBottom} d="M3 18h18" />
-          </svg>
-        </button>
-
         <nav
           id="site-navigation"
           aria-label="Navigazione principale"
@@ -223,6 +190,39 @@ export default function Header({ categorie }: HeaderProps) {
             </li>
           </ul>
         </nav>
+
+        <a className={styles.booking} href={restaurant.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="Prenota un tavolo su WhatsApp">
+          Prenota
+        </a>
+        <button
+          ref={toggleRef}
+          type="button"
+          className={styles.toggle}
+          aria-label={
+            navigationOpen ? "Chiudi navigazione" : "Apri navigazione"
+          }
+          aria-expanded={navigationOpen}
+          aria-controls="site-navigation"
+          onClick={() => {
+            setNavigationOpen(!navigationOpen);
+            setCategoriesOpen(false);
+          }}
+        >
+          <svg
+            width="26"
+            height="26"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            aria-hidden="true"
+          >
+            <path className={styles.toggleTop} d="M3 6h18" />
+            <path className={styles.toggleMiddle} d="M3 12h18" />
+            <path className={styles.toggleBottom} d="M3 18h18" />
+          </svg>
+        </button>
       </div>
     </header>
   );

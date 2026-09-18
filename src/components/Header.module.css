@@ -1,6 +1,6 @@
 .header {
   --header-height: 5.5rem;
-  --header-surface: rgb(23 39 31 / 96%);
+  --header-surface: var(--brand-green);
   --header-panel: var(--brand-green);
   --header-border: rgb(255 255 255 / 14%);
   --header-muted: #d1d6cf;
@@ -12,7 +12,7 @@
   z-index: 40;
   width: 100%;
   background: var(--header-surface);
-  color: #fff;
+  color: #f7f4ed;
   border-bottom: 1px solid var(--header-border);
 }
 

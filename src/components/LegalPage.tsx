@@ -9,7 +9,7 @@ export default function LegalPage({
   children: ReactNode;
 }) {
   return (
-    <main className="mx-auto w-full max-w-4xl px-6 py-12 sm:px-10 sm:py-20">
+    <main id="contenuto" className="mx-auto w-full max-w-4xl px-6 py-12 sm:px-10 sm:py-20">
       <Link
         href="/"
         className="inline-flex min-h-11 items-center text-sm underline underline-offset-4"

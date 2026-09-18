@@ -20,11 +20,11 @@ export default function MenuPage() {
   return (
     <main id="contenuto">
       <header className="mx-auto max-w-6xl px-6 pb-6 pt-10 sm:px-10 sm:pt-16">
-        <h1 className="text-[clamp(3.25rem,7vw,6rem)] leading-none tracking-[-0.025em]">Il menu di Richardus.</h1>
+        <h1 className="text-[clamp(3.25rem,7vw,6rem)] leading-none tracking-[-0.025em]">Il menu.</h1>
         <p className="mt-5 max-w-xl text-base leading-7">Pasta, brace e pizza. Scegli da dove cominciare.</p>
       </header>
       <nav aria-label="Categorie dei piatti" className="sticky top-[calc(5.5rem+1px)] z-20 border-y border-foreground/20 bg-background">
-        <ul className="mx-auto flex max-w-6xl gap-1 overflow-x-auto px-4 py-2 sm:px-8">
+        <ul className="mx-auto flex max-w-6xl gap-1 overflow-x-auto px-4 py-2 [scrollbar-width:thin] sm:px-8">
           {categorie.map(([id, categoria]) => (
             <li key={id} className="shrink-0">
               <a href={`#${id}`} className="inline-flex min-h-11 items-center px-3 text-sm font-medium underline decoration-foreground/30 underline-offset-8 hover:decoration-foreground focus-visible:outline-2 focus-visible:outline-offset-[-2px]">{categoria.nome}</a>
