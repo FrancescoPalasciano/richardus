@@ -2,9 +2,15 @@ import Link from "next/link";
 import { restaurant } from "@/lib/restaurant";
 import styles from "./Reservation.module.css";
 
-export function BookingActions({ showMenu = false }: { showMenu?: boolean }) {
+export function BookingActions({
+  showMenu = false,
+  tone = "default",
+}: {
+  showMenu?: boolean;
+  tone?: "default" | "inverse";
+}) {
   return (
-    <div className={styles.actions}>
+    <div className={styles.actions} data-tone={tone}>
       <a className={styles.primary} href={restaurant.whatsapp} target="_blank" rel="noopener noreferrer">
         Prenota su WhatsApp
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10" /></svg>

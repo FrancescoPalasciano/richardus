@@ -19,19 +19,29 @@ export default function Home() {
   return (
     <main id="contenuto">
       <section className={styles.hero} aria-labelledby="home-title">
-        <div className={styles.heroCopy}>
-          <h1 id="home-title">Pasta, brace<br />e pizza.</h1>
-          <p className={styles.location}>Richardus · Francavilla Fontana</p>
-          <p className={styles.intro}>Le orecchiette, le bombette, una pizza da scegliere.<br className={styles.desktopBreak} /> Il piacere di ritrovarsi a tavola.</p>
-          <BookingActions showMenu />
-          <a className={styles.phone} href={`tel:${restaurant.phone}`}>Preferisci chiamare? {restaurant.phoneLabel}</a>
-        </div>
-        <figure className={styles.heroFigure}>
-          <div className={styles.heroPhoto}>
-            <Image src={homePhoto} alt="Una pizza di Richardus con mozzarella, prosciutto e basilico" fill preload sizes="(min-width: 900px) 48vw, 100vw" />
+        <Image
+          src={homePhoto}
+          alt=""
+          fill
+          preload
+          sizes="100vw"
+          className={styles.heroPhoto}
+        />
+        <div className={styles.heroInner}>
+          <div className={styles.heroCopy}>
+            <h1 id="home-title">Mangia<br />e bevi.</h1>
+            <p className={styles.intro}>
+              Un tavolo, qualcosa di buono.<br />
+              Il resto può aspettare.
+            </p>
+            <a className={styles.location} href={restaurant.maps} target="_blank" rel="noopener noreferrer">
+              <strong>Francavilla Fontana</strong>
+              <span>Via San Giovanni 15</span>
+            </a>
+            <BookingActions showMenu tone="inverse" />
+            <a className={styles.phone} href={`tel:${restaurant.phone}`}>Chiama {restaurant.phoneLabel}</a>
           </div>
-          <figcaption>Una pizza, un tavolo. Richardus.</figcaption>
-        </figure>
+        </div>
       </section>
       <section className={styles.selection} aria-labelledby="selection-title">
         <div className={styles.selectionIntro}>

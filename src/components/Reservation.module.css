@@ -51,9 +51,22 @@
   outline-offset: 4px;
 }
 .primary:active { transform: scale(0.98); }
+.actions[data-tone="inverse"] {
+  color: var(--background);
+}
+.actions[data-tone="inverse"] .primary {
+  background: var(--background);
+  color: var(--brand-green);
+  border-color: var(--background);
+}
+.actions[data-tone="inverse"] a:focus-visible {
+  outline-color: var(--background);
+}
 @media (hover: hover) {
   .primary:hover { background: #304d3d; }
   .secondary:hover { color: var(--accent); }
+  .actions[data-tone="inverse"] .primary:hover { background: #e1c394; border-color: #e1c394; }
+  .actions[data-tone="inverse"] .secondary:hover { color: #e1c394; }
 }
 @container (min-width: 50rem) {
   .section .actions { gap: 1.5rem; }
