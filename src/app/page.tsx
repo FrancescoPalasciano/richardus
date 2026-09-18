@@ -69,7 +69,7 @@ export default function Home() {
           </a>
         </div>
       </PageHero>
-      <VisitSection telefono={telefono} />
+      <VisitSection />
       <ReviewsSection />
     </main>
   );

@@ -1,11 +1,12 @@
 import Image from "next/image";
+import GoogleMap from "./GoogleMap";
 import winePhoto from "@/app/images/vino.webp";
 import styles from "./VisitSection.module.css";
 
 const mapsUrl =
   "https://maps.google.com/?q=Via+San+Giovanni+15,+Francavilla+Fontana,+BR";
 
-export default function VisitSection({ telefono }: { telefono: string }) {
+export default function VisitSection() {
   return (
     <section
       id="contatti"
@@ -21,12 +22,7 @@ export default function VisitSection({ telefono }: { telefono: string }) {
       <div className={styles.content}>
         <dl className={styles.details}>
           <div className={styles.detail} data-reveal>
-            <dt>
-              <span className={styles.number} aria-hidden="true">
-                01
-              </span>
-              Dove siamo
-            </dt>
+            <dt>Dove siamo</dt>
             <dd>
               <address className={styles.address}>
                 <a
@@ -58,15 +54,11 @@ export default function VisitSection({ telefono }: { telefono: string }) {
                   </span>
                 </a>
               </address>
+              <GoogleMap />
             </dd>
           </div>
           <div className={styles.detail} data-reveal>
-            <dt>
-              <span className={styles.number} aria-hidden="true">
-                02
-              </span>
-              Orari di apertura
-            </dt>
+            <dt>Orari di apertura</dt>
             <dd>
               <dl className={styles.hours}>
                 <div>
@@ -92,30 +84,6 @@ export default function VisitSection({ telefono }: { telefono: string }) {
                   </dd>
                 </div>
               </dl>
-            </dd>
-          </div>
-          <div className={styles.detail} data-reveal>
-            <dt>
-              <span className={styles.number} aria-hidden="true">
-                03
-              </span>
-              Chiamaci per prenotare
-            </dt>
-            <dd>
-              <a href={`tel:${telefono}`} className={styles.phone}>
-                329 009 0918
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  aria-hidden="true"
-                >
-                  <path d="m7 17 10-10M7 7h10v10" />
-                </svg>
-              </a>
             </dd>
           </div>
         </dl>

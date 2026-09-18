@@ -58,11 +58,6 @@
   letter-spacing: 0.09em;
   text-transform: uppercase;
 }
-.number {
-  font-variant-numeric: tabular-nums;
-  font-size: 0.625rem;
-  color: var(--foreground);
-}
 .address {
   font-style: normal;
 }
@@ -101,20 +96,6 @@
   flex-direction: column;
   text-align: right;
   font-variant-numeric: tabular-nums;
-}
-.phone {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  min-height: 48px;
-  font-family: var(--font-eb-garamond), Georgia, serif;
-  font-size: clamp(2rem, 3vw, 2.5rem);
-  line-height: 1.2;
-  font-variant-numeric: tabular-nums;
-}
-.phone svg {
-  flex-shrink: 0;
 }
 .section a:focus-visible {
   outline: 2px solid var(--foreground);
@@ -183,14 +164,12 @@
     padding-top: 1.25rem;
   }
   .picture {
-    align-self: stretch;
-    display: flex;
-    flex-direction: column;
+    align-self: start;
+    position: sticky;
+    top: 7rem;
   }
   .imageFrame {
-    flex: 1;
-    min-height: 36rem;
-    aspect-ratio: auto;
+    aspect-ratio: 4 / 5;
   }
   .content {
     align-self: end;

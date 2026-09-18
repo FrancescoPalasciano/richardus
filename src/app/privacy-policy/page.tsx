@@ -120,6 +120,29 @@ export default function PrivacyPage() {
         </p>
       </section>
       <section>
+        <h2>Mappa interattiva</h2>
+        <p>
+          La sezione “Dove siamo” può caricare una mappa Google dopo un consenso
+          specifico, separato da quello delle recensioni. Il caricamento
+          permette a Google di ricevere dati tecnici quali indirizzo IP e
+          informazioni sul browser, e può comportare l’uso di cookie. Puoi
+          rimuovere la mappa con il pulsante “Disattiva la mappa”; la scelta non
+          viene memorizzata per le visite successive.
+        </p>
+        <p>
+          Il trattamento da parte del servizio è descritto nell’
+          <a
+            href="https://policies.google.com/privacy?hl=it"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            informativa Google
+          </a>
+          . Le modalità di attivazione e disattivazione sono riportate nella{" "}
+          <Link href="/cookie-policy#mappa">cookie policy</Link>.
+        </p>
+      </section>
+      <section>
         <h2>Conservazione e destinatari</h2>
         <p>
           I tempi applicabili ai contatti e alle prenotazioni, gli eventuali

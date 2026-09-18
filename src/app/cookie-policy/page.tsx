@@ -84,6 +84,29 @@ export default function CookiePage() {
         </p>
       </section>
       <CookiePreferences />
+      <section id="mappa" className="scroll-mt-28">
+        <h2>Mappa Google</h2>
+        <p>
+          La mappa incorporata è un contenuto facoltativo separato dalle
+          recensioni. Si attiva solo con “Consenti e mostra la mappa”. Il
+          caricamento trasmette a Google dati tecnici, tra cui l’indirizzo IP, e
+          può comportare l’utilizzo di cookie secondo l’
+          <a
+            href="https://policies.google.com/privacy?hl=it"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            informativa Google
+          </a>
+          .
+        </p>
+        <p>
+          Questa scelta non viene salvata nella memoria del browser: vale solo
+          finché la sezione rimane aperta. Il pulsante “Disattiva la mappa”
+          rimuove il contenuto incorporato. Puoi sempre aprire l’indirizzo
+          direttamente su Google Maps senza attivare la mappa nel sito.
+        </p>
+      </section>
       <section>
         <h2>Revoca e servizi collegati</h2>
         <p>
@@ -94,9 +117,10 @@ export default function CookiePage() {
           nelle impostazioni del browser.
         </p>
         <p>
-          I link a Instagram, WhatsApp e Google Maps sono normali collegamenti:
-          non incorporano i relativi contenuti nella pagina. Puoi leggere le
-          recensioni direttamente su Google senza attivare Elfsight.
+          I link a Instagram e WhatsApp sono normali collegamenti. La mappa
+          Google incorporata viene invece gestita con la scelta separata
+          descritta sopra. Puoi leggere le recensioni direttamente su Google
+          senza attivare Elfsight.
         </p>
       </section>
     </LegalPage>
