@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Home from "@/app/page";
-import MenuPage from "@/app/menu/page";
-import AboutPage from "@/app/chi-siamo/page";
-import PrivacyPage from "@/app/privacy-policy/page";
-import CookiePage from "@/app/cookie-policy/page";
+import Home from "@/app/(it)/page";
+import MenuPage from "@/app/(it)/menu/page";
+import AboutPage from "@/app/(it)/chi-siamo/page";
+import PrivacyPage from "@/app/(it)/privacy-policy/page";
+import CookiePage from "@/app/(it)/cookie-policy/page";
 import { getTranslator } from "@/lib/i18n";
 import {
   locales,

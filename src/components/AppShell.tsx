@@ -12,7 +12,7 @@ import {
   type RouteProps,
 } from "@/lib/locale";
 import { LocaleProvider } from "@/components/LocaleProvider";
-import "./globals.css";
+import "@/app/globals.css";
 
 const manrope = localFont({
   src: "../../node_modules/@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2",
@@ -23,6 +23,10 @@ const manrope = localFont({
   adjustFontFallback: "Arial",
 });
 const baseMetadata: Metadata = {
+  icons: {
+    icon: { url: "/icon", type: "image/png", sizes: "256x256" },
+    apple: "/icon",
+  },
   metadataBase: new URL("https://richardus.it"),
   alternates: { canonical: "/" },
   title: {
@@ -32,6 +36,14 @@ const baseMetadata: Metadata = {
   description:
     "Richardus, trattoria storica a Francavilla Fontana. Cucina pugliese, pasta e piatti alla brace. Consulta il menu e prenota un tavolo per telefono o su WhatsApp.",
   openGraph: {
+    images: [
+      {
+        url: "https://richardus.it/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Richardus",
+      },
+    ],
     title: "Richardus | Trattoria a Francavilla Fontana",
     description:
       "Scopri il menu di Richardus e prenota il tuo tavolo in Via San Giovanni 15.",
@@ -41,6 +53,7 @@ const baseMetadata: Metadata = {
     url: "/",
   },
   twitter: {
+    images: ["https://richardus.it/opengraph-image"],
     card: "summary_large_image",
     title: "Richardus | Trattoria storica a Francavilla Fontana",
     description: "Il menu e i contatti di Richardus a Francavilla Fontana.",

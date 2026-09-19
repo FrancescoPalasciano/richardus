@@ -21,7 +21,7 @@ import {
   euro,
   menuSchema,
 } from "@/lib/menu";
-import styles from "./Menu.module.css";
+import styles from "@/app/menu/Menu.module.css";
 
 export const metadata: Metadata = {
   twitter: {
