@@ -35,7 +35,18 @@ const json = (html) =>
     ...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs),
   ].map(([, value]) => JSON.parse(value));
 let links = 0;
+const photographs = new Set();
 for (const [route, html] of Object.entries(pages)) {
+  assert.doesNotMatch(
+    html,
+    /\bpizz[ae]\b/i,
+    `${route}: obsolete offering removed`,
+  );
+  assert.doesNotMatch(
+    html,
+    /home\.[a-f0-9]+\.webp|home\.webp/,
+    `${route}: old food photo removed`,
+  );
   assert.equal(
     (html.match(/<h1(?:\s|>)/g) ?? []).length,
     1,
@@ -87,9 +98,26 @@ for (const [route, html] of Object.entries(pages)) {
       );
     links++;
   }
-  for (const [tag] of html.matchAll(/<img\b[^>]*>/g))
+  for (const [tag] of html.matchAll(/<img\b[^>]*>/g)) {
     assert.ok("alt" in attributes(tag), `${route}: image alt`);
+    const image = new URL(attributes(tag).src, "https://richardus.it");
+    const asset = image.searchParams.get("url") ?? image.pathname;
+    if (!asset.includes("logo")) {
+      assert.ok(
+        !photographs.has(asset),
+        `${route}: each photograph has one placement`,
+      );
+      photographs.add(asset);
+    }
+  }
 }
+assert.equal(
+  photographs.size,
+  7,
+  "Seven supplied food and room photographs, used once each",
+);
+assert.doesNotMatch(pages["/menu"], /\d+ proposte|Informazioni sui prodotti/);
+assert.match(pages["/"], /Trattoria storica/);
 const menu = json(pages["/menu"]).find((item) => item["@type"] === "Menu");
 const visible = Object.values(source.prodotti).filter((dish) => dish.visibile);
 assert.equal(
@@ -136,6 +164,12 @@ assert.equal(
   image.subarray(1, 4).toString(),
   "PNG",
   "Social image renders to PNG",
+);
+const icon = await readFile(`${directory}/icon.body`);
+assert.equal(
+  icon.subarray(1, 4).toString(),
+  "PNG",
+  "Original logo renders as tab icon",
 );
 console.log(
   `Verified ${Object.keys(pages).length} routes, ${links} internal links, ${visible.length} dishes, canonical/metadata, JSON-LD, consent, sitemap, robots and social image.`,

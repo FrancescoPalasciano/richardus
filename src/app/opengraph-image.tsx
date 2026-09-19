@@ -3,16 +3,15 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import sharp from "sharp";
 
-export const alt = "Richardus, pasta, brace e pizza a Francavilla Fontana";
+export const alt = "Richardus, trattoria storica a Francavilla Fontana";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const dynamic = "force-static";
 
 export default async function SocialImage() {
-  const photo = await sharp(
-    await readFile(join(process.cwd(), "src/app/images/home.webp")),
+  const logo = await sharp(
+    await readFile(join(process.cwd(), "src/app/images/logointero.webp")),
   )
-    .resize(980, 1132, { fit: "cover", position: "bottom" })
     .png()
     .toBuffer();
   return new ImageResponse(
@@ -21,64 +20,76 @@ export default async function SocialImage() {
         width: "100%",
         height: "100%",
         display: "flex",
-        padding: 32,
+        alignItems: "center",
+        padding: 64,
         background: "#f3f0ea",
         color: "#24251f",
-        gap: 40,
+        gap: 60,
       }}
     >
       <div
         style={{
           display: "flex",
-          flexDirection: "column",
+          alignItems: "center",
           justifyContent: "center",
-          flex: 1,
-          paddingLeft: 24,
+          width: 320,
+          height: 390,
+          borderRadius: 28,
+          background: "#24251f",
         }}
       >
+        {/* ImageResponse needs an embedded raster; next/image cannot render here. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`data:image/png;base64,${logo.toString("base64")}`}
+          alt=""
+          width={270}
+          height={316}
+          style={{ objectFit: "contain" }}
+        />
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", flex: 1 }}>
         <div
           style={{
             display: "flex",
-            fontSize: 16,
-            marginBottom: 44,
-            letterSpacing: 2,
+            fontSize: 22,
+            marginBottom: 28,
+            color: "#68675f",
           }}
         >
-          FRANCAVILLA FONTANA · PUGLIA
+          CUCINA PUGLIESE · FRANCAVILLA FONTANA
         </div>
         <div
           style={{
             display: "flex",
-            fontSize: 78,
-            fontWeight: 600,
-            letterSpacing: -4,
+            fontSize: 70,
+            lineHeight: 1.08,
+            letterSpacing: -3,
           }}
         >
-          Richardus<span style={{ color: "#a94c2a" }}>.</span>
+          Trattoria storica.
         </div>
-        <div style={{ display: "flex", fontSize: 40, marginTop: 28 }}>
-          Pasta, brace, pizza.
+        <div
+          style={{
+            display: "flex",
+            fontSize: 42,
+            lineHeight: 1.2,
+            marginTop: 24,
+          }}
+        >
+          Il piacere di stare a tavola.
         </div>
-        <div style={{ display: "flex", fontSize: 40, color: "#68675f" }}>
-          Fatto bene.
-        </div>
-        <div style={{ display: "flex", marginTop: 54, fontSize: 18 }}>
+        <div
+          style={{
+            display: "flex",
+            fontSize: 24,
+            marginTop: 50,
+            color: "#a94c2a",
+          }}
+        >
           richardus.it
         </div>
       </div>
-      {/* ImageResponse renders to PNG; next/image is not supported in this renderer. */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={`data:image/png;base64,${photo.toString("base64")}`}
-        alt=""
-        width={490}
-        height={566}
-        style={{
-          borderRadius: 28,
-          objectFit: "cover",
-          objectPosition: "50% 65%",
-        }}
-      />
     </div>,
     size,
   );

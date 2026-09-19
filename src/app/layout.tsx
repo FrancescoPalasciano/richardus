@@ -18,13 +18,13 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://richardus.it"),
   alternates: { canonical: "/" },
   title: {
-    default: "Richardus | Pasta, brace e pizza a Francavilla Fontana",
+    default: "Richardus | Trattoria a Francavilla Fontana",
     template: "%s | Richardus",
   },
   description:
-    "Richardus a Francavilla Fontana: pasta, brace e pizza. Consulta il menu e prenota un tavolo per telefono o su WhatsApp.",
+    "Richardus, trattoria storica a Francavilla Fontana. Cucina pugliese, pasta e piatti alla brace. Consulta il menu e prenota un tavolo per telefono o su WhatsApp.",
   openGraph: {
-    title: "Richardus | Pasta, brace e pizza a Francavilla Fontana",
+    title: "Richardus | Trattoria a Francavilla Fontana",
     description:
       "Scopri il menu di Richardus e prenota il tuo tavolo in Via San Giovanni 15.",
     locale: "it_IT",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Richardus | Pasta, brace e pizza",
+    title: "Richardus | Trattoria storica a Francavilla Fontana",
     description: "Il menu e i contatti di Richardus a Francavilla Fontana.",
   },
 };
@@ -65,7 +65,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               sameAs: ["https://www.instagram.com/richardus_mangia_e_bevi/"],
               acceptsReservations: true,
               description:
-                "Ristorante a Francavilla Fontana, in provincia di Brindisi, Puglia. Cucina italiana e pugliese, pasta, piatti alla brace e pizza.",
+                "Trattoria storica a Francavilla Fontana, in provincia di Brindisi, Puglia. Cucina italiana e pugliese, pasta e piatti alla brace.",
               telephone: restaurant.phone,
               address: {
                 "@type": "PostalAddress",
@@ -74,7 +74,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 addressRegion: "Puglia",
                 addressCountry: "IT",
               },
-              servesCuisine: ["Italiana", "Pugliese", "Pizza"],
+              servesCuisine: ["Italiana", "Pugliese"],
               openingHoursSpecification: [
                 {
                   "@type": "OpeningHoursSpecification",
