@@ -10,7 +10,7 @@ export const dynamic = "force-static";
 
 export default async function SocialImage() {
   const logo = await sharp(
-    await readFile(join(process.cwd(), "src/app/images/logointero.webp")),
+    await readFile(join(process.cwd(), "src/app/images/logo.webp")),
   )
     .png()
     .toBuffer();
@@ -22,8 +22,8 @@ export default async function SocialImage() {
         display: "flex",
         alignItems: "center",
         padding: 64,
-        background: "#f3f0ea",
-        color: "#24251f",
+        background: "#000000",
+        color: "#f5f2ea",
         gap: 60,
       }}
     >
@@ -33,9 +33,9 @@ export default async function SocialImage() {
           alignItems: "center",
           justifyContent: "center",
           width: 320,
-          height: 390,
+          height: 240,
           borderRadius: 28,
-          background: "#24251f",
+          background: "#000000",
         }}
       >
         {/* ImageResponse needs an embedded raster; next/image cannot render here. */}
@@ -44,7 +44,7 @@ export default async function SocialImage() {
           src={`data:image/png;base64,${logo.toString("base64")}`}
           alt=""
           width={270}
-          height={316}
+          height={116}
           style={{ objectFit: "contain" }}
         />
       </div>
@@ -54,7 +54,7 @@ export default async function SocialImage() {
             display: "flex",
             fontSize: 22,
             marginBottom: 28,
-            color: "#68675f",
+            color: "#bcb8af",
           }}
         >
           CUCINA PUGLIESE · FRANCAVILLA FONTANA
@@ -84,7 +84,7 @@ export default async function SocialImage() {
             display: "flex",
             fontSize: 24,
             marginTop: 50,
-            color: "#a94c2a",
+            color: "#e7b18c",
           }}
         >
           richardus.it

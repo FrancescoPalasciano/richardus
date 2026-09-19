@@ -277,7 +277,7 @@
   color: var(--primary-foreground);
 }
 .ui-button-light:hover {
-  background: var(--accent);
+  background: var(--accent-foreground);
 }
 .ui-button-ghost {
   background: transparent;

@@ -1,4 +1,5 @@
 import {
+  Children,
   cloneElement,
   isValidElement,
   type ReactNode,
@@ -16,7 +17,7 @@ export function localizeTree(
   if (locale === "it") return node;
   if (typeof node === "string") return t(node);
   if (Array.isArray(node))
-    return node.map((child) => localizeTree(child, locale, t));
+    return Children.map(node, (child) => localizeTree(child, locale, t));
   if (!isValidElement(node)) return node;
   const element = node as ReactElement<Record<string, unknown>>;
   if (element.props.lang === "it") return node;
