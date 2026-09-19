@@ -141,7 +141,7 @@ export function MenuPreview({ locale = "it" }: LocaleProps = {}) {
           </Link>
         </Button>
       </SectionHeading>
-      <div className={styles.previewGrid}>
+      <div className={styles.previewGrid} data-reveal-group>
         {choices
           .filter((id) => menu.prodotti[id].visibile)
           .map((id) => {
@@ -275,7 +275,7 @@ export function BentoGrid({ locale = "it" }: LocaleProps = {}) {
           </Link>
         </div>
       </div>
-      <div className={styles.bentoGrid}>
+      <div className={styles.bentoGrid} data-reveal-group>
         <figure className={styles.bentoPhoto}>
           <Image
             src={tablePhoto}

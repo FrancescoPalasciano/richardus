@@ -75,7 +75,7 @@ export default async function MenuPage({ params }: RouteProps) {
           {category.descrizione && (
             <p className={styles.categoryDescription}>{category.descrizione}</p>
           )}
-          <ul className={styles.dishGrid}>
+          <ul className={styles.dishGrid} data-reveal-group>
             {products.map(([key, dish]) => (
               <li key={key}>
                 <DishCard

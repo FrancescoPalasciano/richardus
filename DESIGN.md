@@ -207,7 +207,7 @@ Le schede raccolgono proposte del menu e recensioni confrontabili. Fotografie e 
 
 Accordion, Dialog, Sheet, Drawer e Tooltip sono primitive Radix personalizzate. Le disclosure attive servono navigazione, allergie, coperto e consenso alla mappa. Embla avanza con trascinamento, pulsanti e frecce della tastiera; non ha autoplay.
 
-Motion applica una sola entrata per sezione, 300ms da opacità 0.35 a 1 con traslazione di 8px. Il cambio categoria dura 200ms con traslazione di 4px. CSS e hook rispettano `prefers-reduced-motion`. Non esistono campi di prenotazione interni da assumere come pattern.
+Motion applica una sola entrata ai blocchi sotto la piega: dissolvenza da opacità 0 a 1 in 350ms, senza traslazione, a 32px dal bordo inferiore del viewport. Le griglie del menu e della storia rivelano i singoli elementi. Il contenuto iniziale resta subito visibile; senza JavaScript, con movimento ridotto, alla stampa e al focus da tastiera non si attende la dissolvenza. Il cambio categoria dura 200ms con traslazione di 4px. Non esistono campi di prenotazione interni da assumere come pattern.
 
 ## Do's and Don'ts
 

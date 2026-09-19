@@ -29,6 +29,8 @@ Il commit `9922416` comprende nove file per la modifica indivisibile delle route
 
 ## Limiti
 
+Aggiornamento scroll: dissolvenze di 350ms sui singoli blocchi e sulle schede sotto la piega, una volta per pagina e senza traslazione. Verificati home e menu su desktop e home a 375px: gli elementi compaiono entrando nel viewport e non scompaiono risalendo; nessun elemento in attesa resta nascosto nella zona leggibile. Il focus da tastiera rende subito visibile la scheda raggiunta. Console senza errori; Prettier, lint, type-check, build e verifica delle 20 route superati. La schermata iniziale resta visibile; movimento ridotto e stampa completano le dissolvenze tramite codice.
+
 Non sono disponibili misure Core Web Vitals di utenti reali o un rapporto Lighthouse; non si attribuiscono punteggi prestazionali. Il supporto a movimento ridotto è stato verificato nel codice, ma la preferenza non è stata emulata tramite il sistema operativo. Non sono state eseguite prove su hardware mobile fisico.
 
 Le otto pagine legali restano bozze `noindex`: mancano dati aziendali e verifiche già indicate nel README, da completare prima della pubblicazione. Nessuna dichiarazione di conformità è implicita.

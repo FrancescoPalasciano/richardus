@@ -462,6 +462,11 @@
     --gutter: 40px;
   }
 }
+@media (prefers-reduced-motion: no-preference) {
+  [data-scroll-reveal="pending"] {
+    opacity: 0;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -476,6 +481,9 @@
   }
 }
 @media print {
+  [data-scroll-reveal="pending"] {
+    opacity: 1;
+  }
   header,
   footer,
   .mobile-dock,
