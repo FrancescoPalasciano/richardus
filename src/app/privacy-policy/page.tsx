@@ -69,25 +69,11 @@ export default function PrivacyPage() {
       <section>
         <h2>Recensioni e servizi esterni</h2>
         <p>
-          Le recensioni Google sono mostrate tramite Elfsight solo dopo che hai
-          scelto di consentirne il caricamento. L’attivazione comporta una
-          connessione al fornitore e la trasmissione dei dati tecnici necessari;
-          può inoltre comportare l’uso di cookie e il caricamento di risorse di
-          terze parti. La base giuridica per questa attivazione facoltativa è il
-          consenso, revocabile dalla{" "}
-          <Link href="/cookie-policy#preferenze">cookie policy</Link>.
-        </p>
-        <p>
-          Consulta l’
-          <a
-            href="https://elfsight.com/privacy-policy/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            informativa Elfsight
-          </a>{" "}
-          per i dettagli sul trattamento da parte del servizio, sui destinatari
-          e sugli eventuali trasferimenti internazionali.
+          Il sito mostra una selezione di estratti delle recensioni pubblicate
+          su Google, con attribuzione agli autori. I testi sono ospitati nel
+          sito: la loro visualizzazione non carica servizi esterni e non
+          memorizza preferenze nel browser. Il link alle recensioni complete
+          apre il profilo del ristorante su Google.
         </p>
         <p>
           I collegamenti a Instagram, WhatsApp e Google Maps aprono servizi
@@ -123,7 +109,7 @@ export default function PrivacyPage() {
         <h2>Mappa interattiva</h2>
         <p>
           La sezione “Dove siamo” può caricare una mappa Google dopo un consenso
-          specifico, separato da quello delle recensioni. Il caricamento
+          specifico. Il caricamento
           permette a Google di ricevere dati tecnici quali indirizzo IP e
           informazioni sul browser, e può comportare l’uso di cookie. Puoi
           rimuovere la mappa con il pulsante “Disattiva la mappa”; la scelta non

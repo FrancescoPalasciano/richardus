@@ -62,12 +62,6 @@ html {
   color: var(--background);
 }
 
-/* Elfsight's owner toolbar can overlap the heading and widen mobile layouts.
-   Keep editing controls in the Elfsight dashboard, as documented by Elfsight. */
-#recensioni .eapps-widget-toolbar {
-  display: none !important;
-}
-
 /* Set by ScrollReveal only after its observer is ready. No JS = visible content. */
 @media (prefers-reduced-motion: no-preference) {
   [data-reveal-state="pending"] {
