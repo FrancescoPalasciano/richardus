@@ -1,6 +1,11 @@
 "use client";
 
-import { useCallback, useEffect, useId, useState, type ReactNode } from "react";
+import {
+  useCallback,
+  useId,
+  useSyncExternalStore,
+  type ReactNode,
+} from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { useReducedMotion } from "motion/react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -20,30 +25,24 @@ export default function DishCarousel({
     containScroll: "trimSnaps",
     duration: reduce ? 0 : 25,
   });
-  const [state, setState] = useState({
-    previous: false,
-    next: true,
-    index: 0,
-    count: 1,
-  });
   const id = useId();
-  const update = useCallback(() => {
-    if (api)
-      setState({
-        previous: api.canScrollPrev(),
-        next: api.canScrollNext(),
-        index: api.selectedScrollSnap(),
-        count: api.scrollSnapList().length,
-      });
-  }, [api]);
-  useEffect(() => {
-    if (!api) return;
-    update();
-    api.on("select", update).on("reInit", update);
-    return () => {
-      api.off("select", update).off("reInit", update);
-    };
-  }, [api, update]);
+  const subscribe = useCallback(
+    (update: () => void) => {
+      api?.on("select", update).on("reInit", update);
+      return () => {
+        api?.off("select", update).off("reInit", update);
+      };
+    },
+    [api],
+  );
+  const snapshot = useSyncExternalStore(
+    subscribe,
+    () =>
+      `${api?.selectedScrollSnap() ?? 0},${api?.scrollSnapList().length ?? 1},${api?.canScrollPrev() ? 1 : 0},${api?.canScrollNext() ? 1 : 0}`,
+    () => "0,1,0,0",
+  );
+  const [index, count, previous, next] = snapshot.split(",").map(Number);
+  const state = { index, count, previous: !!previous, next: !!next };
   return (
     <div
       role="region"
