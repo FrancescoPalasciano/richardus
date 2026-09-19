@@ -35,8 +35,8 @@ function MapFrame() {
             : "La mappa non è ancora disponibile. Apri le indicazioni direttamente in Google Maps."}
       </p>
       <iframe
-        title="Richardus, Via San Giovanni 15, Francavilla Fontana"
-        src="https://maps.google.com/maps?q=Via+San+Giovanni+15,+Francavilla+Fontana,+BR,+Italy&output=embed&z=16"
+        title="Richardus Mangia & Bevi"
+        src={restaurant.mapsEmbed}
         className="block h-64 w-full border-0"
         referrerPolicy="strict-origin-when-cross-origin"
         allowFullScreen

@@ -61,6 +61,10 @@ const json = (html) =>
 let links = 0;
 const photographs = new Set();
 for (const [route, html] of Object.entries(pages)) {
+  assert.ok(
+    html.includes("0x80ebb7ef34627967"),
+    `${route}: exact Richardus business map`,
+  );
   const locale = route.match(/^\/(en|fr|de|es)(?:\/|$)/)?.[1] ?? "it";
   assert.doesNotMatch(
     html,
@@ -83,7 +87,7 @@ for (const [route, html] of Object.entries(pages)) {
     `${route}: exactly one h1`,
   );
   assert.ok(
-    html.includes(`<html lang="${locale}"`),
+    new RegExp(`<html[^>]* lang="${locale}"`).test(html),
     `${route}: correct document language`,
   );
   for (const language of locales)

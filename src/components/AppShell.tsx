@@ -108,7 +108,11 @@ export default async function RootLayout({
   const locale = resolveLocale((await params).locale);
   const t = getTranslator(locale);
   return (
-    <html lang={locale} className={`${manrope.variable} h-full antialiased`}>
+    <html
+      data-scroll-behavior="smooth"
+      lang={locale}
+      className={`${manrope.variable} h-full antialiased`}
+    >
       <body className="min-h-full flex flex-col">
         <a className="skip-link" href="#contenuto">
           {t("Vai al contenuto")}
