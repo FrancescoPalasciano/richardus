@@ -1,3 +1,6 @@
+import { localizeTree } from "@/lib/localize";
+import { getTranslator } from "@/lib/i18n";
+import type { Locale, LocaleProps } from "@/lib/locale";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -5,13 +8,16 @@ import { restaurant } from "@/lib/restaurant";
 import styles from "./Reservation.module.css";
 
 export function BookingActions({
+  locale = "it",
   showMenu = false,
   tone = "default",
 }: {
+  locale?: Locale;
   showMenu?: boolean;
   tone?: "default" | "inverse";
 }) {
-  return (
+  const t = getTranslator(locale);
+  return localizeTree(
     <div className={styles.actions} data-tone={tone}>
       <Button asChild variant={tone === "inverse" ? "light" : "default"}>
         <a
@@ -32,12 +38,15 @@ export function BookingActions({
           <Phone size={17} aria-hidden="true" /> Chiamaci
         </a>
       )}
-    </div>
+    </div>,
+    locale,
+    t,
   );
 }
 
-export default function Reservation() {
-  return (
+export default function Reservation({ locale = "it" }: LocaleProps = {}) {
+  const t = getTranslator(locale);
+  return localizeTree(
     <section
       id="prenota"
       data-reveal
@@ -58,7 +67,7 @@ export default function Reservation() {
         </p>
       </div>
       <div className={styles.booking}>
-        <BookingActions tone="inverse" />
+        <BookingActions tone="inverse" locale={locale} />
         <p>
           Scrivici su WhatsApp giorno, orario e numero di persone. Il tavolo è
           prenotato quando ricevi la nostra conferma.
@@ -67,6 +76,8 @@ export default function Reservation() {
           {restaurant.phoneLabel}
         </a>
       </div>
-    </section>
+    </section>,
+    locale,
+    t,
   );
 }

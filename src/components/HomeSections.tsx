@@ -1,3 +1,6 @@
+import { localizeTree } from "@/lib/localize";
+import { getTranslator } from "@/lib/i18n";
+import type { LocaleProps } from "@/lib/locale";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Clock, MapPin, Phone } from "lucide-react";
@@ -16,8 +19,9 @@ import styles from "@/app/Home.module.css";
 
 import { euro, displayName } from "@/lib/menu";
 
-export function Hero() {
-  return (
+export function Hero({ locale = "it" }: LocaleProps = {}) {
+  const t = getTranslator(locale);
+  return localizeTree(
     <section
       className={`container ${styles.hero}`}
       aria-labelledby="home-title"
@@ -56,12 +60,15 @@ export function Hero() {
           sizes="(min-width: 1520px) 700px, (min-width: 768px) 52vw, calc(100vw - 32px)"
         />
       </figure>
-    </section>
+    </section>,
+    locale,
+    t,
   );
 }
 
-export function InfoStrip() {
-  return (
+export function InfoStrip({ locale = "it" }: LocaleProps = {}) {
+  const t = getTranslator(locale);
+  return localizeTree(
     <section
       className={`container ${styles.infoStrip}`}
       aria-label="Informazioni utili"
@@ -98,17 +105,20 @@ export function InfoStrip() {
       >
         Indicazioni <ArrowUpRight size={18} aria-hidden="true" />
       </a>
-    </section>
+    </section>,
+    locale,
+    t,
   );
 }
 
-export function MenuPreview() {
+export function MenuPreview({ locale = "it" }: LocaleProps = {}) {
+  const t = getTranslator(locale);
   const choices = [
     "orecchiette-cime-rapa",
     "arrosto-misto",
     "fave-verdura",
   ] as const;
-  return (
+  return localizeTree(
     <section
       className={`container section ${styles.menuPreview}`}
       aria-labelledby="preview-title"
@@ -162,11 +172,14 @@ export function MenuPreview() {
             );
           })}
       </div>
-    </section>
+    </section>,
+    locale,
+    t,
   );
 }
 
-export function SignatureDishes() {
+export function SignatureDishes({ locale = "it" }: LocaleProps = {}) {
+  const t = getTranslator(locale);
   const selections = [
     {
       image: pastaPhoto,
@@ -193,7 +206,7 @@ export function SignatureDishes() {
       href: "/menu#secondi-piatti",
     },
   ];
-  return (
+  return localizeTree(
     <section
       className={`container ${styles.signatureSection}`}
       aria-labelledby="signature-title"
@@ -230,12 +243,15 @@ export function SignatureDishes() {
           </article>
         ))}
       </DishCarousel>
-    </section>
+    </section>,
+    locale,
+    t,
   );
 }
 
-export function BentoGrid() {
-  return (
+export function BentoGrid({ locale = "it" }: LocaleProps = {}) {
+  const t = getTranslator(locale);
+  return localizeTree(
     <section
       className={`container section ${styles.story}`}
       aria-labelledby="story-title"
@@ -309,6 +325,8 @@ export function BentoGrid() {
           <ArrowUpRight size={22} aria-hidden="true" />
         </Link>
       </div>
-    </section>
+    </section>,
+    locale,
+    t,
   );
 }

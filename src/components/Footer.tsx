@@ -1,11 +1,15 @@
+import { localizeTree } from "@/lib/localize";
+import { getTranslator } from "@/lib/i18n";
+import type { LocaleProps } from "@/lib/locale";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { restaurant } from "@/lib/restaurant";
 import styles from "./Footer.module.css";
 import Brand from "./Brand";
 
-export default function Footer() {
-  return (
+export default function Footer({ locale = "it" }: LocaleProps = {}) {
+  const t = getTranslator(locale);
+  return localizeTree(
     <footer className={`container ${styles.footer}`}>
       <div className={styles.top}>
         <div className={styles.brand}>
@@ -54,6 +58,8 @@ export default function Footer() {
           <ArrowUpRight size={12} aria-hidden="true" />
         </a>
       </div>
-    </footer>
+    </footer>,
+    locale,
+    t,
   );
 }

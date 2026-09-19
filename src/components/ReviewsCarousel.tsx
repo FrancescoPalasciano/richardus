@@ -1,10 +1,14 @@
+import { localizeTree } from "@/lib/localize";
+import { getTranslator } from "@/lib/i18n";
+import type { LocaleProps } from "@/lib/locale";
 import { Star } from "lucide-react";
 import { reviews } from "@/data/reviews";
 import DishCarousel from "./DishCarousel";
 import styles from "./ReviewsCarousel.module.css";
 
-export default function ReviewsCarousel() {
-  return (
+export default function ReviewsCarousel({ locale = "it" }: LocaleProps = {}) {
+  const t = getTranslator(locale);
+  return localizeTree(
     <DishCarousel
       label="Recensioni degli ospiti"
       hint="Le esperienze, raccontate da voi."
@@ -37,6 +41,8 @@ export default function ReviewsCarousel() {
           </figcaption>
         </figure>
       ))}
-    </DishCarousel>
+    </DishCarousel>,
+    locale,
+    t,
   );
 }

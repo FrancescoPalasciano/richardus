@@ -1,3 +1,6 @@
+import { localizeTree } from "@/lib/localize";
+import { getTranslator } from "@/lib/i18n";
+import type { LocaleProps } from "@/lib/locale";
 import { ArrowUpRight, MapPin, Phone } from "lucide-react";
 import GoogleMap from "./GoogleMap";
 import OpeningHoursCard from "./OpeningHoursCard";
@@ -7,8 +10,9 @@ import { restaurant } from "@/lib/restaurant";
 import styles from "./VisitSection.module.css";
 import Brand from "./Brand";
 
-export default function VisitSection() {
-  return (
+export default function VisitSection({ locale = "it" }: LocaleProps = {}) {
+  const t = getTranslator(locale);
+  return localizeTree(
     <section
       id="contatti"
       data-reveal
@@ -66,6 +70,8 @@ export default function VisitSection() {
         </div>
         <OpeningHoursCard />
       </div>
-    </section>
+    </section>,
+    locale,
+    t,
   );
 }
