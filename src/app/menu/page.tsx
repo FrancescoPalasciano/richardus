@@ -1,3 +1,10 @@
+import { localizeTree } from "@/lib/localize";
+import { getTranslator } from "@/lib/i18n";
+import {
+  resolveLocale,
+  languageAlternates,
+  type RouteProps,
+} from "@/lib/locale";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Info } from "lucide-react";
@@ -27,7 +34,7 @@ export const metadata: Metadata = {
   title: "Menu: piatti, ingredienti e prezzi",
   description:
     "Il menu di Richardus a Francavilla Fontana: antipasti, pasta e piatti alla brace. Consulta ingredienti e prezzi e prenota il tuo tavolo.",
-  alternates: { canonical: "/menu" },
+  alternates: { canonical: "/menu", languages: languageAlternates("/menu") },
   openGraph: {
     images: [
       {
@@ -47,13 +54,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function MenuPage() {
+export default async function MenuPage({ params }: RouteProps) {
+  const locale = resolveLocale((await params).locale);
+  const t = getTranslator(locale);
   const sections = categories.map(([id, category]) => {
     const products = dishes.filter(([, dish]) => dish.categoria === id);
     return {
       id,
-      label: categoryLabel(id, category.nome),
-      content: (
+      label: t(categoryLabel(id, category.nome)),
+      content: localizeTree(
         <section
           id={id}
           aria-labelledby={`${id}-title`}
@@ -71,16 +80,19 @@ export default function MenuPage() {
               <li key={key}>
                 <DishCard
                   dish={dish}
+                  locale={locale}
                   category={categoryLabel(id, category.nome)}
                 />
               </li>
             ))}
           </ul>
-        </section>
+        </section>,
+        locale,
+        t,
       ),
     };
   });
-  return (
+  return localizeTree(
     <main id="contenuto">
       <header className={`container ${styles.pageHeader}`}>
         <div className={styles.menuHero}>
@@ -108,19 +120,21 @@ export default function MenuPage() {
           <span>
             Allergie o intolleranze? Parlane con il personale prima di ordinare.{" "}
             {menu.costiAggiuntivi.coperto.visibile &&
-              `Coperto ${euro.format(menu.costiAggiuntivi.coperto.prezzo)}.`}
+              `${t("Coperto")} ${euro.format(menu.costiAggiuntivi.coperto.prezzo)}.`}
           </span>
         </div>
       </header>
       <MenuBrowser sections={sections} />
       <MenuInfo />
-      <Reservation />
+      <Reservation locale={locale} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(menuSchema()).replace(/</g, "\\u003c"),
+          __html: JSON.stringify(menuSchema(locale)).replace(/</g, "\\u003c"),
         }}
       />
-    </main>
+    </main>,
+    locale,
+    t,
   );
 }

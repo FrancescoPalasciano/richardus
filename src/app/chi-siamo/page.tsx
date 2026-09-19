@@ -1,3 +1,10 @@
+import { localizeTree } from "@/lib/localize";
+import { getTranslator } from "@/lib/i18n";
+import {
+  resolveLocale,
+  languageAlternates,
+  type RouteProps,
+} from "@/lib/locale";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,7 +18,10 @@ const description =
 export const metadata: Metadata = {
   title: "La nostra trattoria a Francavilla Fontana",
   description,
-  alternates: { canonical: "/chi-siamo" },
+  alternates: {
+    canonical: "/chi-siamo",
+    languages: languageAlternates("/chi-siamo"),
+  },
   openGraph: {
     images: [
       {
@@ -36,8 +46,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AboutPage() {
-  return (
+export default async function AboutPage({ params }: RouteProps) {
+  const locale = resolveLocale((await params).locale);
+  const t = getTranslator(locale);
+  return localizeTree(
     <main id="contenuto">
       <article className={`container ${styles.about}`}>
         <header className={styles.aboutHeader}>
@@ -81,7 +93,9 @@ export default function AboutPage() {
           </div>
         </div>
       </article>
-      <Reservation />
-    </main>
+      <Reservation locale={locale} />
+    </main>,
+    locale,
+    t,
   );
 }

@@ -1,17 +1,29 @@
+import { localizeTree } from "@/lib/localize";
+import { getTranslator } from "@/lib/i18n";
+import {
+  resolveLocale,
+  languageAlternates,
+  type RouteProps,
+} from "@/lib/locale";
 import type { Metadata } from "next";
 import Link from "next/link";
 import LegalPage from "@/components/LegalPage";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/privacy-policy" },
+  alternates: {
+    canonical: "/privacy-policy",
+    languages: languageAlternates("/privacy-policy"),
+  },
   title: "Privacy policy",
   description: "Informazioni sul trattamento dei dati del sito Richardus.",
   robots: { index: false, follow: true },
 };
 
-export default function PrivacyPage() {
-  return (
-    <LegalPage title="Privacy policy">
+export default async function PrivacyPage({ params }: RouteProps) {
+  const locale = resolveLocale((await params).locale);
+  const t = getTranslator(locale);
+  return localizeTree(
+    <LegalPage locale={locale} title="Privacy policy">
       <section>
         <h2>Titolare e contatti</h2>
         <dl className="grid gap-4 text-sm sm:grid-cols-2">
@@ -158,6 +170,8 @@ export default function PrivacyPage() {
           .
         </p>
       </section>
-    </LegalPage>
+    </LegalPage>,
+    locale,
+    t,
   );
 }

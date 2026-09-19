@@ -4,6 +4,14 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import { restaurant } from "@/lib/restaurant";
+import { getMessages, getTranslator } from "@/lib/i18n";
+import {
+  resolveLocale,
+  localizeHref,
+  languageAlternates,
+  type RouteProps,
+} from "@/lib/locale";
+import { LocaleProvider } from "@/components/LocaleProvider";
 import "./globals.css";
 
 const manrope = localFont({
@@ -14,7 +22,7 @@ const manrope = localFont({
   display: "swap",
   adjustFontFallback: "Arial",
 });
-export const metadata: Metadata = {
+const baseMetadata: Metadata = {
   metadataBase: new URL("https://richardus.it"),
   alternates: { canonical: "/" },
   title: {
@@ -39,17 +47,59 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export async function generateMetadata({
+  params,
+}: RouteProps): Promise<Metadata> {
+  const locale = resolveLocale((await params).locale);
+  const t = getTranslator(locale);
+  return {
+    ...baseMetadata,
+    title: {
+      default: t("Richardus | Trattoria a Francavilla Fontana"),
+      template: "%s | Richardus",
+    },
+    description: t(baseMetadata.description!),
+    alternates: {
+      canonical: localizeHref("/", locale),
+      languages: languageAlternates("/"),
+    },
+    openGraph: {
+      ...baseMetadata.openGraph,
+      title: t("Richardus | Trattoria a Francavilla Fontana"),
+      description: t(
+        "Scopri il menu di Richardus e prenota il tuo tavolo in Via San Giovanni 15.",
+      ),
+      locale: { it: "it_IT", en: "en_GB", fr: "fr_FR", de: "de_DE" }[locale],
+      url: localizeHref("/", locale),
+    },
+    twitter: {
+      ...baseMetadata.twitter,
+      title: t("Richardus | Trattoria storica a Francavilla Fontana"),
+      description: t(
+        "Il menu e i contatti di Richardus a Francavilla Fontana.",
+      ),
+    },
+  };
+}
+
+export default async function RootLayout({
+  children,
+  params,
+}: RouteProps & { children: React.ReactNode }) {
+  const locale = resolveLocale((await params).locale);
+  const t = getTranslator(locale);
   return (
-    <html lang="it" className={`${manrope.variable} h-full antialiased`}>
+    <html lang={locale} className={`${manrope.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <a className="skip-link" href="#contenuto">
-          Vai al contenuto
+          {t("Vai al contenuto")}
         </a>
-        <Header />
-        {children}
-        <Footer />
-        <ScrollReveal />
+        <LocaleProvider locale={locale} messages={getMessages(locale)}>
+          <Header />
+          {children}
+          <Footer locale={locale} />
+          <ScrollReveal />
+        </LocaleProvider>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
