@@ -170,7 +170,7 @@ export default function Header() {
       <nav
         className={`${styles.dock} mobile-dock`}
         aria-label="Azioni rapide"
-        hidden={!dockEligible || bookingVisible || open}
+        hidden={pathname === "/menu" || !dockEligible || bookingVisible || open}
       >
         <Button asChild variant="ghost">
           <Link href="/menu">
