@@ -259,7 +259,7 @@ export function BentoGrid({ locale = "it" }: LocaleProps = {}) {
     >
       <div className={styles.storyIntro}>
         <p className="eyebrow">La nostra trattoria</p>
-        <h2>
+        <h2 id="story-title">
           La Puglia, a tavola.
           <br />
           <span>Da sentirsi a casa.</span>
