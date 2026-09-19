@@ -2,13 +2,15 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import winePhoto from "@/app/images/vino.webp";
-import homePhoto from "@/app/images/home.webp";
+import saladPhoto from "@/app/images/RICHARDUS 🍝🍷🍽️🍕…Scopri le nostre insalate, servite in coppa di pane artigianale….Vi aspettia.jpg";
 import Reservation from "@/components/Reservation";
-import { BentoGrid } from "@/components/HomeSections";
 import styles from "@/app/Home.module.css";
 
+const description =
+  "Richardus, trattoria storica a Francavilla Fontana. Cucina pugliese, pasta e piatti alla brace in Via San Giovanni 15, in provincia di Brindisi.";
 export const metadata: Metadata = {
+  title: "La nostra trattoria a Francavilla Fontana",
+  description,
   alternates: { canonical: "/chi-siamo" },
   openGraph: {
     images: [
@@ -16,27 +18,22 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Richardus, pasta, brace e pizza",
+        alt: "Richardus, trattoria storica a Francavilla Fontana",
       },
     ],
     siteName: "Richardus",
     locale: "it_IT",
     type: "website",
-    title: "Richardus, a tavola a Francavilla",
-    description:
-      "Pasta, brace e pizza in Via San Giovanni 15 a Francavilla Fontana, Puglia.",
+    title: "Richardus, la nostra trattoria",
+    description,
     url: "/chi-siamo",
   },
   twitter: {
     images: ["/opengraph-image"],
     card: "summary_large_image",
-    title: "Richardus, a tavola a Francavilla",
-    description:
-      "Pasta, brace e pizza in Via San Giovanni 15 a Francavilla Fontana, Puglia.",
+    title: "Richardus, la nostra trattoria",
+    description,
   },
-  title: "Chi siamo",
-  description:
-    "Richardus a Francavilla Fontana: orecchiette, piatti alla brace e pizze dai nomi di casa. Scopri la nostra proposta di cucina e vieni a trovarci in Via San Giovanni 15.",
 };
 
 export default function AboutPage() {
@@ -46,47 +43,36 @@ export default function AboutPage() {
         <header className={styles.aboutHeader}>
           <p className="eyebrow">Richardus · Francavilla Fontana</p>
           <h1>
-            A tavola, a Francavilla.
+            La nostra trattoria.
             <br />
             <span>Il gusto di stare bene.</span>
           </h1>
           <p className={styles.aboutLead}>
-            Ci trovi in Via San Giovanni 15, a Francavilla Fontana. Il nostro
-            menu parte da tre parole: pasta, brace e pizza.
+            Una trattoria storica a Francavilla Fontana, in Via San Giovanni 15.
+            La cucina pugliese, le pareti in pietra e il piacere di ritrovarsi a
+            tavola.
           </p>
         </header>
-        <div className={styles.aboutPhotoGrid}>
+        <div className={styles.aboutPhotoGrid} data-reveal>
           <figure>
             <Image
-              src={homePhoto}
-              alt="La pizza con burrata e capocollo, servita da Richardus"
+              src={saladPhoto}
+              alt="Insalata con tonno e verdure in una coppa di pane casereccio da Richardus"
               fill
               preload
-              sizes="(min-width: 1520px) 800px, (min-width: 768px) 55vw, 53vw"
+              sizes="(min-width: 1520px) 650px, (min-width: 768px) 48vw, calc(100vw - 32px)"
             />
           </figure>
-          <figure>
-            <Image
-              src={winePhoto}
-              alt="Due calici di rosato si incontrano per un brindisi da Richardus"
-              fill
-              sizes="(min-width: 1520px) 560px, (min-width: 768px) 40vw, 43vw"
-            />
-          </figure>
-        </div>
-        <div className={styles.aboutDetail}>
-          <h2>Il territorio si legge nel menu.</h2>
-          <div>
+          <div className={styles.aboutDetail}>
+            <h2>Il territorio si legge nel menu.</h2>
             <p>
               Orecchiette con cime di rapa, cortecce al grano arso, fave e
               verdura di stagione. Alla brace, un arrosto misto con bombette,
               capocollo, salsiccia e fegatini.
             </p>
             <p>
-              Anche le pizze parlano la lingua di casa: Chianci chianci, La
-              mamma mea, Cori ti la nonna. Nomi da scoprire insieme agli
-              ingredienti, dal cacio ricotta alle melanzane, dalle polpette alla
-              burrata.
+              Dagli antipasti ai primi, dalla carne alle insalate in coppa di
+              pane: una cucina da scegliere con calma, un piatto dopo l’altro.
             </p>
             <Link className="text-link" href="/menu">
               Scopri piatti, ingredienti e prezzi{" "}
@@ -95,7 +81,6 @@ export default function AboutPage() {
           </div>
         </div>
       </article>
-      <BentoGrid about />
       <Reservation />
     </main>
   );

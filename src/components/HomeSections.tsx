@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Clock, MapPin, Phone } from "lucide-react";
-import homePhoto from "@/app/images/home.webp";
-import winePhoto from "@/app/images/vino.webp";
+import roomPhoto from "@/app/images/interno2.jpg";
+import tablePhoto from "@/app/images/interno.jpg";
+import beansPhoto from "@/app/images/🍽️🍷Fave e verdura- il gusto autentico della tradizione pugliese. Da Richardus non poteva certo.jpg";
+import pastaPhoto from "@/app/images/Orecchiette grano arso funghi di stagione e salsiccia 🍄_🟫🍝...Via San Giovanni,15 Francavilla .jpg";
+import meatPhoto from "@/app/images/RICHARDUS🍝🍷🍺🍕🥩Entrecôte In salsa dello chef!🫶...“Il cibo è amore che si può mangiare.”❤️Vi.jpg";
 import menu from "@/data/menu.json";
 import { restaurant } from "@/lib/restaurant";
 import { Badge, SectionHeading } from "@/components/ui/surfaces";
@@ -20,20 +23,13 @@ export function Hero() {
       aria-labelledby="home-title"
     >
       <div className={styles.heroCopy}>
-        <Badge className={styles.locationBadge}>
-          Francavilla Fontana · Puglia
-        </Badge>
         <h1 id="home-title">
-          Richardus<span className={styles.heroDot}>.</span>
-        </h1>
-        <p className={styles.heroClaim}>
-          Pasta, brace, pizza.
+          <span className="sr-only">Richardus, </span>Trattoria storica
           <br />
-          <span>Fatto bene.</span>
-        </p>
+          <span>a Francavilla Fontana.</span>
+        </h1>
         <p className={styles.heroDescription}>
-          La cucina italiana, gli impasti e il gusto della brace. Un tavolo nel
-          cuore di Francavilla Fontana.
+          La cucina pugliese, il piacere di stare a tavola.
         </p>
         <div className={styles.heroActions} data-booking-visibility>
           <Button asChild>
@@ -47,35 +43,18 @@ export function Hero() {
             </a>
           </Button>
           <Link href="/menu" className="text-link">
-            Scopri il menu <ArrowRight size={18} aria-hidden="true" />
+            Il menu <ArrowRight size={18} aria-hidden="true" />
           </Link>
-        </div>
-        <div className={styles.heroHours}>
-          <div>
-            <span>Mar–sab</span>
-            <strong>19:30–00:00</strong>
-          </div>
-          <div>
-            <span>Domenica</span>
-            <strong>12:30–15:00 · 19:30–00:00</strong>
-          </div>
         </div>
       </div>
       <figure className={styles.heroImage}>
         <Image
-          src={homePhoto}
-          alt="Pizza con burrata, capocollo e zucchine servita da Richardus"
+          src={roomPhoto}
+          alt="La sala di Richardus a Francavilla Fontana, con volte in pietra e tavoli apparecchiati"
           fill
           preload
-          sizes="(min-width: 1520px) 680px, (min-width: 768px) 48vw, calc(100vw - 32px)"
+          sizes="(min-width: 1520px) 700px, (min-width: 768px) 52vw, calc(100vw - 32px)"
         />
-        <Badge className={styles.photoBadge}>Pasta · Brace · Pizza</Badge>
-        <figcaption className={styles.heroCaption}>
-          <span>Gli impasti. Il gusto di casa.</span>
-          <Link href="/menu#pizze" aria-label="Scopri le pizze del menu">
-            <ArrowUpRight size={22} aria-hidden="true" />
-          </Link>
-        </figcaption>
       </figure>
     </section>
   );
@@ -127,12 +106,13 @@ export function MenuPreview() {
   const choices = [
     "orecchiette-cime-rapa",
     "arrosto-misto",
-    "la-richardus",
+    "fave-verdura",
   ] as const;
   return (
     <section
       className={`container section ${styles.menuPreview}`}
       aria-labelledby="preview-title"
+      data-reveal
     >
       <SectionHeading
         id="preview-title"
@@ -143,7 +123,7 @@ export function MenuPreview() {
             <br />a tavola.
           </>
         }
-        description="Dalle orecchiette alla pizza, passando per la brace. Parti da quello che ti va."
+        description="Antipasti della tradizione, pasta e carne alla brace. I sapori di casa, a Francavilla."
       >
         <Button asChild variant="outline">
           <Link href="/menu">
@@ -187,10 +167,37 @@ export function MenuPreview() {
 }
 
 export function SignatureDishes() {
+  const selections = [
+    {
+      image: pastaPhoto,
+      alt: "Orecchiette al grano arso con funghi e salsiccia, dalla cucina di Richardus",
+      title: "La pasta di casa",
+      label: "I primi",
+      description: "Il grano arso, la pasta e i sapori del territorio.",
+      href: "/menu#primi-piatti",
+    },
+    {
+      image: beansPhoto,
+      alt: "Purè di fave con verdura e crostini servito da Richardus",
+      title: "Fave e verdura",
+      label: "La tradizione",
+      description: "Un piatto che racconta la cucina pugliese.",
+      href: "/menu#antipasti",
+    },
+    {
+      image: meatPhoto,
+      alt: "Entrecôte di manzo con salsa dello chef e patate",
+      title: "Entrecôte in salsa dello chef",
+      label: "I secondi",
+      description: "La carne, una salsa ricca, il piacere della tavola.",
+      href: "/menu#secondi-piatti",
+    },
+  ];
   return (
     <section
       className={`container ${styles.signatureSection}`}
       aria-labelledby="signature-title"
+      data-reveal
     >
       <SectionHeading
         id="signature-title"
@@ -202,139 +209,68 @@ export function SignatureDishes() {
         </Link>
       </SectionHeading>
       <DishCarousel>
-        <article className={styles.signatureCard}>
-          <Link href="/menu#pizze">
-            <div className={styles.signaturePhoto}>
-              <Image
-                src={homePhoto}
-                alt="Un dettaglio della pizza con burrata e capocollo"
-                fill
-                sizes="(min-width: 1280px) 380px, (min-width: 768px) 40vw, 80vw"
-              />
-              <Badge>Gli impasti</Badge>
-            </div>
-            <div className={styles.signatureText}>
-              <h3>Le pizze di casa</h3>
-              <p>
-                La Richardus, La mamma mea, Cori ti la nonna. Nomi e ingredienti
-                da scoprire.
-              </p>
-              <ArrowUpRight size={19} aria-hidden="true" />
-            </div>
-          </Link>
-        </article>
-        <article className={styles.signatureCard}>
-          <Link href="/menu#primi-piatti">
-            <div className={`${styles.signatureType} ${styles.oliveCard}`}>
-              <Badge>La cucina</Badge>
-              <span>
-                La Puglia,
-                <br />
-                nel piatto.
-              </span>
-              <p>
-                Orecchiette.
-                <br />
-                Cime di rapa.
-                <br />
-                Il gusto di casa.
-              </p>
-              <strong>
-                {euro.format(menu.prodotti["orecchiette-cime-rapa"].prezzo)}
-              </strong>
-            </div>
-            <div className={styles.signatureText}>
-              <h3>Orecchiette con cime di rapa</h3>
-              <p>Un primo che parla la lingua del territorio.</p>
-              <ArrowUpRight size={19} aria-hidden="true" />
-            </div>
-          </Link>
-        </article>
-        <article className={styles.signatureCard}>
-          <Link href="/menu#bevande">
-            <div className={`${styles.signaturePhoto} ${styles.wineCrop}`}>
-              <Image
-                src={winePhoto}
-                alt="Due calici di rosato per un brindisi da Richardus"
-                fill
-                sizes="(min-width: 1280px) 380px, (min-width: 768px) 40vw, 80vw"
-              />
-              <Badge>Da bere</Badge>
-            </div>
-            <div className={styles.signatureText}>
-              <h3>Un calice, in compagnia</h3>
-              <p>Vino della casa e bevande. Il tempo per stare a tavola.</p>
-              <ArrowUpRight size={19} aria-hidden="true" />
-            </div>
-          </Link>
-        </article>
-        <article className={styles.signatureCard}>
-          <Link href="/menu#secondi-piatti">
-            <div className={`${styles.signatureType} ${styles.clayCard}`}>
-              <Badge>La brace</Badge>
-              <span>
-                Il fuoco.
-                <br />
-                Il sapore.
-              </span>
-              <p>
-                Bombette, capocollo,
-                <br />
-                salsiccia e fegatini.
-              </p>
-              <strong>
-                {euro.format(menu.prodotti["arrosto-misto"].prezzo)}
-              </strong>
-            </div>
-            <div className={styles.signatureText}>
-              <h3>Arrosto misto alla brace</h3>
-              <p>La nostra selezione, tutta in un piatto.</p>
-              <ArrowUpRight size={19} aria-hidden="true" />
-            </div>
-          </Link>
-        </article>
+        {selections.map((dish) => (
+          <article className={styles.signatureCard} key={dish.href}>
+            <Link href={dish.href}>
+              <div className={styles.signaturePhoto}>
+                <Image
+                  src={dish.image}
+                  alt={dish.alt}
+                  fill
+                  sizes="(min-width: 1280px) 400px, (min-width: 768px) 40vw, 80vw"
+                />
+                <Badge>{dish.label}</Badge>
+              </div>
+              <div className={styles.signatureText}>
+                <h3>{dish.title}</h3>
+                <p>{dish.description}</p>
+                <ArrowUpRight size={19} aria-hidden="true" />
+              </div>
+            </Link>
+          </article>
+        ))}
       </DishCarousel>
     </section>
   );
 }
 
-export function BentoGrid({ about = false }: { about?: boolean }) {
+export function BentoGrid() {
   return (
     <section
       className={`container section ${styles.story}`}
       aria-labelledby="story-title"
+      data-reveal
     >
       <div className={styles.storyIntro}>
-        <p className="eyebrow">Il nostro modo di stare a tavola</p>
-        <h2 id="story-title">
-          Una cucina semplice.
+        <p className="eyebrow">La nostra trattoria</p>
+        <h2>
+          La Puglia, a tavola.
           <br />
-          <span>Ma mai banale.</span>
+          <span>Da sentirsi a casa.</span>
         </h2>
         <div>
           <p>
-            Pasta, brace e pizza. La Puglia si ritrova negli ingredienti, nei
-            nomi dei piatti e nel piacere di condividere la tavola.
+            Richardus è una trattoria storica di Francavilla Fontana. Tra le
+            pareti in pietra di Via San Giovanni 15, ci ritroviamo attorno ai
+            sapori della cucina pugliese.
           </p>
-          {!about && (
-            <Link href="/chi-siamo" className="text-link">
-              Piacere, Richardus <ArrowRight size={18} aria-hidden="true" />
-            </Link>
-          )}
+          <Link href="/chi-siamo" className="text-link">
+            La nostra storia <ArrowRight size={18} aria-hidden="true" />
+          </Link>
         </div>
       </div>
       <div className={styles.bentoGrid}>
         <figure className={styles.bentoPhoto}>
           <Image
-            src={winePhoto}
-            alt="Un brindisi con vino rosato, ai tavoli di Richardus"
+            src={tablePhoto}
+            alt="I tavoli della trattoria Richardus, tra pareti in pietra e decorazioni di bottiglie"
             fill
             sizes="(min-width: 1520px) 690px, (min-width: 768px) 48vw, calc(100vw - 32px)"
           />
           <figcaption>
-            Un tavolo. Qualcosa di buono.
+            Un posto per stare bene.
             <br />
-            Il resto può aspettare.
+            Una tavola da condividere.
           </figcaption>
         </figure>
         <Link
@@ -351,16 +287,16 @@ export function BentoGrid({ about = false }: { about?: boolean }) {
           <ArrowUpRight size={22} aria-hidden="true" />
         </Link>
         <Link
-          href="/menu#pizze"
+          href="/menu#antipasti"
           className={`${styles.bentoTile} ${styles.clayCard}`}
         >
-          <span>Impasti</span>
+          <span>Tradizione</span>
           <h3>
-            Nomi di casa.
+            Da qui.
             <br />
-            Carattere nostro.
+            Da condividere.
           </h3>
-          <p>Dal cacio ricotta alla burrata.</p>
+          <p>Fave, verdure e formaggi del territorio.</p>
           <ArrowUpRight size={22} aria-hidden="true" />
         </Link>
         <Link
@@ -369,9 +305,7 @@ export function BentoGrid({ about = false }: { about?: boolean }) {
         >
           <span>Cucina</span>
           <h3>Il territorio si legge nel menu.</h3>
-          <p>
-            Orecchiette, cortecce al grano arso, fave e verdura di stagione.
-          </p>
+          <p>Orecchiette, cortecce al grano arso, sapori di stagione.</p>
           <ArrowUpRight size={22} aria-hidden="true" />
         </Link>
       </div>

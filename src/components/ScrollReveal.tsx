@@ -11,13 +11,20 @@ export default function ScrollReveal() {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (media.matches) return;
     const animations: ReturnType<typeof animate>[] = [];
+    const seen = new WeakSet<Element>();
     const stop = inView("[data-reveal]", (element) => {
-      if (media.matches || element.getBoundingClientRect().top < 0) return;
+      if (
+        media.matches ||
+        seen.has(element) ||
+        element.getBoundingClientRect().top < 0
+      )
+        return;
+      seen.add(element);
       animations.push(
         animate(
           element,
           {
-            opacity: [0.85, 1],
+            opacity: [0.35, 1],
             transform: ["translateY(8px)", "translateY(0)"],
           },
           { duration: 0.3, ease: [0.22, 1, 0.36, 1] },

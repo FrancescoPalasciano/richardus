@@ -12,7 +12,7 @@ import Reservation from "@/components/Reservation";
 
 export const metadata: Metadata = {
   description:
-    "Pasta, brace e pizza da Richardus, in Via San Giovanni 15 a Francavilla Fontana. Scopri piatti e prezzi e prenota il tuo tavolo su WhatsApp o per telefono.",
+    "Richardus, trattoria storica a Francavilla Fontana: cucina pugliese, pasta e carne alla brace in Via San Giovanni 15. Scopri il menu e prenota il tuo tavolo.",
 };
 
 export default function Home() {
