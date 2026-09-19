@@ -14,6 +14,7 @@ export default function ReviewsCarousel() {
   const [visible, setVisible] = useState(false);
   const [reduced, setReduced] = useState(true);
   const [announcement, setAnnouncement] = useState("");
+  const pointerPaused = useRef(false);
 
   useEffect(() => {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -69,7 +70,10 @@ export default function ReviewsCarousel() {
       <div className={styles.controls}>
         <span className={styles.count} aria-hidden="true">{String(active + 1).padStart(2, "0")}<span> / {String(reviews.length).padStart(2, "0")}</span></span>
         <div className={styles.actions}>
-          {!reduced && <button type="button" className={styles.play} onClick={() => setPaused((value) => !value)} aria-label={paused ? "Avvia lo scorrimento automatico" : "Metti in pausa lo scorrimento automatico"}>
+          {!reduced && <button type="button" className={styles.play}
+            onPointerDown={() => { pointerPaused.current = paused; }}
+            onClick={(event) => setPaused(event.detail > 0 ? !pointerPaused.current : !paused)}
+            aria-label={paused ? "Avvia lo scorrimento automatico" : "Metti in pausa lo scorrimento automatico"}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">{paused ? <path d="m7 4 14 8-14 8Z" /> : <path d="M6 4h4v16H6zm8 0h4v16h-4z" />}</svg>
             {paused ? "Riprendi" : "Pausa"}
           </button>}

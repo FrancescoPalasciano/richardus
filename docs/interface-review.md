@@ -1,5 +1,9 @@
 # Richardus — revisione dell’interfaccia
 
+Nota: report della revisione iniziale. Il successivo aggiornamento della hero e
+la sostituzione di Elfsight con il carosello locale sono descritti nel README.
+I riferimenti sotto al vecchio widget documentano lo stato precedente.
+
 ## Direzione e ambito
 
 Pubblico: potenziali clienti del ristorante, con priorità mobile. Obiettivi:
