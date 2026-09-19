@@ -739,15 +739,10 @@
     "Richardus · Trattoria à Francavilla Fontana",
     "Richardus · Trattoria in Francavilla Fontana"
   ],
-  "Richardus | Trattoria storica a Francavilla Fontana": [
-    "Richardus · Historic trattoria in Francavilla Fontana",
-    "Richardus · Trattoria historique à Francavilla Fontana",
-    "Richardus · Traditionsreiche Trattoria in Francavilla Fontana"
-  ],
-  "Richardus è una trattoria storica di Francavilla Fontana. Tra le pareti in pietra di Via San Giovanni 15, ci ritroviamo attorno ai sapori della cucina pugliese.": [
-    "Richardus is a historic trattoria in Francavilla Fontana. Within the stone walls of Via San Giovanni 15, we gather around the flavours of Puglian cuisine.",
-    "Richardus est une trattoria historique de Francavilla Fontana. Entre les murs en pierre de la Via San Giovanni 15, nous nous retrouvons autour des saveurs des Pouilles.",
-    "Richardus ist eine traditionsreiche Trattoria in Francavilla Fontana. Zwischen den Steinwänden der Via San Giovanni 15 genießen wir gemeinsam die Aromen Apuliens."
+  "Richardus è una trattoria di Francavilla Fontana. Tra le pareti in pietra di Via San Giovanni 15, ci ritroviamo attorno ai sapori della cucina pugliese.": [
+    "Richardus is a trattoria in Francavilla Fontana. Within the stone walls of Via San Giovanni 15, we gather around the flavours of Puglian cuisine.",
+    "Richardus est une trattoria de Francavilla Fontana. Entre les murs en pierre de la Via San Giovanni 15, nous nous retrouvons autour des saveurs des Pouilles.",
+    "Richardus ist eine Trattoria in Francavilla Fontana. Zwischen den Steinwänden der Via San Giovanni 15 genießen wir gemeinsam die Aromen Apuliens."
   ],
   "Richardus, homepage": [
     "Richardus, homepage",
@@ -764,20 +759,20 @@
     "Richardus, retour à l’accueil",
     "Richardus, zurück zur Startseite"
   ],
-  "Richardus, trattoria storica a Francavilla Fontana": [
-    "Richardus, historic trattoria in Francavilla Fontana",
-    "Richardus, trattoria historique à Francavilla Fontana",
-    "Richardus, traditionsreiche Trattoria in Francavilla Fontana"
+  "Richardus, trattoria a Francavilla Fontana": [
+    "Richardus, trattoria in Francavilla Fontana",
+    "Richardus, trattoria à Francavilla Fontana",
+    "Richardus, Trattoria in Francavilla Fontana"
   ],
-  "Richardus, trattoria storica a Francavilla Fontana. Cucina pugliese, pasta e piatti alla brace. Consulta il menu e prenota un tavolo per telefono o su WhatsApp.": [
-    "Richardus, a historic trattoria in Francavilla Fontana. Puglian cuisine, pasta and grilled dishes. Explore the menu and book by phone or WhatsApp.",
-    "Richardus, trattoria historique à Francavilla Fontana. Cuisine des Pouilles, pâtes et grillades. Consultez la carte et réservez par téléphone ou WhatsApp.",
-    "Richardus, traditionsreiche Trattoria in Francavilla Fontana. Apulische Küche, Pasta und Grillgerichte. Speisekarte ansehen und telefonisch oder per WhatsApp reservieren."
+  "Richardus, trattoria a Francavilla Fontana. Cucina pugliese, pasta e piatti alla brace. Consulta il menu e prenota un tavolo per telefono o su WhatsApp.": [
+    "Richardus, a trattoria in Francavilla Fontana. Puglian cuisine, pasta and grilled dishes. Explore the menu and book by phone or WhatsApp.",
+    "Richardus, trattoria à Francavilla Fontana. Cuisine des Pouilles, pâtes et grillades. Consultez la carte et réservez par téléphone ou WhatsApp.",
+    "Richardus, Trattoria in Francavilla Fontana. Apulische Küche, Pasta und Grillgerichte. Speisekarte ansehen und telefonisch oder per WhatsApp reservieren."
   ],
-  "Richardus, trattoria storica a Francavilla Fontana: cucina pugliese, pasta e carne alla brace in Via San Giovanni 15. Scopri il menu e prenota il tuo tavolo.": [
-    "Richardus, a historic trattoria in Francavilla Fontana: Puglian cuisine, pasta and grilled meat at Via San Giovanni 15. Explore the menu and book your table.",
-    "Richardus, trattoria historique à Francavilla Fontana : cuisine des Pouilles, pâtes et viandes grillées, Via San Giovanni 15. Découvrez la carte et réservez.",
-    "Richardus, traditionsreiche Trattoria in Francavilla Fontana: apulische Küche, Pasta und Grillfleisch in der Via San Giovanni 15. Speisekarte entdecken und Tisch reservieren."
+  "Richardus, trattoria a Francavilla Fontana: cucina pugliese, pasta e carne alla brace in Via San Giovanni 15. Scopri il menu e prenota il tuo tavolo.": [
+    "Richardus, a trattoria in Francavilla Fontana: Puglian cuisine, pasta and grilled meat at Via San Giovanni 15. Explore the menu and book your table.",
+    "Richardus, trattoria à Francavilla Fontana : cuisine des Pouilles, pâtes et viandes grillées, Via San Giovanni 15. Découvrez la carte et réservez.",
+    "Richardus, Trattoria in Francavilla Fontana: apulische Küche, Pasta und Grillfleisch in der Via San Giovanni 15. Speisekarte entdecken und Tisch reservieren."
   ],
   "Rivolgiti al personale prima di ordinare per conoscere gli allergeni presenti e le possibili contaminazioni. Le associazioni ai singoli piatti non sono ancora verificate dal ristorante, perciò non vengono presentate come indicazioni di idoneità.": [
     "Please speak to our staff before ordering about allergens and possible cross-contamination. Dish-specific information has not yet been verified by the restaurant and is therefore not presented as suitability advice.",
@@ -872,20 +867,16 @@
     "Zurück zur Startseite"
   ],
   "Tradizione": ["Tradition", "Tradition", "Tradition"],
-  "Trattoria storica": [
-    "Historic trattoria",
-    "Trattoria historique",
-    "Traditionsreiche Trattoria"
+  "Trattoria": ["Trattoria", "Trattoria", "Trattoria"],
+  "Trattoria a Francavilla Fontana, in provincia di Brindisi, Puglia. Cucina italiana e pugliese, pasta e piatti alla brace.": [
+    "Trattoria in Francavilla Fontana, in the province of Brindisi, Puglia. Italian and Puglian cuisine, pasta and grilled dishes.",
+    "Trattoria à Francavilla Fontana, dans la province de Brindisi, Pouilles. Cuisine italienne et des Pouilles, pâtes et grillades.",
+    "Trattoria in Francavilla Fontana, Provinz Brindisi, Apulien. Italienische und apulische Küche, Pasta und Grillgerichte."
   ],
-  "Trattoria storica a Francavilla Fontana, in provincia di Brindisi, Puglia. Cucina italiana e pugliese, pasta e piatti alla brace.": [
-    "Historic trattoria in Francavilla Fontana, in the province of Brindisi, Puglia. Italian and Puglian cuisine, pasta and grilled dishes.",
-    "Trattoria historique à Francavilla Fontana, dans la province de Brindisi, Pouilles. Cuisine italienne et des Pouilles, pâtes et grillades.",
-    "Traditionsreiche Trattoria in Francavilla Fontana, Provinz Brindisi, Apulien. Italienische und apulische Küche, Pasta und Grillgerichte."
-  ],
-  "Trattoria storica a Francavilla Fontana.": [
-    "Historic trattoria in Francavilla Fontana.",
-    "Trattoria historique à Francavilla Fontana.",
-    "Traditionsreiche Trattoria in Francavilla Fontana."
+  "Trattoria a Francavilla Fontana.": [
+    "Trattoria in Francavilla Fontana.",
+    "Trattoria à Francavilla Fontana.",
+    "Trattoria in Francavilla Fontana."
   ],
   "Tu scegli la compagnia.": [
     "You choose the company.",
@@ -919,10 +910,10 @@
     "Une table à partager.",
     "Ein Tisch zum Teilen."
   ],
-  "Una trattoria storica a Francavilla Fontana, in Via San Giovanni 15. La cucina pugliese, le pareti in pietra e il piacere di ritrovarsi a tavola.": [
-    "A historic trattoria in Francavilla Fontana, at Via San Giovanni 15. Puglian cooking, stone walls and the pleasure of gathering around a table.",
-    "Une trattoria historique à Francavilla Fontana, Via San Giovanni 15. La cuisine des Pouilles, les murs en pierre et le plaisir de se retrouver à table.",
-    "Eine traditionsreiche Trattoria in Francavilla Fontana, Via San Giovanni 15. Apulische Küche, Steinwände und die Freude am gemeinsamen Essen."
+  "Una trattoria a Francavilla Fontana, in Via San Giovanni 15. La cucina pugliese, le pareti in pietra e il piacere di ritrovarsi a tavola.": [
+    "A trattoria in Francavilla Fontana, at Via San Giovanni 15. Puglian cooking, stone walls and the pleasure of gathering around a table.",
+    "Une trattoria à Francavilla Fontana, Via San Giovanni 15. La cuisine des Pouilles, les murs en pierre et le plaisir de se retrouver à table.",
+    "Eine Trattoria in Francavilla Fontana, Via San Giovanni 15. Apulische Küche, Steinwände und die Freude am gemeinsamen Essen."
   ],
   "Un’eventuale preferenza salvata dalla precedente versione del widget non viene più letta né aggiornata. Può essere eliminata dalle impostazioni del browser.": [
     "Any preference saved by the previous widget version is no longer read or updated. You can delete it in your browser settings.",

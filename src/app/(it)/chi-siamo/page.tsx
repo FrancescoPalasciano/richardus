@@ -14,7 +14,7 @@ import Reservation from "@/components/Reservation";
 import styles from "@/app/Home.module.css";
 
 const description =
-  "Richardus, trattoria storica a Francavilla Fontana. Cucina pugliese, pasta e piatti alla brace in Via San Giovanni 15, in provincia di Brindisi.";
+  "Richardus, trattoria a Francavilla Fontana. Cucina pugliese, pasta e piatti alla brace in Via San Giovanni 15, in provincia di Brindisi.";
 export const metadata: Metadata = {
   title: "La nostra trattoria a Francavilla Fontana",
   description,
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Richardus, trattoria storica a Francavilla Fontana",
+        alt: "Richardus, trattoria a Francavilla Fontana",
       },
     ],
     siteName: "Richardus",
@@ -60,7 +60,7 @@ export default async function AboutPage({ params }: RouteProps) {
             <span>Il gusto di stare bene.</span>
           </h1>
           <p className={styles.aboutLead}>
-            Una trattoria storica a Francavilla Fontana, in Via San Giovanni 15.
+            Una trattoria a Francavilla Fontana, in Via San Giovanni 15.
             La cucina pugliese, le pareti in pietra e il piacere di ritrovarsi a
             tavola.
           </p>

@@ -41,7 +41,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Richardus, trattoria storica a Francavilla Fontana",
+        alt: "Richardus, trattoria a Francavilla Fontana",
       },
     ],
     siteName: "Richardus",

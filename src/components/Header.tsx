@@ -118,7 +118,7 @@ export default function Header() {
                 <Brand />
               </DialogTitle>
               <DialogDescription>
-                Trattoria storica a Francavilla Fontana.
+                Trattoria a Francavilla Fontana.
               </DialogDescription>
               <nav
                 aria-label="Navigazione mobile"

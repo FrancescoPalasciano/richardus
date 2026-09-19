@@ -29,10 +29,10 @@ const titles = {
   "cookie-policy": "Cookie policy",
 };
 const descriptions = {
-  "": "Richardus, trattoria storica a Francavilla Fontana: cucina pugliese, pasta e carne alla brace in Via San Giovanni 15. Scopri il menu e prenota il tuo tavolo.",
+  "": "Richardus, trattoria a Francavilla Fontana: cucina pugliese, pasta e carne alla brace in Via San Giovanni 15. Scopri il menu e prenota il tuo tavolo.",
   menu: "Il menu di Richardus a Francavilla Fontana: antipasti, pasta e piatti alla brace. Consulta ingredienti e prezzi e prenota il tuo tavolo.",
   "chi-siamo":
-    "Trattoria storica a Francavilla Fontana, in provincia di Brindisi, Puglia. Cucina italiana e pugliese, pasta e piatti alla brace.",
+    "Trattoria a Francavilla Fontana, in provincia di Brindisi, Puglia. Cucina italiana e pugliese, pasta e piatti alla brace.",
   "privacy-policy": "Informazioni sul trattamento dei dati del sito Richardus.",
   "cookie-policy": "Cookie e contenuti esterni del sito Richardus.",
 };

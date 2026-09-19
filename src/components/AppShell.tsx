@@ -34,7 +34,7 @@ const baseMetadata: Metadata = {
     template: "%s | Richardus",
   },
   description:
-    "Richardus, trattoria storica a Francavilla Fontana. Cucina pugliese, pasta e piatti alla brace. Consulta il menu e prenota un tavolo per telefono o su WhatsApp.",
+    "Richardus, trattoria a Francavilla Fontana. Cucina pugliese, pasta e piatti alla brace. Consulta il menu e prenota un tavolo per telefono o su WhatsApp.",
   openGraph: {
     images: [
       {
@@ -55,7 +55,7 @@ const baseMetadata: Metadata = {
   twitter: {
     images: ["https://richardus.it/opengraph-image"],
     card: "summary_large_image",
-    title: "Richardus | Trattoria storica a Francavilla Fontana",
+    title: "Richardus | Trattoria a Francavilla Fontana",
     description: "Il menu e i contatti di Richardus a Francavilla Fontana.",
   },
 };
@@ -93,7 +93,7 @@ export async function generateMetadata({
     },
     twitter: {
       ...baseMetadata.twitter,
-      title: t("Richardus | Trattoria storica a Francavilla Fontana"),
+      title: t("Richardus | Trattoria a Francavilla Fontana"),
       description: t(
         "Il menu e i contatti di Richardus a Francavilla Fontana.",
       ),
@@ -134,7 +134,7 @@ export default async function RootLayout({
               sameAs: ["https://www.instagram.com/richardus_mangia_e_bevi/"],
               acceptsReservations: true,
               description:
-                "Trattoria storica a Francavilla Fontana, in provincia di Brindisi, Puglia. Cucina italiana e pugliese, pasta e piatti alla brace.",
+                "Trattoria a Francavilla Fontana, in provincia di Brindisi, Puglia. Cucina italiana e pugliese, pasta e piatti alla brace.",
               telephone: restaurant.phone,
               address: {
                 "@type": "PostalAddress",

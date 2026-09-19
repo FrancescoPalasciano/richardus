@@ -64,6 +64,11 @@ for (const [route, html] of Object.entries(pages)) {
   const locale = route.match(/^\/(en|fr|de|es)(?:\/|$)/)?.[1] ?? "it";
   assert.doesNotMatch(
     html,
+    /trattoria storica|historic trattoria|trattoria historique|traditionsreiche trattoria/i,
+    `${route}: no unsupported historic claim`,
+  );
+  assert.doesNotMatch(
+    html,
     /\bpizz[ae]\b/i,
     `${route}: obsolete offering removed`,
   );
@@ -157,7 +162,7 @@ assert.equal(
   "Seven supplied food and room photographs, used once each",
 );
 assert.doesNotMatch(pages["/menu"], /\d+ proposte|Informazioni sui prodotti/);
-assert.match(pages["/"], /Trattoria storica/);
+assert.match(pages["/"], /Trattoria/);
 const menu = json(pages["/menu"]).find((item) => item["@type"] === "Menu");
 const visible = Object.values(source.prodotti).filter((dish) => dish.visibile);
 assert.equal(

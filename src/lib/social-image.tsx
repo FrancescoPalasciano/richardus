@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import sharp from "sharp";
 
-export const alt = "Richardus, trattoria storica a Francavilla Fontana";
+export const alt = "Richardus, trattoria a Francavilla Fontana";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const dynamic = "force-static";
@@ -67,7 +67,7 @@ export default async function SocialImage() {
             letterSpacing: -3,
           }}
         >
-          Trattoria storica.
+          Trattoria.
         </div>
         <div
           style={{

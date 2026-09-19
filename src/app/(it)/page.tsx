@@ -20,7 +20,7 @@ import Reservation from "@/components/Reservation";
 export const metadata: Metadata = {
   alternates: { canonical: "/", languages: languageAlternates("/") },
   description:
-    "Richardus, trattoria storica a Francavilla Fontana: cucina pugliese, pasta e carne alla brace in Via San Giovanni 15. Scopri il menu e prenota il tuo tavolo.",
+    "Richardus, trattoria a Francavilla Fontana: cucina pugliese, pasta e carne alla brace in Via San Giovanni 15. Scopri il menu e prenota il tuo tavolo.",
 };
 
 export default async function Home({ params }: RouteProps) {

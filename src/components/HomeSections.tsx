@@ -28,7 +28,7 @@ export function Hero({ locale = "it" }: LocaleProps = {}) {
     >
       <div className={styles.heroCopy}>
         <h1 id="home-title">
-          <span className="sr-only">Richardus, </span>Trattoria storica
+          <span className="sr-only">Richardus, </span>Trattoria
           <br />
           <span>a Francavilla Fontana.</span>
         </h1>
@@ -266,7 +266,7 @@ export function BentoGrid({ locale = "it" }: LocaleProps = {}) {
         </h2>
         <div>
           <p>
-            Richardus è una trattoria storica di Francavilla Fontana. Tra le
+            Richardus è una trattoria di Francavilla Fontana. Tra le
             pareti in pietra di Via San Giovanni 15, ci ritroviamo attorno ai
             sapori della cucina pugliese.
           </p>

@@ -17,7 +17,7 @@ export default function Footer({ locale = "it" }: LocaleProps = {}) {
             <Brand />
           </Link>
           <p>
-            Trattoria storica
+            Trattoria
             <br />
             Francavilla Fontana, BR · Puglia
           </p>
