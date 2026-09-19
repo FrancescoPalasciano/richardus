@@ -50,6 +50,32 @@
 }
 .categoryBar :global(.ui-tabs-list) {
   padding-inline: 4px;
+  min-width: 0;
+  flex: 1;
+}
+.categoryControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.categoryNavigation {
+  display: flex;
+  flex-shrink: 0;
+  gap: 2px;
+  border-left: 1px solid var(--border);
+  padding-left: 6px;
+}
+.scrollHint {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--muted-foreground);
+  padding-top: 4px;
+}
+.categoryNavigation[hidden],
+.scrollHint[hidden] {
+  display: none;
 }
 .menuContent {
   padding-block: 24px 0;
@@ -61,7 +87,7 @@
   font-variant-numeric: tabular-nums;
 }
 .menuCategory {
-  scroll-margin-top: 170px;
+  scroll-margin-top: 200px;
   padding-bottom: 48px;
 }
 .categoryHeading {

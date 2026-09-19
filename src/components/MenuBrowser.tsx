@@ -1,7 +1,15 @@
 "use client";
 
-import { useEffect, useRef, useSyncExternalStore, type ReactNode } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useSyncExternalStore,
+  type ReactNode,
+} from "react";
 import { animate, useReducedMotion } from "motion/react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   Tabs,
   TabsContent,
@@ -29,7 +37,7 @@ const readHash = () => {
 export default function MenuBrowser({
   sections,
 }: {
-  sections: { id: string; label: string; count: number; content: ReactNode }[];
+  sections: { id: string; label: string; content: ReactNode }[];
 }) {
   const hash = useSyncExternalStore(subscribe, readHash, () => "");
   const selected = sections.some((section) => section.id === hash)
@@ -37,6 +45,33 @@ export default function MenuBrowser({
     : "tutto";
   const reduce = useReducedMotion();
   const panel = useRef<HTMLDivElement>(null);
+  const tabs = useRef<HTMLDivElement>(null);
+  const subscribeCategories = useCallback((update: () => void) => {
+    const list = tabs.current;
+    if (!list) return () => {};
+    list.addEventListener("scroll", update, { passive: true });
+    const observer = new ResizeObserver(update);
+    observer.observe(list);
+    return () => {
+      list.removeEventListener("scroll", update);
+      observer.disconnect();
+    };
+  }, []);
+  const edges = useSyncExternalStore(
+    subscribeCategories,
+    () => {
+      const list = tabs.current;
+      return list
+        ? `${list.scrollLeft > 2 ? 1 : 0}${list.scrollLeft + list.clientWidth < list.scrollWidth - 2 ? 1 : 0}`
+        : "00";
+    },
+    () => "00",
+  );
+  const scrollCategories = (direction: number) =>
+    tabs.current?.scrollBy({
+      left: direction * tabs.current.clientWidth * 0.7,
+      behavior: reduce ? "instant" : "smooth",
+    });
   useEffect(() => {
     if (!panel.current || selected === "tutto") return;
     const frame = requestAnimationFrame(() =>
@@ -57,10 +92,6 @@ export default function MenuBrowser({
     }
     return () => cancelAnimationFrame(frame);
   }, [selected, reduce]);
-  const count =
-    selected === "tutto"
-      ? sections.reduce((sum, section) => sum + section.count, 0)
-      : sections.find((section) => section.id === selected)?.count;
   return (
     <Tabs
       value={selected}
@@ -76,28 +107,46 @@ export default function MenuBrowser({
       id="menu"
     >
       <div className={styles.categoryBar}>
-        <div className="container">
-          <TabsList aria-label="Categorie del menu" loop>
-            <TabsTrigger value="tutto">
-              Tutto{" "}
-              <span>
-                {sections.reduce((sum, section) => sum + section.count, 0)}
-              </span>
-            </TabsTrigger>
+        <div className={`container ${styles.categoryControls}`}>
+          <TabsList ref={tabs} aria-label="Categorie del menu" loop>
+            <TabsTrigger value="tutto">Tutto</TabsTrigger>
             {sections.map((section) => (
               <TabsTrigger key={section.id} value={section.id}>
                 {section.label}
               </TabsTrigger>
             ))}
           </TabsList>
+          <div className={styles.categoryNavigation} hidden={edges === "00"}>
+            <Button
+              size="icon"
+              variant="ghost"
+              aria-label="Categorie precedenti"
+              disabled={edges[0] === "0"}
+              onClick={() => scrollCategories(-1)}
+            >
+              <ChevronLeft size={18} aria-hidden="true" />
+            </Button>
+            <Button
+              size="icon"
+              variant="secondary"
+              aria-label="Altre categorie, scorri a destra"
+              disabled={edges[1] === "0"}
+              onClick={() => scrollCategories(1)}
+            >
+              <ChevronRight size={18} aria-hidden="true" />
+            </Button>
+          </div>
         </div>
+        <p className={`container ${styles.scrollHint}`} hidden={edges === "00"}>
+          Scorri per esplorare le categorie{" "}
+          <ChevronRight size={14} aria-hidden="true" />
+        </p>
       </div>
       <div className={`container ${styles.menuContent}`}>
-        <p role="status" className={styles.resultCount}>
-          {count} proposte{" "}
+        <p role="status" className="sr-only">
           {selected === "tutto"
-            ? "nel nostro menu"
-            : `· ${sections.find((section) => section.id === selected)?.label}`}
+            ? "Tutte le categorie"
+            : sections.find((section) => section.id === selected)?.label}
         </p>
         <TabsContent value={selected} ref={panel} className={styles.panel}>
           {sections.map((section) => (

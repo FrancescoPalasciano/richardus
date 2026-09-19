@@ -53,7 +53,6 @@ export default function MenuPage() {
     return {
       id,
       label: categoryLabel(id, category.nome),
-      count: products.length,
       content: (
         <section
           id={id}
