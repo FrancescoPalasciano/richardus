@@ -3,9 +3,9 @@ import Link from "next/link";
 import LegalPage from "@/components/LegalPage";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/cookie-policy" },
   title: "Cookie policy",
-  description:
-    "Cookie e contenuti esterni del sito Richardus.",
+  description: "Cookie e contenuti esterni del sito Richardus.",
   robots: { index: false, follow: true },
 };
 
@@ -26,10 +26,10 @@ export default function CookiePage() {
       <section>
         <h2>Recensioni sul sito</h2>
         <p>
-          Gli estratti delle recensioni sono inclusi nelle pagine del sito.
-          Il carosello non carica widget, immagini o script di Google o
-          Elfsight e non salva cookie o preferenze nel browser. Il collegamento
-          “Leggi tutte le recensioni” apre il profilo del ristorante su Google.
+          Gli estratti delle recensioni sono inclusi nelle pagine del sito. Il
+          carosello non carica widget, immagini o script di Google o Elfsight e
+          non salva cookie o preferenze nel browser. Il collegamento “Leggi
+          tutte le recensioni” apre il profilo del ristorante su Google.
         </p>
         <p>
           Un’eventuale preferenza salvata dalla precedente versione del widget
@@ -40,9 +40,10 @@ export default function CookiePage() {
       <section id="mappa" className="scroll-mt-28">
         <h2>Mappa Google</h2>
         <p>
-          La mappa incorporata è un contenuto facoltativo. Si attiva solo con “Consenti e carica la mappa”. Il
-          caricamento trasmette a Google dati tecnici, tra cui l’indirizzo IP, e
-          può comportare l’utilizzo di cookie secondo l’
+          La mappa incorporata è un contenuto facoltativo. Si attiva solo con
+          “Consenti e carica la mappa”. Il caricamento trasmette a Google dati
+          tecnici, tra cui l’indirizzo IP, e può comportare l’utilizzo di cookie
+          secondo l’
           <a
             href="https://policies.google.com/privacy?hl=it"
             target="_blank"
@@ -62,9 +63,9 @@ export default function CookiePage() {
       <section>
         <h2>Servizi collegati</h2>
         <p>
-          I link a Instagram, WhatsApp e Google aprono servizi esterni. La
-          mappa Google incorporata viene gestita con la scelta descritta sopra.
-          Gli eventuali cookie già impostati da servizi esterni possono essere
+          I link a Instagram, WhatsApp e Google aprono servizi esterni. La mappa
+          Google incorporata viene gestita con la scelta descritta sopra. Gli
+          eventuali cookie già impostati da servizi esterni possono essere
           gestiti o cancellati nelle impostazioni del browser.
         </p>
       </section>

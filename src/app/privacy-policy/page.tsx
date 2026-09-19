@@ -3,6 +3,7 @@ import Link from "next/link";
 import LegalPage from "@/components/LegalPage";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/privacy-policy" },
   title: "Privacy policy",
   description: "Informazioni sul trattamento dei dati del sito Richardus.",
   robots: { index: false, follow: true },
@@ -109,11 +110,10 @@ export default function PrivacyPage() {
         <h2>Mappa interattiva</h2>
         <p>
           La sezione “Dove siamo” può caricare una mappa Google dopo un consenso
-          specifico. Il caricamento
-          permette a Google di ricevere dati tecnici quali indirizzo IP e
-          informazioni sul browser, e può comportare l’uso di cookie. Puoi
-          rimuovere la mappa con il pulsante “Disattiva la mappa”; la scelta non
-          viene memorizzata per le visite successive.
+          specifico. Il caricamento permette a Google di ricevere dati tecnici
+          quali indirizzo IP e informazioni sul browser, e può comportare l’uso
+          di cookie. Puoi rimuovere la mappa con il pulsante “Disattiva la
+          mappa”; la scelta non viene memorizzata per le visite successive.
         </p>
         <p>
           Il trattamento da parte del servizio è descritto nell’

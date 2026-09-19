@@ -11,12 +11,24 @@ import styles from "@/app/Home.module.css";
 export const metadata: Metadata = {
   alternates: { canonical: "/chi-siamo" },
   openGraph: {
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Richardus, pasta, brace e pizza",
+      },
+    ],
+    siteName: "Richardus",
+    locale: "it_IT",
+    type: "website",
     title: "Richardus, a tavola a Francavilla",
     description:
       "Pasta, brace e pizza in Via San Giovanni 15 a Francavilla Fontana, Puglia.",
     url: "/chi-siamo",
   },
   twitter: {
+    images: ["/opengraph-image"],
     card: "summary_large_image",
     title: "Richardus, a tavola a Francavilla",
     description:
