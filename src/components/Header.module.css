@@ -24,7 +24,7 @@
   box-shadow: var(--shadow-soft);
 }
 .desktopNav,
-.desktopBooking {
+.header .desktopBooking {
   display: none;
 }
 .actions {
@@ -109,10 +109,10 @@
   .desktopNav a[aria-current="page"] {
     background: var(--surface-secondary);
   }
-  .desktopBooking {
+  .header .desktopBooking {
     display: inline-flex;
   }
-  .mobileToggle,
+  .header .mobileToggle,
   .dock {
     display: none;
   }

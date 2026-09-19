@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
+import sharp from "sharp";
 
 export const alt = "Richardus, pasta, brace e pizza a Francavilla Fontana";
 export const size = { width: 1200, height: 630 };
@@ -8,7 +9,12 @@ export const contentType = "image/png";
 export const dynamic = "force-static";
 
 export default async function SocialImage() {
-  const photo = await readFile(join(process.cwd(), "src/app/images/home.webp"));
+  const photo = await sharp(
+    await readFile(join(process.cwd(), "src/app/images/home.webp")),
+  )
+    .resize(980, 1132, { fit: "cover", position: "bottom" })
+    .png()
+    .toBuffer();
   return new ImageResponse(
     <div
       style={{
@@ -63,7 +69,7 @@ export default async function SocialImage() {
       {/* ImageResponse renders to PNG; next/image is not supported in this renderer. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={`data:image/webp;base64,${photo.toString("base64")}`}
+        src={`data:image/png;base64,${photo.toString("base64")}`}
         alt=""
         width={490}
         height={566}

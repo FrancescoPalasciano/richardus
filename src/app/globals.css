@@ -51,7 +51,7 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
   --color-ring: var(--ring);
-  --font-sans: var(--font-manrope), var(--font-work-sans), Arial, sans-serif;
+  --font-sans: var(--font-manrope), Arial, sans-serif;
 }
 
 @layer base {
@@ -68,7 +68,7 @@
   body {
     background: var(--background);
     color: var(--foreground);
-    font-family: var(--font-manrope), var(--font-work-sans), Arial, sans-serif;
+    font-family: var(--font-manrope), Arial, sans-serif;
     font-size: 16px;
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
