@@ -1,0 +1,19 @@
+.carousel { min-width: 0; container-type: inline-size; }
+.slides { display: grid; }
+.slide { grid-area: 1 / 1; display: flex; flex-direction: column; margin: 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity var(--motion-enter) var(--ease-out-quart), transform var(--motion-enter) var(--ease-out-quart), visibility var(--motion-enter); }
+.slide[data-active="true"] { opacity: 1; visibility: visible; transform: none; }
+.stars { display: flex; gap: 5px; color: var(--accent); margin-bottom: 1.5rem; }
+.quote { font-family: var(--font-eb-garamond), Georgia, serif; font-size: clamp(1.65rem, 3.2vw, 2.65rem); font-weight: 500; line-height: 1.2; letter-spacing: -.015em; margin: 0 0 2rem; text-wrap: pretty; }
+.caption { display: flex; flex-direction: column; gap: .15rem; margin-top: auto; font-size: .875rem; font-weight: 500; }
+.source { font-size: .75rem; font-weight: 400; color: color-mix(in oklch, var(--foreground) 78%, #eeeae1); }
+.controls { display: flex; justify-content: space-between; align-items: center; gap: .5rem; border-top: 1px solid color-mix(in oklch, var(--foreground) 22%, transparent); margin-top: 1.75rem; padding-top: 1rem; }
+.count { font-size: .875rem; font-variant-numeric: tabular-nums; }
+.count span { color: color-mix(in oklch, var(--foreground) 72%, #eeeae1); }
+.actions { display: flex; gap: .4rem; align-items: center; }
+.actions button { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; transition: background var(--motion-feedback), color var(--motion-feedback), transform var(--motion-press); }
+.actions button:active { transform: scale(.96); }
+.arrow { border: 1px solid color-mix(in oklch, var(--foreground) 35%, transparent); border-radius: 50%; }
+.play { gap: .4rem; padding-inline: .5rem; font-size: .75rem; }
+@media (hover: hover) { .arrow:hover { color: var(--background); background: var(--foreground); } .play:hover { color: var(--accent); } }
+@container (min-width: 500px) { .caption { flex-direction: row; align-items: baseline; justify-content: space-between; gap: 1rem; } }
+@media (prefers-reduced-motion: reduce) { .slide, .actions button { transition: none; transform: none; } }
