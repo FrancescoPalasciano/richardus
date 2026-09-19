@@ -1,0 +1,120 @@
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 8px;
+  color: var(--foreground);
+  background: var(--accent);
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background var(--motion-feedback),
+    border-color var(--motion-feedback);
+}
+.trigger:hover,
+.trigger[data-state="open"] {
+  background: var(--surface-secondary);
+  border-color: var(--accent-foreground);
+}
+.trigger:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 4px;
+}
+.selection {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.selection svg,
+.item > svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 14px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.fullName {
+  display: none;
+}
+.content {
+  z-index: 60;
+  width: 232px;
+  max-width: calc(100vw - 24px);
+  max-height: var(--radix-select-content-available-height);
+  overflow-y: auto;
+  padding: 8px;
+  background: var(--surface-elevated);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  transform-origin: var(--radix-select-content-transform-origin);
+  animation: language-in var(--motion-press) var(--ease-out-quart);
+}
+.heading {
+  padding: 8px 12px 10px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+}
+.viewport {
+  display: grid;
+  gap: 3px;
+}
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  min-height: 46px;
+  padding: 10px 34px 10px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  cursor: pointer;
+  outline-offset: -2px;
+}
+.item[data-highlighted] {
+  background: var(--surface-secondary);
+  outline: 2px solid var(--ring);
+}
+.item[data-state="checked"] {
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+.code {
+  margin-left: auto;
+  color: var(--muted-foreground);
+  font-size: 10px;
+}
+.check {
+  position: absolute;
+  right: 10px;
+  display: flex;
+  color: var(--primary);
+}
+@keyframes language-in {
+  from {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (min-width: 1280px) {
+  .fullName {
+    display: inline;
+  }
+  .shortName {
+    display: none;
+  }
+  .trigger {
+    padding-inline: 14px;
+    font-size: 13px;
+  }
+}
