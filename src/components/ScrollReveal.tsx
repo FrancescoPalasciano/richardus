@@ -2,93 +2,38 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { animate, inView } from "motion";
 
-gsap.registerPlugin(ScrollTrigger);
-
-const REVEAL_SELECTOR = "[data-reveal]";
-
-/** Reveal offscreen content once; keep initial content and no-JS pages visible. */
+/** Progressive enhancement: content stays visible before JS and without motion. */
 export default function ScrollReveal() {
   const pathname = usePathname();
-
   useEffect(() => {
-    const media = gsap.matchMedia();
-
-    media.add("(prefers-reduced-motion: no-preference)", () => {
-      const tweens = new Map<HTMLElement, gsap.core.Tween>();
-
-      function show(element: HTMLElement) {
-        element.removeAttribute("data-reveal-state");
-        const tween = tweens.get(element);
-        if (tween) {
-          tween.scrollTrigger?.kill();
-          tween.progress(1).kill();
-          tweens.delete(element);
-        }
-        gsap.set(element, { clearProps: "opacity,transform,visibility" });
-      }
-
-      const frame = requestAnimationFrame(() => {
-        gsap.utils.toArray<HTMLElement>(REVEAL_SELECTOR).forEach((element) => {
-          if (
-            element.getBoundingClientRect().top < window.innerHeight ||
-            element.contains(document.activeElement)
-          )
-            return;
-          element.setAttribute("data-reveal-state", "pending");
-
-          const tween = gsap.fromTo(
-            element,
-            { autoAlpha: 0, y: 28 },
-            {
-              autoAlpha: 1,
-              y: 0,
-              duration: 0.85,
-              ease: "power2.out",
-              onStart: () => element.removeAttribute("data-reveal-state"),
-              onComplete: () => {
-                tweens.delete(element);
-                gsap.set(element, {
-                  clearProps: "opacity,transform,visibility",
-                });
-              },
-              scrollTrigger: {
-                trigger: element,
-                start: "top bottom-=32px",
-                once: true,
-                onEnter: () => {
-                  if (element.contains(document.activeElement)) show(element);
-                },
-              },
-            },
-          );
-
-          tweens.set(element, tween);
-        });
-
-        ScrollTrigger.refresh();
-      });
-
-      function handleFocus(event: FocusEvent) {
-        if (!(event.target instanceof Node)) return;
-        for (const element of tweens.keys()) {
-          if (element.contains(event.target)) show(element);
-        }
-      }
-
-      document.addEventListener("focusin", handleFocus);
-
-      return () => {
-        cancelAnimationFrame(frame);
-        document.removeEventListener("focusin", handleFocus);
-        tweens.forEach((_, element) => show(element));
-      };
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (media.matches) return;
+    const animations: ReturnType<typeof animate>[] = [];
+    const stop = inView("[data-reveal]", (element) => {
+      if (media.matches || element.getBoundingClientRect().top < 0) return;
+      animations.push(
+        animate(
+          element,
+          {
+            opacity: [0.85, 1],
+            transform: ["translateY(8px)", "translateY(0)"],
+          },
+          { duration: 0.3, ease: [0.22, 1, 0.36, 1] },
+        ),
+      );
     });
-
-    return () => media.revert();
+    const reduce = () => {
+      if (media.matches)
+        animations.forEach((animation) => animation.complete());
+    };
+    media.addEventListener("change", reduce);
+    return () => {
+      stop();
+      animations.forEach((animation) => animation.complete());
+      media.removeEventListener("change", reduce);
+    };
   }, [pathname]);
-
   return null;
 }
