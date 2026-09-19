@@ -10,7 +10,7 @@ export default function Footer() {
       <div className={styles.top}>
         <div className={styles.brand}>
           <Link href="/" aria-label="Richardus, torna alla home">
-            <Brand full />
+            <Brand />
           </Link>
           <p>
             Trattoria storica
@@ -19,6 +19,7 @@ export default function Footer() {
           </p>
         </div>
         <nav aria-label="Navigazione del footer">
+          <Link href="/">Home</Link>
           <Link href="/menu">Menu</Link>
           <Link href="/chi-siamo">Chi siamo</Link>
           <Link href="/#contatti">Contatti</Link>

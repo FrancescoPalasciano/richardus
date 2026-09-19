@@ -18,6 +18,7 @@ import styles from "./Header.module.css";
 import Brand from "./Brand";
 
 const links = [
+  { href: "/", label: "Home" },
   { href: "/menu", label: "Menu" },
   { href: "/chi-siamo", label: "Chi siamo" },
   { href: "/#contatti", label: "Dove siamo" },
@@ -107,7 +108,7 @@ export default function Header() {
             </SheetTrigger>
             <SheetContent className={styles.mobileSheet}>
               <DialogTitle>
-                <Brand full />
+                <Brand />
               </DialogTitle>
               <DialogDescription>
                 Trattoria storica a Francavilla Fontana.
