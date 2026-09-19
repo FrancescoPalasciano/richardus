@@ -5,11 +5,13 @@ import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/ui/surfaces";
 import { restaurant } from "@/lib/restaurant";
 import styles from "./VisitSection.module.css";
+import Brand from "./Brand";
 
 export default function VisitSection() {
   return (
     <section
       id="contatti"
+      data-reveal
       aria-labelledby="visit-title"
       className={`container ${styles.section}`}
     >
@@ -27,7 +29,7 @@ export default function VisitSection() {
       <div className={styles.visitGrid}>
         <div className={styles.locationCard}>
           <div className={styles.address}>
-            <span className="wordmark">richardus</span>
+            <Brand />
             <h3>Ci trovi qui.</h3>
             <address>
               <p>

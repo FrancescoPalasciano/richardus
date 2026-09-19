@@ -40,6 +40,7 @@ export default function Reservation() {
   return (
     <section
       id="prenota"
+      data-reveal
       className={`container ${styles.section}`}
       aria-labelledby="booking-title"
       data-booking-visibility

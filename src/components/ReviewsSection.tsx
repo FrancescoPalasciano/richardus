@@ -8,6 +8,7 @@ export default function ReviewsSection() {
   return (
     <section
       id="recensioni"
+      data-reveal
       aria-labelledby="reviews-title"
       className={`container ${styles.section}`}
     >
