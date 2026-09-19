@@ -1,6 +1,6 @@
 # Richardus
 
-Sito della trattoria storica Richardus a Francavilla Fontana, in italiano, inglese, francese e tedesco. Stack: Next.js 16.3.5, React 19.2.8, TypeScript e Tailwind CSS 4. Le venti pagine sono generate staticamente; menu e contenuti principali sono presenti nell’HTML iniziale.
+Sito della trattoria Richardus a Francavilla Fontana, in italiano, inglese, francese, tedesco e spagnolo. Stack: Next.js 16.3.5, React 19.2.8, TypeScript e Tailwind CSS 4. Le venticinque pagine sono generate staticamente; menu e contenuti principali sono presenti nell’HTML iniziale.
 
 ## Sviluppo locale
 
@@ -31,11 +31,11 @@ Tailwind 4 usa `@tailwindcss/postcss` e `@theme` nel CSS. Il contesto approvato 
 
 ## Lingue e indicizzazione
 
-L’italiano usa `/`, `/menu`, `/chi-siamo`, `/privacy-policy` e `/cookie-policy`; le altre lingue aggiungono `/en`, `/fr` o `/de` agli stessi percorsi. Il selettore conserva pagina e hash della categoria. Le root layout separate permettono di impostare correttamente `html lang` anche al cambio lingua; condividono `AppShell.tsx`.
+L’italiano usa `/`, `/menu`, `/chi-siamo`, `/privacy-policy` e `/cookie-policy`; le altre lingue aggiungono `/en`, `/fr`, `/de` o `/es` agli stessi percorsi. Il selettore conserva pagina e hash della categoria. Le root layout separate permettono di impostare correttamente `html lang` anche al cambio lingua; condividono `AppShell.tsx`.
 
-Il catalogo è importato lato server. `LocaleProvider` riceve i messaggi della sola lingua selezionata; `localizeTree` traduce testo, proprietà di presentazione e collegamenti interni prima del rendering, lasciando invariati ID, dati e comportamento. Le nuove stringhe visibili e accessibili devono avere le tre traduzioni nel catalogo. Le citazioni delle recensioni mantengono testo e lingua originali.
+Il catalogo è importato lato server. `LocaleProvider` riceve i messaggi della sola lingua selezionata; `localizeTree` traduce testo, proprietà di presentazione e collegamenti interni prima del rendering, lasciando invariati ID, dati e comportamento. Le nuove stringhe visibili e accessibili devono avere le quattro traduzioni nel catalogo. Le citazioni delle recensioni mantengono testo e lingua originali.
 
-Canonical e `hreflang` collegano le quattro versioni. La sitemap contiene le dodici pagine di contenuto indicizzabili. Le otto versioni delle pagine legali restano `noindex`. Gli endpoint `/icon` e `/opengraph-image` usano il logo orizzontale fornito.
+Canonical e `hreflang` collegano le cinque versioni. La sitemap contiene le quindici pagine di contenuto indicizzabili. Le dieci versioni delle pagine legali restano `noindex`. Gli endpoint `/icon` e `/opengraph-image` usano il logo orizzontale fornito.
 
 ## Identità, fotografie e tipografia
 
@@ -105,3 +105,5 @@ docker run --rm -p 3000:3000 richardus
 ```
 
 Riferimenti: [Next.js su Coolify](https://coolify.io/docs/applications/framework-examples/javascript/nextjs), [output standalone](https://nextjs.org/docs/app/api-reference/config/next-config-js/output).
+
+Il selettore lingua usa Radix Select, bandiere SVG decorative e nomi nativi. Lo spagnolo è in `src/data/translations.es.json`; gli altri tre cataloghi in `src/data/translations.json`. Google Maps apre la scheda verificata Richardus Mangia & Bevi; la mappa incorporata richiede consenso.

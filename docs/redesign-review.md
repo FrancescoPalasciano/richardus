@@ -1,6 +1,6 @@
 # Verifica del redesign Richardus
 
-Aggiornamento: 19 settembre 2026. Ambito finale: tema nero, logo orizzontale fornito, Richardus come trattoria storica, fotografie assegnate senza ripetizioni e quattro lingue. Il contesto approvato è in `PRODUCT.md`; il sistema estratto dal CSS è in `DESIGN.md` e `.impeccable/design.json`.
+Aggiornamento: 19 settembre 2026. Prima verifica: tema nero, logo orizzontale e quattro lingue. L’aggiornamento in fondo registra le successive cinque lingue e la rimozione della descrizione storica. Il contesto approvato è in `PRODUCT.md`; il sistema estratto dal CSS è in `DESIGN.md` e `.impeccable/design.json`.
 
 ## Implementazione documentata
 
@@ -36,3 +36,11 @@ Non sono disponibili misure Core Web Vitals di utenti reali o un rapporto Lighth
 Le otto pagine legali restano bozze `noindex`: mancano dati aziendali e verifiche già indicate nel README, da completare prima della pubblicazione. Nessuna dichiarazione di conformità è implicita.
 
 I vecchi componenti o stili non raggiunti dalle pagine attive non sono fonti normative del nuovo sistema. Gli altri asset presenti nella cartella, non importati dalle pagine, non sono considerati integrati. Gli screenshot di verifica restano evidenze locali, non asset da pubblicare.
+
+## Aggiornamento lingue e posizione
+
+Aggiunto lo spagnolo a contenuti, menu, metadati e alternanze SEO: 25 pagine, 15 indicizzabili e 10 legali noindex. Rimossa la descrizione storica in tutte le lingue. Selettore Radix con bandiere SVG, nomi nativi, focus visibile e opzioni da almeno 46px; nuovo accento ambra #d99426. Link e mappa incorporata puntano alla scheda verificata Richardus Mangia & Bevi, mantenendo il consenso.
+
+Verificati lint, type-check, build e output statico: 25 route, 440 collegamenti e 42 piatti. Verifica responsive aggiuntiva: 63 combinazioni (cinque home più menu e Chi siamo spagnoli alle nove larghezze da 320 a 1920px), nessun overflow. Ispezione visiva dropdown desktop e mobile 320px; cambio tra cinque lingue, conservazione categoria e chiusura Escape.
+
+Commit: 4209651 (spagnolo), 9bc8cea (selettore e ambra), 68a27b6 (descrizioni). Quest’ultimo contiene dodici file per mantenere coerenti copy, cataloghi e SEO: eccezione indivisibile dichiarata prima del commit.

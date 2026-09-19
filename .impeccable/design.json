@@ -6,18 +6,8 @@
     "colorMeta": {
       "primary": {
         "role": "primary",
-        "displayName": "Argilla chiara",
-        "canonical": "#e7b18c",
-        "tonalRamp": [
-          "oklch(15.00% 0.08045 55.69)",
-          "oklch(26.43% 0.08045 55.69)",
-          "oklch(37.86% 0.08045 55.69)",
-          "oklch(49.29% 0.08045 55.69)",
-          "oklch(60.71% 0.08045 55.69)",
-          "oklch(72.14% 0.08045 55.69)",
-          "oklch(83.57% 0.08045 55.69)",
-          "oklch(95.00% 0.08045 55.69)"
-        ]
+        "displayName": "Ambra",
+        "canonical": "#d99426"
       },
       "primary-foreground": {
         "role": "primary",
@@ -36,33 +26,13 @@
       },
       "accent": {
         "role": "primary",
-        "displayName": "Argilla scura",
-        "canonical": "#3d291f",
-        "tonalRamp": [
-          "oklch(15.00% 0.03479 47.53)",
-          "oklch(26.43% 0.03479 47.53)",
-          "oklch(37.86% 0.03479 47.53)",
-          "oklch(49.29% 0.03479 47.53)",
-          "oklch(60.71% 0.03479 47.53)",
-          "oklch(72.14% 0.03479 47.53)",
-          "oklch(83.57% 0.03479 47.53)",
-          "oklch(95.00% 0.03479 47.53)"
-        ]
+        "displayName": "Ambra scura",
+        "canonical": "#34230e"
       },
       "accent-foreground": {
         "role": "primary",
         "displayName": "Avorio caldo",
-        "canonical": "#f2d4bd",
-        "tonalRamp": [
-          "oklch(15.00% 0.04565 59.63)",
-          "oklch(26.43% 0.04565 59.63)",
-          "oklch(37.86% 0.04565 59.63)",
-          "oklch(49.29% 0.04565 59.63)",
-          "oklch(60.71% 0.04565 59.63)",
-          "oklch(72.14% 0.04565 59.63)",
-          "oklch(83.57% 0.04565 59.63)",
-          "oklch(95.00% 0.04565 59.63)"
-        ]
+        "canonical": "#efbd65"
       },
       "olive": {
         "role": "secondary",
@@ -247,17 +217,7 @@
       "ring": {
         "role": "primary",
         "displayName": "Focus argilla",
-        "canonical": "#e7b18c",
-        "tonalRamp": [
-          "oklch(15.00% 0.08045 55.69)",
-          "oklch(26.43% 0.08045 55.69)",
-          "oklch(37.86% 0.08045 55.69)",
-          "oklch(49.29% 0.08045 55.69)",
-          "oklch(60.71% 0.08045 55.69)",
-          "oklch(72.14% 0.08045 55.69)",
-          "oklch(83.57% 0.08045 55.69)",
-          "oklch(95.00% 0.08045 55.69)"
-        ]
+        "canonical": "#d99426"
       },
       "overlay": {
         "role": "neutral",
@@ -426,13 +386,13 @@
       "name": "Language selector",
       "kind": "input",
       "description": "Selettore nativo con nome accessibile. Il routing e la conservazione dell’hash sono gestiti nel sito da LanguageSwitcher.",
-      "html": "<label class=\"ds-language\"><span class=\"ds-sr\">Lingua</span><select aria-label=\"Lingua\"><option value=\"it\">IT</option><option value=\"en\">EN</option><option value=\"fr\">FR</option><option value=\"de\">DE</option></select></label>",
-      "css": ".ds-language select {\n  width: 70px;\n  min-height: 44px;\n  padding: 8px 4px;\n  background: var(--background);\n  color: var(--foreground);\n  border: 0;\n  border-radius: var(--radius-sm);\n  font: inherit;\n  font-size: 12px;\n  cursor: pointer;\n}.ds-language select:focus-visible {\n  outline: 2px solid var(--ring);\n  outline-offset: 2px;\n}.ds-language{font-family:var(--font-manrope),Arial,sans-serif;}.ds-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);}"
+      "html": "<button type=\"button\" class=\"ds-language\" aria-label=\"Lingua: Italiano\">Italiano · IT</button>",
+      "css": ".ds-language{font-family:var(--font-manrope),Arial,sans-serif;min-height:44px;padding:8px 14px;border:1px solid var(--primary);border-radius:var(--radius-pill);background:var(--accent);color:var(--foreground)}.ds-language:focus-visible{outline:2px solid var(--ring);outline-offset:4px}"
     }
   ],
   "narrative": {
     "northStar": "La trattoria, dopo il tramonto",
-    "overview": "Richardus presenta la trattoria storica su un fondo nero continuo. Testo avorio, controlli color argilla chiara e fotografie reali di ambienti e cucina danno gerarchia alla pagina. Manrope unifica titoli, contenuti e interfaccia; il logo orizzontale fornito conserva l’identità dell’attività.\n\nLa composizione alterna fotografie, moduli scuri e informazioni compatte. Titoli a sinistra e azioni esplicite rendono il percorso leggibile nelle quattro lingue. Le entrate sono brevi dissolvenze; il contenuto iniziale rimane visibile prima di JavaScript.\n\n**Key Characteristics:",
+    "overview": "Richardus presenta la trattoria su un fondo nero continuo. Testo avorio, controlli color ambra e fotografie reali di ambienti e cucina danno gerarchia alla pagina. Manrope unifica titoli, contenuti e interfaccia; il logo orizzontale fornito conserva l’identità dell’attività.\n\nLa composizione alterna fotografie, moduli scuri e informazioni compatte. Titoli a sinistra e azioni esplicite rendono il percorso leggibile nelle cinque lingue. Le entrate sono brevi dissolvenze; il contenuto iniziale rimane visibile prima di JavaScript.\n\n**Key Characteristics:",
     "keyCharacteristics": [
       "Fondo nero e superfici scure, testo avorio e accenti caldi.",
       "Manrope unica famiglia dell’interfaccia e logo orizzontale originale.",
@@ -465,7 +425,7 @@
     "dos": [
       "**Do** riutilizzare token e primitive esistenti, verificandoli sul tema nero.",
       "**Do** conservare logo orizzontale e fotografie originali con proporzioni dichiarate.",
-      "**Do** verificare focus, tastiera e testi nelle quattro lingue da 320px.",
+      "**Do** verificare focus, tastiera e testi nelle cinque lingue da 320px.",
       "**Do** mantenere prezzi, contatti e conferma della prenotazione leggibili e specifici."
     ],
     "donts": [

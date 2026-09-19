@@ -6,7 +6,7 @@ Non sono necessari database o dipendenze aggiuntive. Il campo `$schema` collega 
 
 ## Aggiornamento approvato del 19 settembre 2026
 
-Su indicazione del committente sono state rimosse le 19 pizze, la relativa categoria e i supplementi collegati: Richardus è presentata come trattoria storica. Nomi, prezzi e contenuti delle 42 voci rimaste sono preservati. Il PDF resta la fonte storica della trascrizione; questa rimozione è una decisione successiva del committente, non una nuova lettura del PDF.
+Su indicazione del committente sono state rimosse le 19 pizze, la relativa categoria e i supplementi collegati: Richardus è presentata come trattoria. Nomi, prezzi e contenuti delle 42 voci rimaste sono preservati. Il PDF resta la fonte storica della trascrizione; questa rimozione è una decisione successiva del committente, non una nuova lettura del PDF.
 
 ## Organizzazione
 

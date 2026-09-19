@@ -1,11 +1,11 @@
 ---
 name: Richardus
-description: La trattoria storica su fondo nero, con fotografie autentiche e accenti caldi.
+description: La trattoria su fondo nero, con fotografie autentiche e accenti caldi.
 colors:
-  primary: "#e7b18c"
+  primary: "#d99426"
   primary-foreground: "#28160e"
-  accent: "#3d291f"
-  accent-foreground: "#f2d4bd"
+  accent: "#34230e"
+  accent-foreground: "#efbd65"
   olive: "#242b20"
   olive-foreground: "#d8dfc9"
   background: "#000000"
@@ -18,7 +18,7 @@ colors:
   dark: "#111111"
   dark-foreground: "#f5f2ea"
   dark-muted: "#c3c3b7"
-  ring: "#e7b18c"
+  ring: "#d99426"
   overlay: "rgb(24 24 21 / 42%)"
 typography:
   display:
@@ -121,9 +121,9 @@ components:
 
 **Creative North Star: "La trattoria, dopo il tramonto"**
 
-Richardus presenta la trattoria storica su un fondo nero continuo. Testo avorio, controlli color argilla chiara e fotografie reali di ambienti e cucina danno gerarchia alla pagina. Manrope unifica titoli, contenuti e interfaccia; il logo orizzontale fornito conserva l’identità dell’attività.
+Richardus presenta la trattoria su un fondo nero continuo. Testo avorio, controlli color ambra e fotografie reali di ambienti e cucina danno gerarchia alla pagina. Manrope unifica titoli, contenuti e interfaccia; il logo orizzontale fornito conserva l’identità dell’attività.
 
-La composizione alterna fotografie, moduli scuri e informazioni compatte. Titoli a sinistra e azioni esplicite rendono il percorso leggibile nelle quattro lingue. Le entrate sono brevi dissolvenze; il contenuto iniziale rimane visibile prima di JavaScript.
+La composizione alterna fotografie, moduli scuri e informazioni compatte. Titoli a sinistra e azioni esplicite rendono il percorso leggibile nelle cinque lingue. Le entrate sono brevi dissolvenze; il contenuto iniziale rimane visibile prima di JavaScript.
 
 **Key Characteristics:**
 
@@ -141,8 +141,8 @@ Il nero è il fondo condiviso. Le superfici si distinguono attraverso piccole va
 
 ### Primary
 
-- **Argilla chiara:** `primary` e `primary-foreground` identificano prenotazione e controlli principali; `ring` rende riconoscibile il focus.
-- **Argilla scura:** `accent` e `accent-foreground` formano una coppia per selezione e moduli editoriali.
+- **Ambra:** `primary` e `primary-foreground` identificano prenotazione e controlli principali; `ring` rende riconoscibile il focus.
+- **Ambra scura:** `accent` e `accent-foreground` formano una coppia per selezione e moduli editoriali.
 
 ### Secondary
 
@@ -193,7 +193,7 @@ Altezza minima 48px; i pulsanti con sola icona misurano 46px. Primary, secondary
 
 ### Navigation and language selector
 
-Header nero sospeso, logo originale, Home esplicita e selettore nativo IT/EN/FR/DE. Da 1024px mostra link e prenotazione; sotto usa un Sheet Radix con gestione focus e chiusura Escape. Il cambio lingua conserva pagina e hash. Il dock compare dopo lo scorrimento quando la prenotazione non è visibile e il pannello è chiuso; rispetta la safe area inferiore.
+Header nero sospeso, logo originale, Home esplicita e selettore Radix con bandiere SVG e lingue IT/EN/FR/DE/ES. Da 1024px mostra link e prenotazione; sotto usa un Sheet Radix con gestione focus e chiusura Escape. Il cambio lingua conserva pagina e hash. Il dock compare dopo lo scorrimento quando la prenotazione non è visibile e il pannello è chiuso; rispetta la safe area inferiore.
 
 ### Categories and badges
 
@@ -215,7 +215,7 @@ Motion applica una sola entrata ai blocchi sotto la piega: dissolvenza da opacit
 
 - **Do** riutilizzare token e primitive esistenti, verificandoli sul tema nero.
 - **Do** conservare logo orizzontale e fotografie originali con proporzioni dichiarate.
-- **Do** verificare focus, tastiera e testi nelle quattro lingue da 320px.
+- **Do** verificare focus, tastiera e testi nelle cinque lingue da 320px.
 - **Do** mantenere prezzi, contatti e conferma della prenotazione leggibili e specifici.
 
 ### Don't:
