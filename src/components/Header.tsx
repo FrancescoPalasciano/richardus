@@ -1,237 +1,184 @@
 "use client";
 
-import Image from "next/image";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
-import styles from "./Header.module.css";
+import { ArrowUpRight, Menu, Phone, Utensils } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  DialogDescription,
+  DialogTitle,
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/disclosure";
 import { restaurant } from "@/lib/restaurant";
+import styles from "./Header.module.css";
 
-type HeaderProps = {
-  categorie: { id: string; nome: string }[];
+const links = [
+  { href: "/menu", label: "Menu" },
+  { href: "/chi-siamo", label: "Chi siamo" },
+  { href: "/#contatti", label: "Dove siamo" },
+];
+const subscribeScroll = (callback: () => void) => {
+  window.addEventListener("scroll", callback, { passive: true });
+  return () => window.removeEventListener("scroll", callback);
 };
 
-export default function Header({ categorie }: HeaderProps) {
+export default function Header() {
   const pathname = usePathname();
-  const [navigationOpen, setNavigationOpen] = useState(false);
-  const [categoriesOpen, setCategoriesOpen] = useState(false);
-  const headerRef = useRef<HTMLElement>(null);
-  const toggleRef = useRef<HTMLButtonElement>(null);
-  const menuRef = useRef<HTMLButtonElement>(null);
-
-  function closeNavigation() {
-    setNavigationOpen(false);
-    setCategoriesOpen(false);
-  }
-
+  const [open, setOpen] = useState(false);
+  const [bookingVisible, setBookingVisible] = useState(true);
+  const toggle = useRef<HTMLButtonElement>(null);
+  const scrolled = useSyncExternalStore(
+    subscribeScroll,
+    () => window.scrollY > 32,
+    () => false,
+  );
+  const dockEligible = useSyncExternalStore(
+    subscribeScroll,
+    () => window.scrollY > 480,
+    () => false,
+  );
   useEffect(() => {
-    function handlePointerDown(event: PointerEvent) {
-      if (
-        event.target instanceof Node &&
-        !headerRef.current?.contains(event.target)
-      ) {
-        setNavigationOpen(false);
-        setCategoriesOpen(false);
-      }
-    }
-
-    function handleEscape(event: KeyboardEvent) {
-      if (event.key !== "Escape") return;
-
-      if (categoriesOpen) {
-        event.preventDefault();
-        setCategoriesOpen(false);
-        menuRef.current?.focus();
-      } else if (navigationOpen) {
-        event.preventDefault();
-        setNavigationOpen(false);
-        toggleRef.current?.focus();
-      }
-    }
-
-    document.addEventListener("pointerdown", handlePointerDown);
-    document.addEventListener("keydown", handleEscape);
-    return () => {
-      document.removeEventListener("pointerdown", handlePointerDown);
-      document.removeEventListener("keydown", handleEscape);
+    const visible = new Set<Element>();
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) =>
+        entry.isIntersecting
+          ? visible.add(entry.target)
+          : visible.delete(entry.target),
+      );
+      setBookingVisible(visible.size > 0);
+    });
+    document
+      .querySelectorAll("[data-booking-visibility]")
+      .forEach((element) => observer.observe(element));
+    return () => observer.disconnect();
+  }, [pathname]);
+  useEffect(() => {
+    const media = window.matchMedia("(min-width: 768px)");
+    const resize = () => {
+      if (media.matches) setOpen(false);
     };
-  }, [categoriesOpen, navigationOpen]);
-
-  useEffect(() => {
-    const breakpoint = window.matchMedia("(min-width: 768px)");
-    function handleBreakpointChange() {
-      // Avoid leaving keyboard focus in navigation hidden by the new layout.
-      const activeElement = document.activeElement;
-      if (
-        !breakpoint.matches &&
-        activeElement instanceof Element &&
-        activeElement.closest("#site-navigation")
-      ) {
-        toggleRef.current?.focus();
-      } else if (breakpoint.matches && activeElement === toggleRef.current) {
-        headerRef.current?.querySelector<HTMLAnchorElement>("a")?.focus();
-      }
-      setNavigationOpen(false);
-      setCategoriesOpen(false);
-    }
-    breakpoint.addEventListener("change", handleBreakpointChange);
-    return () =>
-      breakpoint.removeEventListener("change", handleBreakpointChange);
+    media.addEventListener("change", resize);
+    return () => media.removeEventListener("change", resize);
   }, []);
-
   return (
-    <header
-      ref={headerRef}
-      className={styles.header}
-      onBlur={(event) => {
-        if (
-          event.relatedTarget instanceof Node &&
-          !event.currentTarget.contains(event.relatedTarget)
-        ) {
-          closeNavigation();
-        }
-      }}
-    >
-      <div className={styles.inner}>
-        <Link
-          href="/"
-          className={styles.logo}
-          aria-label="Richardus, homepage"
-          onClick={closeNavigation}
-        >
-          <Image
-            src="/logo-richardus.webp"
-            alt="Richardus"
-            width={256}
-            height={300}
-            preload
-            sizes="68px"
-          />
+    <>
+      <header className={styles.header} data-scrolled={scrolled}>
+        <Link href="/" className="wordmark" aria-label="Richardus, homepage">
+          richardus
         </Link>
-
-        <nav
-          id="site-navigation"
-          aria-label="Navigazione principale"
-          className={styles.navigation}
-          data-open={navigationOpen}
-        >
-          <ul className={styles.links}>
-            <li>
-              <Link
-                href="/"
-                className={styles.link}
-                aria-current={pathname === "/" ? "page" : undefined}
-                onClick={closeNavigation}
-              >
-                Home
-              </Link>
-            </li>
-            <li className={styles.menuItem}>
-              <Link href="/menu" className={styles.link} aria-current={pathname === "/menu" ? "page" : undefined} onClick={closeNavigation}>
-                Menu
-              </Link>
-              <button
-                ref={menuRef}
-                type="button"
-                className={styles.categoryToggle}
-                aria-label="Categorie del menu"
-                data-active={pathname === "/menu"}
-                aria-expanded={categoriesOpen}
-                aria-controls="menu-categories"
-                onClick={() => setCategoriesOpen(!categoriesOpen)}
-              >
-                <svg
-                  className={styles.chevron}
-                  data-open={categoriesOpen}
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="m6 9 6 6 6-6" />
-                </svg>
-              </button>
-              <ul
-                id="menu-categories"
-                className={styles.categories}
-                hidden={!categoriesOpen}
-              >
-                <li className={styles.overview}>
-                  <Link href="/menu" onClick={closeNavigation}>
-                    Tutto il menu
-                  </Link>
-                </li>
-                {categorie.map((categoria) => (
-                  <li key={categoria.id}>
-                    <Link
-                      href={`/menu#${categoria.id}`}
-                      onClick={closeNavigation}
-                    >
-                      {categoria.nome}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </li>
-            <li>
-              <Link
-                href="/chi-siamo"
-                className={styles.link}
-                aria-current={pathname === "/chi-siamo" ? "page" : undefined}
-                onClick={closeNavigation}
-              >
-                Chi siamo
-              </Link>
-            </li>
-          </ul>
+        <nav className={styles.desktopNav} aria-label="Navigazione principale">
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              aria-current={pathname === link.href ? "page" : undefined}
+            >
+              {link.label}
+            </Link>
+          ))}
         </nav>
-
-        <a className={styles.booking} href={restaurant.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="Prenota un tavolo su WhatsApp">
-          Prenota
-        </a>
-        <button
-          ref={toggleRef}
-          type="button"
-          className={styles.toggle}
-          aria-label={
-            navigationOpen ? "Chiudi navigazione" : "Apri navigazione"
-          }
-          aria-expanded={navigationOpen}
-          aria-controls="site-navigation"
-          onClick={(event) => {
-            const opening = !navigationOpen;
-            setNavigationOpen(opening);
-            setCategoriesOpen(false);
-            if (opening && event.detail === 0) {
-              requestAnimationFrame(() => {
-                headerRef.current
-                  ?.querySelector<HTMLAnchorElement>("#site-navigation a")
-                  ?.focus();
-              });
-            }
-          }}
-        >
-          <svg
-            width="26"
-            height="26"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            aria-hidden="true"
+        <div className={styles.actions}>
+          <Button asChild className={styles.desktopBooking}>
+            <a
+              href={restaurant.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Prenota un tavolo su WhatsApp"
+            >
+              Prenota <ArrowUpRight size={16} aria-hidden="true" />
+            </a>
+          </Button>
+          <Sheet open={open} onOpenChange={setOpen}>
+            <SheetTrigger asChild>
+              <Button
+                ref={toggle}
+                variant="secondary"
+                size="icon"
+                className={styles.mobileToggle}
+                aria-label="Apri navigazione"
+              >
+                <Menu size={21} aria-hidden="true" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent className={styles.mobileSheet}>
+              <DialogTitle>
+                <span className="wordmark">richardus</span>
+              </DialogTitle>
+              <DialogDescription>
+                Pasta, brace, pizza. Francavilla Fontana.
+              </DialogDescription>
+              <nav
+                aria-label="Navigazione mobile"
+                className={styles.mobileLinks}
+              >
+                {[...links, { href: "/#prenota", label: "Contatti" }].map(
+                  (link) => (
+                    <SheetClose asChild key={link.label}>
+                      <Link
+                        href={link.href}
+                        aria-current={
+                          pathname === link.href ? "page" : undefined
+                        }
+                      >
+                        {link.label}
+                        <ArrowUpRight size={21} aria-hidden="true" />
+                      </Link>
+                    </SheetClose>
+                  ),
+                )}
+              </nav>
+              <div className={styles.mobileDetails}>
+                <p>
+                  Via San Giovanni 15
+                  <br />
+                  Francavilla Fontana · BR
+                </p>
+                <a href={`tel:${restaurant.phone}`}>
+                  <Phone size={17} aria-hidden="true" />
+                  {restaurant.phoneLabel}
+                </a>
+              </div>
+              <SheetClose asChild>
+                <Button asChild>
+                  <a
+                    href={restaurant.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Prenota un tavolo{" "}
+                    <ArrowUpRight size={18} aria-hidden="true" />
+                  </a>
+                </Button>
+              </SheetClose>
+            </SheetContent>
+          </Sheet>
+        </div>
+      </header>
+      <nav
+        className={`${styles.dock} mobile-dock`}
+        aria-label="Azioni rapide"
+        hidden={!dockEligible || bookingVisible || open}
+      >
+        <Button asChild variant="ghost">
+          <Link href="/menu">
+            <Utensils size={17} aria-hidden="true" /> Menu
+          </Link>
+        </Button>
+        <Button asChild>
+          <a
+            href={restaurant.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Prenota su WhatsApp"
           >
-            <path className={styles.toggleTop} d="M3 6h18" />
-            <path className={styles.toggleMiddle} d="M3 12h18" />
-            <path className={styles.toggleBottom} d="M3 18h18" />
-          </svg>
-        </button>
-      </div>
-    </header>
+            Prenota <ArrowUpRight size={17} aria-hidden="true" />
+          </a>
+        </Button>
+      </nav>
+    </>
   );
 }
