@@ -1,107 +1,69 @@
-import Image from "next/image";
+import { ArrowUpRight, MapPin, Phone } from "lucide-react";
 import GoogleMap from "./GoogleMap";
-import winePhoto from "@/app/images/vino.webp";
+import OpeningHoursCard from "./OpeningHoursCard";
+import { Button } from "@/components/ui/button";
+import { SectionHeading } from "@/components/ui/surfaces";
+import { restaurant } from "@/lib/restaurant";
 import styles from "./VisitSection.module.css";
-
-const mapsUrl =
-  "https://maps.google.com/?q=Via+San+Giovanni+15,+Francavilla+Fontana,+BR";
 
 export default function VisitSection() {
   return (
     <section
       id="contatti"
       aria-labelledby="visit-title"
-      className={styles.section}
+      className={`container ${styles.section}`}
     >
-      <div className={styles.intro} data-reveal>
-        <h2 id="visit-title" className={styles.title}>
-          Ti aspettiamo a Francavilla.
-        </h2>
-      </div>
-      <div className={styles.content}>
-        <dl className={styles.details}>
-          <div className={styles.detail} data-reveal>
-            <dt>Dove siamo</dt>
-            <dd>
-              <address className={styles.address}>
-                <a
-                  href={mapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.addressLink}
-                >
-                  <span>
-                    Via S. Giovanni 15,
-                    <br />
-                    Francavilla Fontana
-                  </span>
-                  <span className={styles.mapLabel}>
-                    Apri in Google Maps
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                    >
-                      <path d="M7 17 17 7M7 7h10v10" />
-                    </svg>
-                  </span>
-                </a>
-              </address>
-            </dd>
+      <SectionHeading
+        id="visit-title"
+        eyebrow="Dove siamo"
+        title={
+          <>
+            Il tuo prossimo tavolo.
+            <br />A Francavilla.
+          </>
+        }
+        description="Via San Giovanni 15, Francavilla Fontana. Provincia di Brindisi, Puglia."
+      />
+      <div className={styles.visitGrid}>
+        <div className={styles.locationCard}>
+          <div className={styles.address}>
+            <span className="wordmark">richardus</span>
+            <h3>Ci trovi qui.</h3>
+            <address>
+              <p>
+                Via San Giovanni 15
+                <br />
+                Francavilla Fontana
+                <br />
+                <span>Brindisi · Puglia</span>
+              </p>
+              <a href={`tel:${restaurant.phone}`}>
+                <Phone size={17} aria-hidden="true" />
+                {restaurant.phoneLabel}
+              </a>
+            </address>
+            <Button asChild variant="secondary">
+              <a
+                href={restaurant.maps}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Indicazioni <ArrowUpRight size={17} aria-hidden="true" />
+              </a>
+            </Button>
           </div>
-          <div className={styles.detail} data-reveal>
-            <dt>Orari di apertura</dt>
-            <dd>
-              <dl className={styles.hours}>
-                <div>
-                  <dt>Martedì–sabato</dt>
-                  <dd>
-                    <span>
-                      <time dateTime="19:30">19:30</time>–
-                      <time dateTime="00:00">00:00</time>
-                    </span>
-                  </dd>
-                </div>
-                <div>
-                  <dt>Domenica</dt>
-                  <dd>
-                    <span>
-                      <time dateTime="12:30">12:30</time>–
-                      <time dateTime="15:00">15:00</time>
-                    </span>
-                    <span>
-                      <time dateTime="19:30">19:30</time>–
-                      <time dateTime="00:00">00:00</time>
-                    </span>
-                  </dd>
-                </div>
-              </dl>
-            </dd>
+          <div className={styles.mapPanel}>
+            <MapPin size={30} aria-hidden="true" />
+            <p>
+              Francavilla
+              <br />
+              Fontana<span>Puglia, Italia</span>
+            </p>
+            <GoogleMap />
           </div>
-        </dl>
-        <GoogleMap />
-      </div>
-      <figure className={styles.picture} data-reveal>
-        <div className={styles.imageFrame}>
-          <Image
-            src={winePhoto}
-            alt="Un brindisi con due calici di vino rosato da Richardus"
-            fill
-            sizes="(min-width: 1280px) 560px, (min-width: 900px) 46vw, 100vw"
-            className={styles.photo}
-          />
         </div>
-        <figcaption className={styles.caption}>
-          <span>Richardus</span>
-          <span>Francavilla Fontana</span>
-        </figcaption>
-      </figure>
+        <OpeningHoursCard />
+      </div>
     </section>
   );
 }

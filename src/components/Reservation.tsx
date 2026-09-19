@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { ArrowRight, ArrowUpRight, Phone } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { restaurant } from "@/lib/restaurant";
 import styles from "./Reservation.module.css";
 
@@ -11,14 +13,24 @@ export function BookingActions({
 }) {
   return (
     <div className={styles.actions} data-tone={tone}>
-      <a className={styles.primary} href={restaurant.whatsapp} target="_blank" rel="noopener noreferrer">
-        Prenota su WhatsApp
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10" /></svg>
-      </a>
+      <Button asChild variant={tone === "inverse" ? "light" : "default"}>
+        <a
+          href={restaurant.whatsapp}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Prenota un tavolo su WhatsApp"
+        >
+          Prenota un tavolo <ArrowUpRight size={18} aria-hidden="true" />
+        </a>
+      </Button>
       {showMenu ? (
-        <Link className={styles.secondary} href="/menu">Guarda il menu</Link>
+        <Link href="/menu" className={styles.secondary}>
+          Scopri il menu <ArrowRight size={18} aria-hidden="true" />
+        </Link>
       ) : (
-        <a className={styles.secondary} href={`tel:${restaurant.phone}`}>Chiama {restaurant.phoneLabel}</a>
+        <a className={styles.secondary} href={`tel:${restaurant.phone}`}>
+          <Phone size={17} aria-hidden="true" /> Chiamaci
+        </a>
       )}
     </div>
   );
@@ -26,12 +38,34 @@ export function BookingActions({
 
 export default function Reservation() {
   return (
-    <section className={styles.section} aria-label="Prenota un tavolo">
-      <div>
-        <h2>Ci vediamo a tavola.</h2>
-        <p>Scrivici giorno, orario e numero di persone.<br />Il tavolo è prenotato quando ricevi la nostra conferma.</p>
+    <section
+      id="prenota"
+      className={`container ${styles.section}`}
+      aria-labelledby="booking-title"
+      data-booking-visibility
+    >
+      <div className={styles.copy}>
+        <p className="eyebrow">Il piacere di ritrovarsi</p>
+        <h2 id="booking-title">
+          Ci vediamo
+          <br />a tavola?
+        </h2>
+        <p>
+          Tu scegli la compagnia.
+          <br />
+          Noi mettiamo il resto.
+        </p>
       </div>
-      <BookingActions />
+      <div className={styles.booking}>
+        <BookingActions tone="inverse" />
+        <p>
+          Scrivici su WhatsApp giorno, orario e numero di persone. Il tavolo è
+          prenotato quando ricevi la nostra conferma.
+        </p>
+        <a className={styles.phone} href={`tel:${restaurant.phone}`}>
+          {restaurant.phoneLabel}
+        </a>
+      </div>
     </section>
   );
 }
