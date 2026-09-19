@@ -1,69 +1,120 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import { Info } from "lucide-react";
+import homePhoto from "@/app/images/home.webp";
 import menu from "@/data/menu.json";
 import Reservation from "@/components/Reservation";
+import DishCard from "@/components/DishCard";
+import MenuBrowser from "@/components/MenuBrowser";
+import MenuInfo from "@/components/MenuInfo";
+import { Badge } from "@/components/ui/surfaces";
+import {
+  categories,
+  categoryLabel,
+  dishes,
+  euro,
+  menuSchema,
+} from "@/lib/menu";
+import styles from "./Menu.module.css";
 
 export const metadata: Metadata = {
-  title: "Menu",
-  description: "Il menu di Richardus a Francavilla Fontana: antipasti, pasta, piatti alla brace e pizze. Consulta ingredienti e prezzi e prenota il tuo tavolo.",
+  title: "Menu: piatti, ingredienti e prezzi",
+  description:
+    "Il menu di Richardus a Francavilla Fontana: antipasti, pasta, piatti alla brace e pizze. Consulta ingredienti e prezzi e prenota il tuo tavolo.",
+  alternates: { canonical: "/menu" },
+  openGraph: {
+    title: "Il menu di Richardus",
+    description:
+      "Piatti, ingredienti e prezzi. Pasta, brace e pizza a Francavilla Fontana.",
+    url: "/menu",
+  },
 };
 
-const euro = new Intl.NumberFormat("it-IT", { style: "currency", currency: menu.valuta });
-const displayName = (name: string) => name === name.toLocaleUpperCase("it-IT")
-  ? name.charAt(0) + name.slice(1).toLocaleLowerCase("it-IT") : name;
-
 export default function MenuPage() {
-  const prodotti = Object.entries(menu.prodotti).filter(([, prodotto]) => prodotto.visibile);
-  const categorie = Object.entries(menu.categorie)
-    .filter(([id]) => prodotti.some(([, prodotto]) => prodotto.categoria === id))
-    .sort(([, a], [, b]) => a.ordine - b.ordine);
-
+  const sections = categories.map(([id, category]) => {
+    const products = dishes.filter(([, dish]) => dish.categoria === id);
+    return {
+      id,
+      label: categoryLabel(id, category.nome),
+      count: products.length,
+      content: (
+        <section
+          id={id}
+          aria-labelledby={`${id}-title`}
+          className={styles.menuCategory}
+        >
+          <div className={styles.categoryHeading}>
+            <h2 id={`${id}-title`}>{category.nome}</h2>
+            <span>{products.length} proposte</span>
+          </div>
+          {category.descrizione && (
+            <p className={styles.categoryDescription}>{category.descrizione}</p>
+          )}
+          <ul className={styles.dishGrid}>
+            {products.map(([key, dish]) => (
+              <li key={key}>
+                <DishCard
+                  dish={dish}
+                  category={categoryLabel(id, category.nome)}
+                />
+              </li>
+            ))}
+          </ul>
+          {id === "pizze" && (
+            <p className={styles.categoryNote}>
+              {menu.costiAggiuntivi.aggiuntePizze.descrizione}
+            </p>
+          )}
+        </section>
+      ),
+    };
+  });
   return (
     <main id="contenuto">
-      <header className="mx-auto max-w-6xl px-6 pb-6 pt-10 sm:px-10 sm:pt-16">
-        <h1 className="text-[clamp(3.25rem,7vw,6rem)] leading-none tracking-[-0.025em]">Il menu.</h1>
-        <p className="mt-5 max-w-xl text-base leading-7">Pasta, brace e pizza. Scegli da dove cominciare.</p>
+      <header className={`container ${styles.pageHeader}`}>
+        <div>
+          <p className="eyebrow">Il menu Richardus</p>
+          <h1>
+            Cosa portiamo
+            <br />
+            <span>a tavola.</span>
+          </h1>
+          <p>
+            Pasta, brace e pizza. Scegli da dove cominciare, al resto pensiamo
+            noi.
+          </p>
+          <div className={styles.menuNotice}>
+            <Info size={15} aria-hidden="true" />
+            <span>
+              Allergie o intolleranze? Parlane con il personale prima di
+              ordinare.{" "}
+              {menu.costiAggiuntivi.coperto.visibile &&
+                `Coperto ${euro.format(menu.costiAggiuntivi.coperto.prezzo)}.`}
+            </span>
+          </div>
+        </div>
+        <figure className={styles.menuCover}>
+          <Image
+            src={homePhoto}
+            alt="Pizza di Richardus con burrata e capocollo"
+            fill
+            preload
+            sizes="(min-width: 1520px) 560px, (min-width: 768px) 38vw, calc(100vw - 32px)"
+          />
+          <figcaption>
+            <Badge>Ingredienti, carattere, gusto.</Badge>
+          </figcaption>
+        </figure>
       </header>
-      <nav aria-label="Categorie dei piatti" className="sticky top-[calc(5.5rem+1px)] z-20 border-y border-foreground/20 bg-background">
-        <ul className="mx-auto flex max-w-6xl gap-1 overflow-x-auto px-4 py-2 [scrollbar-width:thin] sm:px-8">
-          {categorie.map(([id, categoria]) => (
-            <li key={id} className="shrink-0">
-              <a href={`#${id}`} className="inline-flex min-h-11 items-center px-3 text-sm font-medium underline decoration-foreground/30 underline-offset-8 hover:decoration-foreground focus-visible:outline-2 focus-visible:outline-offset-[-2px]">{categoria.nome}</a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-      <div className="mx-auto max-w-6xl px-6 pb-12 sm:px-10">
-        <p className="mt-5 max-w-2xl text-sm leading-6 text-foreground/85">Allergie o intolleranze? Rivolgiti al personale prima di ordinare. {menu.costiAggiuntivi.coperto.visibile && `Coperto ${euro.format(menu.costiAggiuntivi.coperto.prezzo)}.`}</p>
-        {categorie.map(([id, categoria]) => (
-          <section key={id} id={id} aria-labelledby={`${id}-title`} className="scroll-mt-44 border-b border-foreground/20 py-9 sm:py-12 lg:grid lg:grid-cols-[1fr_2fr] lg:gap-16">
-            <div>
-              <h2 id={`${id}-title`} className="text-4xl leading-tight sm:text-5xl">{categoria.nome}</h2>
-              {categoria.descrizione && <p className="mt-3 max-w-md text-sm leading-6">{categoria.descrizione}</p>}
-            </div>
-            <div>
-              <ul className="mt-5 divide-y divide-foreground/15 lg:mt-0">
-                {prodotti.filter(([, prodotto]) => prodotto.categoria === id)
-                  .sort(([, a], [, b]) => a.ordine - b.ordine)
-                  .map(([prodottoId, prodotto]) => (
-                    <li key={prodottoId} className="py-5 first:pt-0">
-                      <div className="flex items-baseline justify-between gap-4">
-                        <h3 className="min-w-0 text-base font-medium leading-6">{displayName(prodotto.nome)}</h3>
-                        <p className="shrink-0 text-right text-sm tabular-nums">
-                          {euro.format(prodotto.prezzo)}
-                          {prodotto.prezzoMassimo !== null && <><br /><span>– {euro.format(prodotto.prezzoMassimo)}</span></>}
-                          {prodotto.prezzoAPersona && <span className="block text-xs leading-5">a persona</span>}
-                        </p>
-                      </div>
-                      {prodotto.descrizione && <p className="mt-2 max-w-2xl text-sm leading-6 text-foreground/85">{prodotto.descrizione}</p>}
-                    </li>
-                  ))}
-              </ul>
-              {id === "pizze" && <p className="mt-4 text-sm leading-6">{menu.costiAggiuntivi.aggiuntePizze.descrizione}</p>}
-            </div>
-          </section>
-        ))}
-      </div>
+      <MenuBrowser sections={sections} />
+      <MenuInfo />
       <Reservation />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(menuSchema()).replace(/</g, "\\u003c"),
+        }}
+      />
     </main>
   );
 }
