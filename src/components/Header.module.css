@@ -30,6 +30,7 @@
 .actions {
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 .mobileSheet {
   display: flex;
@@ -100,7 +101,7 @@
     display: inline-flex;
     align-items: center;
     min-height: 44px;
-    padding-inline: 17px;
+    padding-inline: 12px;
     font-size: 13px;
     font-weight: 500;
     border-radius: var(--radius-pill);

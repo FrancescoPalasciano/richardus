@@ -1,17 +1,14 @@
 import type { MetadataRoute } from "next";
+import { locales, localizeHref, languageAlternates } from "@/lib/locale";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    { url: "https://richardus.it", changeFrequency: "monthly", priority: 1 },
-    {
-      url: "https://richardus.it/menu",
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: "https://richardus.it/chi-siamo",
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-  ];
+  return locales.flatMap((locale) =>
+    ["/", "/menu", "/chi-siamo"].map((path) => ({
+      url: `https://richardus.it${localizeHref(path, locale)}`,
+      changeFrequency:
+        path === "/menu" ? ("weekly" as const) : ("monthly" as const),
+      priority: path === "/" ? 1 : path === "/menu" ? 0.9 : 0.7,
+      alternates: { languages: languageAlternates(path) },
+    })),
+  );
 }

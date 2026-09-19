@@ -20,6 +20,7 @@ import {
 import { restaurant } from "@/lib/restaurant";
 import styles from "./Header.module.css";
 import Brand from "./Brand";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const links = [
   { href: "/", label: "Home" },
@@ -89,6 +90,7 @@ export default function Header() {
           ))}
         </nav>
         <div className={styles.actions}>
+          <LanguageSwitcher />
           <Button asChild className={styles.desktopBooking}>
             <a
               href={restaurant.whatsapp}
