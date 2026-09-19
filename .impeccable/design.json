@@ -1,0 +1,479 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-19T14:38:13.066Z",
+  "title": "Design System: Richardus",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Argilla chiara",
+        "canonical": "#e7b18c",
+        "tonalRamp": [
+          "oklch(15.00% 0.08045 55.69)",
+          "oklch(26.43% 0.08045 55.69)",
+          "oklch(37.86% 0.08045 55.69)",
+          "oklch(49.29% 0.08045 55.69)",
+          "oklch(60.71% 0.08045 55.69)",
+          "oklch(72.14% 0.08045 55.69)",
+          "oklch(83.57% 0.08045 55.69)",
+          "oklch(95.00% 0.08045 55.69)"
+        ]
+      },
+      "primary-foreground": {
+        "role": "primary",
+        "displayName": "Testo argilla",
+        "canonical": "#28160e",
+        "tonalRamp": [
+          "oklch(15.00% 0.03305 44.58)",
+          "oklch(26.43% 0.03305 44.58)",
+          "oklch(37.86% 0.03305 44.58)",
+          "oklch(49.29% 0.03305 44.58)",
+          "oklch(60.71% 0.03305 44.58)",
+          "oklch(72.14% 0.03305 44.58)",
+          "oklch(83.57% 0.03305 44.58)",
+          "oklch(95.00% 0.03305 44.58)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Argilla scura",
+        "canonical": "#3d291f",
+        "tonalRamp": [
+          "oklch(15.00% 0.03479 47.53)",
+          "oklch(26.43% 0.03479 47.53)",
+          "oklch(37.86% 0.03479 47.53)",
+          "oklch(49.29% 0.03479 47.53)",
+          "oklch(60.71% 0.03479 47.53)",
+          "oklch(72.14% 0.03479 47.53)",
+          "oklch(83.57% 0.03479 47.53)",
+          "oklch(95.00% 0.03479 47.53)"
+        ]
+      },
+      "accent-foreground": {
+        "role": "primary",
+        "displayName": "Avorio caldo",
+        "canonical": "#f2d4bd",
+        "tonalRamp": [
+          "oklch(15.00% 0.04565 59.63)",
+          "oklch(26.43% 0.04565 59.63)",
+          "oklch(37.86% 0.04565 59.63)",
+          "oklch(49.29% 0.04565 59.63)",
+          "oklch(60.71% 0.04565 59.63)",
+          "oklch(72.14% 0.04565 59.63)",
+          "oklch(83.57% 0.04565 59.63)",
+          "oklch(95.00% 0.04565 59.63)"
+        ]
+      },
+      "olive": {
+        "role": "secondary",
+        "displayName": "Oliva profondo",
+        "canonical": "#242b20",
+        "tonalRamp": [
+          "oklch(15.00% 0.02203 134.23)",
+          "oklch(26.43% 0.02203 134.23)",
+          "oklch(37.86% 0.02203 134.23)",
+          "oklch(49.29% 0.02203 134.23)",
+          "oklch(60.71% 0.02203 134.23)",
+          "oklch(72.14% 0.02203 134.23)",
+          "oklch(83.57% 0.02203 134.23)",
+          "oklch(95.00% 0.02203 134.23)"
+        ]
+      },
+      "olive-foreground": {
+        "role": "secondary",
+        "displayName": "Testo oliva",
+        "canonical": "#d8dfc9",
+        "tonalRamp": [
+          "oklch(15.00% 0.03043 121.40)",
+          "oklch(26.43% 0.03043 121.40)",
+          "oklch(37.86% 0.03043 121.40)",
+          "oklch(49.29% 0.03043 121.40)",
+          "oklch(60.71% 0.03043 121.40)",
+          "oklch(72.14% 0.03043 121.40)",
+          "oklch(83.57% 0.03043 121.40)",
+          "oklch(95.00% 0.03043 121.40)"
+        ]
+      },
+      "background": {
+        "role": "neutral",
+        "displayName": "Nero",
+        "canonical": "#000000",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 0.00)",
+          "oklch(26.43% 0.00000 0.00)",
+          "oklch(37.86% 0.00000 0.00)",
+          "oklch(49.29% 0.00000 0.00)",
+          "oklch(60.71% 0.00000 0.00)",
+          "oklch(72.14% 0.00000 0.00)",
+          "oklch(83.57% 0.00000 0.00)",
+          "oklch(95.00% 0.00000 0.00)"
+        ]
+      },
+      "foreground": {
+        "role": "neutral",
+        "displayName": "Avorio",
+        "canonical": "#f5f2ea",
+        "tonalRamp": [
+          "oklch(15.00% 0.01109 89.72)",
+          "oklch(26.43% 0.01109 89.72)",
+          "oklch(37.86% 0.01109 89.72)",
+          "oklch(49.29% 0.01109 89.72)",
+          "oklch(60.71% 0.01109 89.72)",
+          "oklch(72.14% 0.01109 89.72)",
+          "oklch(83.57% 0.01109 89.72)",
+          "oklch(95.00% 0.01109 89.72)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Carbone",
+        "canonical": "#101010",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 89.88)",
+          "oklch(26.43% 0.00000 89.88)",
+          "oklch(37.86% 0.00000 89.88)",
+          "oklch(49.29% 0.00000 89.88)",
+          "oklch(60.71% 0.00000 89.88)",
+          "oklch(72.14% 0.00000 89.88)",
+          "oklch(83.57% 0.00000 89.88)",
+          "oklch(95.00% 0.00000 89.88)"
+        ]
+      },
+      "surface-secondary": {
+        "role": "neutral",
+        "displayName": "Carbone secondario",
+        "canonical": "#1c1c1c",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 89.88)",
+          "oklch(26.43% 0.00000 89.88)",
+          "oklch(37.86% 0.00000 89.88)",
+          "oklch(49.29% 0.00000 89.88)",
+          "oklch(60.71% 0.00000 89.88)",
+          "oklch(72.14% 0.00000 89.88)",
+          "oklch(83.57% 0.00000 89.88)",
+          "oklch(95.00% 0.00000 89.88)"
+        ]
+      },
+      "surface-elevated": {
+        "role": "neutral",
+        "displayName": "Superficie elevata",
+        "canonical": "#151515",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 89.88)",
+          "oklch(26.43% 0.00000 89.88)",
+          "oklch(37.86% 0.00000 89.88)",
+          "oklch(49.29% 0.00000 89.88)",
+          "oklch(60.71% 0.00000 89.88)",
+          "oklch(72.14% 0.00000 89.88)",
+          "oklch(83.57% 0.00000 89.88)",
+          "oklch(95.00% 0.00000 89.88)"
+        ]
+      },
+      "muted-foreground": {
+        "role": "neutral",
+        "displayName": "Grigio caldo",
+        "canonical": "#bcb8af",
+        "tonalRamp": [
+          "oklch(15.00% 0.01333 86.84)",
+          "oklch(26.43% 0.01333 86.84)",
+          "oklch(37.86% 0.01333 86.84)",
+          "oklch(49.29% 0.01333 86.84)",
+          "oklch(60.71% 0.01333 86.84)",
+          "oklch(72.14% 0.01333 86.84)",
+          "oklch(83.57% 0.01333 86.84)",
+          "oklch(95.00% 0.01333 86.84)"
+        ]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Bordo grafite",
+        "canonical": "#333333",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 89.88)",
+          "oklch(26.43% 0.00000 89.88)",
+          "oklch(37.86% 0.00000 89.88)",
+          "oklch(49.29% 0.00000 89.88)",
+          "oklch(60.71% 0.00000 89.88)",
+          "oklch(72.14% 0.00000 89.88)",
+          "oklch(83.57% 0.00000 89.88)",
+          "oklch(95.00% 0.00000 89.88)"
+        ]
+      },
+      "dark": {
+        "role": "neutral",
+        "displayName": "Sezione scura",
+        "canonical": "#111111",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 89.88)",
+          "oklch(26.43% 0.00000 89.88)",
+          "oklch(37.86% 0.00000 89.88)",
+          "oklch(49.29% 0.00000 89.88)",
+          "oklch(60.71% 0.00000 89.88)",
+          "oklch(72.14% 0.00000 89.88)",
+          "oklch(83.57% 0.00000 89.88)",
+          "oklch(95.00% 0.00000 89.88)"
+        ]
+      },
+      "dark-foreground": {
+        "role": "neutral",
+        "displayName": "Avorio su scuro",
+        "canonical": "#f5f2ea",
+        "tonalRamp": [
+          "oklch(15.00% 0.01109 89.72)",
+          "oklch(26.43% 0.01109 89.72)",
+          "oklch(37.86% 0.01109 89.72)",
+          "oklch(49.29% 0.01109 89.72)",
+          "oklch(60.71% 0.01109 89.72)",
+          "oklch(72.14% 0.01109 89.72)",
+          "oklch(83.57% 0.01109 89.72)",
+          "oklch(95.00% 0.01109 89.72)"
+        ]
+      },
+      "dark-muted": {
+        "role": "neutral",
+        "displayName": "Grigio su scuro",
+        "canonical": "#c3c3b7",
+        "tonalRamp": [
+          "oklch(15.00% 0.01650 106.76)",
+          "oklch(26.43% 0.01650 106.76)",
+          "oklch(37.86% 0.01650 106.76)",
+          "oklch(49.29% 0.01650 106.76)",
+          "oklch(60.71% 0.01650 106.76)",
+          "oklch(72.14% 0.01650 106.76)",
+          "oklch(83.57% 0.01650 106.76)",
+          "oklch(95.00% 0.01650 106.76)"
+        ]
+      },
+      "ring": {
+        "role": "primary",
+        "displayName": "Focus argilla",
+        "canonical": "#e7b18c",
+        "tonalRamp": [
+          "oklch(15.00% 0.08045 55.69)",
+          "oklch(26.43% 0.08045 55.69)",
+          "oklch(37.86% 0.08045 55.69)",
+          "oklch(49.29% 0.08045 55.69)",
+          "oklch(60.71% 0.08045 55.69)",
+          "oklch(72.14% 0.08045 55.69)",
+          "oklch(83.57% 0.08045 55.69)",
+          "oklch(95.00% 0.08045 55.69)"
+        ]
+      },
+      "overlay": {
+        "role": "neutral",
+        "displayName": "Sovrapposizione",
+        "canonical": "rgb(24 24 21 / 42%)",
+        "tonalRamp": [
+          "oklch(15.00% 0.00579 106.89 / 42%)",
+          "oklch(26.43% 0.00579 106.89 / 42%)",
+          "oklch(37.86% 0.00579 106.89 / 42%)",
+          "oklch(49.29% 0.00579 106.89 / 42%)",
+          "oklch(60.71% 0.00579 106.89 / 42%)",
+          "oklch(72.14% 0.00579 106.89 / 42%)",
+          "oklch(83.57% 0.00579 106.89 / 42%)",
+          "oklch(95.00% 0.00579 106.89 / 42%)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Titolo di apertura",
+        "purpose": "Hero della home; scala fluida e composizione a sinistra."
+      },
+      "headline": {
+        "displayName": "Titolo di sezione",
+        "purpose": "Gerarchia delle sezioni condivise."
+      },
+      "title": {
+        "displayName": "Titolo breve",
+        "purpose": "Anteprime dei piatti."
+      },
+      "body": {
+        "displayName": "Testo base",
+        "purpose": "Testo globale; i componenti definiscono le varianti compatte."
+      },
+      "label": {
+        "displayName": "Controllo",
+        "purpose": "Azioni principali e pulsanti."
+      },
+      "editorial-label": {
+        "displayName": "Etichetta editoriale",
+        "purpose": "Etichette brevi maiuscole approvate dal brief."
+      }
+    },
+    "shadows": [
+      {
+        "name": "shadow-soft",
+        "value": "0 8px 28px rgb(36 37 31 / 6%)",
+        "purpose": "Elementi sospesi: header, dock e dialoghi."
+      }
+    ],
+    "motion": [
+      {
+        "name": "motion-press",
+        "value": "150ms",
+        "purpose": "Durata condivisa per pressione, feedback o entrata."
+      },
+      {
+        "name": "motion-feedback",
+        "value": "200ms",
+        "purpose": "Durata condivisa per pressione, feedback o entrata."
+      },
+      {
+        "name": "motion-enter",
+        "value": "300ms",
+        "purpose": "Durata condivisa per pressione, feedback o entrata."
+      },
+      {
+        "name": "ease-out-quart",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Entrate sobrie di sezioni e pannelli."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "two-columns",
+        "value": "600px"
+      },
+      {
+        "name": "split-layout",
+        "value": "768px"
+      },
+      {
+        "name": "desktop-navigation",
+        "value": "1024px"
+      },
+      {
+        "name": "three-column-menu",
+        "value": "1280px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Button primary",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Variante esistente del pulsante Richardus; il testo dipende dall’azione.",
+      "html": "<button type=\"button\" class=\"ds-control ds-button ds-button-primary\">Prenota un tavolo</button>",
+      "css": ".ds-button {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  gap: 10px;\n  min-height: 48px;\n  padding: 12px 22px;\n  border-radius: var(--radius-pill);\n  font-size: 13px;\n  line-height: 1.4;\n  font-weight: 600;\n  text-align: center;\n  transition:\n    background-color var(--motion-feedback),\n    transform var(--motion-press),\n    color var(--motion-feedback);\n}.ds-button-primary {\n  background: var(--primary);\n  color: var(--primary-foreground);\n}.ds-button-primary:hover {\n  background: var(--accent-foreground);\n}.ds-button:active:not(:disabled) {\n  transform: translateY(1px);\n}.ds-button:disabled {\n  opacity: 0.45;\n}.ds-control:focus-visible{outline:2px solid var(--ring);outline-offset:4px;}.ds-button{font-family:var(--font-manrope),Arial,sans-serif;border:0;} .ds-button-outline,.ds-button-ghost{color:var(--foreground);}"
+    },
+    {
+      "name": "Button secondary",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Variante esistente del pulsante Richardus; il testo dipende dall’azione.",
+      "html": "<button type=\"button\" class=\"ds-control ds-button ds-button-secondary\">Scopri il menu</button>",
+      "css": ".ds-button {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  gap: 10px;\n  min-height: 48px;\n  padding: 12px 22px;\n  border-radius: var(--radius-pill);\n  font-size: 13px;\n  line-height: 1.4;\n  font-weight: 600;\n  text-align: center;\n  transition:\n    background-color var(--motion-feedback),\n    transform var(--motion-press),\n    color var(--motion-feedback);\n}.ds-button-secondary {\n  background: var(--surface-secondary);\n  color: var(--foreground);\n}.ds-button-secondary:hover {\n  background: var(--border);\n}.ds-button:active:not(:disabled) {\n  transform: translateY(1px);\n}.ds-button:disabled {\n  opacity: 0.45;\n}.ds-control:focus-visible{outline:2px solid var(--ring);outline-offset:4px;}.ds-button{font-family:var(--font-manrope),Arial,sans-serif;border:0;} .ds-button-outline,.ds-button-ghost{color:var(--foreground);}"
+    },
+    {
+      "name": "Button outline",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Variante esistente del pulsante Richardus; il testo dipende dall’azione.",
+      "html": "<button type=\"button\" class=\"ds-control ds-button ds-button-outline\">Scopri il menu</button>",
+      "css": ".ds-button {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  gap: 10px;\n  min-height: 48px;\n  padding: 12px 22px;\n  border-radius: var(--radius-pill);\n  font-size: 13px;\n  line-height: 1.4;\n  font-weight: 600;\n  text-align: center;\n  transition:\n    background-color var(--motion-feedback),\n    transform var(--motion-press),\n    color var(--motion-feedback);\n}.ds-button-outline {\n  border: 1px solid var(--border);\n  background: transparent;\n}.ds-button-outline:hover{background:var(--surface-secondary);}.ds-button:active:not(:disabled) {\n  transform: translateY(1px);\n}.ds-button:disabled {\n  opacity: 0.45;\n}.ds-control:focus-visible{outline:2px solid var(--ring);outline-offset:4px;}.ds-button{font-family:var(--font-manrope),Arial,sans-serif;} .ds-button-outline,.ds-button-ghost{color:var(--foreground);}"
+    },
+    {
+      "name": "Button ghost",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Variante esistente del pulsante Richardus; il testo dipende dall’azione.",
+      "html": "<button type=\"button\" class=\"ds-control ds-button ds-button-ghost\">Scopri il menu</button>",
+      "css": ".ds-button {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  gap: 10px;\n  min-height: 48px;\n  padding: 12px 22px;\n  border-radius: var(--radius-pill);\n  font-size: 13px;\n  line-height: 1.4;\n  font-weight: 600;\n  text-align: center;\n  transition:\n    background-color var(--motion-feedback),\n    transform var(--motion-press),\n    color var(--motion-feedback);\n}.ds-button-ghost {\n  background: transparent;\n}.ds-button-ghost:hover{background:var(--surface-secondary);}.ds-button:active:not(:disabled) {\n  transform: translateY(1px);\n}.ds-button:disabled {\n  opacity: 0.45;\n}.ds-control:focus-visible{outline:2px solid var(--ring);outline-offset:4px;}.ds-button{font-family:var(--font-manrope),Arial,sans-serif;border:0;} .ds-button-outline,.ds-button-ghost{color:var(--foreground);}"
+    },
+    {
+      "name": "Button light",
+      "kind": "button",
+      "refersTo": "button-light",
+      "description": "Variante esistente del pulsante Richardus; il testo dipende dall’azione.",
+      "html": "<button type=\"button\" class=\"ds-control ds-button ds-button-light\">Prenota un tavolo</button>",
+      "css": ".ds-button {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  gap: 10px;\n  min-height: 48px;\n  padding: 12px 22px;\n  border-radius: var(--radius-pill);\n  font-size: 13px;\n  line-height: 1.4;\n  font-weight: 600;\n  text-align: center;\n  transition:\n    background-color var(--motion-feedback),\n    transform var(--motion-press),\n    color var(--motion-feedback);\n}.ds-button-light {\n  background: var(--primary);\n  color: var(--primary-foreground);\n}.ds-button-light:hover {\n  background: var(--accent-foreground);\n}.ds-button:active:not(:disabled) {\n  transform: translateY(1px);\n}.ds-button:disabled {\n  opacity: 0.45;\n}.ds-control:focus-visible{outline:2px solid var(--ring);outline-offset:4px;}.ds-button{font-family:var(--font-manrope),Arial,sans-serif;border:0;} .ds-button-outline,.ds-button-ghost{color:var(--foreground);}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Link della navigazione desktop, con Home esplicita. Il logo è l’asset originale gestito da Brand.tsx.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Navigazione principale\"><a class=\"ds-control\" href=\"/\" aria-current=\"page\">Home</a><a class=\"ds-control\" href=\"/menu\">Menu</a><a class=\"ds-control\" href=\"/chi-siamo\">Chi siamo</a></nav>",
+      "css": ".ds-nav{display:flex;flex-wrap:wrap;gap:8px;padding:10px 12px;background:var(--background);color:var(--foreground);border:1px solid var(--border);border-radius:var(--radius-pill);font-family:var(--font-manrope),Arial,sans-serif;}.ds-nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;color:inherit;text-decoration:none;font-size:13px;font-weight:500;border-radius:var(--radius-pill);transition:background var(--motion-feedback);}.ds-nav a:hover,.ds-nav a[aria-current=\"page\"]{background:var(--surface-secondary);}.ds-control:focus-visible{outline:2px solid var(--ring);outline-offset:4px;}"
+    },
+    {
+      "name": "Badge",
+      "kind": "chip",
+      "refersTo": "badge",
+      "description": "Etichetta informativa breve, priva di comportamento interattivo.",
+      "html": "<span class=\"ds-badge\">Cucina pugliese</span>",
+      "css": ".ds-badge {\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  min-height: 26px;\n  padding: 4px 10px;\n  font-size: 10px;\n  font-weight: 600;\n  letter-spacing: 0.045em;\n  border-radius: var(--radius-pill);\n  background: var(--surface-secondary);\n  color: var(--foreground);\n}.ds-badge{font-family:var(--font-manrope),Arial,sans-serif;}"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Superficie base opaca; padding e contenuti sono definiti dal componente che la usa.",
+      "html": "<div class=\"ds-card\"><p class=\"ds-card-copy\">Cucina pugliese, il piacere di stare a tavola.</p></div>",
+      "css": ".ds-card {\n  background: var(--surface);\n  border-radius: var(--radius-lg);\n}.ds-card{color:var(--foreground);font-family:var(--font-manrope),Arial,sans-serif;padding:28px;}.ds-card-copy{margin:0;font-size:15px;line-height:1.8;}"
+    },
+    {
+      "name": "Category",
+      "kind": "chip",
+      "refersTo": "category-active",
+      "description": "Aspetto selezionato della categoria; nel sito il comportamento è fornito da Tabs Radix.",
+      "html": "<button type=\"button\" class=\"ds-control ds-tab\" aria-pressed=\"true\">Primi</button>",
+      "css": ".ds-tab {\n  min-height: 44px;\n  flex-shrink: 0;\n  padding: 10px 20px;\n  border-radius: var(--radius-pill);\n  font-size: 13px;\n  font-weight: 600;\n  white-space: nowrap;\n  transition:\n    background var(--motion-feedback),\n    color var(--motion-feedback);\n}.ds-tab:hover {\n  background: var(--surface-secondary);\n}.ds-tab[aria-pressed=\"true\"] {\n  background: var(--foreground);\n  color: var(--surface);\n}.ds-tab{border:0;font-family:var(--font-manrope),Arial,sans-serif;}.ds-control:focus-visible{outline:2px solid var(--ring);outline-offset:4px;}"
+    },
+    {
+      "name": "Language selector",
+      "kind": "input",
+      "description": "Selettore nativo con nome accessibile. Il routing e la conservazione dell’hash sono gestiti nel sito da LanguageSwitcher.",
+      "html": "<label class=\"ds-language\"><span class=\"ds-sr\">Lingua</span><select aria-label=\"Lingua\"><option value=\"it\">IT</option><option value=\"en\">EN</option><option value=\"fr\">FR</option><option value=\"de\">DE</option></select></label>",
+      "css": ".ds-language select {\n  width: 70px;\n  min-height: 44px;\n  padding: 8px 4px;\n  background: var(--background);\n  color: var(--foreground);\n  border: 0;\n  border-radius: var(--radius-sm);\n  font: inherit;\n  font-size: 12px;\n  cursor: pointer;\n}.ds-language select:focus-visible {\n  outline: 2px solid var(--ring);\n  outline-offset: 2px;\n}.ds-language{font-family:var(--font-manrope),Arial,sans-serif;}.ds-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);}"
+    }
+  ],
+  "narrative": {
+    "northStar": "La trattoria, dopo il tramonto",
+    "overview": "Richardus presenta la trattoria storica su un fondo nero continuo. Testo avorio, controlli color argilla chiara e fotografie reali di ambienti e cucina danno gerarchia alla pagina. Manrope unifica titoli, contenuti e interfaccia; il logo orizzontale fornito conserva l’identità dell’attività.\n\nLa composizione alterna fotografie, moduli scuri e informazioni compatte. Titoli a sinistra e azioni esplicite rendono il percorso leggibile nelle quattro lingue. Le entrate sono brevi dissolvenze; il contenuto iniziale rimane visibile prima di JavaScript.\n\n**Key Characteristics:",
+    "keyCharacteristics": [
+      "Fondo nero e superfici scure, testo avorio e accenti caldi.",
+      "Manrope unica famiglia dell’interfaccia e logo orizzontale originale.",
+      "Fotografie autentiche, una collocazione per immagine in ogni lingua.",
+      "Navigazione sospesa con Home e selettore IT, EN, FR, DE.",
+      "Gerarchia adattabile alle traduzioni e movimento leggero."
+    ],
+    "rules": [
+      {
+        "name": "The Contrast Rule",
+        "body": "Conserva le coppie testo/sfondo dei token e verifica anche hover, focus e selezione sul fondo nero.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Family Rule",
+        "body": "Mantieni Manrope in tutti i ruoli dell’interfaccia; differenzia la gerarchia con scala, peso, contrasto e spazio.",
+        "section": "typography"
+      },
+      {
+        "name": "The Content First Rule",
+        "body": "Mantieni proposta, prezzi e azioni leggibili a 320px in tutte le lingue; cambia colonne e proporzioni senza nascondere informazioni essenziali.",
+        "section": "layout"
+      },
+      {
+        "name": "The Quiet Depth Rule",
+        "body": "Usa l’ombra condivisa per elementi sospesi; le schede restano superfici scure senza elevazione decorativa.",
+        "section": "elevation & depth"
+      }
+    ],
+    "dos": [
+      "**Do** riutilizzare token e primitive esistenti, verificandoli sul tema nero.",
+      "**Do** conservare logo orizzontale e fotografie originali con proporzioni dichiarate.",
+      "**Do** verificare focus, tastiera e testi nelle quattro lingue da 320px.",
+      "**Do** mantenere prezzi, contatti e conferma della prenotazione leggibili e specifici."
+    ],
+    "donts": [
+      "**Don't** introdurre superfici generali chiare o targhette aggiunte dietro il logo.",
+      "**Don't** aggiungere serif, font script o altre famiglie all’interfaccia.",
+      "**Don't** usare fotografie generate, stock esterno o duplicare le foto nel percorso di una lingua.",
+      "**Don't** copiare asset o composizioni complete di Plate.",
+      "**Don't** subordinare contenuti essenziali ad autoplay, hover o animazioni.\r"
+    ]
+  }
+}

@@ -1,70 +1,73 @@
 # Richardus
 
-Base per il sito di un ristorante con Next.js 16, React 19, TypeScript, Tailwind CSS 4 e App Router.
-La home presenta il ristorante con una foto e i pulsanti di contatto; sono disponibili anche le pagine Menu e Chi siamo.
+Sito della trattoria storica Richardus a Francavilla Fontana, in italiano, inglese, francese e tedesco. Stack: Next.js 16.3.5, React 19.2.8, TypeScript e Tailwind CSS 4. Le venti pagine sono generate staticamente; menu e contenuti principali sono presenti nell’HTML iniziale.
 
 ## Sviluppo locale
 
-Versione consigliata: Node.js 24 LTS, indicata anche in `.nvmrc` e usata nel Dockerfile.
-Le dipendenze sono gestite con npm e `package-lock.json`.
+Node.js 24 LTS è indicato in `.nvmrc` e usato nel Dockerfile. Le dipendenze sono gestite con npm e `package-lock.json`.
 
 ```bash
 npm ci
 npm run dev
 ```
 
-Apri [http://localhost:3000](http://localhost:3000).
-Docker non è necessario durante lo sviluppo locale.
+Apri [http://localhost:3000](http://localhost:3000). Docker non è necessario durante lo sviluppo locale.
 
 ## File principali
 
-- `src/app/page.tsx`: pagina iniziale.
-- `src/app/layout.tsx`: layout, lingua e metadati.
-- `src/app/globals.css`: Tailwind, colori e font.
-- `src/components/PageHero.tsx`: sezione fotografica condivisa dai titoli delle tre pagine.
-- `src/app/images/home.webp`: foto usata come sfondo, ottimizzata da `next/image`.
-- `public/`: immagini e altri file pubblici.
+- `src/app/(it)/`: cinque pagine italiane e layout italiano.
+- `src/app/[locale]/[[...slug]]/page.tsx`: generazione delle quindici pagine EN/FR/DE, metadata e gestione dei percorsi non validi.
+- `src/app/[locale]/layout.tsx` e `src/components/AppShell.tsx`: layout condiviso, lingua HTML, font, metadata generali, JSON-LD e provider client.
+- `src/lib/locale.ts`, `src/lib/i18n.ts`, `src/lib/translate.ts` e `src/lib/localize.tsx`: percorsi localizzati, catalogo, traduttore e trasformazione dei contenuti renderizzabili.
+- `src/data/translations.json`: traduzioni EN/FR/DE delle stringhe sorgente italiane.
+- `src/components/HomeSections.tsx`, `Header.tsx`, `Footer.tsx` e `Reservation.tsx`: sezioni e navigazione condivise.
+- `src/components/ui/`: primitive personalizzate su Radix e varianti dei pulsanti.
+- `src/data/menu.json` e `src/lib/menu.ts`: contenuti e presentazione delle 42 proposte in otto categorie.
+- `src/lib/restaurant.ts`: telefono, indirizzo e link WhatsApp, Maps e recensioni.
+- `src/app/globals.css` e moduli CSS: tema scuro, token e layout; `DESIGN.md` e `.impeccable/design.json` documentano il sistema.
 - `next.config.ts`: configurazione Next.js e output standalone.
 
-Tailwind 4 è configurato con `@tailwindcss/postcss` e `@theme` nel CSS; non serve un `tailwind.config.js` per questa base.
-I font sono inclusi nel progetto, quindi la build non richiede download da Google Fonts.
+Tailwind 4 usa `@tailwindcss/postcss` e `@theme` nel CSS. Il contesto approvato è in `PRODUCT.md`; le evidenze di verifica sono in `docs/redesign-review.md`.
 
-I collegamenti “Chiama ora” e “Scrivici” della home sono configurati in `src/app/page.tsx`: numero `+39 329 009 0918` e messaggio WhatsApp precompilato “Salve vorrei prenotare un tavolo per le x per x persone a nome di x”. Il visitatore può modificare e inviare il messaggio in WhatsApp; il sito non lo invia automaticamente.
+## Lingue e indicizzazione
+
+L’italiano usa `/`, `/menu`, `/chi-siamo`, `/privacy-policy` e `/cookie-policy`; le altre lingue aggiungono `/en`, `/fr` o `/de` agli stessi percorsi. Il selettore conserva pagina e hash della categoria. Le root layout separate permettono di impostare correttamente `html lang` anche al cambio lingua; condividono `AppShell.tsx`.
+
+Il catalogo è importato lato server. `LocaleProvider` riceve i messaggi della sola lingua selezionata; `localizeTree` traduce testo, proprietà di presentazione e collegamenti interni prima del rendering, lasciando invariati ID, dati e comportamento. Le nuove stringhe visibili e accessibili devono avere le tre traduzioni nel catalogo. Le citazioni delle recensioni mantengono testo e lingua originali.
+
+Canonical e `hreflang` collegano le quattro versioni. La sitemap contiene le dodici pagine di contenuto indicizzabili. Le otto versioni delle pagine legali restano `noindex`. Gli endpoint `/icon` e `/opengraph-image` usano il logo orizzontale fornito.
+
+## Identità, fotografie e tipografia
+
+Tema nero, superfici scure e accenti caldi. `Brand.tsx` usa `src/app/images/logo.webp` in navigazione, pannello mobile, contatti e footer, senza aggiungere una targhetta. La navigazione include Home.
+
+Ogni fotografia ha un solo impiego per lingua: `interno2.jpg` nell’apertura della home, `interno.jpg` nel suo modulo narrativo, foto di orecchiette/fave/entrecôte nel carosello, insalata in Chi siamo e `vino.webp` nel menu. `home.webp` non viene usata. Nessuna immagine generata o stock esterno è integrata. Altri file presenti nella cartella non implicano l’uso sul sito.
+
+Manrope è l’unico font dell’interfaccia: WOFF2 variabile latino locale, intervallo 400–700, circa 24,8KB, caricato tramite `next/font/local` da `AppShell.tsx`, con `display: swap` e fallback Arial adattato. Proviene dalla dipendenza `@fontsource-variable/manrope`, distribuita con licenza SIL OFL. Non ci sono richieste a Google Fonts durante build o navigazione. Il lettering del logo resta quello dell’immagine fornita.
+
+## Prenotazioni, menu e recensioni
+
+Le CTA aprono il link WhatsApp configurato in `src/lib/restaurant.ts`, con messaggio precompilato modificabile. Il sito non lo invia automaticamente; la prenotazione richiede conferma del ristorante. Il numero telefonico è `+39 329 009 0918`.
+
+Il menu usa Tabs Radix, categorie raggiungibili tramite hash e frecce di scorrimento quando necessarie. Tutte le proposte rimangono nell’HTML iniziale. I conteggi sono esclusi dall’interfaccia. Le informazioni su allergie e coperto rimangono disponibili; non si dichiarano allergeni dei singoli piatti come verificati.
+
+`ReviewsCarousel.tsx` mostra cinque estratti autentici in `src/data/reviews.ts`, verificati sul profilo Google il 19 settembre 2026. La selezione conserva testo e attribuzione; non è un feed automatico. Il link visibile apre tutte le recensioni Google. Non carica script o avatar esterni e non usa cookie o localStorage.
+
+Piatti e recensioni usano `DishCarousel.tsx` con Embla: trascinamento, pulsanti e frecce della tastiera, senza rotazione automatica. Le slide sono server-rendered e i controlli rispettano il movimento ridotto.
+
+## Movimento e accessibilità
+
+`ScrollReveal.tsx` usa Motion per i blocchi `data-reveal`: una dissolvenza di 300ms da opacità 0.35 a 1 e traslazione da 8px a 0, una volta per elemento durante la visita alla pagina. I contenuti sono già visibili nell’HTML iniziale. Il componente completa le animazioni quando si attiva `prefers-reduced-motion` e le ripulisce al cambio percorso.
+
+Le primitive Radix gestiscono focus e tastiera per pannello mobile, categorie e disclosure. CSS e hook riducono il movimento quando richiesto. L’header è sticky; il dock mobile mostra le azioni rapide quando il blocco prenotazione non è visibile.
 
 ## Footer, privacy e cookie
 
-Il footer condiviso (`src/components/Footer.tsx`) contiene contatti, orari, navigazione e i link diretti ai profili Instagram di Richardus e Senza Freno Digital.
+Il footer condiviso contiene contatti, orari, navigazione e link diretti ai profili Instagram di Richardus e Senza Freno Digital.
 
-Le pagine `/privacy-policy` e `/cookie-policy` sono bozze con `noindex`: per richiesta del committente ragione sociale, partita IVA, sede legale e contatto privacy restano vuoti. Prima della pubblicazione vanno completati e verificati anche hosting, log, destinatari, conservazione e trasferimenti; poi può essere rimossa l'esclusione dall'indicizzazione. Queste bozze non attestano la conformità del sito.
+Le pagine privacy e cookie sono bozze `noindex`: per richiesta del committente ragione sociale, partita IVA, sede legale e contatto privacy restano vuoti. Prima della pubblicazione vanno completati e verificati anche hosting, log, destinatari, conservazione e trasferimenti; solo dopo può essere rimossa l’esclusione dall’indicizzazione. Le traduzioni mantengono lo stesso stato di bozza. Queste pagine non attestano la conformità del sito.
 
-Il carosello locale in `ReviewsCarousel.tsx` mostra otto estratti autentici selezionati in `src/data/reviews.ts`, verificati sul profilo Google il 19 settembre 2026. Non è un feed aggiornato automaticamente: modificare il file per aggiornare la selezione, mantenendo testo e attribuzione fedeli. Il collegamento visibile apre tutte le recensioni su Google. Non carica script o avatar esterni e non usa cookie o localStorage.
-
-La rotazione cambia citazione ogni 8 secondi solo quando il carosello è visibile e la scheda attiva. Pausa al passaggio del mouse, arresto al focus o alla navigazione manuale, ripresa esplicita. Con movimento ridotto la rotazione e le transizioni sono disattivate. Le card scorrono in un contenitore nativo con scroll snap: una card con anticipo della successiva su mobile, due su tablet, tre su desktop. Indicatori di gruppo cliccabili, swipe e frecce della tastiera consentono la navigazione; il pulsante pausa resta disponibile. Tutti gli estratti sono accessibili anche senza JavaScript. Le card condividono l’altezza della riga evitando salti.
-
-La mappa incorporata in `GoogleMap.tsx` resta facoltativa: consenso esplicito non memorizzato e pulsante “Disattiva la mappa”. I normali link a Instagram, WhatsApp e Google non sono embed. Le vecchie preferenze Elfsight non sono più lette; si possono eliminare dalle impostazioni del browser.
-
-## Animazioni allo scorrimento
-
-`src/components/ScrollReveal.tsx`, incluso nel layout, gestisce con GSAP e ScrollTrigger i blocchi con attributo `data-reveal`. Prepara solo quelli sotto lo schermo con `data-reveal-state="pending"`, poi al primo ingresso applica una dissolvenza di 850 ms con spostamento dal basso di 28 px e easing `power2.out`. L'effetto è attivo sui blocchi della sezione contatti e sulle parti principali del footer. La sezione recensioni ha uno sfondo sabbia separato dal resto della pagina.
-
-Per aggiungerlo a un nuovo blocco basta usare `<section data-reveal>...</section>` (o l'elemento semantico appropriato). Evitare blocchi annidati entrambi animati. Il contenuto è presente e visibile nell'HTML iniziale: senza JavaScript o con movimento ridotto rimane leggibile. Lo stato nascosto viene applicato solo dal codice client ai blocchi fuori schermo. I blocchi già visibili all'apertura non sono animati; il focus da tastiera rende visibile il blocco anche se era in attesa. Le istanze ScrollTrigger vengono ricreate al cambio pagina e ripulite insieme a tween e stati di attesa; anche la stampa mostra tutti i contenuti.
-
-Il verde comune a header, pannelli di navigazione e footer è `#17271f`; l'header conserva una leggera trasparenza.
-
-## Tipografia
-
-La coppia scelta per Richardus è **EB Garamond + Work Sans**, consigliata nelle linee guida Markdown per ristoranti storici e cucina tradizionale:
-
-| Font        | Utilizzo                                                               | Pesi utilizzati |
-| ----------- | ---------------------------------------------------------------------- | --------------- |
-| EB Garamond | Titoli di pagina e di sezione, classe `font-serif`                     | 500             |
-| Work Sans   | Testi, header, categorie, nomi dei piatti e prezzi, classe `font-sans` | 400 e 500       |
-
-Il serif richiama la tradizione del ristorante; il sans-serif mantiene leggibili navigazione e menu anche su mobile. Il logo originale rimane un'immagine e non viene ridisegnato.
-
-I due file WOFF2 variabili con subset latino sono in `src/app/fonts/` (circa 92 KiB complessivi). Sono caricati con `next/font/local`, `font-display: swap` e fallback con metriche adattate. Non vengono effettuate richieste a Google Fonts, né durante la build né dal browser; non sono caricati corsivi o altri subset.
-
-Le variabili `--font-work-sans` e `--font-eb-garamond` sono definite in `src/app/layout.tsx` e collegate ai token Tailwind in `src/app/globals.css`. Le licenze SIL Open Font License 1.1 sono conservate accanto ai file. Origine dei font: pacchetti Fontsource `@fontsource-variable/eb-garamond` e `@fontsource-variable/work-sans`; non sono dipendenze dell'applicazione.
+La mappa in `GoogleMap.tsx` resta facoltativa: l’apertura della disclosure non carica Google, serve il consenso esplicito. Il consenso non è memorizzato e “Disattiva la mappa” rimuove l’iframe. I normali link a Instagram, WhatsApp e Google non sono embed. Le vecchie preferenze Elfsight non sono più lette e possono essere eliminate dalle impostazioni del browser.
 
 ## Verifiche
 
@@ -72,7 +75,10 @@ Le variabili `--font-work-sans` e `--font-eb-garamond` sono definite in `src/app
 npm run lint
 npm run typecheck
 npm run build
+npm run verify
 ```
+
+`verify` controlla l’output generato in `.next/server/app`: eseguirlo dopo la build. Lo script verifica contenuti, lingue, link, menu, metadata e vincoli degli asset. Le verifiche visive e i limiti delle misure prestazionali sono registrati separatamente in `docs/redesign-review.md`.
 
 ## Pubblicazione su Coolify
 
