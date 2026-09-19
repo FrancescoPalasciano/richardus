@@ -15,9 +15,11 @@ import styles from "@/app/Home.module.css";
 export default function DishCarousel({
   children,
   label = "I piatti Richardus",
+  hint = "Da assaggiare. Da condividere.",
 }: {
   children: ReactNode;
   label?: string;
+  hint?: string;
 }) {
   const reduce = useReducedMotion();
   const [ref, api] = useEmblaCarousel({
@@ -67,7 +69,7 @@ export default function DishCarousel({
         <div className={styles.carouselTrack}>{children}</div>
       </div>
       <div className={`${styles.carouselControls} carousel-controls`}>
-        <p>Da assaggiare. Da condividere.</p>
+        <p>{hint}</p>
         <div>
           <span
             className={styles.carouselCount}
