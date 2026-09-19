@@ -15,8 +15,10 @@ const manrope = localFont({
   adjustFontFallback: "Arial",
 });
 export const metadata: Metadata = {
+  metadataBase: new URL("https://richardus.it"),
+  alternates: { canonical: "/" },
   title: {
-    default: "Richardus | Ristorante",
+    default: "Richardus | Pasta, brace e pizza a Francavilla Fontana",
     template: "%s | Richardus",
   },
   description:
@@ -28,9 +30,10 @@ export const metadata: Metadata = {
     locale: "it_IT",
     type: "website",
     siteName: "Richardus",
+    url: "/",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Richardus | Pasta, brace e pizza",
     description: "Il menu e i contatti di Richardus a Francavilla Fontana.",
   },
@@ -53,13 +56,22 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Restaurant",
+              "@id": "https://richardus.it/#ristorante",
               name: "Richardus",
+              url: "https://richardus.it",
+              image: "https://richardus.it/opengraph-image",
+              hasMenu: "https://richardus.it/menu",
+              hasMap: restaurant.maps,
+              sameAs: ["https://www.instagram.com/richardus_mangia_e_bevi/"],
+              acceptsReservations: true,
+              description:
+                "Ristorante a Francavilla Fontana, in provincia di Brindisi, Puglia. Cucina italiana e pugliese, pasta, piatti alla brace e pizza.",
               telephone: restaurant.phone,
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "Via San Giovanni 15",
                 addressLocality: "Francavilla Fontana",
-                addressRegion: "BR",
+                addressRegion: "Puglia",
                 addressCountry: "IT",
               },
               servesCuisine: ["Italiana", "Pugliese", "Pizza"],

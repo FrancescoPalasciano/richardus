@@ -9,6 +9,19 @@ import { BentoGrid } from "@/components/HomeSections";
 import styles from "@/app/Home.module.css";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/chi-siamo" },
+  openGraph: {
+    title: "Richardus, a tavola a Francavilla",
+    description:
+      "Pasta, brace e pizza in Via San Giovanni 15 a Francavilla Fontana, Puglia.",
+    url: "/chi-siamo",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Richardus, a tavola a Francavilla",
+    description:
+      "Pasta, brace e pizza in Via San Giovanni 15 a Francavilla Fontana, Puglia.",
+  },
   title: "Chi siamo",
   description:
     "Richardus a Francavilla Fontana: orecchiette, piatti alla brace e pizze dai nomi di casa. Scopri la nostra proposta di cucina e vieni a trovarci in Via San Giovanni 15.",

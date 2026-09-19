@@ -18,6 +18,12 @@ import {
 import styles from "./Menu.module.css";
 
 export const metadata: Metadata = {
+  twitter: {
+    card: "summary_large_image",
+    title: "Il menu di Richardus",
+    description:
+      "Piatti, ingredienti e prezzi. Pasta, brace e pizza a Francavilla Fontana.",
+  },
   title: "Menu: piatti, ingredienti e prezzi",
   description:
     "Il menu di Richardus a Francavilla Fontana: antipasti, pasta, piatti alla brace e pizze. Consulta ingredienti e prezzi e prenota il tuo tavolo.",
