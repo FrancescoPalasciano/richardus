@@ -1,16 +1,22 @@
+import { localizeTree } from "@/lib/localize";
+import { getTranslator } from "@/lib/i18n";
+import type { Locale } from "@/lib/locale";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Badge } from "@/components/ui/surfaces";
 
 export default function LegalPage({
+  locale = "it",
   title,
   children,
 }: {
+  locale?: Locale;
   title: string;
   children: ReactNode;
 }) {
-  return (
+  const t = getTranslator(locale);
+  return localizeTree(
     <main
       id="contenuto"
       className="mx-auto w-full max-w-4xl px-4 py-12 sm:px-8 sm:py-20"
@@ -31,6 +37,8 @@ export default function LegalPage({
       <div className="mt-12 space-y-10 text-sm leading-8 [&_a]:break-words [&_a]:underline [&_a]:underline-offset-4 [&_h2]:mb-4 [&_h2]:text-2xl [&_p+p]:mt-3">
         {children}
       </div>
-    </main>
+    </main>,
+    locale,
+    t,
   );
 }

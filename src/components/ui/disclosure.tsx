@@ -1,5 +1,8 @@
 "use client";
 
+import { localizeTree } from "@/lib/localize";
+import { useLocale } from "@/components/LocaleProvider";
+
 import type { ComponentProps, ReactNode } from "react";
 import {
   Accordion as AccordionPrimitive,
@@ -25,7 +28,8 @@ export function DialogContent({
   children,
   ...props
 }: ComponentProps<typeof DialogPrimitive.Content>) {
-  return (
+  const { locale, t } = useLocale();
+  return localizeTree(
     <DialogPrimitive.Portal>
       <DialogPrimitive.Overlay className="ui-overlay" />
       <DialogPrimitive.Content
@@ -44,7 +48,9 @@ export function DialogContent({
           </Button>
         </DialogPrimitive.Close>
       </DialogPrimitive.Content>
-    </DialogPrimitive.Portal>
+    </DialogPrimitive.Portal>,
+    locale,
+    t,
   );
 }
 export function SheetContent(props: ComponentProps<typeof DialogContent>) {

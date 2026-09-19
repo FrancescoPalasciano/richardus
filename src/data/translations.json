@@ -1076,5 +1076,14 @@
     "Richardus menu",
     "Carte Richardus",
     "Richardus-Speisekarte"
-  ]
+  ],
+  "Menu": ["Menu", "Carte", "Speisekarte"],
+  "Su richiesta": ["On request", "Sur demande", "Auf Anfrage"],
+  "carosello": ["carousel", "carrousel", "Karussell"],
+  "usa le frecce per scorrere": [
+    "use the arrows to scroll",
+    "utilisez les flèches pour faire défiler",
+    "mit den Pfeiltasten scrollen"
+  ],
+  "Coperto": ["Cover charge", "Couvert", "Gedeck"]
 }

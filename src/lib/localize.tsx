@@ -30,6 +30,7 @@ export function localizeTree(
     "label",
     "alt",
     "aria-label",
+    "aria-roledescription",
     "placeholder",
   ]) {
     const value = element.props[key];

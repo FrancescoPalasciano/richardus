@@ -1,4 +1,6 @@
 import menu from "@/data/menu.json";
+import { getTranslator } from "./i18n";
+import { localizeHref, type Locale } from "./locale";
 
 export type Dish = (typeof menu.prodotti)[keyof typeof menu.prodotti];
 export const euro = new Intl.NumberFormat("it-IT", {
@@ -24,24 +26,26 @@ export const categoryLabel = (id: string, fallback: string) =>
     bevande: "Vini e bevande",
   })[id] ?? fallback;
 
-export function menuSchema() {
+export function menuSchema(locale: Locale = "it") {
+  const t = getTranslator(locale);
+  const url = `https://richardus.it${localizeHref("/menu", locale)}`;
   return {
     "@context": "https://schema.org",
     "@type": "Menu",
-    "@id": "https://richardus.it/menu#carta",
-    name: "Menu Richardus",
-    inLanguage: "it",
-    url: "https://richardus.it/menu",
+    "@id": `${url}#carta`,
+    name: t("Menu Richardus"),
+    inLanguage: locale,
+    url,
     hasMenuSection: categories.map(([id, category]) => ({
       "@type": "MenuSection",
-      name: category.nome,
-      description: category.descrizione || undefined,
+      name: t(category.nome),
+      description: t(category.descrizione) || undefined,
       hasMenuItem: dishes
         .filter(([, dish]) => dish.categoria === id)
         .map(([, dish]) => ({
           "@type": "MenuItem",
-          name: displayName(dish.nome),
-          description: dish.descrizione || undefined,
+          name: t(displayName(dish.nome)),
+          description: t(dish.descrizione) || undefined,
           offers: dish.prezzoSuRichiesta
             ? undefined
             : dish.prezzoMassimo !== null

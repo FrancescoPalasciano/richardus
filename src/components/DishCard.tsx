@@ -1,15 +1,21 @@
+import { localizeTree } from "@/lib/localize";
+import { getTranslator } from "@/lib/i18n";
+import type { Locale } from "@/lib/locale";
 import { Badge } from "@/components/ui/surfaces";
 import { displayName, euro, type Dish } from "@/lib/menu";
 import styles from "@/app/menu/Menu.module.css";
 
 export default function DishCard({
+  locale = "it",
   dish,
   category,
 }: {
+  locale?: Locale;
   dish: Dish;
   category: string;
 }) {
-  return (
+  const t = getTranslator(locale);
+  return localizeTree(
     <article className={styles.dishCard}>
       <div className={styles.dishTop}>
         <h3>{displayName(dish.nome)}</h3>
@@ -31,6 +37,8 @@ export default function DishCard({
         <p className={styles.description}>{dish.descrizione}</p>
       )}
       <Badge className={styles.categoryBadge}>{category}</Badge>
-    </article>
+    </article>,
+    locale,
+    t,
   );
 }
