@@ -46,8 +46,8 @@ export default function Home() {
       <section className={styles.selection} aria-labelledby="selection-title">
         <div className={styles.selectionIntro}>
           <h2 id="selection-title">La Puglia,<br />nel piatto.</h2>
-          <p>Tre proposte dal nostro menu, tra pasta, brace e pizza. Per cominciare a scegliere, ancora prima di sedersi.</p>
-          <Link className={styles.textLink} href="/menu">Tutti i piatti e i prezzi</Link>
+          <p>Pasta, brace e pizza. Il gusto di casa.</p>
+          <Link className={styles.textLink} href="/menu">Scopri il menu</Link>
         </div>
         <ul className={styles.dishes}>
           {selection.filter(id => menu.prodotti[id].visibile).map(id => {

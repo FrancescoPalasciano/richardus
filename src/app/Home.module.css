@@ -61,10 +61,10 @@
 .dishes li:first-child { padding-top: 0; }
 .dishes li:last-child { border-bottom: 0; padding-bottom: 0; }
 .dishTitle { display: flex; align-items: baseline; justify-content: space-between; gap: 1.25rem; }
-.dishTitle h3 { font-family: var(--font-eb-garamond), Georgia, serif; font-size: clamp(1.75rem, 2.5vw, 2.25rem); line-height: 1.15; }
-.dishTitle a { display: inline-block; padding-block: 0.375rem; text-decoration: underline; text-decoration-thickness: 1px; text-decoration-color: color-mix(in srgb, var(--foreground) 30%, transparent); text-underline-offset: 5px; }
-.dishTitle span { flex-shrink: 0; font-size: 0.875rem; font-variant-numeric: tabular-nums; }
-.dishes p { margin-top: 0.625rem; max-width: 55ch; font-size: 0.9375rem; line-height: 1.7; }
+.dishTitle h3 { font-family: inherit; font-weight: 500; font-size: 1rem; line-height: 1.5; }
+.dishTitle a { display: inline-flex; align-items: center; min-height: 44px; }
+.dishTitle span { flex-shrink: 0; font-size: 1rem; font-variant-numeric: tabular-nums; }
+.dishes p { margin-top: 0.25rem; max-width: 55ch; font-size: 1rem; line-height: 1.6; color: color-mix(in oklch, var(--foreground) 80%, var(--background)); }
 .selection a:focus-visible, .about a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .hero a:focus-visible { outline: 2px solid var(--background); outline-offset: 4px; }
 .about { padding-block: clamp(3rem, 6vw, 6rem); }

@@ -1,19 +1,43 @@
-.carousel { min-width: 0; container-type: inline-size; }
-.slides { display: grid; }
-.slide { grid-area: 1 / 1; display: flex; flex-direction: column; margin: 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity var(--motion-enter) var(--ease-out-quart), transform var(--motion-enter) var(--ease-out-quart), visibility var(--motion-enter); }
-.slide[data-active="true"] { opacity: 1; visibility: visible; transform: none; }
-.stars { display: flex; gap: 5px; color: var(--accent); margin-bottom: 1.5rem; }
-.quote { font-family: var(--font-eb-garamond), Georgia, serif; font-size: clamp(1.65rem, 3.2vw, 2.65rem); font-weight: 500; line-height: 1.2; letter-spacing: -.015em; margin: 0 0 2rem; text-wrap: pretty; }
-.caption { display: flex; flex-direction: column; gap: .15rem; margin-top: auto; font-size: .875rem; font-weight: 500; }
-.source { font-size: .75rem; font-weight: 400; color: color-mix(in oklch, var(--foreground) 78%, #eeeae1); }
-.controls { display: flex; justify-content: space-between; align-items: center; gap: .5rem; border-top: 1px solid color-mix(in oklch, var(--foreground) 22%, transparent); margin-top: 1.75rem; padding-top: 1rem; }
-.count { font-size: .875rem; font-variant-numeric: tabular-nums; }
-.count span { color: color-mix(in oklch, var(--foreground) 72%, #eeeae1); }
-.actions { display: flex; gap: .4rem; align-items: center; }
-.actions button { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; transition: background var(--motion-feedback), color var(--motion-feedback), transform var(--motion-press); }
-.actions button:active { transform: scale(.96); }
-.arrow { border: 1px solid color-mix(in oklch, var(--foreground) 35%, transparent); border-radius: 50%; }
-.play { gap: .4rem; padding-inline: .5rem; font-size: .75rem; }
-@media (hover: hover) { .arrow:hover { color: var(--background); background: var(--foreground); } .play:hover { color: var(--accent); } }
-@container (min-width: 500px) { .caption { flex-direction: row; align-items: baseline; justify-content: space-between; gap: 1rem; } }
-@media (prefers-reduced-motion: reduce) { .slide, .actions button { transition: none; transform: none; } }
+.carousel { min-width: 0; }
+.track {
+  --per-view: 1;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 88%;
+  gap: 16px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: 4px 2px 8px;
+}
+.track::-webkit-scrollbar { display: none; }
+.track:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.card {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  border: 1px solid color-mix(in oklch, var(--foreground) 15%, transparent);
+  border-radius: 14px;
+  background: var(--background);
+  scroll-snap-align: start;
+  min-width: 0;
+}
+.stars { display: flex; gap: 3px; color: var(--accent); margin-bottom: 1rem; }
+.quote { font-size: 1rem; line-height: 1.65; margin: 0 0 1.75rem; }
+.caption { display: flex; align-items: center; gap: .75rem; margin-top: auto; }
+.avatar { display: grid; place-items: center; flex-shrink: 0; width: 38px; height: 38px; border-radius: 50%; background: #e6e9df; color: var(--brand-green); font-size: .75rem; font-weight: 500; }
+.author { display: block; font-size: .8125rem; font-weight: 500; line-height: 1.4; }
+.source { display: block; font-size: .75rem; margin-top: .2rem; color: color-mix(in oklch, var(--foreground) 78%, var(--background)); }
+.controls { display: flex; justify-content: center; align-items: center; gap: .75rem; margin-top: .75rem; }
+.dots { display: flex; }
+.dots button, .play { display: grid; place-items: center; height: 44px; cursor: pointer; }
+.dots button { width: 26px; }
+.dots span { width: 6px; height: 6px; border-radius: 50%; background: color-mix(in oklch, var(--foreground) 30%, transparent); transition: transform var(--motion-feedback) var(--ease-out-quart), background var(--motion-feedback); }
+.dots [aria-current="true"] span { transform: scale(1.5); background: var(--brand-green); }
+.play { width: 44px; color: var(--foreground); }
+@media (hover: hover) { .dots button:hover span { background: var(--accent); } .play:hover { color: var(--accent); } }
+@media (min-width: 640px) { .track { --per-view: 2; grid-auto-columns: calc((100% - 16px) / 2); } .dots button { width: 44px; } }
+@media (min-width: 1024px) { .track { --per-view: 3; grid-auto-columns: calc((100% - 32px) / 3); } }
+@media (prefers-reduced-motion: reduce) { .dots span { transition: none; } }
