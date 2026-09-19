@@ -46,7 +46,10 @@ export function generateStaticParams() {
 }
 function resolvePage(locale: string, slug: string[] = []) {
   const key = slug.join("/");
-  if (!["en", "fr", "de"].includes(locale) || !Object.hasOwn(pages, key))
+  if (
+    !locales.some((value) => value !== "it" && value === locale) ||
+    !Object.hasOwn(pages, key)
+  )
     notFound();
   return { locale: resolveLocale(locale), key: key as keyof typeof pages };
 }
@@ -73,7 +76,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: localizeHref(path, locale),
       siteName: "Richardus",
       type: "website",
-      locale: { en: "en_GB", fr: "fr_FR", de: "de_DE", it: "it_IT" }[locale],
+      locale: {
+        en: "en_GB",
+        fr: "fr_FR",
+        de: "de_DE",
+        it: "it_IT",
+        es: "es_ES",
+      }[locale],
       images: [
         { url: "/opengraph-image", width: 1200, height: 630, alt: "Richardus" },
       ],

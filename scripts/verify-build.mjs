@@ -10,7 +10,10 @@ const paths = {
   "/privacy-policy": "privacy-policy",
   "/cookie-policy": "cookie-policy",
 };
-const locales = ["it", "en", "fr", "de"];
+const locales = ["it", "en", "fr", "de", "es"];
+const spanish = JSON.parse(
+  await readFile("src/data/translations.es.json", "utf8"),
+);
 const translations = JSON.parse(
   await readFile("src/data/translations.json", "utf8"),
 );
@@ -20,6 +23,12 @@ for (const values of Object.values(translations))
       values.every((value) => typeof value === "string" && value.trim()),
   );
 const basePaths = { ...paths };
+assert.deepEqual(Object.keys(spanish).sort(), Object.keys(translations).sort());
+assert.ok(
+  Object.values(spanish).every(
+    (value) => typeof value === "string" && value.trim(),
+  ),
+);
 for (const locale of locales.slice(1))
   for (const [route, file] of Object.entries(basePaths)) {
     paths[`/${locale}${route === "/" ? "" : route}`] =
@@ -52,7 +61,7 @@ const json = (html) =>
 let links = 0;
 const photographs = new Set();
 for (const [route, html] of Object.entries(pages)) {
-  const locale = route.match(/^\/(en|fr|de)(?:\/|$)/)?.[1] ?? "it";
+  const locale = route.match(/^\/(en|fr|de|es)(?:\/|$)/)?.[1] ?? "it";
   assert.doesNotMatch(
     html,
     /\bpizz[ae]\b/i,
@@ -144,7 +153,7 @@ for (const [route, html] of Object.entries(pages)) {
 }
 assert.equal(
   photographs.size,
-  28,
+  7 * locales.length,
   "Seven supplied food and room photographs, used once each",
 );
 assert.doesNotMatch(pages["/menu"], /\d+ proposte|Informazioni sui prodotti/);
@@ -192,7 +201,10 @@ for (const [index, locale] of locales.slice(1).entries()) {
   assert.equal(items.length, visible.length);
   assert.equal((html.match(/<article\b/g) ?? []).length, visible.length);
   for (const dish of visible) {
-    const name = translations[dish.nome]?.[index] ?? dish.nome;
+    const name =
+      locale === "es"
+        ? (spanish[dish.nome] ?? dish.nome)
+        : (translations[dish.nome]?.[index] ?? dish.nome);
     assert.ok(
       items.some((item) => item.name === name),
       `${locale}: translated dish ${name}`,
@@ -208,7 +220,7 @@ assert.match(
   /Sitemap: https:\/\/richardus.it\/sitemap.xml/,
 );
 const sitemap = await readFile(`${directory}/sitemap.xml.body`, "utf8");
-assert.equal((sitemap.match(/<loc>/g) ?? []).length, 12);
+assert.equal((sitemap.match(/<loc>/g) ?? []).length, 3 * locales.length);
 assert.ok(!sitemap.includes("policy"));
 const image = await readFile(`${directory}/opengraph-image.body`);
 assert.equal(

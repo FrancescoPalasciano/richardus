@@ -82,7 +82,13 @@ export async function generateMetadata({
       description: t(
         "Scopri il menu di Richardus e prenota il tuo tavolo in Via San Giovanni 15.",
       ),
-      locale: { it: "it_IT", en: "en_GB", fr: "fr_FR", de: "de_DE" }[locale],
+      locale: {
+        it: "it_IT",
+        en: "en_GB",
+        fr: "fr_FR",
+        de: "de_DE",
+        es: "es_ES",
+      }[locale],
       url: localizeHref("/", locale),
     },
     twitter: {
