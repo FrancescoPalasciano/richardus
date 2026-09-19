@@ -1,5 +1,8 @@
 "use client";
 
+import { localizeTree } from "@/lib/localize";
+import { useLocale } from "@/components/LocaleProvider";
+
 import {
   useCallback,
   useEffect,
@@ -39,6 +42,7 @@ export default function MenuBrowser({
 }: {
   sections: { id: string; label: string; content: ReactNode }[];
 }) {
+  const { locale, t } = useLocale();
   const hash = useSyncExternalStore(subscribe, readHash, () => "");
   const selected = sections.some((section) => section.id === hash)
     ? hash
@@ -92,7 +96,7 @@ export default function MenuBrowser({
     }
     return () => cancelAnimationFrame(frame);
   }, [selected, reduce]);
-  return (
+  return localizeTree(
     <Tabs
       value={selected}
       onValueChange={(value) => {
@@ -159,6 +163,8 @@ export default function MenuBrowser({
           ))}
         </TabsContent>
       </div>
-    </Tabs>
+    </Tabs>,
+    locale,
+    t,
   );
 }

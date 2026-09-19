@@ -1,5 +1,8 @@
 "use client";
 
+import { localizeTree } from "@/lib/localize";
+import { useLocale } from "@/components/LocaleProvider";
+
 import {
   Accordion,
   AccordionContent,
@@ -11,7 +14,8 @@ import menu from "@/data/menu.json";
 import styles from "@/app/menu/Menu.module.css";
 
 export default function MenuInfo() {
-  return (
+  const { locale, t } = useLocale();
+  return localizeTree(
     <section
       className={`container ${styles.menuInfo}`}
       aria-labelledby="menu-info-title"
@@ -44,6 +48,8 @@ export default function MenuInfo() {
           </AccordionContent>
         </AccordionItem>
       </Accordion>
-    </section>
+    </section>,
+    locale,
+    t,
   );
 }

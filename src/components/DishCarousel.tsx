@@ -1,5 +1,8 @@
 "use client";
 
+import { localizeTree } from "@/lib/localize";
+import { useLocale } from "@/components/LocaleProvider";
+
 import {
   useCallback,
   useId,
@@ -21,6 +24,7 @@ export default function DishCarousel({
   label?: string;
   hint?: string;
 }) {
+  const { locale, t } = useLocale();
   const reduce = useReducedMotion();
   const [ref, api] = useEmblaCarousel({
     align: "start",
@@ -45,7 +49,7 @@ export default function DishCarousel({
   );
   const [index, count, previous, next] = snapshot.split(",").map(Number);
   const state = { index, count, previous: !!previous, next: !!next };
-  return (
+  return localizeTree(
     <div
       role="region"
       aria-roledescription="carosello"
@@ -57,7 +61,7 @@ export default function DishCarousel({
         id={id}
         className={styles.carouselViewport}
         tabIndex={0}
-        aria-label={`${label}: usa le frecce per scorrere`}
+        aria-label={`${t(label)}: ${t("usa le frecce per scorrere")}`}
         onKeyDown={(event) => {
           if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
             event.preventDefault();
@@ -100,6 +104,8 @@ export default function DishCarousel({
           </Button>
         </div>
       </div>
-    </div>
+    </div>,
+    locale,
+    t,
   );
 }

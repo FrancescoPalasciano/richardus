@@ -1,8 +1,12 @@
 "use client";
 
+import { localizeTree } from "@/lib/localize";
+import { useLocale } from "@/components/LocaleProvider";
+
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { unlocalizedPath } from "@/lib/locale";
 import { ArrowUpRight, Menu, Phone, Utensils } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -29,7 +33,8 @@ const subscribeScroll = (callback: () => void) => {
 };
 
 export default function Header() {
-  const pathname = usePathname();
+  const { locale, t } = useLocale();
+  const pathname = unlocalizedPath(usePathname());
   const [open, setOpen] = useState(false);
   const [bookingVisible, setBookingVisible] = useState(true);
   const toggle = useRef<HTMLButtonElement>(null);
@@ -59,14 +64,14 @@ export default function Header() {
     return () => observer.disconnect();
   }, [pathname]);
   useEffect(() => {
-    const media = window.matchMedia("(min-width: 768px)");
+    const media = window.matchMedia("(min-width: 1024px)");
     const resize = () => {
       if (media.matches) setOpen(false);
     };
     media.addEventListener("change", resize);
     return () => media.removeEventListener("change", resize);
   }, []);
-  return (
+  return localizeTree(
     <>
       <header className={styles.header} data-scrolled={scrolled}>
         <Link href="/" aria-label="Richardus, homepage">
@@ -181,6 +186,8 @@ export default function Header() {
           </a>
         </Button>
       </nav>
-    </>
+    </>,
+    locale,
+    t,
   );
 }

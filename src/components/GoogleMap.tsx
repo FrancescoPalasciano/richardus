@@ -1,5 +1,8 @@
 "use client";
 
+import { localizeTree } from "@/lib/localize";
+import { useLocale } from "@/components/LocaleProvider";
+
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
@@ -13,6 +16,7 @@ import {
 } from "@/components/ui/disclosure";
 
 function MapFrame() {
+  const { locale, t } = useLocale();
   const [status, setStatus] = useState("loading");
   useEffect(() => {
     const timeout = window.setTimeout(
@@ -21,7 +25,7 @@ function MapFrame() {
     );
     return () => window.clearTimeout(timeout);
   }, []);
-  return (
+  return localizeTree(
     <>
       <p role="status" className="mb-3 min-h-6 text-xs leading-6">
         {status === "loading"
@@ -47,13 +51,16 @@ function MapFrame() {
       >
         Apri in Google Maps <ArrowUpRight size={16} aria-hidden="true" />
       </a>
-    </>
+    </>,
+    locale,
+    t,
   );
 }
 
 export default function GoogleMap() {
+  const { locale, t } = useLocale();
   const [visible, setVisible] = useState(false);
-  return (
+  return localizeTree(
     <Accordion
       type="single"
       collapsible
@@ -97,6 +104,8 @@ export default function GoogleMap() {
           )}
         </AccordionContent>
       </AccordionItem>
-    </Accordion>
+    </Accordion>,
+    locale,
+    t,
   );
 }

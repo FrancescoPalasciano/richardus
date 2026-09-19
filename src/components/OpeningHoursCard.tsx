@@ -1,5 +1,8 @@
 "use client";
 
+import { localizeTree } from "@/lib/localize";
+import { useLocale } from "@/components/LocaleProvider";
+
 import { useSyncExternalStore } from "react";
 import { Clock } from "lucide-react";
 import { Badge } from "@/components/ui/surfaces";
@@ -33,11 +36,12 @@ const subscribe = (update: () => void) => {
 const useToday = () => useSyncExternalStore(subscribe, readDay, () => null);
 
 export function TodayHours() {
+  const { locale, t } = useLocale();
   const day = useToday();
-  return (
+  return localizeTree(
     <div>
       <span>
-        {day === null ? "Gli orari" : `Oggi, ${days[day].toLowerCase()}`}
+        {day === null ? "Gli orari" : `${t("Oggi")}, ${t(days[day])}`}
       </span>
       <strong>
         {day === null
@@ -48,13 +52,16 @@ export function TodayHours() {
               ? "12:30–15:00 / 19:30–00:00"
               : "19:30–00:00"}
       </strong>
-    </div>
+    </div>,
+    locale,
+    t,
   );
 }
 
 export default function OpeningHoursCard() {
+  const { locale, t } = useLocale();
   const today = useToday();
-  return (
+  return localizeTree(
     <section className={styles.hoursCard} aria-labelledby="hours-title">
       <div className={styles.widgetTitle}>
         <h3 id="hours-title">I nostri orari</h3>
@@ -83,6 +90,8 @@ export default function OpeningHoursCard() {
         ))}
       </dl>
       <p>La domenica, anche a pranzo.</p>
-    </section>
+    </section>,
+    locale,
+    t,
   );
 }
