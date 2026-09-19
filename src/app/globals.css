@@ -1,5 +1,30 @@
 @import "tailwindcss";
 
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 9px;
+  width: 130px;
+  height: 54px;
+  background: var(--dark);
+  border-radius: var(--radius-sm);
+  vertical-align: middle;
+}
+.brand-logo img {
+  width: 112px;
+  height: 44px;
+  object-fit: contain;
+}
+.brand-logo-full {
+  width: 132px;
+  height: 146px;
+}
+.brand-logo-full img {
+  width: 120px;
+  height: 134px;
+}
+
 :root {
   --background: #f3f0ea;
   --foreground: #24251f;

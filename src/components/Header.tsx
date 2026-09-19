@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/disclosure";
 import { restaurant } from "@/lib/restaurant";
 import styles from "./Header.module.css";
+import Brand from "./Brand";
 
 const links = [
   { href: "/menu", label: "Menu" },
@@ -67,8 +68,8 @@ export default function Header() {
   return (
     <>
       <header className={styles.header} data-scrolled={scrolled}>
-        <Link href="/" className="wordmark" aria-label="Richardus, homepage">
-          richardus
+        <Link href="/" aria-label="Richardus, homepage">
+          <Brand />
         </Link>
         <nav className={styles.desktopNav} aria-label="Navigazione principale">
           {links.map((link) => (
@@ -106,10 +107,10 @@ export default function Header() {
             </SheetTrigger>
             <SheetContent className={styles.mobileSheet}>
               <DialogTitle>
-                <span className="wordmark">richardus</span>
+                <Brand full />
               </DialogTitle>
               <DialogDescription>
-                Pasta, brace, pizza. Francavilla Fontana.
+                Trattoria storica a Francavilla Fontana.
               </DialogDescription>
               <nav
                 aria-label="Navigazione mobile"

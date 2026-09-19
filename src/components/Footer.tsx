@@ -2,21 +2,18 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { restaurant } from "@/lib/restaurant";
 import styles from "./Footer.module.css";
+import Brand from "./Brand";
 
 export default function Footer() {
   return (
     <footer className={`container ${styles.footer}`}>
       <div className={styles.top}>
         <div className={styles.brand}>
-          <Link
-            href="/"
-            className="wordmark"
-            aria-label="Richardus, torna alla home"
-          >
-            richardus
+          <Link href="/" aria-label="Richardus, torna alla home">
+            <Brand full />
           </Link>
           <p>
-            Pasta · Brace · Pizza
+            Trattoria storica
             <br />
             Francavilla Fontana, BR · Puglia
           </p>
