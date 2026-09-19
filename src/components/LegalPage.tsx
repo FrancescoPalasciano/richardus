@@ -24,7 +24,7 @@ export default function LegalPage({
       <Link href="/" className="text-link">
         <ArrowLeft size={16} aria-hidden="true" /> Torna alla home
       </Link>
-      <h1 className="mt-8 text-[clamp(2.4rem,6vw,5rem)] leading-tight">
+      <h1 className="mt-8 text-[clamp(2.4rem,6vw,5rem)] leading-tight hyphens-auto [overflow-wrap:anywhere]">
         {title}
       </h1>
       <div className="mt-8 rounded-2xl bg-surface-secondary p-6 text-sm leading-7">
