@@ -30,11 +30,7 @@
     "fonte": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "file",
-        "pagineProdotti",
-        "paginaAllergeni"
-      ],
+      "required": ["file", "pagineProdotti", "paginaAllergeni"],
       "properties": {
         "file": {
           "type": "string"
@@ -66,20 +62,12 @@
     "costiAggiuntivi": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "coperto",
-        "aggiuntePizze"
-      ],
+      "required": ["coperto"],
       "properties": {
         "coperto": {
           "type": "object",
           "additionalProperties": false,
-          "required": [
-            "nome",
-            "prezzo",
-            "visibile",
-            "paginaFonte"
-          ],
+          "required": ["nome", "prezzo", "visibile", "paginaFonte"],
           "properties": {
             "nome": {
               "type": "string"
@@ -91,34 +79,6 @@
             },
             "visibile": {
               "type": "boolean"
-            },
-            "paginaFonte": {
-              "type": "integer",
-              "minimum": 1
-            }
-          }
-        },
-        "aggiuntePizze": {
-          "type": "object",
-          "additionalProperties": false,
-          "required": [
-            "descrizione",
-            "importi",
-            "paginaFonte"
-          ],
-          "properties": {
-            "descrizione": {
-              "type": "string"
-            },
-            "importi": {
-              "type": "array",
-              "minItems": 1,
-              "uniqueItems": true,
-              "items": {
-                "type": "number",
-                "minimum": 0,
-                "description": "Importo in euro, senza simbolo. Usare il punto per i decimali."
-              }
             },
             "paginaFonte": {
               "type": "integer",
@@ -166,11 +126,7 @@
     "categoria": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "nome",
-        "ordine",
-        "descrizione"
-      ],
+      "required": ["nome", "ordine", "descrizione"],
       "properties": {
         "nome": {
           "type": "string",
@@ -188,10 +144,7 @@
     "allergene": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "nome",
-        "ordine"
-      ],
+      "required": ["nome", "ordine"],
       "properties": {
         "nome": {
           "type": "string",
@@ -237,10 +190,7 @@
           "description": "Importo in euro, senza simbolo. Usare il punto per i decimali."
         },
         "prezzoMassimo": {
-          "type": [
-            "number",
-            "null"
-          ],
+          "type": ["number", "null"],
           "minimum": 0,
           "description": "null per un prezzo fisso; limite superiore per un intervallo."
         },
@@ -258,10 +208,7 @@
           "description": "Ingredienti o descrizione del PDF. Stringa vuota quando non è presente una descrizione separata."
         },
         "allergeni": {
-          "type": [
-            "array",
-            "null"
-          ],
+          "type": ["array", "null"],
           "items": {
             "type": "string",
             "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"

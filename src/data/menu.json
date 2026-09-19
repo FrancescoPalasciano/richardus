@@ -1,15 +1,10 @@
 {
   "$schema": "./menu.schema.json",
-  "versione": 1,
+  "versione": 2,
   "valuta": "EUR",
   "fonte": {
     "file": "menu.pdf",
-    "pagineProdotti": [
-      3,
-      4,
-      5,
-      6
-    ],
+    "pagineProdotti": [3, 4, 5, 6],
     "paginaAllergeni": 7
   },
   "noteAllergeni": "La pagina 7 riporta soltanto la legenda dei 14 allergeni, senza associazioni ai singoli prodotti. Le liste presenti nei prodotti sono indicative e non esaustive, dedotte dagli ingredienti e dalle preparazioni nominate; non sono dichiarazioni del ristorante. Vanno confermate con ricette e schede degli ingredienti. null indica informazione non disponibile, non assenza di allergeni. Nessun prodotto è attualmente verificato. Non usare questi dati per garantire l'idoneità a persone allergiche.",
@@ -22,14 +17,6 @@
       "prezzo": 2,
       "visibile": true,
       "paginaFonte": 6
-    },
-    "aggiuntePizze": {
-      "descrizione": "Le aggiunte o le modifiche alle pizze possono subire variazione di € 1,00 o € 1,50.",
-      "importi": [
-        1,
-        1.5
-      ],
-      "paginaFonte": 5
     }
   },
   "categorie": {
@@ -56,11 +43,6 @@
     "secondi-piatti": {
       "nome": "Secondi Piatti",
       "ordine": 50,
-      "descrizione": ""
-    },
-    "pizze": {
-      "nome": "Pizze",
-      "ordine": 60,
       "descrizione": ""
     },
     "bevande": {
@@ -162,9 +144,7 @@
       "prezzoSuRichiesta": false,
       "visibile": true,
       "descrizione": "",
-      "allergeni": [
-        "latte"
-      ],
+      "allergeni": ["latte"],
       "allergeniVerificati": false,
       "varianti": [],
       "ordine": 20,
@@ -179,9 +159,7 @@
       "prezzoSuRichiesta": false,
       "visibile": true,
       "descrizione": "",
-      "allergeni": [
-        "latte"
-      ],
+      "allergeni": ["latte"],
       "allergeniVerificati": false,
       "varianti": [],
       "ordine": 30,
@@ -196,9 +174,7 @@
       "prezzoSuRichiesta": false,
       "visibile": true,
       "descrizione": "",
-      "allergeni": [
-        "latte"
-      ],
+      "allergeni": ["latte"],
       "allergeniVerificati": false,
       "varianti": [],
       "ordine": 40,
@@ -243,9 +219,7 @@
       "prezzoSuRichiesta": false,
       "visibile": true,
       "descrizione": "",
-      "allergeni": [
-        "glutine"
-      ],
+      "allergeni": ["glutine"],
       "allergeniVerificati": false,
       "varianti": [],
       "ordine": 20,
@@ -305,9 +279,7 @@
       "prezzoSuRichiesta": false,
       "visibile": true,
       "descrizione": "",
-      "allergeni": [
-        "glutine"
-      ],
+      "allergeni": ["glutine"],
       "allergeniVerificati": false,
       "varianti": [],
       "ordine": 60,
@@ -322,11 +294,7 @@
       "prezzoSuRichiesta": false,
       "visibile": true,
       "descrizione": "Insalata verde, rucola, pomodorini, olive leccine, acciughe, carciofi, burrata.",
-      "allergeni": [
-        "glutine",
-        "pesce",
-        "latte"
-      ],
+      "allergeni": ["glutine", "pesce", "latte"],
       "allergeniVerificati": false,
       "varianti": [],
       "ordine": 10,
@@ -341,11 +309,7 @@
       "prezzoSuRichiesta": false,
       "visibile": true,
       "descrizione": "Insalata verde, rucola, pomodorini, tonno, cipolla, mix di verdurine caserecce in agrodolce e cacio ricotta.",
-      "allergeni": [
-        "glutine",
-        "pesce",
-        "latte"
-      ],
+      "allergeni": ["glutine", "pesce", "latte"],
       "allergeniVerificati": false,
       "varianti": [],
       "ordine": 20,
@@ -360,10 +324,7 @@
       "prezzoSuRichiesta": false,
       "visibile": true,
       "descrizione": "Insalata verde, rucola, pomodorini, bresaola, grana, limone, salsa di aceto balsamico.",
-      "allergeni": [
-        "glutine",
-        "latte"
-      ],
+      "allergeni": ["glutine", "latte"],
       "allergeniVerificati": false,
       "varianti": [],
       "ordine": 30,
@@ -378,9 +339,7 @@
       "prezzoSuRichiesta": false,
       "visibile": true,
       "descrizione": "",
-      "allergeni": [
-        "glutine"
-      ],
+      "allergeni": ["glutine"],
       "allergeniVerificati": false,
       "varianti": [],
       "ordine": 10,
@@ -395,9 +354,7 @@
       "prezzoSuRichiesta": false,
       "visibile": true,
       "descrizione": "",
-      "allergeni": [
-        "glutine"
-      ],
+      "allergeni": ["glutine"],
       "allergeniVerificati": false,
       "varianti": [],
       "ordine": 20,
@@ -412,10 +369,7 @@
       "prezzoSuRichiesta": false,
       "visibile": true,
       "descrizione": "",
-      "allergeni": [
-        "glutine",
-        "latte"
-      ],
+      "allergeni": ["glutine", "latte"],
       "allergeniVerificati": false,
       "varianti": [],
       "ordine": 30,
@@ -430,9 +384,7 @@
       "prezzoSuRichiesta": false,
       "visibile": true,
       "descrizione": "",
-      "allergeni": [
-        "glutine"
-      ],
+      "allergeni": ["glutine"],
       "allergeniVerificati": false,
       "varianti": [],
       "ordine": 40,
@@ -447,10 +399,7 @@
       "prezzoSuRichiesta": false,
       "visibile": true,
       "descrizione": "",
-      "allergeni": [
-        "glutine",
-        "latte"
-      ],
+      "allergeni": ["glutine", "latte"],
       "allergeniVerificati": false,
       "varianti": [],
       "ordine": 50,
@@ -465,10 +414,7 @@
       "prezzoSuRichiesta": false,
       "visibile": true,
       "descrizione": "",
-      "allergeni": [
-        "glutine",
-        "latte"
-      ],
+      "allergeni": ["glutine", "latte"],
       "allergeniVerificati": false,
       "varianti": [],
       "ordine": 60,
@@ -483,10 +429,7 @@
       "prezzoSuRichiesta": false,
       "visibile": true,
       "descrizione": "",
-      "allergeni": [
-        "glutine",
-        "latte"
-      ],
+      "allergeni": ["glutine", "latte"],
       "allergeniVerificati": false,
       "varianti": [],
       "ordine": 70,
@@ -516,9 +459,7 @@
       "prezzoSuRichiesta": false,
       "visibile": true,
       "descrizione": "",
-      "allergeni": [
-        "latte"
-      ],
+      "allergeni": ["latte"],
       "allergeniVerificati": false,
       "varianti": [],
       "ordine": 20,
@@ -533,9 +474,7 @@
       "prezzoSuRichiesta": false,
       "visibile": true,
       "descrizione": "",
-      "allergeni": [
-        "latte"
-      ],
+      "allergeni": ["latte"],
       "allergeniVerificati": false,
       "varianti": [],
       "ordine": 30,
@@ -550,9 +489,7 @@
       "prezzoSuRichiesta": false,
       "visibile": true,
       "descrizione": "",
-      "allergeni": [
-        "latte"
-      ],
+      "allergeni": ["latte"],
       "allergeniVerificati": false,
       "varianti": [],
       "ordine": 40,
@@ -584,10 +521,7 @@
       "descrizione": "Al primitivo o ai porcini.",
       "allergeni": null,
       "allergeniVerificati": false,
-      "varianti": [
-        "Al primitivo",
-        "Ai porcini"
-      ],
+      "varianti": ["Al primitivo", "Ai porcini"],
       "ordine": 60,
       "paginaFonte": 4
     },
@@ -621,351 +555,6 @@
       "ordine": 80,
       "paginaFonte": 4
     },
-    "la-priora": {
-      "categoria": "pizze",
-      "nome": "LA PRIORA",
-      "prezzo": 7,
-      "prezzoMassimo": null,
-      "prezzoAPersona": false,
-      "prezzoSuRichiesta": false,
-      "visibile": true,
-      "descrizione": "Pomodoro, mozzarella, olio evo locale, basilico.",
-      "allergeni": [
-        "glutine",
-        "latte"
-      ],
-      "allergeniVerificati": false,
-      "varianti": [],
-      "ordine": 10,
-      "paginaFonte": 5
-    },
-    "chianci-chianci": {
-      "categoria": "pizze",
-      "nome": "CHIANCI CHIANCI",
-      "prezzo": 9,
-      "prezzoMassimo": null,
-      "prezzoAPersona": false,
-      "prezzoSuRichiesta": false,
-      "visibile": true,
-      "descrizione": "Pomodoro, mozzarella, salame piccante, olio piccante, olio evo locale, basilico.",
-      "allergeni": [
-        "glutine",
-        "latte"
-      ],
-      "allergeniVerificati": false,
-      "varianti": [],
-      "ordine": 20,
-      "paginaFonte": 5
-    },
-    "la-piliona": {
-      "categoria": "pizze",
-      "nome": "LA PILIONA",
-      "prezzo": 11,
-      "prezzoMassimo": null,
-      "prezzoAPersona": false,
-      "prezzoSuRichiesta": false,
-      "visibile": true,
-      "descrizione": "Pomodoro, mozzarella, cotto, funghi, olio, carciofi, salame piccante, olio evo locale, basilico.",
-      "allergeni": [
-        "glutine",
-        "latte"
-      ],
-      "allergeniVerificati": false,
-      "varianti": [],
-      "ordine": 30,
-      "paginaFonte": 5
-    },
-    "lu-uerto": {
-      "categoria": "pizze",
-      "nome": "LU UERTO",
-      "prezzo": 9,
-      "prezzoMassimo": null,
-      "prezzoAPersona": false,
-      "prezzoSuRichiesta": false,
-      "visibile": true,
-      "descrizione": "Pomodoro, mozzarella, verdure di stagione grigliate, olio evo locale, basilico.",
-      "allergeni": [
-        "glutine",
-        "latte"
-      ],
-      "allergeniVerificati": false,
-      "varianti": [],
-      "ordine": 40,
-      "paginaFonte": 5
-    },
-    "mancu-li-cani": {
-      "categoria": "pizze",
-      "nome": "MANCU LI CANI",
-      "prezzo": 9,
-      "prezzoMassimo": null,
-      "prezzoAPersona": false,
-      "prezzoSuRichiesta": false,
-      "visibile": true,
-      "descrizione": "Pomodoro, mozzarella, tonno, cipolla, olio evo locale, basilico.",
-      "allergeni": [
-        "glutine",
-        "latte",
-        "pesce"
-      ],
-      "allergeniVerificati": false,
-      "varianti": [],
-      "ordine": 50,
-      "paginaFonte": 5
-    },
-    "nu-scigghiu": {
-      "categoria": "pizze",
-      "nome": "NU SCIGGHIU",
-      "prezzo": 12,
-      "prezzoMassimo": null,
-      "prezzoAPersona": false,
-      "prezzoSuRichiesta": false,
-      "visibile": true,
-      "descrizione": "Base piada, fuori cottura: bufala, pomodoro, prosciutto crudo, rucola, olio evo locale, basilico.",
-      "allergeni": [
-        "glutine",
-        "latte"
-      ],
-      "allergeniVerificati": false,
-      "varianti": [],
-      "ordine": 60,
-      "paginaFonte": 5
-    },
-    "allu-piccinnu-mia": {
-      "categoria": "pizze",
-      "nome": "ALLU PICCINNU MIA",
-      "prezzo": 9,
-      "prezzoMassimo": null,
-      "prezzoAPersona": false,
-      "prezzoSuRichiesta": false,
-      "visibile": true,
-      "descrizione": "Pomodoro, mozzarella, würstel, patatine fritte, olio evo locale, basilico.",
-      "allergeni": [
-        "glutine",
-        "latte"
-      ],
-      "allergeniVerificati": false,
-      "varianti": [],
-      "ordine": 70,
-      "paginaFonte": 5
-    },
-    "benedica": {
-      "categoria": "pizze",
-      "nome": "BENEDICA",
-      "prezzo": 9,
-      "prezzoMassimo": null,
-      "prezzoAPersona": false,
-      "prezzoSuRichiesta": false,
-      "visibile": true,
-      "descrizione": "Pomodoro, mozzarella di bufala, olio evo locale, basilico.",
-      "allergeni": [
-        "glutine",
-        "latte"
-      ],
-      "allergeniVerificati": false,
-      "varianti": [],
-      "ordine": 80,
-      "paginaFonte": 5
-    },
-    "la-mamma-mea": {
-      "categoria": "pizze",
-      "nome": "LA MAMMA MEA",
-      "prezzo": 13,
-      "prezzoMassimo": null,
-      "prezzoAPersona": false,
-      "prezzoSuRichiesta": false,
-      "visibile": true,
-      "descrizione": "Pomodoro, mozzarella, capocollo, zucchine alla poverella, pomodori secchi, burrata, olio evo locale, basilico.",
-      "allergeni": [
-        "glutine",
-        "latte"
-      ],
-      "allergeniVerificati": false,
-      "varianti": [],
-      "ordine": 90,
-      "paginaFonte": 5
-    },
-    "la-richardus": {
-      "categoria": "pizze",
-      "nome": "LA RICHARDUS",
-      "prezzo": 13,
-      "prezzoMassimo": null,
-      "prezzoAPersona": false,
-      "prezzoSuRichiesta": false,
-      "visibile": true,
-      "descrizione": "Mozzarella, pancetta coppata, pomodorini gialli, pepe, porcini, olio evo locale, basilico.",
-      "allergeni": [
-        "glutine",
-        "latte"
-      ],
-      "allergeniVerificati": false,
-      "varianti": [],
-      "ordine": 100,
-      "paginaFonte": 5
-    },
-    "nu-chiancone": {
-      "categoria": "pizze",
-      "nome": "NU CHIANCONE",
-      "prezzo": 12,
-      "prezzoMassimo": null,
-      "prezzoAPersona": false,
-      "prezzoSuRichiesta": false,
-      "visibile": true,
-      "descrizione": "Mozzarella, mortadella, burrata, crema di pistacchio, pomodori secchi, olio evo locale, basilico.",
-      "allergeni": [
-        "glutine",
-        "latte",
-        "frutta-a-guscio"
-      ],
-      "allergeniVerificati": false,
-      "varianti": [],
-      "ordine": 110,
-      "paginaFonte": 5
-    },
-    "la-zzia-rosa": {
-      "categoria": "pizze",
-      "nome": "LA ZZIA ROSA",
-      "prezzo": 13,
-      "prezzoMassimo": null,
-      "prezzoAPersona": false,
-      "prezzoSuRichiesta": false,
-      "visibile": true,
-      "descrizione": "Pomodoro, mozzarella, prosciutto cotto, pesto di rucola, crocchette, crema di formaggi, olio evo locale, basilico.",
-      "allergeni": [
-        "glutine",
-        "latte"
-      ],
-      "allergeniVerificati": false,
-      "varianti": [],
-      "ordine": 120,
-      "paginaFonte": 5
-    },
-    "la-napulitana": {
-      "categoria": "pizze",
-      "nome": "LA NAPULITANA",
-      "prezzo": 9,
-      "prezzoMassimo": null,
-      "prezzoAPersona": false,
-      "prezzoSuRichiesta": false,
-      "visibile": true,
-      "descrizione": "Pomodoro in cottura, pomodorini fuori cottura, alici, capperi, origano, olio evo locale, basilico.",
-      "allergeni": [
-        "glutine",
-        "pesce"
-      ],
-      "allergeniVerificati": false,
-      "varianti": [],
-      "ordine": 130,
-      "paginaFonte": 5
-    },
-    "anna-ca-l-acchi": {
-      "categoria": "pizze",
-      "nome": "ANNA CA L’ACCHI",
-      "prezzo": 11,
-      "prezzoMassimo": null,
-      "prezzoAPersona": false,
-      "prezzoSuRichiesta": false,
-      "visibile": true,
-      "descrizione": "Mozzarella, crema di formaggi, carciofi, scaglie di cacio cavallo, olio evo locale, basilico.",
-      "allergeni": [
-        "glutine",
-        "latte"
-      ],
-      "allergeniVerificati": false,
-      "varianti": [],
-      "ordine": 140,
-      "paginaFonte": 5
-    },
-    "cori-ti-la-nonna": {
-      "categoria": "pizze",
-      "nome": "CORI TI LA NONNA",
-      "prezzo": 13,
-      "prezzoMassimo": null,
-      "prezzoAPersona": false,
-      "prezzoSuRichiesta": false,
-      "visibile": true,
-      "descrizione": "Pomodoro, mozzarella, melanzane fritte, polpette di carne, scaglie di cacio ricotta, olio evo locale, basilico.",
-      "allergeni": [
-        "glutine",
-        "latte"
-      ],
-      "allergeniVerificati": false,
-      "varianti": [],
-      "ordine": 150,
-      "paginaFonte": 5
-    },
-    "l-altitaliana": {
-      "categoria": "pizze",
-      "nome": "L’ALTITALIANA",
-      "prezzo": 12,
-      "prezzoMassimo": null,
-      "prezzoAPersona": false,
-      "prezzoSuRichiesta": false,
-      "visibile": true,
-      "descrizione": "Pomodoro, mozzarella, rucola, grana, pomodorini, salsa di aceto balsamico, olio evo locale, basilico.",
-      "allergeni": [
-        "glutine",
-        "latte"
-      ],
-      "allergeniVerificati": false,
-      "varianti": [],
-      "ordine": 160,
-      "paginaFonte": 5
-    },
-    "na-fiori-di-cucuzza": {
-      "categoria": "pizze",
-      "nome": "NA FIORI DI CUCUZZA",
-      "prezzo": 14,
-      "prezzoMassimo": null,
-      "prezzoAPersona": false,
-      "prezzoSuRichiesta": false,
-      "visibile": true,
-      "descrizione": "Mozzarella, fiori di zucca, acciughe, ricotta, olio evo locale, basilico.",
-      "allergeni": [
-        "glutine",
-        "latte",
-        "pesce"
-      ],
-      "allergeniVerificati": false,
-      "varianti": [],
-      "ordine": 170,
-      "paginaFonte": 5
-    },
-    "na-maranciana": {
-      "categoria": "pizze",
-      "nome": "NA MARANCIANA",
-      "prezzo": 13,
-      "prezzoMassimo": null,
-      "prezzoAPersona": false,
-      "prezzoSuRichiesta": false,
-      "visibile": true,
-      "descrizione": "Mozzarella, melanzane fritte, pomodorini, cacio ricotta, olio evo locale, basilico.",
-      "allergeni": [
-        "glutine",
-        "latte"
-      ],
-      "allergeniVerificati": false,
-      "varianti": [],
-      "ordine": 180,
-      "paginaFonte": 5
-    },
-    "la-muntanara": {
-      "categoria": "pizze",
-      "nome": "LA MUNTANARA",
-      "prezzo": 13,
-      "prezzoMassimo": null,
-      "prezzoAPersona": false,
-      "prezzoSuRichiesta": false,
-      "visibile": true,
-      "descrizione": "Pomodoro, mozzarella, bresaola, rucola, grana, pomodori secchi, olio evo locale, basilico.",
-      "allergeni": [
-        "glutine",
-        "latte"
-      ],
-      "allergeniVerificati": false,
-      "varianti": [],
-      "ordine": 190,
-      "paginaFonte": 5
-    },
     "acqua": {
       "categoria": "bevande",
       "nome": "Acqua",
@@ -977,10 +566,7 @@
       "descrizione": "Naturale / Frizzante.",
       "allergeni": null,
       "allergeniVerificati": false,
-      "varianti": [
-        "Naturale",
-        "Frizzante"
-      ],
+      "varianti": ["Naturale", "Frizzante"],
       "ordine": 10,
       "paginaFonte": 6
     },
@@ -993,9 +579,7 @@
       "prezzoSuRichiesta": false,
       "visibile": true,
       "descrizione": "",
-      "allergeni": [
-        "solfiti"
-      ],
+      "allergeni": ["solfiti"],
       "allergeniVerificati": false,
       "varianti": [],
       "ordine": 20,
@@ -1040,9 +624,7 @@
       "prezzoSuRichiesta": false,
       "visibile": true,
       "descrizione": "",
-      "allergeni": [
-        "glutine"
-      ],
+      "allergeni": ["glutine"],
       "allergeniVerificati": false,
       "varianti": [],
       "ordine": 50,
@@ -1057,9 +639,7 @@
       "prezzoSuRichiesta": false,
       "visibile": true,
       "descrizione": "",
-      "allergeni": [
-        "glutine"
-      ],
+      "allergeni": ["glutine"],
       "allergeniVerificati": false,
       "varianti": [],
       "ordine": 60,
@@ -1074,14 +654,9 @@
       "prezzoSuRichiesta": false,
       "visibile": true,
       "descrizione": "Rosse e doppio malto.",
-      "allergeni": [
-        "glutine"
-      ],
+      "allergeni": ["glutine"],
       "allergeniVerificati": false,
-      "varianti": [
-        "Rossa",
-        "Doppio malto"
-      ],
+      "varianti": ["Rossa", "Doppio malto"],
       "ordine": 70,
       "paginaFonte": 6
     },
@@ -1094,9 +669,7 @@
       "prezzoSuRichiesta": true,
       "visibile": true,
       "descrizione": "Prezzo da chiedere al personale di sala.",
-      "allergeni": [
-        "solfiti"
-      ],
+      "allergeni": ["solfiti"],
       "allergeniVerificati": false,
       "varianti": [],
       "ordine": 80,
@@ -1173,10 +746,7 @@
       "descrizione": "",
       "allergeni": null,
       "allergeniVerificati": false,
-      "varianti": [
-        "Bianca",
-        "Barricata"
-      ],
+      "varianti": ["Bianca", "Barricata"],
       "ordine": 30,
       "paginaFonte": 6
     }

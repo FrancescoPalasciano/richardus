@@ -15,6 +15,7 @@ export default function MenuInfo() {
     <section
       className={`container ${styles.menuInfo}`}
       aria-labelledby="menu-info-title"
+      data-reveal
     >
       <div>
         <p className="eyebrow">Prima di ordinare</p>
@@ -32,7 +33,7 @@ export default function MenuInfo() {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="coperto">
-          <AccordionTrigger>Coperto e aggiunte</AccordionTrigger>
+          <AccordionTrigger>Il coperto</AccordionTrigger>
           <AccordionContent>
             {menu.costiAggiuntivi.coperto.visibile && (
               <p>
@@ -40,15 +41,6 @@ export default function MenuInfo() {
                 persona.
               </p>
             )}
-            <p>{menu.costiAggiuntivi.aggiuntePizze.descrizione}</p>
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="prodotti">
-          <AccordionTrigger>Informazioni sui prodotti</AccordionTrigger>
-          <AccordionContent>
-            Il menu riporta una nota sui prodotti surgelati senza associarla a
-            singole voci. Chiedi al personale informazioni sui piatti che
-            desideri ordinare.
           </AccordionContent>
         </AccordionItem>
       </Accordion>

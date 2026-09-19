@@ -6,11 +6,9 @@ export const euro = new Intl.NumberFormat("it-IT", {
   currency: menu.valuta,
 });
 export const displayName = (name: string) =>
-  name === "LA RICHARDUS"
-    ? "La Richardus"
-    : name === name.toLocaleUpperCase("it-IT")
-      ? name.charAt(0) + name.slice(1).toLocaleLowerCase("it-IT")
-      : name;
+  name === name.toLocaleUpperCase("it-IT")
+    ? name.charAt(0) + name.slice(1).toLocaleLowerCase("it-IT")
+    : name;
 export const dishes = Object.entries(menu.prodotti)
   .filter(([, dish]) => dish.visibile)
   .sort(([, a], [, b]) => a.ordine - b.ordine);
@@ -22,7 +20,6 @@ export const categoryLabel = (id: string, fallback: string) =>
     "primi-piatti": "Primi",
     "secondi-piatti": "Secondi",
     "frittura-della-casa": "Frittura",
-    pizze: "Pizza",
     dolci: "Dessert",
     bevande: "Vini e bevande",
   })[id] ?? fallback;

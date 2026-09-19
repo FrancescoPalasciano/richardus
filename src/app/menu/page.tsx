@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Info } from "lucide-react";
-import homePhoto from "@/app/images/home.webp";
+import winePhoto from "@/app/images/vino.webp";
 import menu from "@/data/menu.json";
 import Reservation from "@/components/Reservation";
 import DishCard from "@/components/DishCard";
 import MenuBrowser from "@/components/MenuBrowser";
 import MenuInfo from "@/components/MenuInfo";
-import { Badge } from "@/components/ui/surfaces";
 import {
   categories,
   categoryLabel,
@@ -23,11 +22,11 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Il menu di Richardus",
     description:
-      "Piatti, ingredienti e prezzi. Pasta, brace e pizza a Francavilla Fontana.",
+      "Piatti, ingredienti e prezzi. Cucina pugliese e brace nella nostra trattoria a Francavilla Fontana.",
   },
   title: "Menu: piatti, ingredienti e prezzi",
   description:
-    "Il menu di Richardus a Francavilla Fontana: antipasti, pasta, piatti alla brace e pizze. Consulta ingredienti e prezzi e prenota il tuo tavolo.",
+    "Il menu di Richardus a Francavilla Fontana: antipasti, pasta e piatti alla brace. Consulta ingredienti e prezzi e prenota il tuo tavolo.",
   alternates: { canonical: "/menu" },
   openGraph: {
     images: [
@@ -35,7 +34,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Richardus, pasta, brace e pizza",
+        alt: "Richardus, trattoria storica a Francavilla Fontana",
       },
     ],
     siteName: "Richardus",
@@ -43,7 +42,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "Il menu di Richardus",
     description:
-      "Piatti, ingredienti e prezzi. Pasta, brace e pizza a Francavilla Fontana.",
+      "Piatti, ingredienti e prezzi. Cucina pugliese e brace nella nostra trattoria a Francavilla Fontana.",
     url: "/menu",
   },
 };
@@ -60,10 +59,10 @@ export default function MenuPage() {
           id={id}
           aria-labelledby={`${id}-title`}
           className={styles.menuCategory}
+          data-reveal
         >
           <div className={styles.categoryHeading}>
             <h2 id={`${id}-title`}>{category.nome}</h2>
-            <span>{products.length} proposte</span>
           </div>
           {category.descrizione && (
             <p className={styles.categoryDescription}>{category.descrizione}</p>
@@ -78,11 +77,6 @@ export default function MenuPage() {
               </li>
             ))}
           </ul>
-          {id === "pizze" && (
-            <p className={styles.categoryNote}>
-              {menu.costiAggiuntivi.aggiuntePizze.descrizione}
-            </p>
-          )}
         </section>
       ),
     };
@@ -90,39 +84,34 @@ export default function MenuPage() {
   return (
     <main id="contenuto">
       <header className={`container ${styles.pageHeader}`}>
-        <div>
-          <p className="eyebrow">Il menu Richardus</p>
-          <h1>
-            Cosa portiamo
-            <br />
-            <span>a tavola.</span>
-          </h1>
-          <p>
-            Pasta, brace e pizza. Scegli da dove cominciare, al resto pensiamo
-            noi.
-          </p>
-          <div className={styles.menuNotice}>
-            <Info size={15} aria-hidden="true" />
-            <span>
-              Allergie o intolleranze? Parlane con il personale prima di
-              ordinare.{" "}
-              {menu.costiAggiuntivi.coperto.visibile &&
-                `Coperto ${euro.format(menu.costiAggiuntivi.coperto.prezzo)}.`}
-            </span>
-          </div>
-        </div>
-        <figure className={styles.menuCover}>
+        <div className={styles.menuHero}>
           <Image
-            src={homePhoto}
-            alt="Pizza di Richardus con burrata e capocollo"
+            src={winePhoto}
+            alt="Due calici di vino rosato per un brindisi da Richardus"
             fill
             preload
-            sizes="(min-width: 1520px) 560px, (min-width: 768px) 38vw, calc(100vw - 32px)"
+            sizes="(min-width: 1520px) 1400px, calc(100vw - 32px)"
           />
-          <figcaption>
-            <Badge>Ingredienti, carattere, gusto.</Badge>
-          </figcaption>
-        </figure>
+          <div className={styles.coverCopy}>
+            <p className="eyebrow">Il menu Richardus</p>
+            <h1>
+              Cosa portiamo
+              <br />a tavola.
+            </h1>
+            <p>
+              La cucina pugliese, i primi di casa e il gusto della brace. Scegli
+              da dove cominciare.
+            </p>
+          </div>
+        </div>
+        <div className={styles.menuNotice}>
+          <Info size={15} aria-hidden="true" />
+          <span>
+            Allergie o intolleranze? Parlane con il personale prima di ordinare.{" "}
+            {menu.costiAggiuntivi.coperto.visibile &&
+              `Coperto ${euro.format(menu.costiAggiuntivi.coperto.prezzo)}.`}
+          </span>
+        </div>
       </header>
       <MenuBrowser sections={sections} />
       <MenuInfo />

@@ -1,34 +1,39 @@
 .pageHeader {
-  display: grid;
-  gap: 30px;
-  padding-block: 48px 40px;
+  padding-block: 28px 24px;
 }
-.pageHeader h1 {
-  font-size: clamp(2.7rem, 6vw, 5.5rem);
-}
-.pageHeader h1 span {
-  color: var(--muted-foreground);
-}
-.pageHeader p:not(:global(.eyebrow)) {
-  max-width: 50ch;
-  color: var(--muted-foreground);
-  margin-top: 22px;
-  font-size: 15px;
-}
-.menuCover {
+.menuHero {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-lg);
-  aspect-ratio: 2.8;
+  min-height: 370px;
+  display: flex;
+  align-items: flex-end;
+  background: var(--dark);
 }
-.menuCover img {
+.menuHero > img {
   object-fit: cover;
-  object-position: 50% 72%;
+  object-position: 50% 58%;
 }
-.menuCover figcaption {
-  position: absolute;
-  left: 16px;
-  bottom: 16px;
+.coverCopy {
+  position: relative;
+  margin: 16px;
+  padding: 24px;
+  background: color-mix(in srgb, var(--dark) 88%, transparent);
+  color: var(--dark-foreground);
+  border-radius: var(--radius-md);
+  max-width: 640px;
+}
+.coverCopy h1 {
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+}
+.coverCopy > p:last-child {
+  font-size: 15px;
+  max-width: 42ch;
+  margin-top: 20px;
+  color: var(--dark-foreground);
+}
+.coverCopy :global(.eyebrow) {
+  color: var(--dark-muted);
 }
 .categoryBar {
   position: sticky;
@@ -173,17 +178,15 @@
 }
 @media (min-width: 768px) {
   .pageHeader {
-    grid-template-columns: 1.4fr 1fr;
-    align-items: center;
-    gap: 50px;
-    padding-block: 58px 48px;
+    padding-block: 32px;
   }
-  .menuCover {
-    aspect-ratio: 1.4;
+  .menuHero {
+    min-height: 470px;
+    border-radius: var(--radius-xl);
   }
-  .menuCover figcaption {
-    left: 24px;
-    bottom: 24px;
+  .coverCopy {
+    margin: 32px;
+    padding: 36px;
   }
   .menuContent {
     padding-block: 28px 0;
