@@ -1,0 +1,1080 @@
+{
+  ". Il collegamento al profilo del realizzatore del sito non comporta, da solo, la trasmissione a quest’ultimo dei dati delle prenotazioni.": [
+    ". The link to the website creator’s profile does not, by itself, share reservation data with them.",
+    ". Le lien vers le profil du créateur du site ne lui transmet pas, à lui seul, les données de réservation.",
+    ". Der Link zum Profil des Website-Erstellers übermittelt diesem allein keine Reservierungsdaten."
+  ],
+  ". Le modalità di attivazione e disattivazione sono riportate nella": [
+    ". Instructions for enabling and disabling it are in the",
+    ". Les modalités d’activation et de désactivation figurent dans la",
+    ". Hinweise zum Aktivieren und Deaktivieren finden Sie in der"
+  ],
+  "10 portate.": ["10 dishes.", "10 plats.", "10 Gerichte."],
+  "5 stelle su 5": ["5 out of 5 stars", "5 étoiles sur 5", "5 von 5 Sternen"],
+  "A Francavilla.": ["In Francavilla.", "À Francavilla.", "In Francavilla."],
+  "A tavola con voi.": [
+    "Around your table.",
+    "À table avec vous.",
+    "Mit Ihnen am Tisch."
+  ],
+  "Acqua": ["Water", "Eau", "Wasser"],
+  "Al primitivo o ai porcini.": [
+    "With Primitivo wine or porcini mushrooms.",
+    "Au vin Primitivo ou aux cèpes.",
+    "Mit Primitivo-Wein oder Steinpilzen."
+  ],
+  "Allergie e intolleranze": [
+    "Allergies and intolerances",
+    "Allergies et intolérances",
+    "Allergien und Unverträglichkeiten"
+  ],
+  "Allergie o intolleranze? Parlane con il personale prima di ordinare.": [
+    "Allergies or intolerances? Please speak to our staff before ordering.",
+    "Allergies ou intolérances ? Parlez-en au personnel avant de commander.",
+    "Allergien oder Unverträglichkeiten? Bitte sprechen Sie vor der Bestellung mit unserem Personal."
+  ],
+  "Altre categorie, scorri a destra": [
+    "More categories, scroll right",
+    "Autres catégories, faire défiler à droite",
+    "Weitere Kategorien, nach rechts scrollen"
+  ],
+  "Amari": ["Digestifs", "Digestifs", "Kräuterliköre"],
+  "Antipasti": ["Starters", "Entrées", "Vorspeisen"],
+  "Antipasti della casa": [
+    "House starters",
+    "Entrées de la maison",
+    "Vorspeisen des Hauses"
+  ],
+  "Antipasti della tradizione, pasta e carne alla brace. I sapori di casa, a Francavilla.": [
+    "Traditional starters, pasta and grilled meat. The flavours of home, in Francavilla.",
+    "Entrées traditionnelles, pâtes et viandes grillées. Les saveurs de la maison, à Francavilla.",
+    "Traditionelle Vorspeisen, Pasta und Fleisch vom Grill. Heimatliche Küche in Francavilla."
+  ],
+  "Apri in Google Maps": [
+    "Open in Google Maps",
+    "Ouvrir dans Google Maps",
+    "In Google Maps öffnen"
+  ],
+  "Apri navigazione": [
+    "Open navigation",
+    "Ouvrir la navigation",
+    "Navigation öffnen"
+  ],
+  "Arrosto misto alla brace": [
+    "Mixed grilled meats",
+    "Assortiment de viandes grillées",
+    "Gemischte Grillplatte"
+  ],
+  "Azioni rapide": ["Quick actions", "Actions rapides", "Schnellzugriff"],
+  "Bevande": ["Drinks", "Boissons", "Getränke"],
+  "Birra 33 cl": ["Beer 33 cl", "Bière 33 cl", "Bier 33 cl"],
+  "Birra 66 cl": ["Beer 66 cl", "Bière 66 cl", "Bier 66 cl"],
+  "Birra speciali": [
+    "Speciality beers",
+    "Bières spéciales",
+    "Bierspezialitäten"
+  ],
+  "Bocconcini di melanzane": [
+    "Aubergine bites",
+    "Bouchées d’aubergine",
+    "Auberginenhäppchen"
+  ],
+  "Bombette, capocollo, salsiccia e fegatini.": [
+    "Bombette, pork neck, sausage and liver skewers.",
+    "Bombette, échine de porc, saucisse et brochettes de foie.",
+    "Bombette, Schweinenacken, Bratwurst und Leberspieße."
+  ],
+  "Bombette, capocollo, salsiccia, fegatini.": [
+    "Bombette, pork neck, sausage, liver skewers.",
+    "Bombette, échine de porc, saucisse, brochettes de foie.",
+    "Bombette, Schweinenacken, Bratwurst, Leberspieße."
+  ],
+  "Brace": ["From the grill", "Au gril", "Vom Grill"],
+  "Brindisi · Puglia": [
+    "Brindisi · Puglia",
+    "Brindisi · Pouilles",
+    "Brindisi · Apulien"
+  ],
+  "Caffè": ["Coffee", "Café", "Kaffee"],
+  "Cappellaccio ripieno di burrata in salsa di pomodorini giallo e capocollo croccante": [
+    "Burrata-filled cappellaccio with yellow cherry tomato sauce and crispy capocollo",
+    "Cappellaccio farci à la burrata, sauce aux tomates cerises jaunes et capocollo croustillant",
+    "Cappellaccio mit Burratafüllung, gelber Kirschtomatensauce und knusprigem Capocollo"
+  ],
+  "Categorie del menu": [
+    "Menu categories",
+    "Catégories du menu",
+    "Menükategorien"
+  ],
+  "Categorie precedenti": [
+    "Previous categories",
+    "Catégories précédentes",
+    "Vorherige Kategorien"
+  ],
+  "Chi siamo": ["About us", "La trattoria", "Über uns"],
+  "Chiamaci": ["Call us", "Appelez-nous", "Anrufen"],
+  "Chiudi": ["Close", "Fermer", "Schließen"],
+  "Ci trovi qui.": [
+    "Find us here.",
+    "Retrouvez-nous ici.",
+    "Hier finden Sie uns."
+  ],
+  "Ci vediamo": ["Shall we meet", "On se retrouve", "Treffen wir uns"],
+  "Consenti e carica la mappa": [
+    "Allow and load the map",
+    "Autoriser et charger la carte",
+    "Karte erlauben und laden"
+  ],
+  "Conservazione e destinatari": [
+    "Retention and recipients",
+    "Conservation et destinataires",
+    "Speicherung und Empfänger"
+  ],
+  "Contatti": ["Contact", "Contact", "Kontakt"],
+  "Cookie": ["Cookies", "Cookies", "Cookies"],
+  "Cookie e contenuti esterni del sito Richardus.": [
+    "Cookies and external content on the Richardus website.",
+    "Cookies et contenus externes du site Richardus.",
+    "Cookies und externe Inhalte auf der Website von Richardus."
+  ],
+  "Cookie e memoria del browser": [
+    "Cookies and browser storage",
+    "Cookies et mémoire du navigateur",
+    "Cookies und Browserspeicher"
+  ],
+  "Cookie policy": [
+    "Cookie policy",
+    "Politique de cookies",
+    "Cookie-Richtlinie"
+  ],
+  "Coperto:": ["Cover charge:", "Couvert :", "Gedeck:"],
+  "Cortecce al grano arso, salsiccia e funghi porcini": [
+    "Burnt-wheat cortecce pasta with sausage and porcini mushrooms",
+    "Cortecce au blé brûlé, saucisse et cèpes",
+    "Cortecce aus geröstetem Weizen mit Bratwurst und Steinpilzen"
+  ],
+  "Cosa portiamo": ["What we bring", "Ce que nous servons", "Was wir auf"],
+  "Cotoletta e patatine fritte": [
+    "Breaded cutlet and fries",
+    "Escalope panée et frites",
+    "Paniertes Schnitzel mit Pommes frites"
+  ],
+  "Crocchette di patate": [
+    "Potato croquettes",
+    "Croquettes de pommes de terre",
+    "Kartoffelkroketten"
+  ],
+  "Cucina": ["Our kitchen", "Cuisine", "Unsere Küche"],
+  "Da condividere.": ["To share.", "À partager.", "Zum Teilen."],
+  "Da qui.": ["From here.", "D’ici.", "Von hier."],
+  "Da sentirsi a casa.": [
+    "Feel at home.",
+    "Comme à la maison.",
+    "Wie zu Hause."
+  ],
+  "Dagli antipasti ai primi, dalla carne alle insalate in coppa di pane: una cucina da scegliere con calma, un piatto dopo l’altro.": [
+    "From starters to pasta, from meat to salads in bread bowls: food to enjoy at your own pace, one dish at a time.",
+    "Des entrées aux pâtes, des viandes aux salades en coupe de pain : une cuisine à savourer tranquillement, un plat après l’autre.",
+    "Von Vorspeisen und Pasta bis zu Fleisch und Salaten in Brotschalen: Gerichte zum Genießen, ganz in Ruhe."
+  ],
+  "Dalla nostra cucina": [
+    "From our kitchen",
+    "De notre cuisine",
+    "Aus unserer Küche"
+  ],
+  "Dati tecnici e hosting": [
+    "Technical data and hosting",
+    "Données techniques et hébergement",
+    "Technische Daten und Hosting"
+  ],
+  "Dato da completare": [
+    "Information to be completed",
+    "Information à compléter",
+    "Angabe noch zu ergänzen"
+  ],
+  "Dessert": ["Dessert", "Dessert", "Dessert"],
+  "Disattiva la mappa": [
+    "Disable the map",
+    "Désactiver la carte",
+    "Karte deaktivieren"
+  ],
+  "Distillati speciali": [
+    "Speciality spirits",
+    "Spiritueux spéciaux",
+    "Besondere Spirituosen"
+  ],
+  "Dolci": ["Desserts", "Desserts", "Desserts"],
+  "Dove siamo": ["Find us", "Nous trouver", "Anfahrt"],
+  "Due calici di vino rosato per un brindisi da Richardus": [
+    "Two glasses of rosé for a toast at Richardus",
+    "Deux verres de rosé pour trinquer chez Richardus",
+    "Zwei Gläser Rosé zum Anstoßen bei Richardus"
+  ],
+  "Entrecotè di manzo ai ferri": [
+    "Grilled beef entrecôte",
+    "Entrecôte de bœuf grillée",
+    "Gegrilltes Rinderentrecôte"
+  ],
+  "Entrecotè di manzo in salsa dello chef": [
+    "Beef entrecôte with the chef’s sauce",
+    "Entrecôte de bœuf à la sauce du chef",
+    "Rinderentrecôte mit Sauce nach Art des Küchenchefs"
+  ],
+  "Entrecôte di manzo con salsa dello chef e patate": [
+    "Beef entrecôte with the chef’s sauce and potatoes",
+    "Entrecôte de bœuf à la sauce du chef et pommes de terre",
+    "Rinderentrecôte mit Sauce nach Art des Küchenchefs und Kartoffeln"
+  ],
+  "Entrecôte in salsa dello chef": [
+    "Entrecôte with the chef’s sauce",
+    "Entrecôte à la sauce du chef",
+    "Entrecôte nach Art des Küchenchefs"
+  ],
+  "Esplora tutto il menu": [
+    "Explore the full menu",
+    "Découvrir toute la carte",
+    "Die gesamte Karte entdecken"
+  ],
+  "Estratto da Google": [
+    "Excerpt from Google",
+    "Extrait de Google",
+    "Auszug aus Google"
+  ],
+  "Fave e verdura": [
+    "Fava beans and greens",
+    "Fèves et légumes verts",
+    "Dicke Bohnen und Blattgemüse"
+  ],
+  "Fave e verdura di stagione": [
+    "Fava beans and seasonal greens",
+    "Fèves et légumes de saison",
+    "Dicke Bohnen und saisonales Blattgemüse"
+  ],
+  "Fave, verdure e formaggi del territorio.": [
+    "Fava beans, vegetables and local cheeses.",
+    "Fèves, légumes et fromages du terroir.",
+    "Dicke Bohnen, Gemüse und Käse aus der Region."
+  ],
+  "Foglie d’ulivo pomodoro tricolore con melanzane e caciocavallo": [
+    "Olive-leaf pasta with three-colour tomatoes, aubergine and caciocavallo",
+    "Pâtes en forme de feuilles d’olivier, tomates tricolores, aubergine et caciocavallo",
+    "Olivenblatt-Pasta mit dreifarbigen Tomaten, Auberginen und Caciocavallo"
+  ],
+  "Francavilla Fontana, BR · Puglia": [
+    "Francavilla Fontana, BR · Puglia",
+    "Francavilla Fontana, BR · Pouilles",
+    "Francavilla Fontana, BR · Apulien"
+  ],
+  "Frittura della Casa": [
+    "House fried specialities",
+    "Fritures de la maison",
+    "Frittierte Spezialitäten des Hauses"
+  ],
+  "Garante per la protezione dei dati personali": [
+    "Italian Data Protection Authority",
+    "Autorité italienne de protection des données",
+    "Italienische Datenschutzbehörde"
+  ],
+  "Gli estratti delle recensioni sono inclusi nelle pagine del sito. Il carosello non carica widget, immagini o script di Google o Elfsight e non salva cookie o preferenze nel browser. Il collegamento “Leggi tutte le recensioni” apre il profilo del ristorante su Google.": [
+    "Review excerpts are included directly in the pages. The carousel loads no Google or Elfsight widgets, images or scripts and saves no cookies or browser preferences. “Read all reviews” opens the restaurant’s Google profile.",
+    "Les extraits d’avis sont inclus dans les pages. Le carrousel ne charge aucun widget, image ou script Google ou Elfsight et n’enregistre ni cookies ni préférences. « Lire tous les avis » ouvre le profil Google du restaurant.",
+    "Die Bewertungsauszüge sind direkt in die Seiten eingebunden. Das Karussell lädt keine Widgets, Bilder oder Skripte von Google oder Elfsight und speichert keine Cookies oder Einstellungen. „Alle Bewertungen lesen“ öffnet das Google-Profil des Restaurants."
+  ],
+  "Grappa Bianca o Barricata": [
+    "White or barrel-aged grappa",
+    "Grappa blanche ou vieillie en fût",
+    "Klarer oder fassgereifter Grappa"
+  ],
+  "I caratteri tipografici del sito sono ospitati localmente. Nel codice del sito non sono integrati strumenti di analytics o pixel pubblicitari.": [
+    "The website’s fonts are hosted locally. Its code includes no analytics tools or advertising pixels.",
+    "Les polices du site sont hébergées localement. Le code du site n’intègre aucun outil d’analyse ni pixel publicitaire.",
+    "Die Schriftarten werden lokal gehostet. Im Website-Code sind keine Analysewerkzeuge oder Werbepixel integriert."
+  ],
+  "I collegamenti a Instagram, WhatsApp e Google Maps aprono servizi esterni, soggetti alle rispettive informative:": [
+    "Links to Instagram, WhatsApp and Google Maps open external services governed by their respective privacy policies:",
+    "Les liens vers Instagram, WhatsApp et Google Maps ouvrent des services externes soumis à leurs politiques respectives :",
+    "Links zu Instagram, WhatsApp und Google Maps öffnen externe Dienste, für die deren Datenschutzhinweise gelten:"
+  ],
+  "I cookie sono piccoli file salvati nel browser. Anche altri strumenti, come localStorage, possono memorizzare informazioni sul dispositivo. Questa pagina descrive le funzionalità implementate nel sito; i dati del titolare sono riportati nella": [
+    "Cookies are small files stored in your browser. Other tools, such as localStorage, may also store information on your device. This page describes the website’s implemented features; the controller’s details appear in the",
+    "Les cookies sont de petits fichiers enregistrés dans le navigateur. D’autres outils, comme localStorage, peuvent aussi stocker des informations sur l’appareil. Cette page décrit les fonctions du site ; les coordonnées du responsable figurent dans la",
+    "Cookies sind kleine Dateien im Browser. Auch andere Werkzeuge wie localStorage können Informationen auf dem Gerät speichern. Diese Seite beschreibt die Funktionen der Website; Angaben zum Verantwortlichen stehen in der"
+  ],
+  "I dati del titolare e le informazioni sulla gestione dei dati devono essere completati e verificati prima della pubblicazione del sito.": [
+    "The controller’s details and information on data handling must be completed and checked before the website is published.",
+    "Les coordonnées du responsable et les informations sur la gestion des données doivent être complétées et vérifiées avant la publication du site.",
+    "Die Angaben zum Verantwortlichen und zur Datenverarbeitung müssen vor Veröffentlichung der Website ergänzt und geprüft werden."
+  ],
+  "I link a Instagram, WhatsApp e Google aprono servizi esterni. La mappa Google incorporata viene gestita con la scelta descritta sopra. Gli eventuali cookie già impostati da servizi esterni possono essere gestiti o cancellati nelle impostazioni del browser.": [
+    "Links to Instagram, WhatsApp and Google open external services. The embedded Google map uses the consent choice described above. Cookies already set by external services can be managed or deleted in your browser settings.",
+    "Les liens vers Instagram, WhatsApp et Google ouvrent des services externes. La carte Google intégrée utilise le choix décrit ci-dessus. Les cookies déjà déposés par ces services peuvent être gérés ou supprimés dans les paramètres du navigateur.",
+    "Links zu Instagram, WhatsApp und Google öffnen externe Dienste. Die eingebettete Google-Karte wird über die oben beschriebene Auswahl gesteuert. Bereits gesetzte Cookies externer Dienste können in den Browsereinstellungen verwaltet oder gelöscht werden."
+  ],
+  "I nostri orari": ["Opening hours", "Nos horaires", "Öffnungszeiten"],
+  "I piatti Richardus": [
+    "Richardus dishes",
+    "Les plats Richardus",
+    "Die Gerichte von Richardus"
+  ],
+  "I primi": ["Pasta", "Les pâtes", "Pasta"],
+  "I secondi": ["Main courses", "Les plats", "Hauptgerichte"],
+  "I tavoli della trattoria Richardus, tra pareti in pietra e decorazioni di bottiglie": [
+    "Tables at Richardus trattoria, with stone walls and bottle decorations",
+    "Les tables de la trattoria Richardus, entre murs en pierre et décorations de bouteilles",
+    "Die Tische der Trattoria Richardus mit Steinwänden und Flaschendekoration"
+  ],
+  "I tempi applicabili ai contatti e alle prenotazioni, gli eventuali obblighi di conservazione e i soggetti autorizzati ad accedere ai dati devono essere definiti dal titolare prima della pubblicazione di questa informativa.": [
+    "Retention periods for enquiries and reservations, any retention obligations and the persons authorised to access the data must be defined by the controller before this notice is published.",
+    "Les durées de conservation des contacts et réservations, les éventuelles obligations de conservation et les personnes autorisées à accéder aux données doivent être définies par le responsable avant publication de cette information.",
+    "Aufbewahrungsfristen für Anfragen und Reservierungen, mögliche Aufbewahrungspflichten und zugriffsberechtigte Personen sind vor Veröffentlichung dieser Hinweise vom Verantwortlichen festzulegen."
+  ],
+  "I tuoi diritti": ["Your rights", "Vos droits", "Ihre Rechte"],
+  "Il coperto": ["Cover charge", "Le couvert", "Gedeck"],
+  "Il grano arso, la pasta e i sapori del territorio.": [
+    "Burnt wheat, pasta and the flavours of our region.",
+    "Le blé brûlé, les pâtes et les saveurs du terroir.",
+    "Gerösteter Weizen, Pasta und die Aromen unserer Region."
+  ],
+  "Il gusto di stare bene.": [
+    "The pleasure of feeling at home.",
+    "Le plaisir de se sentir bien.",
+    "Einfach wohlfühlen."
+  ],
+  "Il gusto,": ["Flavour,", "Le goût,", "Geschmack,"],
+  "Il menu": ["The menu", "La carte", "Die Speisekarte"],
+  "Il menu Richardus": [
+    "The Richardus menu",
+    "La carte Richardus",
+    "Die Richardus-Speisekarte"
+  ],
+  "Il menu di Richardus": [
+    "Richardus menu",
+    "La carte de Richardus",
+    "Speisekarte von Richardus"
+  ],
+  "Il menu di Richardus a Francavilla Fontana: antipasti, pasta e piatti alla brace. Consulta ingredienti e prezzi e prenota il tuo tavolo.": [
+    "The menu at Richardus in Francavilla Fontana: starters, pasta and grilled dishes. Explore ingredients and prices and book your table.",
+    "La carte de Richardus à Francavilla Fontana : entrées, pâtes et grillades. Découvrez les ingrédients et les prix, puis réservez votre table.",
+    "Die Speisekarte von Richardus in Francavilla Fontana: Vorspeisen, Pasta und Grillgerichte. Zutaten und Preise entdecken und einen Tisch reservieren."
+  ],
+  "Il menu e i contatti di Richardus a Francavilla Fontana.": [
+    "The menu and contact details for Richardus in Francavilla Fontana.",
+    "La carte et les coordonnées de Richardus à Francavilla Fontana.",
+    "Speisekarte und Kontaktdaten von Richardus in Francavilla Fontana."
+  ],
+  "Il piacere di ritrovarsi": [
+    "The pleasure of being together",
+    "Le plaisir de se retrouver",
+    "Gemeinsam genießen"
+  ],
+  "Il ristorante Richardus si trova in Via S. Giovanni 15, Francavilla Fontana. Per informazioni sul ristorante:": [
+    "Richardus is at Via S. Giovanni 15, Francavilla Fontana. For restaurant enquiries:",
+    "Richardus se trouve Via S. Giovanni 15, Francavilla Fontana. Pour toute information :",
+    "Richardus befindet sich in der Via S. Giovanni 15 in Francavilla Fontana. Informationen zum Restaurant:"
+  ],
+  "Il server che eroga il sito riceve dati tecnici necessari alla comunicazione, tra cui indirizzo IP, data e ora, risorsa richiesta e informazioni sul browser. La configurazione dei log, il fornitore di hosting, gli eventuali destinatari, i tempi di conservazione e la relativa base giuridica devono essere confermati dal titolare.": [
+    "The website server receives technical data needed for communication, including IP address, date and time, requested resource and browser information. Log configuration, hosting provider, any recipients, retention periods and legal basis must be confirmed by the controller.",
+    "Le serveur reçoit les données techniques nécessaires à la communication : adresse IP, date et heure, ressource demandée et informations du navigateur. La configuration des journaux, l’hébergeur, les éventuels destinataires, les durées de conservation et la base juridique doivent être confirmés par le responsable.",
+    "Der Webserver erhält für die Kommunikation erforderliche technische Daten, darunter IP-Adresse, Datum und Uhrzeit, angeforderte Ressource und Browserinformationen. Protokollierung, Hosting-Anbieter, mögliche Empfänger, Speicherfristen und Rechtsgrundlage müssen vom Verantwortlichen bestätigt werden."
+  ],
+  "Il sito mostra una selezione di estratti delle recensioni pubblicate su Google, con attribuzione agli autori. I testi sono ospitati nel sito: la loro visualizzazione non carica servizi esterni e non memorizza preferenze nel browser. Il link alle recensioni complete apre il profilo del ristorante su Google.": [
+    "The site displays selected excerpts from Google reviews with author attribution. Text is hosted on this site: displaying it loads no external services and stores no browser preferences. The full-reviews link opens the restaurant’s Google profile.",
+    "Le site affiche une sélection d’extraits d’avis Google avec attribution aux auteurs. Les textes sont hébergés sur le site : leur affichage ne charge aucun service externe et ne mémorise aucune préférence. Le lien vers les avis complets ouvre le profil Google du restaurant.",
+    "Die Website zeigt ausgewählte Google-Bewertungen mit Namensnennung. Die Texte werden lokal bereitgestellt; ihre Anzeige lädt keine externen Dienste und speichert keine Browsereinstellungen. Der Link zu allen Bewertungen öffnet das Google-Profil des Restaurants."
+  ],
+  "Il territorio si legge nel menu.": [
+    "Our region, written in the menu.",
+    "Le terroir se lit dans la carte.",
+    "Unsere Region steht auf der Karte."
+  ],
+  "Il trattamento da parte del servizio è descritto nell’": [
+    "The service’s data processing is described in the",
+    "Le traitement par ce service est décrit dans la",
+    "Die Datenverarbeitung des Dienstes wird erläutert in den"
+  ],
+  "Il tuo prossimo tavolo.": [
+    "Your next table.",
+    "Votre prochaine table.",
+    "Ihr nächster Tisch."
+  ],
+  "Indicazioni": ["Directions", "Itinéraire", "Route planen"],
+  "Informativa in preparazione": [
+    "Notice in preparation",
+    "Information en préparation",
+    "Hinweise in Vorbereitung"
+  ],
+  "Informazioni legali": [
+    "Legal information",
+    "Informations légales",
+    "Rechtliche Hinweise"
+  ],
+  "Informazioni privacy": [
+    "Privacy information",
+    "Informations de confidentialité",
+    "Datenschutzhinweise"
+  ],
+  "Informazioni sul trattamento dei dati del sito Richardus.": [
+    "Information on data processing on the Richardus website.",
+    "Informations sur le traitement des données du site Richardus.",
+    "Informationen zur Datenverarbeitung auf der Richardus-Website."
+  ],
+  "Informazioni utili": [
+    "Useful information",
+    "Informations pratiques",
+    "Praktische Informationen"
+  ],
+  "Insalata con acciughe e burrata": [
+    "Salad with anchovies and burrata",
+    "Salade aux anchois et burrata",
+    "Salat mit Sardellen und Burrata"
+  ],
+  "Insalata con bresaola e grana": [
+    "Salad with bresaola and grana",
+    "Salade à la bresaola et au grana",
+    "Salat mit Bresaola und Grana"
+  ],
+  "Insalata con tonno e cacio ricotta": [
+    "Salad with tuna and cacio ricotta",
+    "Salade au thon et au cacio ricotta",
+    "Salat mit Thunfisch und Cacio Ricotta"
+  ],
+  "Insalata con tonno e verdure in una coppa di pane casereccio da Richardus": [
+    "Tuna and vegetable salad in a rustic bread bowl at Richardus",
+    "Salade de thon et légumes en coupe de pain rustique chez Richardus",
+    "Thunfisch-Gemüse-Salat in einer rustikalen Brotschale bei Richardus"
+  ],
+  "Insalata verde, rucola, pomodorini, bresaola, grana, limone, salsa di aceto balsamico.": [
+    "Green salad, rocket, cherry tomatoes, bresaola, grana, lemon and balsamic dressing.",
+    "Salade verte, roquette, tomates cerises, bresaola, grana, citron et sauce au vinaigre balsamique.",
+    "Grüner Salat, Rucola, Kirschtomaten, Bresaola, Grana, Zitrone und Balsamico-Dressing."
+  ],
+  "Insalata verde, rucola, pomodorini, olive leccine, acciughe, carciofi, burrata.": [
+    "Green salad, rocket, cherry tomatoes, Leccine olives, anchovies, artichokes and burrata.",
+    "Salade verte, roquette, tomates cerises, olives Leccine, anchois, artichauts et burrata.",
+    "Grüner Salat, Rucola, Kirschtomaten, Leccine-Oliven, Sardellen, Artischocken und Burrata."
+  ],
+  "Insalata verde, rucola, pomodorini, tonno, cipolla, mix di verdurine caserecce in agrodolce e cacio ricotta.": [
+    "Green salad, rocket, cherry tomatoes, tuna, onion, mixed sweet-and-sour vegetables and cacio ricotta.",
+    "Salade verte, roquette, tomates cerises, thon, oignon, petits légumes maison aigres-doux et cacio ricotta.",
+    "Grüner Salat, Rucola, Kirschtomaten, Thunfisch, Zwiebeln, süßsaures Hausgemüse und Cacio Ricotta."
+  ],
+  "Insalate": ["Salads", "Salades", "Salate"],
+  "La Puglia, a tavola.": [
+    "Puglia, at the table.",
+    "Les Pouilles, à table.",
+    "Apulien auf dem Tisch."
+  ],
+  "La carne, una salsa ricca, il piacere della tavola.": [
+    "Meat, a rich sauce and the pleasure of good food.",
+    "La viande, une sauce généreuse, le plaisir de la table.",
+    "Fleisch, eine kräftige Sauce und die Freude am Genießen."
+  ],
+  "La consultazione di questo sito non richiede un account. Non sono presenti moduli di prenotazione o pagamento: i pulsanti di contatto aprono il telefono oppure WhatsApp. Il messaggio proposto su WhatsApp viene inviato solo dopo la tua conferma nell’app.": [
+    "No account is required to browse this site. There are no booking or payment forms: contact buttons open your phone or WhatsApp. The suggested WhatsApp message is sent only after you confirm it in the app.",
+    "Aucun compte n’est nécessaire pour consulter ce site. Il ne comporte aucun formulaire de réservation ou de paiement : les boutons ouvrent le téléphone ou WhatsApp. Le message proposé n’est envoyé qu’après votre confirmation dans l’application.",
+    "Zum Besuch der Website ist kein Konto nötig. Es gibt keine Buchungs- oder Zahlungsformulare: Die Kontaktbuttons öffnen Telefon oder WhatsApp. Die vorgeschlagene WhatsApp-Nachricht wird erst nach Ihrer Bestätigung in der App gesendet."
+  ],
+  "Coca Cola 33 cl": ["Coca Cola 33 cl", "Coca Cola 33 cl", "Coca Cola 33 cl"],
+  "Fanta 33 cl": ["Fanta 33 cl", "Fanta 33 cl", "Fanta 33 cl"],
+  "Fontana": ["Fontana", "Fontana", "Fontana"],
+  "Francavilla": ["Francavilla", "Francavilla", "Francavilla"],
+  "Francavilla Fontana": [
+    "Francavilla Fontana",
+    "Francavilla Fontana",
+    "Francavilla Fontana"
+  ],
+  "Francavilla Fontana · BR": [
+    "Francavilla Fontana · BR",
+    "Francavilla Fontana · BR",
+    "Francavilla Fontana · BR"
+  ],
+  "Google": ["Google", "Google", "Google"],
+  "La cucina pugliese, i primi di casa e il gusto della brace. Scegli da dove cominciare.": [
+    "Puglian cooking, house-made pasta dishes and flavours from the grill. Choose where to begin.",
+    "La cuisine des Pouilles, les pâtes de la maison et les saveurs du gril. À vous de choisir.",
+    "Apulische Küche, Pastagerichte des Hauses und Geschmack vom Grill. Womit möchten Sie beginnen?"
+  ],
+  "La cucina pugliese, il piacere di stare a tavola.": [
+    "Puglian cooking and the pleasure of sharing a table.",
+    "La cuisine des Pouilles, le plaisir d’être à table.",
+    "Apulische Küche und die Freude am gemeinsamen Essen."
+  ],
+  "La domenica, anche a pranzo.": [
+    "Also open for Sunday lunch.",
+    "Le dimanche, aussi au déjeuner.",
+    "Sonntags auch zum Mittagessen."
+  ],
+  "La mappa incorporata è un contenuto facoltativo. Si attiva solo con “Consenti e carica la mappa”. Il caricamento trasmette a Google dati tecnici, tra cui l’indirizzo IP, e può comportare l’utilizzo di cookie secondo l’": [
+    "The embedded map is optional. It activates only with “Allow and load the map”. Loading it sends technical data, including your IP address, to Google and may involve cookies under the",
+    "La carte intégrée est facultative. Elle s’active uniquement avec « Autoriser et charger la carte ». Son chargement transmet à Google des données techniques, dont votre adresse IP, et peut utiliser des cookies selon la",
+    "Die eingebettete Karte ist optional. Sie wird nur über „Karte erlauben und laden“ aktiviert. Beim Laden werden technische Daten einschließlich Ihrer IP-Adresse an Google gesendet; Cookies können verwendet werden gemäß den"
+  ],
+  "La mappa si collega a Google e trasmette dati di navigazione solo dopo il tuo consenso.": [
+    "The map connects to Google and sends browsing data only after your consent.",
+    "La carte se connecte à Google et transmet des données de navigation uniquement après votre accord.",
+    "Die Karte verbindet sich erst nach Ihrer Einwilligung mit Google und übermittelt dabei Nutzungsdaten."
+  ],
+  "La nostra storia": ["Our story", "Notre histoire", "Unsere Geschichte"],
+  "La nostra trattoria": [
+    "Our trattoria",
+    "Notre trattoria",
+    "Unsere Trattoria"
+  ],
+  "La nostra trattoria a Francavilla Fontana": [
+    "Our trattoria in Francavilla Fontana",
+    "Notre trattoria à Francavilla Fontana",
+    "Unsere Trattoria in Francavilla Fontana"
+  ],
+  "La nostra trattoria.": [
+    "Our trattoria.",
+    "Notre trattoria.",
+    "Unsere Trattoria."
+  ],
+  "La pasta di casa": [
+    "Pasta from our kitchen",
+    "Les pâtes de la maison",
+    "Pasta aus unserer Küche"
+  ],
+  "La sala di Richardus a Francavilla Fontana, con volte in pietra e tavoli apparecchiati": [
+    "The dining room at Richardus in Francavilla Fontana, with stone vaults and tables set for guests",
+    "La salle de Richardus à Francavilla Fontana, avec ses voûtes en pierre et ses tables dressées",
+    "Der Gastraum von Richardus in Francavilla Fontana mit Steingewölben und gedeckten Tischen"
+  ],
+  "La sezione “Dove siamo” può caricare una mappa Google dopo un consenso specifico. Il caricamento permette a Google di ricevere dati tecnici quali indirizzo IP e informazioni sul browser, e può comportare l’uso di cookie. Puoi rimuovere la mappa con il pulsante “Disattiva la mappa”; la scelta non viene memorizzata per le visite successive.": [
+    "“Find us” can load a Google map after specific consent. Loading it allows Google to receive technical data such as your IP address and browser information and may involve cookies. You can remove the map using “Disable the map”; your choice is not stored for future visits.",
+    "La section « Nous trouver » peut charger une carte Google après un accord spécifique. Google peut alors recevoir des données techniques, comme l’adresse IP et les informations du navigateur, et utiliser des cookies. « Désactiver la carte » supprime la carte ; ce choix n’est pas mémorisé pour les prochaines visites.",
+    "Im Bereich „Anfahrt“ kann nach gesonderter Einwilligung eine Google-Karte geladen werden. Google erhält dabei technische Daten wie IP-Adresse und Browserinformationen und kann Cookies verwenden. Über „Karte deaktivieren“ lässt sie sich entfernen; Ihre Auswahl wird nicht für spätere Besuche gespeichert."
+  ],
+  "La tradizione": ["Tradition", "La tradition", "Tradition"],
+  "Le cose da sapere.": ["Before you order.", "À savoir.", "Gut zu wissen."],
+  "Le esperienze, raccontate da voi.": [
+    "Your experiences, in your words.",
+    "Vos expériences, avec vos mots.",
+    "Ihre Erlebnisse, Ihre Worte."
+  ],
+  "Le vostre parole": ["Your words", "Vos mots", "Ihre Worte"],
+  "Leggi tutte le recensioni": [
+    "Read all reviews",
+    "Lire tous les avis",
+    "Alle Bewertungen lesen"
+  ],
+  "Mappa Google": ["Google map", "Carte Google", "Google-Karte"],
+  "Mappa interattiva": [
+    "Interactive map",
+    "Carte interactive",
+    "Interaktive Karte"
+  ],
+  "Menu: piatti, ingredienti e prezzi": [
+    "Menu: dishes, ingredients and prices",
+    "Carte : plats, ingrédients et prix",
+    "Speisekarte: Gerichte, Zutaten und Preise"
+  ],
+  "Mostra la mappa qui": [
+    "Show the map here",
+    "Afficher la carte ici",
+    "Karte hier anzeigen"
+  ],
+  "Naturale / Frizzante.": [
+    "Still / Sparkling.",
+    "Plate / Gazeuse.",
+    "Still / Mit Kohlensäure."
+  ],
+  "Navigazione del footer": [
+    "Footer navigation",
+    "Navigation de bas de page",
+    "Footernavigation"
+  ],
+  "Navigazione e contatti": [
+    "Browsing and contact",
+    "Navigation et contacts",
+    "Nutzung und Kontakt"
+  ],
+  "Navigazione mobile": [
+    "Mobile navigation",
+    "Navigation mobile",
+    "Mobile Navigation"
+  ],
+  "Navigazione principale": [
+    "Main navigation",
+    "Navigation principale",
+    "Hauptnavigation"
+  ],
+  "Nei casi previsti dal GDPR puoi chiedere accesso, rettifica, cancellazione, limitazione e portabilità dei dati, oppure opporti al trattamento. Puoi revocare il consenso senza pregiudicare la liceità del trattamento effettuato prima della revoca. Le richieste vanno indirizzate al titolare, ai recapiti da completare sopra.": [
+    "Where the GDPR applies, you may request access, rectification, erasure, restriction and data portability, or object to processing. You may withdraw consent without affecting the lawfulness of earlier processing. Requests should be sent to the controller using the details to be completed above.",
+    "Dans les cas prévus par le RGPD, vous pouvez demander l’accès, la rectification, l’effacement, la limitation et la portabilité des données, ou vous opposer au traitement. Vous pouvez retirer votre consentement sans affecter la licéité du traitement antérieur. Les demandes doivent être adressées au responsable, aux coordonnées à compléter ci-dessus.",
+    "In den von der DSGVO vorgesehenen Fällen können Sie Auskunft, Berichtigung, Löschung, Einschränkung und Datenübertragbarkeit verlangen oder der Verarbeitung widersprechen. Ein Widerruf der Einwilligung berührt die Rechtmäßigkeit der vorherigen Verarbeitung nicht. Anfragen sind an den Verantwortlichen unter den oben noch zu ergänzenden Kontaktdaten zu richten."
+  ],
+  "Noi mettiamo il resto.": [
+    "We’ll take care of the rest.",
+    "Nous nous occupons du reste.",
+    "Wir kümmern uns um den Rest."
+  ],
+  "Oggi": ["Today", "Aujourd’hui", "Heute"],
+  "Orecchietta al sugo": [
+    "Orecchiette with tomato sauce",
+    "Orecchiette à la sauce tomate",
+    "Orecchiette mit Tomatensauce"
+  ],
+  "Orecchiette al grano arso con funghi e salsiccia, dalla cucina di Richardus": [
+    "Burnt-wheat orecchiette with mushrooms and sausage from Richardus’s kitchen",
+    "Orecchiette au blé brûlé, champignons et saucisse, de la cuisine de Richardus",
+    "Orecchiette aus geröstetem Weizen mit Pilzen und Bratwurst aus der Küche von Richardus"
+  ],
+  "Orecchiette con cime di rapa": [
+    "Orecchiette with turnip greens",
+    "Orecchiette aux pousses de navet",
+    "Orecchiette mit Stängelkohl"
+  ],
+  "Orecchiette con cime di rapa, cortecce al grano arso, fave e verdura di stagione. Alla brace, un arrosto misto con bombette, capocollo, salsiccia e fegatini.": [
+    "Orecchiette with turnip greens, burnt-wheat cortecce pasta, fava beans and seasonal greens. From the grill, mixed meats with bombette, pork neck, sausage and liver skewers.",
+    "Orecchiette aux pousses de navet, cortecce au blé brûlé, fèves et légumes de saison. Au gril, un assortiment de bombette, échine de porc, saucisse et brochettes de foie.",
+    "Orecchiette mit Stängelkohl, Cortecce aus geröstetem Weizen, dicke Bohnen und saisonales Blattgemüse. Vom Grill: Bombette, Schweinenacken, Bratwurst und Leberspieße."
+  ],
+  "Orecchiette, cortecce al grano arso, sapori di stagione.": [
+    "Orecchiette, burnt-wheat cortecce and seasonal flavours.",
+    "Orecchiette, cortecce au blé brûlé et saveurs de saison.",
+    "Orecchiette, Cortecce aus geröstetem Weizen und saisonale Aromen."
+  ],
+  "Pacchero in salsa di pomodori confit, stracciatella e chips di zucchine fritte": [
+    "Paccheri with confit tomato sauce, stracciatella and fried courgette crisps",
+    "Paccheri à la sauce de tomates confites, stracciatella et chips de courgettes frites",
+    "Paccheri mit Sauce aus confierten Tomaten, Stracciatella und frittierten Zucchinichips"
+  ],
+  "Panzerottini": ["Mini panzerotti", "Petits panzerotti", "Mini-Panzerotti"],
+  "Parliamone": ["Let’s talk", "Parlons-en", "Sprechen wir darüber"],
+  "Patatine fritte": ["French fries", "Frites", "Pommes frites"],
+  "Per qualsiasi esigenza, parlane con noi.": [
+    "Please speak to us about any requirements.",
+    "Pour toute demande, parlez-en avec nous.",
+    "Sprechen Sie uns bei besonderen Wünschen an."
+  ],
+  "Pettole e verdura pastellata": [
+    "Pettole fritters and battered vegetables",
+    "Pettole et légumes en beignets",
+    "Pettole-Teigbällchen und Gemüse im Backteig"
+  ],
+  "Piatti, ingredienti e prezzi. Cucina pugliese e brace nella nostra trattoria a Francavilla Fontana.": [
+    "Dishes, ingredients and prices. Puglian cuisine and grilled dishes at our trattoria in Francavilla Fontana.",
+    "Plats, ingrédients et prix. Cuisine des Pouilles et grillades dans notre trattoria à Francavilla Fontana.",
+    "Gerichte, Zutaten und Preise. Apulische Küche und Grillgerichte in unserer Trattoria in Francavilla Fontana."
+  ],
+  "Polpette di carne": ["Meatballs", "Boulettes de viande", "Fleischbällchen"],
+  "Precedente": ["Previous", "Précédent", "Zurück"],
+  "Prenota": ["Book", "Réserver", "Reservieren"],
+  "Prenota su WhatsApp": [
+    "Book on WhatsApp",
+    "Réserver sur WhatsApp",
+    "Über WhatsApp reservieren"
+  ],
+  "Prenota un tavolo": [
+    "Book a table",
+    "Réserver une table",
+    "Tisch reservieren"
+  ],
+  "Prenota un tavolo su WhatsApp": [
+    "Book a table on WhatsApp",
+    "Réserver une table sur WhatsApp",
+    "Tisch über WhatsApp reservieren"
+  ],
+  "Prezzo da chiedere al personale di sala.": [
+    "Please ask the waiting staff for the price.",
+    "Veuillez demander le prix au personnel de salle.",
+    "Bitte fragen Sie das Servicepersonal nach dem Preis."
+  ],
+  "Prima di ordinare": [
+    "Before ordering",
+    "Avant de commander",
+    "Vor der Bestellung"
+  ],
+  "Primi Piatti": ["Pasta dishes", "Pâtes", "Pastagerichte"],
+  "Privacy": ["Privacy", "Confidentialité", "Datenschutz"],
+  "Privacy policy": [
+    "Privacy policy",
+    "Politique de confidentialité",
+    "Datenschutzerklärung"
+  ],
+  "Puglia, Italia": ["Puglia, Italy", "Pouilles, Italie", "Apulien, Italien"],
+  "Puoi inoltre presentare un reclamo al": [
+    "You may also lodge a complaint with the",
+    "Vous pouvez également déposer une réclamation auprès de l’",
+    "Sie können außerdem eine Beschwerde einreichen bei der"
+  ],
+  "Purè di fave con verdura e crostini servito da Richardus": [
+    "Fava bean purée with greens and croutons served at Richardus",
+    "Purée de fèves, légumes verts et croûtons servis chez Richardus",
+    "Bohnenpüree mit Blattgemüse und Croûtons bei Richardus"
+  ],
+  "Quando contatti il ristorante per una prenotazione, puoi comunicare nome, recapito, orario e numero di persone. Questi dati servono a rispondere alla tua richiesta e a organizzare la prenotazione; la base giuridica è l’esecuzione di misure precontrattuali richieste dall’interessato, ai sensi dell’art. 6, par. 1, lett. b del GDPR.": [
+    "When you contact the restaurant to book, you may provide your name, contact details, time and party size. These data are used to answer your request and arrange the reservation. The legal basis is taking pre-contractual steps at your request under Article 6(1)(b) GDPR.",
+    "Lors d’une réservation, vous pouvez communiquer votre nom, vos coordonnées, l’horaire et le nombre de personnes. Ces données servent à répondre à votre demande et à organiser la réservation ; la base juridique est l’exécution de mesures précontractuelles demandées par la personne concernée, selon l’article 6, paragraphe 1, point b du RGPD.",
+    "Bei einer Reservierungsanfrage können Sie Namen, Kontaktdaten, Uhrzeit und Personenzahl angeben. Diese Daten dienen zur Beantwortung der Anfrage und Organisation der Reservierung. Rechtsgrundlage sind auf Ihren Wunsch erfolgende vorvertragliche Maßnahmen gemäß Art. 6 Abs. 1 lit. b DSGVO."
+  ],
+  "Questa scelta non viene salvata nella memoria del browser: vale solo finché la sezione rimane aperta. Il pulsante “Disattiva la mappa” rimuove il contenuto incorporato. Puoi sempre aprire l’indirizzo direttamente su Google Maps senza attivare la mappa nel sito.": [
+    "This choice is not stored in the browser: it applies only while the section remains open. “Disable the map” removes the embed. You can always open the address directly in Google Maps without enabling the map on the site.",
+    "Ce choix n’est pas enregistré dans le navigateur : il vaut uniquement tant que la section reste ouverte. « Désactiver la carte » supprime le contenu intégré. Vous pouvez toujours ouvrir l’adresse directement dans Google Maps sans activer la carte sur le site.",
+    "Diese Auswahl wird nicht im Browser gespeichert und gilt nur, solange der Bereich geöffnet bleibt. „Karte deaktivieren“ entfernt die Einbettung. Die Adresse lässt sich jederzeit direkt in Google Maps öffnen, ohne die Karte auf der Website zu aktivieren."
+  ],
+  "Raviolaccio ripieno al ragù di braciola con pomodorini e cacio ricotta": [
+    "Large raviolo filled with braciola ragù, cherry tomatoes and cacio ricotta",
+    "Grand raviolo farci au ragù de braciola, tomates cerises et cacio ricotta",
+    "Großer Raviolo mit Braciola-Ragù-Füllung, Kirschtomaten und Cacio Ricotta"
+  ],
+  "Recensioni degli ospiti": [
+    "Guest reviews",
+    "Avis de nos clients",
+    "Gästebewertungen"
+  ],
+  "Recensioni e servizi esterni": [
+    "Reviews and external services",
+    "Avis et services externes",
+    "Bewertungen und externe Dienste"
+  ],
+  "Recensioni sul sito": [
+    "Reviews on the site",
+    "Avis sur le site",
+    "Bewertungen auf der Website"
+  ],
+  "Richardus | Trattoria a Francavilla Fontana": [
+    "Richardus · Trattoria in Francavilla Fontana",
+    "Richardus · Trattoria à Francavilla Fontana",
+    "Richardus · Trattoria in Francavilla Fontana"
+  ],
+  "Richardus | Trattoria storica a Francavilla Fontana": [
+    "Richardus · Historic trattoria in Francavilla Fontana",
+    "Richardus · Trattoria historique à Francavilla Fontana",
+    "Richardus · Traditionsreiche Trattoria in Francavilla Fontana"
+  ],
+  "Richardus è una trattoria storica di Francavilla Fontana. Tra le pareti in pietra di Via San Giovanni 15, ci ritroviamo attorno ai sapori della cucina pugliese.": [
+    "Richardus is a historic trattoria in Francavilla Fontana. Within the stone walls of Via San Giovanni 15, we gather around the flavours of Puglian cuisine.",
+    "Richardus est une trattoria historique de Francavilla Fontana. Entre les murs en pierre de la Via San Giovanni 15, nous nous retrouvons autour des saveurs des Pouilles.",
+    "Richardus ist eine traditionsreiche Trattoria in Francavilla Fontana. Zwischen den Steinwänden der Via San Giovanni 15 genießen wir gemeinsam die Aromen Apuliens."
+  ],
+  "Richardus, homepage": [
+    "Richardus, homepage",
+    "Richardus, accueil",
+    "Richardus, Startseite"
+  ],
+  "Richardus, la nostra trattoria": [
+    "Richardus, our trattoria",
+    "Richardus, notre trattoria",
+    "Richardus, unsere Trattoria"
+  ],
+  "Richardus, torna alla home": [
+    "Richardus, back to home",
+    "Richardus, retour à l’accueil",
+    "Richardus, zurück zur Startseite"
+  ],
+  "Richardus, trattoria storica a Francavilla Fontana": [
+    "Richardus, historic trattoria in Francavilla Fontana",
+    "Richardus, trattoria historique à Francavilla Fontana",
+    "Richardus, traditionsreiche Trattoria in Francavilla Fontana"
+  ],
+  "Richardus, trattoria storica a Francavilla Fontana. Cucina pugliese, pasta e piatti alla brace. Consulta il menu e prenota un tavolo per telefono o su WhatsApp.": [
+    "Richardus, a historic trattoria in Francavilla Fontana. Puglian cuisine, pasta and grilled dishes. Explore the menu and book by phone or WhatsApp.",
+    "Richardus, trattoria historique à Francavilla Fontana. Cuisine des Pouilles, pâtes et grillades. Consultez la carte et réservez par téléphone ou WhatsApp.",
+    "Richardus, traditionsreiche Trattoria in Francavilla Fontana. Apulische Küche, Pasta und Grillgerichte. Speisekarte ansehen und telefonisch oder per WhatsApp reservieren."
+  ],
+  "Richardus, trattoria storica a Francavilla Fontana: cucina pugliese, pasta e carne alla brace in Via San Giovanni 15. Scopri il menu e prenota il tuo tavolo.": [
+    "Richardus, a historic trattoria in Francavilla Fontana: Puglian cuisine, pasta and grilled meat at Via San Giovanni 15. Explore the menu and book your table.",
+    "Richardus, trattoria historique à Francavilla Fontana : cuisine des Pouilles, pâtes et viandes grillées, Via San Giovanni 15. Découvrez la carte et réservez.",
+    "Richardus, traditionsreiche Trattoria in Francavilla Fontana: apulische Küche, Pasta und Grillfleisch in der Via San Giovanni 15. Speisekarte entdecken und Tisch reservieren."
+  ],
+  "Rivolgiti al personale prima di ordinare per conoscere gli allergeni presenti e le possibili contaminazioni. Le associazioni ai singoli piatti non sono ancora verificate dal ristorante, perciò non vengono presentate come indicazioni di idoneità.": [
+    "Please speak to our staff before ordering about allergens and possible cross-contamination. Dish-specific information has not yet been verified by the restaurant and is therefore not presented as suitability advice.",
+    "Veuillez consulter le personnel avant de commander pour connaître les allergènes et les contaminations possibles. Les associations aux plats n’ont pas encore été vérifiées par le restaurant et ne sont donc pas présentées comme des garanties de compatibilité.",
+    "Bitte fragen Sie vor der Bestellung nach Allergenen und möglichen Kreuzkontaminationen. Die Zuordnung zu einzelnen Gerichten wurde vom Restaurant noch nicht überprüft und wird daher nicht als Eignungsempfehlung dargestellt."
+  ],
+  "Rosse e doppio malto.": [
+    "Red ales and strong beers.",
+    "Bières rousses et double malt.",
+    "Rotbiere und Starkbiere."
+  ],
+  "Scopri il menu": [
+    "Explore the menu",
+    "Découvrir la carte",
+    "Speisekarte entdecken"
+  ],
+  "Scopri il menu di Richardus e prenota il tuo tavolo in Via San Giovanni 15.": [
+    "Explore the Richardus menu and book your table at Via San Giovanni 15.",
+    "Découvrez la carte de Richardus et réservez votre table Via San Giovanni 15.",
+    "Entdecken Sie die Richardus-Speisekarte und reservieren Sie in der Via San Giovanni 15."
+  ],
+  "Scopri la categoria": [
+    "Explore this category",
+    "Découvrir la catégorie",
+    "Kategorie entdecken"
+  ],
+  "Scopri piatti, ingredienti e prezzi": [
+    "Explore dishes, ingredients and prices",
+    "Découvrir plats, ingrédients et prix",
+    "Gerichte, Zutaten und Preise entdecken"
+  ],
+  "Scorri per esplorare le categorie": [
+    "Scroll to explore the categories",
+    "Faites défiler pour voir les catégories",
+    "Scrollen Sie zu weiteren Kategorien"
+  ],
+  "Scrivici su WhatsApp giorno, orario e numero di persone. Il tavolo è prenotato quando ricevi la nostra conferma.": [
+    "Send us your day, time and party size on WhatsApp. Your table is booked when you receive our confirmation.",
+    "Envoyez-nous sur WhatsApp le jour, l’heure et le nombre de personnes. La réservation est confirmée lorsque vous recevez notre réponse.",
+    "Senden Sie uns Tag, Uhrzeit und Personenzahl über WhatsApp. Der Tisch ist reserviert, sobald Sie unsere Bestätigung erhalten."
+  ],
+  "Secondi Piatti": ["Main courses", "Plats principaux", "Hauptgerichte"],
+  "Servizi collegati": [
+    "Linked services",
+    "Services liés",
+    "Verlinkte Dienste"
+  ],
+  "Stracci di diaframma di vitello": [
+    "Veal skirt steak strips",
+    "Lanières de hampe de veau",
+    "Streifen vom Kalb-Zwerchfell"
+  ],
+  "Successivo": ["Next", "Suivant", "Weiter"],
+  "Tagliata di manzo cacio ricotta e pomodorini": [
+    "Sliced beef with cacio ricotta and cherry tomatoes",
+    "Émincé de bœuf, cacio ricotta et tomates cerises",
+    "Aufgeschnittenes Rindfleisch mit Cacio Ricotta und Kirschtomaten"
+  ],
+  "Tagliata di manzo radicchio e caciocavallo": [
+    "Sliced beef with radicchio and caciocavallo",
+    "Émincé de bœuf, radicchio et caciocavallo",
+    "Aufgeschnittenes Rindfleisch mit Radicchio und Caciocavallo"
+  ],
+  "Tagliata di manzo rucola e grana": [
+    "Sliced beef with rocket and grana",
+    "Émincé de bœuf, roquette et grana",
+    "Aufgeschnittenes Rindfleisch mit Rucola und Grana"
+  ],
+  "Tagliere bresaola, rucola e grana, olio evo, limone": [
+    "Bresaola, rocket and grana board with extra virgin olive oil and lemon",
+    "Planche de bresaola, roquette et grana, huile d’olive extra vierge et citron",
+    "Bresaola-Platte mit Rucola, Grana, nativem Olivenöl extra und Zitrone"
+  ],
+  "Tagliere crudo e mozzarella di bufala": [
+    "Prosciutto and buffalo mozzarella board",
+    "Planche de jambon cru et mozzarella de bufflonne",
+    "Platte mit Rohschinken und Büffelmozzarella"
+  ],
+  "Tagliere di salumi e formaggi locali": [
+    "Local cured meat and cheese board",
+    "Planche de charcuteries et fromages locaux",
+    "Platte mit regionalen Wurst- und Käsespezialitäten"
+  ],
+  "Titolare e contatti": [
+    "Controller and contact details",
+    "Responsable et coordonnées",
+    "Verantwortlicher und Kontakt"
+  ],
+  "Torna alla home": [
+    "Back to home",
+    "Retour à l’accueil",
+    "Zurück zur Startseite"
+  ],
+  "Tradizione": ["Tradition", "Tradition", "Tradition"],
+  "Trattoria storica": [
+    "Historic trattoria",
+    "Trattoria historique",
+    "Traditionsreiche Trattoria"
+  ],
+  "Trattoria storica a Francavilla Fontana, in provincia di Brindisi, Puglia. Cucina italiana e pugliese, pasta e piatti alla brace.": [
+    "Historic trattoria in Francavilla Fontana, in the province of Brindisi, Puglia. Italian and Puglian cuisine, pasta and grilled dishes.",
+    "Trattoria historique à Francavilla Fontana, dans la province de Brindisi, Pouilles. Cuisine italienne et des Pouilles, pâtes et grillades.",
+    "Traditionsreiche Trattoria in Francavilla Fontana, Provinz Brindisi, Apulien. Italienische und apulische Küche, Pasta und Grillgerichte."
+  ],
+  "Trattoria storica a Francavilla Fontana.": [
+    "Historic trattoria in Francavilla Fontana.",
+    "Trattoria historique à Francavilla Fontana.",
+    "Traditionsreiche Trattoria in Francavilla Fontana."
+  ],
+  "Tu scegli la compagnia.": [
+    "You choose the company.",
+    "Vous choisissez la compagnie.",
+    "Sie wählen die Gesellschaft."
+  ],
+  "Tutte le nostre insalate sono servite in coppa pane casereccio, cotto in forno a legna.": [
+    "All our salads are served in a rustic bread bowl baked in a wood-fired oven.",
+    "Toutes nos salades sont servies dans une coupe de pain rustique cuite au four à bois.",
+    "Alle unsere Salate werden in einer rustikalen Brotschale aus dem Holzofen serviert."
+  ],
+  "Tutti i piatti": ["All dishes", "Tous les plats", "Alle Gerichte"],
+  "Tutto": ["All", "Tout", "Alle"],
+  "Un piatto che racconta la cucina pugliese.": [
+    "A dish that tells the story of Puglian cuisine.",
+    "Un plat qui raconte la cuisine des Pouilles.",
+    "Ein Gericht, das von der Küche Apuliens erzählt."
+  ],
+  "Un posto per stare bene.": [
+    "A place to feel at home.",
+    "Un endroit où se sentir bien.",
+    "Ein Ort zum Wohlfühlen."
+  ],
+  "Una selezione delle vostre recensioni su Google.": [
+    "A selection of your Google reviews.",
+    "Une sélection de vos avis Google.",
+    "Eine Auswahl Ihrer Google-Bewertungen."
+  ],
+  "Una tavola da condividere.": [
+    "A table to share.",
+    "Une table à partager.",
+    "Ein Tisch zum Teilen."
+  ],
+  "Una trattoria storica a Francavilla Fontana, in Via San Giovanni 15. La cucina pugliese, le pareti in pietra e il piacere di ritrovarsi a tavola.": [
+    "A historic trattoria in Francavilla Fontana, at Via San Giovanni 15. Puglian cooking, stone walls and the pleasure of gathering around a table.",
+    "Une trattoria historique à Francavilla Fontana, Via San Giovanni 15. La cuisine des Pouilles, les murs en pierre et le plaisir de se retrouver à table.",
+    "Eine traditionsreiche Trattoria in Francavilla Fontana, Via San Giovanni 15. Apulische Küche, Steinwände und die Freude am gemeinsamen Essen."
+  ],
+  "Un’eventuale preferenza salvata dalla precedente versione del widget non viene più letta né aggiornata. Può essere eliminata dalle impostazioni del browser.": [
+    "Any preference saved by the previous widget version is no longer read or updated. You can delete it in your browser settings.",
+    "Toute préférence enregistrée par l’ancienne version du widget n’est plus lue ni mise à jour. Vous pouvez la supprimer dans les paramètres du navigateur.",
+    "Eine von der früheren Widget-Version gespeicherte Einstellung wird nicht mehr gelesen oder aktualisiert. Sie lässt sich in den Browsereinstellungen löschen."
+  ],
+  "Vai al contenuto": [
+    "Skip to content",
+    "Aller au contenu",
+    "Zum Inhalt springen"
+  ],
+  "Via San Giovanni 15, Francavilla Fontana. Provincia di Brindisi, Puglia.": [
+    "Via San Giovanni 15, Francavilla Fontana. Province of Brindisi, Puglia.",
+    "Via San Giovanni 15, Francavilla Fontana. Province de Brindisi, Pouilles.",
+    "Via San Giovanni 15, Francavilla Fontana. Provinz Brindisi, Apulien."
+  ],
+  "Vieni a trovarci": ["Visit us", "Venez nous voir", "Besuchen Sie uns"],
+  "Vini imbottigliati": ["Bottled wines", "Vins en bouteille", "Flaschenweine"],
+  "Vino in caraffa della casa 1 lt": [
+    "House wine, 1-litre carafe",
+    "Vin de la maison en carafe, 1 litre",
+    "Hauswein, 1-Liter-Karaffe"
+  ],
+  "a Francavilla Fontana.": [
+    "in Francavilla Fontana.",
+    "à Francavilla Fontana.",
+    "in Francavilla Fontana."
+  ],
+  "a persona": ["per person", "par personne", "pro Person"],
+  "a persona.": ["per person.", "par personne.", "pro Person."],
+  "a tavola.": ["to the table.", "à table.", "den Tisch bringen."],
+  "a tavola?": ["at the table?", "à table ?", "am Tisch?"],
+  "cookie policy": [
+    "cookie policy",
+    "politique de cookies",
+    "Cookie-Richtlinie"
+  ],
+  "e": ["and", "et", "und"],
+  "e devono ancora essere completati.": [
+    "and still need to be completed.",
+    "et doivent encore être complétées.",
+    "und müssen noch ergänzt werden."
+  ],
+  "informativa Google": [
+    "Google privacy policy",
+    "politique de confidentialité Google",
+    "Datenschutzhinweisen von Google"
+  ],
+  "privacy policy": [
+    "privacy policy",
+    "politique de confidentialité",
+    "Datenschutzerklärung"
+  ],
+  "senza giri di parole.": ["without fuss.", "sans détour.", "ohne Umwege."],
+  "Made by Senza Freno Digital": [
+    "Made by Senza Freno Digital",
+    "Made by Senza Freno Digital",
+    "Made by Senza Freno Digital"
+  ],
+  "Richardus · Francavilla Fontana": [
+    "Richardus · Francavilla Fontana",
+    "Richardus · Francavilla Fontana",
+    "Richardus · Francavilla Fontana"
+  ],
+  "Richardus,": ["Richardus,", "Richardus,", "Richardus,"],
+  "Richardus, Via San Giovanni 15, Francavilla Fontana": [
+    "Richardus, Via San Giovanni 15, Francavilla Fontana",
+    "Richardus, Via San Giovanni 15, Francavilla Fontana",
+    "Richardus, Via San Giovanni 15, Francavilla Fontana"
+  ],
+  "Via S. Giovanni 15": [
+    "Via S. Giovanni 15",
+    "Via S. Giovanni 15",
+    "Via S. Giovanni 15"
+  ],
+  "Via San Giovanni 15": [
+    "Via San Giovanni 15",
+    "Via San Giovanni 15",
+    "Via San Giovanni 15"
+  ],
+  "WhatsApp": ["WhatsApp", "WhatsApp", "WhatsApp"],
+  "Home": ["Home", "Accueil", "Startseite"],
+  "Lingua": ["Language", "Langue", "Sprache"],
+  "Primi": ["Pasta", "Pâtes", "Pasta"],
+  "Secondi": ["Main courses", "Plats", "Hauptgerichte"],
+  "Frittura": ["Fried dishes", "Fritures", "Frittiertes"],
+  "Vini e bevande": ["Wine & drinks", "Vins et boissons", "Wein & Getränke"],
+  "Domenica": ["Sunday", "Dimanche", "Sonntag"],
+  "Lunedì": ["Monday", "Lundi", "Montag"],
+  "Martedì": ["Tuesday", "Mardi", "Dienstag"],
+  "Mercoledì": ["Wednesday", "Mercredi", "Mittwoch"],
+  "Giovedì": ["Thursday", "Jeudi", "Donnerstag"],
+  "Venerdì": ["Friday", "Vendredi", "Freitag"],
+  "Sabato": ["Saturday", "Samedi", "Samstag"],
+  "Gli orari": ["Opening hours", "Les horaires", "Öffnungszeiten"],
+  "Mar–sab · 19:30–00:00": [
+    "Tue–Sat · 19:30–00:00",
+    "Mar–sam · 19:30–00:00",
+    "Di–Sa · 19:30–00:00"
+  ],
+  "Giorno di chiusura": [
+    "Closed today",
+    "Jour de fermeture",
+    "Heute geschlossen"
+  ],
+  "Chiuso": ["Closed", "Fermé", "Geschlossen"],
+  "Caricamento della mappa…": [
+    "Loading the map…",
+    "Chargement de la carte…",
+    "Karte wird geladen…"
+  ],
+  "Mappa fornita da Google.": [
+    "Map provided by Google.",
+    "Carte fournie par Google.",
+    "Karte von Google."
+  ],
+  "La mappa non è ancora disponibile. Apri le indicazioni direttamente in Google Maps.": [
+    "The map is not available yet. Open directions directly in Google Maps.",
+    "La carte n’est pas encore disponible. Ouvrez l’itinéraire directement dans Google Maps.",
+    "Die Karte ist noch nicht verfügbar. Öffnen Sie die Route direkt in Google Maps."
+  ],
+  "Tutte le categorie": [
+    "All categories",
+    "Toutes les catégories",
+    "Alle Kategorien"
+  ],
+  "Da assaggiare. Da condividere.": [
+    "To taste. To share.",
+    "À goûter. À partager.",
+    "Zum Probieren. Zum Teilen."
+  ],
+  "su richiesta": ["on request", "sur demande", "auf Anfrage"],
+  "Ragione sociale del titolare": [
+    "Controller’s legal name",
+    "Raison sociale du responsable",
+    "Name des Verantwortlichen"
+  ],
+  "Partita IVA": ["VAT number", "Numéro de TVA", "Umsatzsteuer-ID"],
+  "Sede legale": ["Registered office", "Siège social", "Geschäftssitz"],
+  "Contatto per richieste privacy": [
+    "Privacy contact",
+    "Contact pour la confidentialité",
+    "Datenschutzkontakt"
+  ],
+  "Recensioni in lingua originale italiana.": [
+    "Reviews in their original Italian.",
+    "Avis dans leur version originale italienne.",
+    "Bewertungen im italienischen Original."
+  ],
+  "Menu Richardus": [
+    "Richardus menu",
+    "Carte Richardus",
+    "Richardus-Speisekarte"
+  ]
+}
