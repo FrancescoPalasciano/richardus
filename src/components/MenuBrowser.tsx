@@ -18,7 +18,13 @@ const subscribe = (update: () => void) => {
     window.removeEventListener("popstate", update);
   };
 };
-const readHash = () => decodeURIComponent(window.location.hash.slice(1));
+const readHash = () => {
+  try {
+    return decodeURIComponent(window.location.hash.slice(1));
+  } catch {
+    return "";
+  }
+};
 
 export default function MenuBrowser({
   sections,
