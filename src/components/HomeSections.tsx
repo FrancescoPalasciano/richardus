@@ -11,14 +11,7 @@ import { TodayHours } from "./OpeningHoursCard";
 import DishCarousel from "./DishCarousel";
 import styles from "@/app/Home.module.css";
 
-const euro = new Intl.NumberFormat("it-IT", {
-  style: "currency",
-  currency: menu.valuta,
-});
-const displayName = (name: string) =>
-  name === name.toLocaleUpperCase("it-IT")
-    ? name.charAt(0) + name.slice(1).toLocaleLowerCase("it-IT")
-    : name;
+import { euro, displayName } from "@/lib/menu";
 
 export function Hero() {
   return (
