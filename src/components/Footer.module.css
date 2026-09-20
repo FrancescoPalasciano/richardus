@@ -9,6 +9,9 @@
 .brand :global(.wordmark) {
   font-size: 34px;
 }
+.brand :global(.brand-logo img) {
+  filter: invert(1);
+}
 .brand > p {
   color: var(--muted-foreground);
   font-size: 12px;
