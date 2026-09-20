@@ -1,25 +1,52 @@
 .section {
-  background: var(--dark);
-  color: var(--dark-foreground);
-  border-radius: var(--radius-xl);
-  padding: 36px 28px;
+  position: relative;
   display: grid;
-  gap: 36px;
+  min-height: min(82svh, 820px);
+  overflow: hidden;
+  place-items: center;
+  color: #fffaf0;
+  background: var(--walnut);
 }
-.copy > :global(.eyebrow) {
-  color: var(--dark-muted);
+.section > img {
+  object-fit: cover;
+  object-position: center 55%;
 }
-.copy h2 {
-  font-size: clamp(2.8rem, 6vw, 5.5rem);
-  font-weight: 500;
+.shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgb(32 22 17 / 26%), rgb(32 22 17 / 80%));
 }
-.copy > p:last-child {
-  margin-top: 22px;
-  color: var(--dark-muted);
-  font-size: 15px;
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 100px;
+  text-align: center;
 }
-.booking {
-  align-self: center;
+.content h2 {
+  max-width: 10ch;
+  font-size: clamp(4rem, 10vw, 9rem);
+  line-height: 0.78;
+  text-shadow: 0 3px 30px rgb(0 0 0 / 24%);
+}
+.content h2 span {
+  display: block;
+  margin-left: 0.26em;
+  color: var(--terracotta-soft);
+  font-style: italic;
+  font-weight: 400;
+}
+.content > p {
+  margin-top: 34px;
+  color: rgb(255 250 240 / 82%);
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+}
+.content > :global(.ui-button) {
+  margin-top: 30px;
+  text-transform: uppercase;
+  letter-spacing: 0.075em;
 }
 .actions {
   display: flex;
@@ -29,37 +56,22 @@
 }
 .secondary {
   display: inline-flex;
+  min-height: 48px;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  min-height: 48px;
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 0.8rem;
+  font-weight: 650;
 }
 .secondary:hover {
   text-decoration: underline;
+  text-underline-offset: 5px;
 }
-.booking > p {
-  margin-top: 22px;
-  max-width: 44ch;
-  font-size: 12px;
-  line-height: 1.85;
-  color: var(--dark-muted);
-}
-.phone {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  margin-top: 14px;
-  font-size: 14px;
-}
-.section :where(a, button):focus-visible {
-  outline-color: var(--accent);
-}
-@media (min-width: 768px) {
+@media (max-width: 520px) {
   .section {
-    grid-template-columns: 1.2fr 1fr;
-    gap: 60px;
-    padding: clamp(40px, 5vw, 76px);
+    min-height: 72svh;
+  }
+  .content h2 {
+    font-size: clamp(3.5rem, 19vw, 5.5rem);
   }
 }

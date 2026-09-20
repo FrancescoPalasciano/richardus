@@ -1,10 +1,12 @@
 import { localizeTree } from "@/lib/localize";
 import { getTranslator } from "@/lib/i18n";
 import type { Locale, LocaleProps } from "@/lib/locale";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { restaurant } from "@/lib/restaurant";
+import tablePhoto from "@/app/images/interno.jpg";
 import styles from "./Reservation.module.css";
 
 export function BookingActions({
@@ -50,31 +52,34 @@ export default function Reservation({ locale = "it" }: LocaleProps = {}) {
     <section
       id="prenota"
       data-reveal
-      className={`container ${styles.section}`}
+      className={styles.section}
       aria-labelledby="booking-title"
       data-booking-visibility
     >
-      <div className={styles.copy}>
-        <p className="eyebrow">Il piacere di ritrovarsi</p>
+      <Image
+        src={tablePhoto}
+        alt="La sala in pietra di Richardus pronta ad accogliere gli ospiti"
+        fill
+        sizes="100vw"
+      />
+      <div className={styles.shade} aria-hidden="true" />
+      <div className={`container ${styles.content}`}>
         <h2 id="booking-title">
           Ci vediamo
-          <br />a tavola?
+          <span>a tavola?</span>
         </h2>
-        <p>
-          Tu scegli la compagnia.
-          <br />
-          Noi mettiamo il resto.
-        </p>
-      </div>
-      <div className={styles.booking}>
-        <BookingActions tone="inverse" locale={locale} />
-        <p>
-          Scrivici su WhatsApp giorno, orario e numero di persone. Il tavolo è
-          prenotato quando ricevi la nostra conferma.
-        </p>
-        <a className={styles.phone} href={`tel:${restaurant.phone}`}>
-          {restaurant.phoneLabel}
-        </a>
+        <p>Tu scegli la compagnia. Noi mettiamo il resto.</p>
+        <Button asChild variant="light">
+          <a
+            href={restaurant.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Prenota un tavolo su WhatsApp"
+          >
+            Prenota su WhatsApp
+            <ArrowUpRight size={18} aria-hidden="true" />
+          </a>
+        </Button>
       </div>
     </section>,
     locale,
