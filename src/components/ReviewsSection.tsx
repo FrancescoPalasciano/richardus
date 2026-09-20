@@ -3,7 +3,6 @@ import { getTranslator } from "@/lib/i18n";
 import type { LocaleProps } from "@/lib/locale";
 import { ArrowUpRight } from "lucide-react";
 import ReviewsCarousel from "./ReviewsCarousel";
-import { SectionHeading } from "@/components/ui/surfaces";
 import { restaurant } from "@/lib/restaurant";
 import styles from "./ReviewsCarousel.module.css";
 
@@ -16,12 +15,11 @@ export default function ReviewsSection({ locale = "it" }: LocaleProps = {}) {
       aria-labelledby="reviews-title"
       className={`container ${styles.section}`}
     >
-      <SectionHeading
-        id="reviews-title"
-        eyebrow="Le vostre parole"
-        title="A tavola con voi."
-        description="Una selezione delle vostre recensioni su Google."
-      >
+      <div className={styles.heading}>
+        <div>
+          <h2 id="reviews-title">A tavola con voi.</h2>
+          <p>Tre storie vere, scelte dalle vostre recensioni su Google.</p>
+        </div>
         <a
           href={restaurant.reviews}
           target="_blank"
@@ -31,7 +29,7 @@ export default function ReviewsSection({ locale = "it" }: LocaleProps = {}) {
           Leggi tutte le recensioni{" "}
           <ArrowUpRight size={17} aria-hidden="true" />
         </a>
-      </SectionHeading>
+      </div>
       {locale !== "it" && (
         <p className="mb-6 text-sm text-muted-foreground">
           Recensioni in lingua originale italiana.

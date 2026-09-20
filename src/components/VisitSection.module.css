@@ -1,95 +1,163 @@
 .section {
-  padding-bottom: var(--section-space);
+  padding-block: clamp(82px, 10vw, 150px);
+  color: var(--ivory);
+  background: var(--charcoal);
+}
+.heading {
+  display: grid;
+  gap: 28px;
+  align-items: end;
+  margin-bottom: clamp(44px, 7vw, 82px);
+}
+.heading h2 {
+  max-width: 10ch;
+  font-size: clamp(3.25rem, 8vw, 7.2rem);
+  line-height: 0.83;
+}
+.heading h2 span {
+  display: block;
+  margin-left: 0.32em;
+  color: var(--terracotta-soft);
+  font-style: italic;
+  font-weight: 400;
+}
+.heading p {
+  max-width: 48ch;
+  color: rgb(242 234 219 / 70%);
 }
 .visitGrid {
   display: grid;
-  gap: 16px;
+  gap: 18px;
 }
 .locationCard {
   display: grid;
-  background: var(--surface);
-  border-radius: var(--radius-lg);
+  min-width: 0;
   overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--stone);
+  color: var(--charcoal);
 }
 .address {
-  padding: 30px;
-}
-.address > span {
-  font-size: 24px;
-}
-.address h3 {
-  margin-top: 36px;
-  font-size: 26px;
-}
-.address address {
-  margin-block: 22px 26px;
-  font-size: 14px;
-}
-.address address p {
-  line-height: 1.85;
-}
-.address address p span {
-  color: var(--muted-foreground);
-}
-.address address a {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  min-height: 44px;
-  margin-top: 16px;
-}
-.mapPanel {
-  padding: 30px;
-  background: var(--surface-secondary);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
+  padding: clamp(30px, 5vw, 64px);
 }
-.mapPanel > svg {
-  color: var(--primary);
+.address > svg {
+  color: var(--terracotta);
 }
-.mapPanel > p {
-  font-size: clamp(1.9rem, 3.3vw, 3rem);
-  line-height: 1.12;
-  letter-spacing: -0.04em;
-  font-weight: 500;
-  margin-top: 28px;
+.address h3 {
+  max-width: 12ch;
+  margin-top: 44px;
+  font-size: clamp(2.1rem, 4vw, 3.8rem);
+  line-height: 0.98;
 }
-.mapPanel > p > span {
-  display: block;
-  font-size: 11px;
-  color: var(--muted-foreground);
-  letter-spacing: 0.05em;
+.address address {
+  margin-block: 20px 12px;
+  color: #5f544b;
+  line-height: 1.7;
+}
+.phone {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 26px;
+  font-size: 0.82rem;
+  font-weight: 650;
+}
+.mapPanel {
+  position: relative;
+  display: grid;
+  min-height: 430px;
+  overflow: hidden;
+  place-items: center;
+  padding: 24px;
+  background: #d0bea5;
+}
+.mapPanel::before,
+.mapPanel::after {
+  position: absolute;
+  content: "";
+  border: 1px solid rgb(77 58 45 / 18%);
+  border-radius: 50%;
+}
+.mapPanel::before {
+  width: 430px;
+  height: 430px;
+}
+.mapPanel::after {
+  width: 280px;
+  height: 280px;
+}
+.mapConsent {
+  position: relative;
+  z-index: 1;
+  max-width: 36ch;
+  text-align: center;
+}
+.mapConsent > svg {
+  margin-inline: auto;
+  color: var(--terracotta);
+}
+.mapConsent h3 {
   margin-top: 18px;
+  font-size: 2rem;
 }
-.mapPanel > details {
+.mapConsent p {
+  margin-top: 12px;
+  color: #65584e;
+  font-size: 0.78rem;
+  line-height: 1.7;
+}
+.mapConsent :global(.ui-button) {
+  margin-top: 22px;
+}
+.mapPrivacy {
+  display: inline-block;
+  min-height: 36px;
+  margin-top: 8px;
+  font-size: 0.69rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.mapFrame {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
   width: 100%;
+  height: 100%;
+  border: 0;
 }
-.mapPanel iframe {
-  border-radius: var(--radius-md);
+.mapStatus {
+  position: absolute;
+  z-index: 3;
+  right: 14px;
+  bottom: 14px;
+  max-width: calc(100% - 28px);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--charcoal);
+  color: var(--ivory);
+  font-size: 0.68rem;
 }
-.mapPanel :global(button) {
-  border-radius: var(--radius-pill);
+.section :global(.hoursCard) {
+  color: var(--foreground);
 }
-@media (min-width: 600px) {
+@media (min-width: 760px) {
+  .heading {
+    grid-template-columns: 1.3fr 0.7fr;
+  }
   .locationCard {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.74fr 1.26fr;
+  }
+  .mapPanel {
+    min-height: 560px;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1080px) {
   .visitGrid {
-    grid-template-columns: 1.8fr 1fr;
+    grid-template-columns: minmax(0, 1.8fr) minmax(280px, 0.62fr);
     align-items: stretch;
-  }
-  .address,
-  .mapPanel {
-    padding: 32px;
-  }
-}
-@media (min-width: 1280px) {
-  .address,
-  .mapPanel {
-    padding: 40px;
   }
 }

@@ -5,10 +5,8 @@ import { ArrowUpRight, MapPin, Phone } from "lucide-react";
 import GoogleMap from "./GoogleMap";
 import OpeningHoursCard from "./OpeningHoursCard";
 import { Button } from "@/components/ui/button";
-import { SectionHeading } from "@/components/ui/surfaces";
 import { restaurant } from "@/lib/restaurant";
 import styles from "./VisitSection.module.css";
-import Brand from "./Brand";
 
 export default function VisitSection({ locale = "it" }: LocaleProps = {}) {
   const t = getTranslator(locale);
@@ -17,56 +15,44 @@ export default function VisitSection({ locale = "it" }: LocaleProps = {}) {
       id="contatti"
       data-reveal
       aria-labelledby="visit-title"
-      className={`container ${styles.section}`}
+      className={styles.section}
     >
-      <SectionHeading
-        id="visit-title"
-        eyebrow="Dove siamo"
-        title={
-          <>
-            Il tuo prossimo tavolo.
-            <br />A Francavilla.
-          </>
-        }
-        description="Via San Giovanni 15, Francavilla Fontana. Provincia di Brindisi, Puglia."
-      />
-      <div className={styles.visitGrid}>
+      <div className={`container ${styles.heading}`}>
+        <h2 id="visit-title">
+          Nel cuore di
+          <span>Francavilla.</span>
+        </h2>
+        <p>
+          Richardus è in Via San Giovanni 15, tra le strade del centro di
+          Francavilla Fontana. La tavola è a pochi passi dalla città.
+        </p>
+      </div>
+      <div className={`container ${styles.visitGrid}`}>
         <div className={styles.locationCard}>
           <div className={styles.address}>
-            <Brand />
-            <h3>Ci trovi qui.</h3>
+            <MapPin size={26} aria-hidden="true" />
+            <h3>Via San Giovanni 15</h3>
             <address>
-              <p>
-                Via San Giovanni 15
-                <br />
-                Francavilla Fontana
-                <br />
-                <span>Brindisi · Puglia</span>
-              </p>
-              <a href={`tel:${restaurant.phone}`}>
-                <Phone size={17} aria-hidden="true" />
-                {restaurant.phoneLabel}
-              </a>
+              Francavilla Fontana
+              <br />
+              Brindisi · Puglia
             </address>
-            <Button asChild variant="secondary">
+            <a className={styles.phone} href={`tel:${restaurant.phone}`}>
+              <Phone size={17} aria-hidden="true" />
+              {restaurant.phoneLabel}
+            </a>
+            <Button asChild>
               <a
                 href={restaurant.maps}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Indicazioni <ArrowUpRight size={17} aria-hidden="true" />
+                Portami da Richardus
+                <ArrowUpRight size={17} aria-hidden="true" />
               </a>
             </Button>
           </div>
-          <div className={styles.mapPanel}>
-            <MapPin size={30} aria-hidden="true" />
-            <p>
-              Francavilla
-              <br />
-              Fontana<span>Puglia, Italia</span>
-            </p>
-            <GoogleMap />
-          </div>
+          <GoogleMap />
         </div>
         <OpeningHoursCard />
       </div>
