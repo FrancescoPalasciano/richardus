@@ -407,6 +407,35 @@
     transform: scale(1.035);
   }
 }
+@media (max-width: 719px) {
+  .heroCopy {
+    align-items: center;
+    text-align: center;
+  }
+  .heroCopy h1,
+  .heroDescription {
+    margin-inline: auto;
+  }
+  .heroActions {
+    justify-content: center;
+  }
+  .sectionIntro,
+  .tableCopy,
+  .storyHeading {
+    text-align: center;
+  }
+  .sectionIntro h2,
+  .sectionIntro > div,
+  .tableCopy h2,
+  .tableCopy > p:last-child,
+  .storyHeading h2,
+  .storyHeading > p {
+    margin-inline: auto;
+  }
+  .storyHeading h2 span {
+    margin-left: 0;
+  }
+}
 @media (min-width: 720px) {
   .heroNote {
     display: block;

@@ -144,6 +144,18 @@
 .section :global(.hoursCard) {
   color: var(--foreground);
 }
+@media (max-width: 759px) {
+  .heading {
+    text-align: center;
+  }
+  .heading h2,
+  .heading p {
+    margin-inline: auto;
+  }
+  .heading h2 span {
+    margin-left: 0;
+  }
+}
 @media (min-width: 760px) {
   .heading {
     grid-template-columns: 1.3fr 0.7fr;
