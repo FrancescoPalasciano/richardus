@@ -9,7 +9,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Clock3, MapPin, Phone } from "lucide-react";
-import saladPhoto from "@/app/images/RICHARDUS 🍝🍷🍽️🍕…Scopri le nostre insalate, servite in coppa di pane artigianale….Vi aspettia.jpg";
+import saladPhoto from "@/app/images/foto5.webp";
 import Reservation from "@/components/Reservation";
 import { Button } from "@/components/ui/button";
 import { restaurant } from "@/lib/restaurant";

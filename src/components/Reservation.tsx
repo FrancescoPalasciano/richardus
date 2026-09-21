@@ -6,7 +6,7 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { restaurant } from "@/lib/restaurant";
-import tablePhoto from "@/app/images/interno.jpg";
+import tablePhoto from "@/app/images/interno.webp";
 import styles from "./Reservation.module.css";
 
 export function BookingActions({
