@@ -149,11 +149,24 @@ for (const [route, html] of Object.entries(pages)) {
     if (!asset.includes("logo")) photographs.add(`${locale}:${asset}`);
   }
 }
-assert.equal(
-  photographs.size,
-  8 * locales.length,
-  "Eight supplied food and room photographs are present for every locale",
-);
+for (const locale of locales) {
+  for (const name of [
+    "interno2",
+    "interno",
+    "foto1",
+    "foto2",
+    "foto5",
+    "foto6",
+  ]) {
+    assert.ok(
+      [...photographs].some(
+        (asset) =>
+          asset.startsWith(`${locale}:`) && asset.includes(`/${name}.`),
+      ),
+      `${locale}: supplied photograph ${name} is present`,
+    );
+  }
+}
 assert.doesNotMatch(pages["/menu"], /\d+ proposte|Informazioni sui prodotti/);
 assert.match(pages["/"], /Trattoria/);
 const menu = json(pages["/menu"]).find((item) => item["@type"] === "Menu");

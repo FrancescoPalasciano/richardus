@@ -6,9 +6,7 @@ import {
   type RouteProps,
 } from "@/lib/locale";
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Info } from "lucide-react";
-import winePhoto from "@/app/images/vino.webp";
 import menu from "@/data/menu.json";
 import Reservation from "@/components/Reservation";
 import DishCard from "@/components/DishCard";
@@ -75,14 +73,10 @@ export default async function MenuPage({ params }: RouteProps) {
           {category.descrizione && (
             <p className={styles.categoryDescription}>{category.descrizione}</p>
           )}
-          <ul className={styles.dishGrid} data-reveal-group>
+          <ul className={styles.dishGrid}>
             {products.map(([key, dish]) => (
               <li key={key}>
-                <DishCard
-                  dish={dish}
-                  locale={locale}
-                  category={categoryLabel(id, category.nome)}
-                />
+                <DishCard dish={dish} locale={locale} />
               </li>
             ))}
           </ul>
@@ -95,25 +89,12 @@ export default async function MenuPage({ params }: RouteProps) {
   return localizeTree(
     <main id="contenuto">
       <header className={`container ${styles.pageHeader}`}>
-        <div className={styles.menuHero}>
-          <Image
-            src={winePhoto}
-            alt="Due calici di vino rosato per un brindisi da Richardus"
-            fill
-            preload
-            sizes="(min-width: 1520px) 1400px, calc(100vw - 32px)"
-          />
-          <div className={styles.coverCopy}>
-            <p className="eyebrow">Il menu Richardus</p>
-            <h1>
-              Cosa portiamo
-              <br />a tavola.
-            </h1>
-            <p>
-              La cucina pugliese, i primi di casa e il gusto della brace. Scegli
-              da dove cominciare.
-            </p>
-          </div>
+        <div className={styles.coverCopy}>
+          <h1>Il menu Richardus</h1>
+          <p>
+            La cucina pugliese, i primi di casa e il gusto della brace. Scegli
+            da dove cominciare.
+          </p>
         </div>
         <div className={styles.menuNotice}>
           <Info size={15} aria-hidden="true" />

@@ -14,7 +14,7 @@
 }
 .brand > p {
   color: var(--muted-foreground);
-  font-size: 12px;
+  font-size: 0.875rem;
   line-height: 1.9;
   margin-top: 16px;
 }
@@ -29,7 +29,8 @@
   align-items: center;
   gap: 7px;
   min-height: 44px;
-  font-size: 12px;
+  min-width: 44px;
+  font-size: 0.875rem;
   font-weight: 500;
 }
 .top a:hover,
@@ -46,11 +47,11 @@
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  font-size: 13px;
+  font-size: 0.875rem;
 }
 .contact > a:last-child {
   color: var(--muted-foreground);
-  font-size: 12px;
+  font-size: 0.875rem;
 }
 .bottom {
   border-top: 1px solid var(--border);
@@ -60,7 +61,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 4px 20px;
-  font-size: 10px;
+  font-size: 0.8125rem;
   color: var(--muted-foreground);
 }
 .bottom nav {
@@ -70,8 +71,14 @@
 .bottom a {
   display: inline-flex;
   min-height: 44px;
+  min-width: 44px;
   align-items: center;
   gap: 6px;
+}
+.brand > a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
 }
 @media (min-width: 768px) {
   .footer {
