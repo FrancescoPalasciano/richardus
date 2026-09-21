@@ -146,7 +146,7 @@ export default async function AboutPage({ params }: RouteProps) {
               </dd>
             </div>
           </dl>
-          <Button asChild variant="outline" className={styles.directions}>
+          <Button asChild className={styles.directions}>
             <a href={restaurant.maps} target="_blank" rel="noopener noreferrer">
               Portami da Richardus
               <ArrowUpRight size={18} aria-hidden="true" />
