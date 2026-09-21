@@ -4,7 +4,6 @@ import { localizeTree } from "@/lib/localize";
 import { useLocale } from "@/components/LocaleProvider";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { MapPin } from "lucide-react";
 import { restaurant } from "@/lib/restaurant";
 import { Button } from "@/components/ui/button";
 import styles from "./VisitSection.module.css";
@@ -46,22 +45,25 @@ export default function GoogleMap() {
   const { locale, t } = useLocale();
   const [visible, setVisible] = useState(false);
   return localizeTree(
-    <div className={styles.mapPanel}>
+    <div
+      className={`${styles.mapPanel} ${visible ? styles.mapPanelVisible : ""}`}
+    >
       {visible ? (
         <MapFrame />
       ) : (
         <div className={styles.mapConsent}>
-          <MapPin size={34} aria-hidden="true" />
-          <h3>Richardus, in centro.</h3>
-          <p>
-            Attiva la mappa interattiva per esplorare la posizione. Google
-            riceverà dati di navigazione solo dopo la tua scelta.
-          </p>
-          <Button onClick={() => setVisible(true)}>Carica la mappa</Button>
-          <br />
-          <Link href="/cookie-policy#mappa" className={styles.mapPrivacy}>
-            Informazioni privacy
-          </Link>
+          <div>
+            <h3>Mappa interattiva</h3>
+            <p>
+              Google riceverà dati di navigazione solo dopo la tua scelta.
+            </p>
+          </div>
+          <div className={styles.mapActions}>
+            <Button onClick={() => setVisible(true)}>Carica la mappa</Button>
+            <Link href="/cookie-policy#mappa" className={styles.mapPrivacy}>
+              Informazioni privacy
+            </Link>
+          </div>
         </div>
       )}
     </div>,

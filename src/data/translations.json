@@ -1182,6 +1182,11 @@
     "Activez la carte interactive pour explorer l’emplacement. Google ne recevra des données de navigation qu’après votre choix.",
     "Aktivieren Sie die interaktive Karte, um den Standort zu erkunden. Google erhält Navigationsdaten erst nach Ihrer Auswahl."
   ],
+  "Google riceverà dati di navigazione solo dopo la tua scelta.": [
+    "Google will receive browsing data only after you choose to load the map.",
+    "Google ne recevra des données de navigation qu’après votre choix.",
+    "Google erhält Navigationsdaten erst nach Ihrer Auswahl."
+  ],
   "Carica la mappa": ["Load the map", "Charger la carte", "Karte laden"],
   "Il caricamento richiede più tempo del previsto.": [
     "Loading is taking longer than expected.",
