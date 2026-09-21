@@ -10,6 +10,21 @@
   margin-top: calc(-1 * var(--header-offset));
   padding-top: var(--header-offset);
 }
+.hero::after {
+  position: absolute;
+  z-index: 0;
+  inset: -8% -42%;
+  pointer-events: none;
+  background: linear-gradient(
+    104deg,
+    transparent 34%,
+    rgb(223 173 136 / 18%) 48%,
+    transparent 62%
+  );
+  content: "";
+  opacity: 0;
+  transform: translateX(-44%);
+}
 .heroPhoto {
   object-fit: cover;
   object-position: 56% center;
@@ -267,6 +282,54 @@
   margin-top: 20px;
   color: var(--muted-foreground);
   font-size: 0.875rem;
+}
+@keyframes room-settle {
+  from {
+    scale: 1.055;
+  }
+  to {
+    scale: 1.015;
+  }
+}
+@keyframes room-light-pass {
+  0% {
+    opacity: 0;
+    transform: translateX(-44%);
+  }
+  24% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(44%);
+  }
+}
+@keyframes hero-copy-settle {
+  from {
+    opacity: 0.72;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .heroPhoto {
+    animation: room-settle var(--motion-focal) var(--ease-out-expo) both;
+  }
+  .hero::after {
+    animation: room-light-pass var(--motion-focal) var(--ease-out-expo) 80ms
+      both;
+  }
+  .heroCopy h1 {
+    animation: hero-copy-settle 560ms var(--ease-out-expo) 80ms both;
+  }
+  .heroDescription,
+  .heroActions,
+  .bookingNote {
+    animation: hero-copy-settle 520ms var(--ease-out-expo) 150ms both;
+  }
 }
 @media (hover: hover) {
   .dishCard:hover > img {

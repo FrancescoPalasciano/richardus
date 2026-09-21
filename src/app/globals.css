@@ -61,7 +61,9 @@
   --motion-press: 150ms;
   --motion-feedback: 200ms;
   --motion-enter: 300ms;
+  --motion-focal: 800ms;
   --ease-out-quart: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --container-width: 1400px;
   --gutter: 16px;
   --section-space: clamp(64px, 7vw, 112px);
@@ -471,7 +473,14 @@
 }
 @media (prefers-reduced-motion: no-preference) {
   [data-scroll-reveal="pending"] {
-    opacity: 0;
+    opacity: 0.55;
+  }
+  [data-scroll-reveal="pending"][data-reveal-kind="copy"],
+  [data-scroll-reveal="pending"][data-reveal-kind="dish"] {
+    transform: translateY(16px);
+  }
+  [data-scroll-reveal="pending"][data-reveal-kind="photo"] {
+    clip-path: inset(0 12% 0 0);
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -485,6 +494,11 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+  :where(.ui-button, .ui-tab, .ui-accordion-trigger svg) {
+    transition-duration: 120ms !important;
+    transition-property:
+      background-color, color, border-color, opacity !important;
   }
 }
 @media print {

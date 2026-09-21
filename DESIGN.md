@@ -43,9 +43,11 @@ I colori sono centralizzati in `src/app/globals.css`. Il focus usa terracotta sc
 ## Movimento
 
 - Transizioni brevi su link e controlli.
+- Il momento focale della home è l’assestamento iniziale della fotografia della sala, attraversata una sola volta da una luce calda che richiama pietra e convivialità; il copy resta leggibile dal primo frame.
+- Le entrate sotto la piega distinguono materiale e ruolo: ritaglio controllato per le fotografie, breve continuità verticale per il copy e un solo stagger contenuto per i piatti.
 - L’unico movimento fotografico ricorrente è un leggero ingrandimento dei piatti su hover.
-- I reveal esistenti restano progressivi e non nascondono contenuto senza JavaScript.
-- `prefers-reduced-motion` disattiva animazioni e transizioni non essenziali.
+- I reveal sono progressivi, si eseguono una volta e non nascondono contenuto senza JavaScript.
+- `prefers-reduced-motion` elimina movimento spaziale e sequenze non essenziali, preservando un feedback cromatico rapido sui controlli.
 
 ## Homepage
 

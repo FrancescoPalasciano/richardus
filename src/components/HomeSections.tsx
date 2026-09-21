@@ -142,7 +142,7 @@ export function MenuPreview({ locale = "it" }: LocaleProps = {}) {
       aria-labelledby="preview-title"
       data-reveal
     >
-      <div className={styles.sectionIntro}>
+      <div className={styles.sectionIntro} data-reveal-kind="copy">
         <h2 id="preview-title">La cucina pugliese.</h2>
         <div>
           <p>
@@ -162,6 +162,7 @@ export function MenuPreview({ locale = "it" }: LocaleProps = {}) {
               href={`/menu#${id}`}
               className={styles.dishCard}
               data-size={index === 0 ? "wide" : "standard"}
+              data-reveal-kind="dish"
               key={id}
             >
               <Image
@@ -202,7 +203,7 @@ export function SignatureDishes({ locale = "it" }: LocaleProps = {}) {
       aria-labelledby="table-title"
       data-reveal
     >
-      <div className={styles.tablePhotoWide}>
+      <div className={styles.tablePhotoWide} data-reveal-kind="photo">
         <Image
           src={tablePhoto}
           alt="Una tavola apparecchiata nella sala in pietra di Richardus"
@@ -210,7 +211,7 @@ export function SignatureDishes({ locale = "it" }: LocaleProps = {}) {
           sizes="(min-width: 720px) 55vw, 100vw"
         />
       </div>
-      <div className={styles.tableCopy}>
+      <div className={styles.tableCopy} data-reveal-kind="copy">
         <h2 id="table-title">La nostra trattoria.</h2>
         <p>
           Una sala raccolta, la pietra chiara, i piatti al centro e il tempo
