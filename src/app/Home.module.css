@@ -415,8 +415,13 @@
   }
   .infoStrip {
     grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .infoItem {
+    width: fit-content;
   }
   .directions {
+    justify-self: center;
     margin-top: 2px;
   }
 }
