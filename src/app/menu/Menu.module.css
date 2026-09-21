@@ -172,9 +172,6 @@
   font-size: 1rem;
   margin-top: 18px;
 }
-.panel:focus-visible {
-  outline-offset: 6px;
-}
 @media (min-width: 768px) {
   .pageHeader {
     grid-template-columns: minmax(0, 1fr) minmax(280px, 0.52fr);
@@ -262,9 +259,6 @@
   }
 }
 @media print {
-  .browser [hidden] {
-    display: block !important;
-  }
   .categoryBar {
     display: none;
   }
