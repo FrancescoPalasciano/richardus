@@ -49,38 +49,6 @@ export default async function CookiePage({ params }: RouteProps) {
           impostazioni del browser.
         </p>
       </section>
-      <section id="mappa" className="scroll-mt-28">
-        <h2>Mappa Google</h2>
-        <p>
-          La mappa incorporata è un contenuto facoltativo. Si attiva solo con
-          “Consenti e carica la mappa”. Il caricamento trasmette a Google dati
-          tecnici, tra cui l’indirizzo IP, e può comportare l’utilizzo di cookie
-          secondo l’
-          <a
-            href="https://policies.google.com/privacy?hl=it"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            informativa Google
-          </a>
-          .
-        </p>
-        <p>
-          Questa scelta non viene salvata nella memoria del browser: vale solo
-          finché la sezione rimane aperta. Il pulsante “Disattiva la mappa”
-          rimuove il contenuto incorporato. Puoi sempre aprire l’indirizzo
-          direttamente su Google Maps senza attivare la mappa nel sito.
-        </p>
-      </section>
-      <section>
-        <h2>Servizi collegati</h2>
-        <p>
-          I link a Instagram, WhatsApp e Google aprono servizi esterni. La mappa
-          Google incorporata viene gestita con la scelta descritta sopra. Gli
-          eventuali cookie già impostati da servizi esterni possono essere
-          gestiti o cancellati nelle impostazioni del browser.
-        </p>
-      </section>
     </LegalPage>,
     locale,
     t,

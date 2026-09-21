@@ -2,7 +2,6 @@ import { localizeTree } from "@/lib/localize";
 import { getTranslator } from "@/lib/i18n";
 import type { LocaleProps } from "@/lib/locale";
 import { ArrowUpRight, MapPin, Phone } from "lucide-react";
-import GoogleMap from "./GoogleMap";
 import OpeningHoursCard from "./OpeningHoursCard";
 import { Button } from "@/components/ui/button";
 import { restaurant } from "@/lib/restaurant";
@@ -52,7 +51,6 @@ export default function VisitSection({ locale = "it" }: LocaleProps = {}) {
               </a>
             </Button>
           </div>
-          <GoogleMap />
         </div>
         <OpeningHoursCard />
       </div>
