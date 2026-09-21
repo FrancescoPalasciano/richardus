@@ -1,4 +1,5 @@
 .hero {
+  --ring: var(--ivory);
   position: relative;
   display: flex;
   min-height: 92svh;
@@ -33,22 +34,13 @@
 .heroCopy h1 {
   max-width: 12ch;
   font-family: var(--font-display);
-  font-size: clamp(3.15rem, 8.4vw, 7.4rem);
+  font-size: clamp(3.15rem, 7vw, 6rem);
   font-weight: 500;
   line-height: 0.86;
   letter-spacing: -0.035em;
   text-shadow: 0 3px 28px rgb(0 0 0 / 22%);
 }
-.heroCopy h1 span {
-  display: block;
-  margin-bottom: 0.18em;
-  font-family: var(--font-sans);
-  font-size: 0.16em;
-  font-weight: 650;
-  letter-spacing: 0.11em;
-  line-height: 1;
-  text-transform: uppercase;
-}
+
 .heroDescription {
   max-width: 46ch;
   margin-top: 28px;
@@ -62,6 +54,12 @@
   align-items: center;
   gap: 8px 24px;
   margin-top: 32px;
+}
+.bookingNote {
+  max-width: 48ch;
+  margin-top: 16px;
+  color: var(--ivory);
+  font-size: 0.875rem;
 }
 .heroMenuLink {
   display: inline-flex;
@@ -102,10 +100,10 @@
 }
 .infoItem span {
   color: var(--muted-foreground);
-  font-size: 0.67rem;
+  font-size: 0.8125rem;
 }
 .infoItem strong {
-  font-size: 0.75rem;
+  font-size: 0.9375rem;
   font-weight: 650;
   font-variant-numeric: tabular-nums;
 }
@@ -115,7 +113,7 @@
   align-items: center;
   gap: 10px;
   align-self: center;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 650;
 }
 .menuPreview {
@@ -171,12 +169,7 @@
   z-index: 1;
   inset: auto 56px 24px 24px;
 }
-.dishContent > span {
-  font-size: 0.64rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
+
 .dishContent h3 {
   max-width: 17ch;
   margin-top: 7px;
@@ -188,15 +181,10 @@
 }
 .dishContent p {
   margin-top: 10px;
-  color: rgb(255 250 240 / 72%);
-  font-size: 0.78rem;
+  color: var(--ivory);
+  font-size: 0.875rem;
 }
-.dishContent strong {
-  display: block;
-  margin-top: 14px;
-  font-size: 0.85rem;
-  font-variant-numeric: tabular-nums;
-}
+
 .dishArrow {
   position: absolute;
   z-index: 1;
@@ -204,121 +192,34 @@
   bottom: 27px;
 }
 .tableStory {
+  --ring: var(--ivory);
   display: grid;
-  overflow: hidden;
   background: var(--walnut);
   color: var(--ivory);
 }
-.tablePhotoWide,
-.tablePhotoTall {
+.tablePhotoWide {
   position: relative;
-  min-height: 390px;
-}
-.tablePhotoWide img,
-.tablePhotoTall img {
-  object-fit: cover;
+  min-height: 360px;
 }
 .tablePhotoWide img {
+  object-fit: cover;
   object-position: center 58%;
 }
-.tablePhotoTall {
-  width: 100%;
-  min-height: 0;
-  aspect-ratio: 1170 / 1389;
-  margin: 0;
-}
-.tablePhotoTall img {
-  object-position: center;
-}
 .tableCopy {
-  padding: 50px var(--gutter) 64px;
+  align-self: center;
+  padding: clamp(40px, 5vw, 72px) var(--gutter);
 }
 .tableCopy h2 {
-  max-width: 9ch;
-  font-size: clamp(2.9rem, 6vw, 5.8rem);
+  max-width: 12ch;
+  font-size: clamp(2.75rem, 5vw, 4.5rem);
 }
-.tableCopy > p:last-child {
+.tableCopy > p {
   max-width: 42ch;
   margin-top: 24px;
-  color: rgb(250 240 221 / 72%);
+  color: var(--dark-muted);
 }
-.story {
-  padding-block: clamp(90px, 11vw, 170px);
-  background: var(--background);
-}
-.storyHeading {
-  display: grid;
-  gap: 32px;
-  align-items: end;
-}
-.storyHeading h2 {
-  font-size: clamp(4.1rem, 10.5vw, 9.5rem);
-  line-height: 0.77;
-  letter-spacing: -0.04em;
-}
-.storyHeading h2 span {
-  display: block;
-  margin-left: 0.32em;
-  color: var(--terracotta);
-  font-style: italic;
-  font-weight: 400;
-}
-.storyHeading > p {
-  max-width: 55ch;
-  color: var(--muted-foreground);
-}
-.storyGrid {
-  display: grid;
-  gap: 32px;
-  margin-top: clamp(58px, 8vw, 104px);
-}
-.storyStatement,
-.storyLink {
-  padding-block: 24px;
-  border-top: 1px solid var(--border);
-}
-.storyStatement h3 {
-  max-width: 20ch;
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 3vw, 3rem);
-  font-weight: 500;
-  line-height: 1;
-}
-.storyStatement > p:last-child {
-  max-width: 38ch;
-  margin-top: 18px;
-  color: var(--muted-foreground);
-  font-size: 1rem;
-}
-.storyPhoto {
-  position: relative;
-  min-height: 460px;
-  overflow: hidden;
-  border-radius: var(--radius-md);
-}
-.storyPhoto img {
-  object-fit: cover;
-  object-position: center;
-}
-.storyLink {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.storyLink p {
-  max-width: 18ch;
-  font-family: var(--font-display);
-  font-size: 2rem;
-  line-height: 1.05;
-}
-.storyLink a {
-  display: inline-flex;
-  min-height: 44px;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
-  font-size: 0.8rem;
-  font-weight: 650;
+.tableCopy > a {
+  margin-top: 24px;
 }
 .hoursCard {
   padding: 28px;
@@ -345,7 +246,7 @@
   gap: 10px;
   padding: 13px 0;
   border-bottom: 1px solid var(--border);
-  font-size: 0.75rem;
+  font-size: 0.875rem;
 }
 .hoursCard dl > div[data-today="true"] {
   color: var(--primary);
@@ -365,7 +266,7 @@
 .hoursCard > p {
   margin-top: 20px;
   color: var(--muted-foreground);
-  font-size: 0.7rem;
+  font-size: 0.875rem;
 }
 @media (hover: hover) {
   .dishCard:hover > img {
@@ -378,27 +279,22 @@
     text-align: center;
   }
   .heroCopy h1,
-  .heroDescription {
+  .heroDescription,
+  .bookingNote {
     margin-inline: auto;
   }
   .heroActions {
     justify-content: center;
   }
   .sectionIntro,
-  .tableCopy,
-  .storyHeading {
+  .tableCopy {
     text-align: center;
   }
   .sectionIntro h2,
   .sectionIntro > div,
   .tableCopy h2,
-  .tableCopy > p:last-child,
-  .storyHeading h2,
-  .storyHeading > p {
+  .tableCopy > p {
     margin-inline: auto;
-  }
-  .storyHeading h2 span {
-    margin-left: 0;
   }
 }
 @media (min-width: 720px) {
@@ -422,40 +318,13 @@
     min-height: 353px;
   }
   .tableStory {
-    grid-template-columns: 1.35fr 0.65fr;
-    grid-template-rows: auto auto;
+    grid-template-columns: 1.1fr 0.9fr;
   }
   .tablePhotoWide {
-    grid-row: 1 / 3;
-    min-height: 780px;
+    min-height: 520px;
   }
   .tableCopy {
-    align-self: center;
-    padding: 72px clamp(36px, 5vw, 82px);
-  }
-  .tablePhotoTall {
-    width: min(88%, 480px);
-    min-height: 540px;
-    aspect-ratio: auto;
-    margin: -40px 0 -82px -80px;
-    translate: 0 0;
-  }
-  .storyHeading {
-    grid-template-columns: 1.45fr 0.55fr;
-  }
-  .storyGrid {
-    grid-template-columns: 0.85fr 1.15fr;
-    column-gap: clamp(32px, 6vw, 88px);
-    row-gap: 0;
-  }
-  .storyPhoto {
-    grid-column: 2;
-    grid-row: 1 / 4;
-    min-height: 620px;
-  }
-  .storyStatement,
-  .storyLink {
-    grid-column: 1;
+    padding-inline: clamp(32px, 5vw, 80px);
   }
 }
 @media (min-width: 1100px) {
@@ -475,15 +344,12 @@
     font-size: clamp(2.8rem, 15.5vw, 4rem);
   }
   .heroDescription {
-    font-size: 0.94rem;
+    font-size: 1rem;
   }
   .infoStrip {
     grid-template-columns: 1fr;
   }
   .directions {
     margin-top: 2px;
-  }
-  .storyHeading h2 {
-    font-size: clamp(3.45rem, 18vw, 5rem);
   }
 }

@@ -11,15 +11,11 @@
 }
 .heading h2 {
   max-width: 10ch;
-  font-size: clamp(3.25rem, 8vw, 7.2rem);
-  line-height: 0.83;
+  font-size: clamp(2.75rem, 6vw, 5rem);
+  line-height: 1;
 }
 .heading h2 span {
   display: block;
-  margin-left: 0.32em;
-  color: var(--terracotta-soft);
-  font-style: italic;
-  font-weight: 400;
 }
 .heading p {
   max-width: 48ch;
@@ -63,7 +59,7 @@
   align-items: center;
   gap: 10px;
   margin-bottom: 26px;
-  font-size: 0.82rem;
+  font-size: 1rem;
   font-weight: 650;
 }
 .mapPanel {
@@ -74,21 +70,6 @@
   place-items: center;
   padding: 24px;
   background: #d0bea5;
-}
-.mapPanel::before,
-.mapPanel::after {
-  position: absolute;
-  content: "";
-  border: 1px solid rgb(77 58 45 / 18%);
-  border-radius: 50%;
-}
-.mapPanel::before {
-  width: 430px;
-  height: 430px;
-}
-.mapPanel::after {
-  width: 280px;
-  height: 280px;
 }
 .mapConsent {
   position: relative;
@@ -107,17 +88,18 @@
 .mapConsent p {
   margin-top: 12px;
   color: #65584e;
-  font-size: 0.78rem;
+  font-size: 1rem;
   line-height: 1.7;
 }
 .mapConsent :global(.ui-button) {
   margin-top: 22px;
 }
 .mapPrivacy {
-  display: inline-block;
-  min-height: 36px;
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
   margin-top: 8px;
-  font-size: 0.69rem;
+  font-size: 0.875rem;
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -139,7 +121,7 @@
   border-radius: var(--radius-sm);
   background: var(--charcoal);
   color: var(--ivory);
-  font-size: 0.68rem;
+  font-size: 0.8125rem;
 }
 .section :global(.hoursCard) {
   color: var(--foreground);

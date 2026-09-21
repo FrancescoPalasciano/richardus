@@ -9,14 +9,11 @@ import tablePhoto from "@/app/images/interno.webp";
 import beansPhoto from "@/app/images/foto2.webp";
 import pastaPhoto from "@/app/images/foto6.webp";
 import meatPhoto from "@/app/images/foto1.webp";
-import placeSettingPhoto from "@/app/images/foto3.webp";
 import menu from "@/data/menu.json";
 import { restaurant } from "@/lib/restaurant";
 import { Button } from "@/components/ui/button";
 import { TodayHours } from "./OpeningHoursCard";
 import styles from "@/app/Home.module.css";
-
-import { euro, displayName } from "@/lib/menu";
 
 export function Hero({ locale = "it" }: LocaleProps = {}) {
   const t = getTranslator(locale);
@@ -30,14 +27,15 @@ export function Hero({ locale = "it" }: LocaleProps = {}) {
         src={roomPhoto}
         alt="La sala di Richardus a Francavilla Fontana, con volte in pietra e tavoli apparecchiati"
         fill
-        preload
+        loading="eager"
+        fetchPriority="high"
         className={styles.heroPhoto}
         sizes="100vw"
       />
       <div className={styles.heroShade} aria-hidden="true" />
       <div className={`container ${styles.heroCopy}`}>
         <h1 id="home-title">
-          <span>Richardus,</span>
+          <span className="sr-only">Richardus,</span>
           Trattoria a<br />
           Francavilla Fontana
         </h1>
@@ -53,13 +51,16 @@ export function Hero({ locale = "it" }: LocaleProps = {}) {
               rel="noopener noreferrer"
               aria-label="Prenota un tavolo su WhatsApp"
             >
-              Prenota un tavolo <ArrowUpRight size={18} aria-hidden="true" />
+              Prenota su WhatsApp <ArrowUpRight size={18} aria-hidden="true" />
             </a>
           </Button>
           <Link href="/menu" className={styles.heroMenuLink}>
             Scopri il menu <ArrowRight size={18} aria-hidden="true" />
           </Link>
         </div>
+        <p className={styles.bookingNote}>
+          Scrivici su WhatsApp. Ti confermiamo noi la disponibilità.
+        </p>
       </div>
     </section>,
     locale,
@@ -110,33 +111,29 @@ export function InfoStrip({ locale = "it" }: LocaleProps = {}) {
   );
 }
 
-type FeaturedDish = {
-  id: "cortecce-grano-arso" | "arrosto-misto" | "fave-verdura";
+type FeaturedCategory = {
+  id: "primi-piatti" | "secondi-piatti" | "antipasti";
   image: StaticImageData;
   alt: string;
-  shortName: string;
 };
 
 export function MenuPreview({ locale = "it" }: LocaleProps = {}) {
   const t = getTranslator(locale);
-  const choices: FeaturedDish[] = [
+  const choices: FeaturedCategory[] = [
     {
-      id: "cortecce-grano-arso",
+      id: "primi-piatti",
       image: pastaPhoto,
-      alt: "Pasta di grano arso con funghi e salsiccia servita da Richardus",
-      shortName: "Grano arso, salsiccia e porcini",
+      alt: "Un piatto di pasta servito da Richardus",
     },
     {
-      id: "arrosto-misto",
+      id: "secondi-piatti",
       image: meatPhoto,
       alt: "Carne servita da Richardus con salsa e patate",
-      shortName: "La carne e la brace",
     },
     {
-      id: "fave-verdura",
+      id: "antipasti",
       image: beansPhoto,
       alt: "Fave e verdura con crostini servite da Richardus",
-      shortName: "Fave e verdura",
     },
   ];
   return localizeTree(
@@ -146,11 +143,11 @@ export function MenuPreview({ locale = "it" }: LocaleProps = {}) {
       data-reveal
     >
       <div className={styles.sectionIntro}>
-        <h2 id="preview-title">Dalla cucina, senza distanza.</h2>
+        <h2 id="preview-title">La cucina pugliese.</h2>
         <div>
           <p>
-            Ricette pugliesi, pasta, verdure e carne alla brace. Pochi giri di
-            parole: qui il menu arriva a tavola.
+            Antipasti della tradizione, pasta e carne alla brace. I sapori di
+            casa, a Francavilla.
           </p>
           <Link href="/menu" className="text-link">
             Esplora tutto il menu <ArrowRight size={17} aria-hidden="true" />
@@ -158,13 +155,11 @@ export function MenuPreview({ locale = "it" }: LocaleProps = {}) {
         </div>
       </div>
       <div className={styles.dishGrid} data-reveal-group>
-        {choices.map(({ id, image, alt, shortName }, index) => {
-          const dish = menu.prodotti[id];
-          const category =
-            menu.categorie[dish.categoria as keyof typeof menu.categorie];
+        {choices.map(({ id, image, alt }, index) => {
+          const category = menu.categorie[id];
           return (
             <Link
-              href={`/menu#${dish.categoria}`}
+              href={`/menu#${id}`}
               className={styles.dishCard}
               data-size={index === 0 ? "wide" : "standard"}
               key={id}
@@ -181,10 +176,8 @@ export function MenuPreview({ locale = "it" }: LocaleProps = {}) {
               />
               <span className={styles.dishShade} aria-hidden="true" />
               <div className={styles.dishContent}>
-                <span>{category.nome}</span>
-                <h3>{shortName}</h3>
-                <p>{displayName(dish.nome)}</p>
-                <strong>{euro.format(dish.prezzo)}</strong>
+                <h3>{category.nome}</h3>
+                <p>Scopri piatti, ingredienti e prezzi</p>
               </div>
               <ArrowUpRight
                 className={styles.dishArrow}
@@ -214,68 +207,18 @@ export function SignatureDishes({ locale = "it" }: LocaleProps = {}) {
           src={tablePhoto}
           alt="Una tavola apparecchiata nella sala in pietra di Richardus"
           fill
-          sizes="(min-width: 900px) 62vw, 100vw"
+          sizes="(min-width: 720px) 55vw, 100vw"
         />
       </div>
       <div className={styles.tableCopy}>
-        <h2 id="table-title">La tavola prima di tutto.</h2>
+        <h2 id="table-title">La nostra trattoria.</h2>
         <p>
           Una sala raccolta, la pietra chiara, i piatti al centro e il tempo
           necessario per stare bene insieme.
         </p>
-      </div>
-      <div className={styles.tablePhotoTall}>
-        <Image
-          src={placeSettingPhoto}
-          alt="Un piatto Richardus sulla tavola apparecchiata"
-          fill
-          sizes="(min-width: 900px) 32vw, 78vw"
-        />
-      </div>
-    </section>,
-    locale,
-    t,
-  );
-}
-
-export function BentoGrid({ locale = "it" }: LocaleProps = {}) {
-  const t = getTranslator(locale);
-  return localizeTree(
-    <section className={styles.story} aria-labelledby="story-title" data-reveal>
-      <div className={`container ${styles.storyHeading}`}>
-        <h2 id="story-title">
-          La Puglia,
-          <span>a tavola.</span>
-        </h2>
-        <p>
-          Richardus è una trattoria di Francavilla Fontana. Tra le pareti in
-          pietra di Via San Giovanni 15, la cucina pugliese si racconta con
-          semplicità, brace accesa e piatti da condividere.
-        </p>
-      </div>
-      <div className={`container ${styles.storyGrid}`} data-reveal-group>
-        <article className={styles.storyStatement}>
-          <h3>La pietra custodisce l’atmosfera.</h3>
-          <p>Volte chiare, luci calde, una sala che invita a restare.</p>
-        </article>
-        <figure className={styles.storyPhoto}>
-          <Image
-            src={roomPhoto}
-            alt="Le volte e le pareti in pietra della sala Richardus"
-            fill
-            sizes="(min-width: 900px) 52vw, 100vw"
-          />
-        </figure>
-        <article className={styles.storyStatement}>
-          <h3>La brace parla la lingua del territorio.</h3>
-          <p>Bombette, capocollo, salsiccia e fegatini, senza formalismi.</p>
-        </article>
-        <article className={styles.storyLink}>
-          <p>Una storia di cucina pugliese e accoglienza.</p>
-          <Link href="/chi-siamo">
-            Conosci Richardus <ArrowRight size={18} aria-hidden="true" />
-          </Link>
-        </article>
+        <Link href="/chi-siamo" className="text-link">
+          Conosci Richardus <ArrowRight size={18} aria-hidden="true" />
+        </Link>
       </div>
     </section>,
     locale,

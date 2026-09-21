@@ -1,12 +1,10 @@
 import { localizeTree } from "@/lib/localize";
 import { getTranslator } from "@/lib/i18n";
 import type { Locale, LocaleProps } from "@/lib/locale";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { restaurant } from "@/lib/restaurant";
-import tablePhoto from "@/app/images/interno.webp";
 import styles from "./Reservation.module.css";
 
 export function BookingActions({
@@ -28,7 +26,7 @@ export function BookingActions({
           rel="noopener noreferrer"
           aria-label="Prenota un tavolo su WhatsApp"
         >
-          Prenota un tavolo <ArrowUpRight size={18} aria-hidden="true" />
+          Prenota su WhatsApp <ArrowUpRight size={18} aria-hidden="true" />
         </a>
       </Button>
       {showMenu ? (
@@ -51,35 +49,16 @@ export default function Reservation({ locale = "it" }: LocaleProps = {}) {
   return localizeTree(
     <section
       id="prenota"
-      data-reveal
       className={styles.section}
       aria-labelledby="booking-title"
       data-booking-visibility
     >
-      <Image
-        src={tablePhoto}
-        alt="La sala in pietra di Richardus pronta ad accogliere gli ospiti"
-        fill
-        sizes="100vw"
-      />
-      <div className={styles.shade} aria-hidden="true" />
       <div className={`container ${styles.content}`}>
-        <h2 id="booking-title">
-          Ci vediamo
-          <span>a tavola?</span>
-        </h2>
-        <p>Tu scegli la compagnia. Noi mettiamo il resto.</p>
-        <Button asChild variant="light">
-          <a
-            href={restaurant.whatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Prenota un tavolo su WhatsApp"
-          >
-            Prenota su WhatsApp
-            <ArrowUpRight size={18} aria-hidden="true" />
-          </a>
-        </Button>
+        <div>
+          <h2 id="booking-title">Prenota un tavolo</h2>
+          <p>Scrivici su WhatsApp. Ti confermiamo noi la disponibilità.</p>
+        </div>
+        <BookingActions locale={locale} tone="inverse" />
       </div>
     </section>,
     locale,

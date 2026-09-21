@@ -11,7 +11,6 @@ import {
   InfoStrip,
   MenuPreview,
   SignatureDishes,
-  BentoGrid,
 } from "@/components/HomeSections";
 import VisitSection from "@/components/VisitSection";
 import ReviewsSection from "@/components/ReviewsSection";
@@ -32,7 +31,6 @@ export default async function Home({ params }: RouteProps) {
       <InfoStrip locale={locale} />
       <MenuPreview locale={locale} />
       <SignatureDishes locale={locale} />
-      <BentoGrid locale={locale} />
       <VisitSection locale={locale} />
       <ReviewsSection locale={locale} />
       <Reservation locale={locale} />
