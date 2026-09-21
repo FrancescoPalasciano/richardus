@@ -52,6 +52,9 @@
   color: var(--muted-foreground);
   padding-top: 4px;
 }
+.menuBooking {
+  display: none;
+}
 .categoryNavigation[hidden],
 .scrollHint[hidden] {
   display: none;
@@ -212,8 +215,8 @@
 }
 @media (max-width: 1023px) {
   :global(body):has(.browser) {
-    padding-bottom: calc(104px + env(safe-area-inset-bottom));
-    scroll-padding-bottom: calc(104px + env(safe-area-inset-bottom));
+    padding-bottom: calc(140px + env(safe-area-inset-bottom));
+    scroll-padding-bottom: calc(140px + env(safe-area-inset-bottom));
   }
   .categoryBar {
     position: fixed;
@@ -236,7 +239,23 @@
     padding-left: 2px;
   }
   .scrollHint {
+    min-width: 0;
+    flex: 1;
+    padding-top: 0;
+  }
+  .menuBarMeta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 4px;
     padding-inline: 16px;
+  }
+  .menuBooking {
+    display: inline-flex;
+    flex-shrink: 0;
+    min-height: 44px;
+    margin-left: auto;
+    padding: 8px 16px;
   }
   .menuCategory {
     scroll-margin-top: 110px;

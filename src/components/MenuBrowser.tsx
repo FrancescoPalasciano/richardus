@@ -11,8 +11,9 @@ import {
   type ReactNode,
 } from "react";
 import { animate, useReducedMotion } from "motion/react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { whatsappForLocale } from "@/lib/restaurant";
 import {
   Tabs,
   TabsContent,
@@ -44,9 +45,13 @@ export default function MenuBrowser({
 }) {
   const { locale, t } = useLocale();
   const hash = useSyncExternalStore(subscribe, readHash, () => "");
-  const selected = sections.some((section) => section.id === hash)
-    ? hash
-    : "tutto";
+  const defaultCategory = sections[0]?.id ?? "tutto";
+  const selected =
+    hash === "tutto"
+      ? "tutto"
+      : sections.some((section) => section.id === hash)
+        ? hash
+        : defaultCategory;
   const reduce = useReducedMotion();
   const panel = useRef<HTMLDivElement>(null);
   const tabs = useRef<HTMLDivElement>(null);
@@ -77,7 +82,7 @@ export default function MenuBrowser({
       behavior: reduce ? "instant" : "smooth",
     });
   useEffect(() => {
-    if (!panel.current || selected === "tutto") return;
+    if (!panel.current || selected === "tutto" || hash !== selected) return;
     const frame = requestAnimationFrame(() =>
       document
         .getElementById(selected)
@@ -95,7 +100,7 @@ export default function MenuBrowser({
       };
     }
     return () => cancelAnimationFrame(frame);
-  }, [selected, reduce]);
+  }, [hash, selected, reduce]);
   return localizeTree(
     <Tabs
       value={selected}
@@ -103,7 +108,7 @@ export default function MenuBrowser({
         window.history.pushState(
           null,
           "",
-          value === "tutto" ? window.location.pathname : `#${value}`,
+          value === defaultCategory ? window.location.pathname : `#${value}`,
         );
         window.dispatchEvent(new HashChangeEvent("hashchange"));
       }}
@@ -113,12 +118,12 @@ export default function MenuBrowser({
       <div className={styles.categoryBar}>
         <div className={`container ${styles.categoryControls}`}>
           <TabsList ref={tabs} aria-label="Categorie del menu" loop>
-            <TabsTrigger value="tutto">Tutto</TabsTrigger>
             {sections.map((section) => (
               <TabsTrigger key={section.id} value={section.id}>
                 {section.label}
               </TabsTrigger>
             ))}
+            <TabsTrigger value="tutto">Tutto</TabsTrigger>
           </TabsList>
           <div className={styles.categoryNavigation} hidden={edges === "00"}>
             <Button
@@ -141,10 +146,22 @@ export default function MenuBrowser({
             </Button>
           </div>
         </div>
-        <p className={`container ${styles.scrollHint}`} hidden={edges === "00"}>
-          Scorri per esplorare le categorie{" "}
-          <ChevronRight size={14} aria-hidden="true" />
-        </p>
+        <div className={`container ${styles.menuBarMeta}`}>
+          <p className={styles.scrollHint} hidden={edges === "00"}>
+            Scorri per esplorare le categorie{" "}
+            <ChevronRight size={14} aria-hidden="true" />
+          </p>
+          <Button asChild className={styles.menuBooking}>
+            <a
+              href={whatsappForLocale(locale)}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Prenota un tavolo su WhatsApp"
+            >
+              Prenota <ArrowUpRight size={16} aria-hidden="true" />
+            </a>
+          </Button>
+        </div>
       </div>
       <div className={`container ${styles.menuContent}`}>
         <p role="status" className="sr-only">
