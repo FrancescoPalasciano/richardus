@@ -17,7 +17,12 @@
 .heroShade {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgb(23 16 12 / 28%) 0%, rgb(23 16 12 / 18%) 34%, rgb(23 16 12 / 84%) 100%);
+  background: linear-gradient(
+    180deg,
+    rgb(23 16 12 / 28%) 0%,
+    rgb(23 16 12 / 18%) 34%,
+    rgb(23 16 12 / 84%) 100%
+  );
 }
 .heroCopy {
   position: relative;
@@ -236,16 +241,16 @@
   object-position: center 58%;
 }
 .tablePhotoTall {
-  width: min(78vw, 420px);
-  min-height: 500px;
-  margin: 0 0 -72px auto;
-  translate: 0 -42px;
+  width: 100%;
+  min-height: 0;
+  aspect-ratio: 1170 / 1389;
+  margin: 0;
 }
 .tablePhotoTall img {
-  object-position: center 66%;
+  object-position: center;
 }
 .tableCopy {
-  padding: 50px var(--gutter) 94px;
+  padding: 50px var(--gutter) 64px;
 }
 .tableScript {
   font-family: var(--font-display);
@@ -474,6 +479,7 @@
   .tablePhotoTall {
     width: min(88%, 480px);
     min-height: 540px;
+    aspect-ratio: auto;
     margin: -40px 0 -82px -80px;
     translate: 0 0;
   }

@@ -1,0 +1,335 @@
+.page {
+  background: var(--background);
+}
+
+.hero {
+  display: grid;
+  background: var(--charcoal);
+  color: var(--ivory);
+}
+
+.heroCopy {
+  display: flex;
+  align-items: center;
+  min-height: 560px;
+  padding: clamp(70px, 12vw, 120px) var(--gutter);
+}
+
+.heroCopyInner {
+  width: min(100%, 640px);
+  margin-inline: auto;
+}
+
+.heroCopy h1 {
+  max-width: 9ch;
+  font-size: clamp(3.7rem, 14.5vw, 6rem);
+  line-height: 0.86;
+}
+
+.heroCopy h1 span {
+  display: block;
+  margin-top: 0.18em;
+  color: var(--terracotta-soft);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.heroLead {
+  max-width: 52ch;
+  margin-top: 34px;
+  color: rgb(255 250 240 / 76%);
+  font-size: clamp(1rem, 0.96rem + 0.25vw, 1.14rem);
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 24px;
+  margin-top: 34px;
+}
+
+.locationLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 48px;
+  color: rgb(255 250 240 / 80%);
+  font-size: 0.78rem;
+  font-weight: 650;
+}
+
+.locationLink:hover {
+  color: var(--ivory);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.cuisineLine {
+  margin-top: 54px;
+  padding-top: 18px;
+  border-top: 1px solid rgb(255 250 240 / 18%);
+  color: rgb(255 250 240 / 56%);
+  font-size: 0.69rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.heroPhoto {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--walnut);
+}
+
+.heroPhoto img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.heroPhoto figcaption {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  padding: 7px 10px;
+  color: var(--ivory);
+  background: rgb(32 24 19 / 76%);
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+}
+
+.manifesto {
+  padding-block: clamp(86px, 11vw, 164px);
+  background: var(--stone);
+}
+
+.manifestoGrid {
+  display: grid;
+  gap: 44px;
+}
+
+.manifesto h2 {
+  max-width: 11ch;
+  font-size: clamp(3.45rem, 11.5vw, 7rem);
+  line-height: 0.82;
+}
+
+.manifesto h2 span {
+  display: block;
+  margin-left: 0.22em;
+  color: var(--terracotta);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.manifestoCopy {
+  align-self: end;
+  max-width: 58ch;
+}
+
+.manifestoCopy p + p {
+  margin-top: 24px;
+}
+
+.manifestoLead {
+  color: var(--foreground);
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 2.6vw, 2.75rem);
+  line-height: 1.14;
+}
+
+.manifestoCopy p:last-child {
+  color: var(--muted-foreground);
+}
+
+.cuisine {
+  padding-block: var(--section-space);
+}
+
+.cuisineIntro {
+  display: grid;
+  gap: 28px;
+}
+
+.cuisineIntro h2 {
+  max-width: 10ch;
+  font-size: clamp(3.2rem, 8.7vw, 6.7rem);
+  line-height: 0.9;
+}
+
+.cuisineIntro > p {
+  align-self: end;
+  max-width: 58ch;
+  color: var(--muted-foreground);
+}
+
+.cuisineIndex {
+  display: grid;
+  margin-top: clamp(56px, 8vw, 100px);
+  border-top: 1px solid var(--border);
+}
+
+.cuisineIndex > div {
+  display: grid;
+  gap: 10px;
+  padding-block: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.cuisineIndex h3 {
+  font-size: clamp(2.1rem, 4.5vw, 3.7rem);
+  font-weight: 500;
+}
+
+.cuisineIndex p {
+  align-self: center;
+  max-width: 45ch;
+  color: var(--muted-foreground);
+  font-size: 0.9rem;
+}
+
+.menuLink {
+  margin-top: 32px;
+}
+
+.visit {
+  display: grid;
+  gap: 44px;
+  margin-bottom: var(--section-space);
+  padding-block: clamp(58px, 8vw, 96px);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.visitHeading h2 {
+  max-width: 10ch;
+  font-size: clamp(3.2rem, 8vw, 6.2rem);
+  line-height: 0.9;
+}
+
+.visitHeading p {
+  max-width: 54ch;
+  margin-top: 26px;
+  color: var(--muted-foreground);
+}
+
+.visitFacts {
+  border-top: 1px solid var(--border);
+}
+
+.visitFacts > div {
+  padding-block: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.visitFacts dt {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.visitFacts dd {
+  margin-top: 8px;
+  color: var(--muted-foreground);
+  font-size: 0.9rem;
+}
+
+.schedule {
+  display: grid;
+  gap: 3px;
+}
+
+.schedule strong {
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+.visitFacts a:hover {
+  color: var(--foreground);
+  text-decoration: underline;
+}
+
+.directions {
+  justify-self: start;
+}
+
+@media (min-width: 720px) {
+  .heroCopy {
+    padding-inline: clamp(42px, 6vw, 96px);
+  }
+
+  .manifestoGrid,
+  .cuisineIntro {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+
+  .cuisineIndex > div {
+    grid-template-columns: minmax(180px, 0.7fr) 1.3fr;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .visit {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+
+  .visitFacts {
+    grid-row: span 2;
+  }
+}
+
+@media (min-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    min-height: min(800px, calc(100svh - 76px));
+  }
+
+  .heroCopy {
+    min-height: 100%;
+  }
+
+  .heroPhoto {
+    aspect-ratio: auto;
+    min-height: 100%;
+  }
+
+  .heroPhoto img {
+    object-position: center 62%;
+  }
+}
+
+@media (min-width: 1100px) {
+  .heroCopyInner {
+    margin-right: 0;
+  }
+
+  .manifestoGrid {
+    grid-template-columns: 1.28fr 0.72fr;
+  }
+
+  .cuisineIntro {
+    grid-template-columns: 1.25fr 0.75fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .heroCopy h1 {
+    font-size: clamp(3.35rem, 16vw, 4.1rem);
+  }
+
+  .heroActions > :global(.ui-button) {
+    width: 100%;
+  }
+
+  .manifesto h2,
+  .cuisineIntro h2,
+  .visitHeading h2 {
+    font-size: clamp(3rem, 15.5vw, 4.15rem);
+  }
+}
