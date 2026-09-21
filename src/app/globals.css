@@ -326,6 +326,12 @@
   background: var(--overlay);
   animation: overlay-in var(--motion-feedback) ease-out;
 }
+@media (max-width: 1023px) {
+  .ui-overlay:has(~ .ui-sheet) {
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
+}
 .ui-dialog {
   position: fixed;
   top: 50%;
