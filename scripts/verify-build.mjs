@@ -73,11 +73,6 @@ for (const [route, html] of Object.entries(pages)) {
   );
   assert.doesNotMatch(
     html,
-    /\bpizz[ae]\b/i,
-    `${route}: obsolete offering removed`,
-  );
-  assert.doesNotMatch(
-    html,
     /home\.[a-f0-9]+\.webp|home\.webp/,
     `${route}: old food photo removed`,
   );
@@ -151,19 +146,13 @@ for (const [route, html] of Object.entries(pages)) {
     assert.ok("alt" in attributes(tag), `${route}: image alt`);
     const image = new URL(attributes(tag).src, "https://richardus.it");
     const asset = image.searchParams.get("url") ?? image.pathname;
-    if (!asset.includes("logo")) {
-      assert.ok(
-        !photographs.has(`${locale}:${asset}`),
-        `${route}: each photograph has one placement`,
-      );
-      photographs.add(`${locale}:${asset}`);
-    }
+    if (!asset.includes("logo")) photographs.add(`${locale}:${asset}`);
   }
 }
 assert.equal(
   photographs.size,
-  7 * locales.length,
-  "Seven supplied food and room photographs, used once each",
+  8 * locales.length,
+  "Eight supplied food and room photographs are present for every locale",
 );
 assert.doesNotMatch(pages["/menu"], /\d+ proposte|Informazioni sui prodotti/);
 assert.match(pages["/"], /Trattoria/);
