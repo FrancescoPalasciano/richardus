@@ -32,18 +32,18 @@ Gli stessi cinque percorsi sono disponibili con prefissi `/en`, `/fr`, `/de` e `
 
 ## Direzione approvata
 
-Il brief finale richiede fondo nero in tutto il sito, Manrope come unica famiglia dell’interfaccia, superfici scure e accenti caldi. Si usa esclusivamente il logo orizzontale fornito dal committente, senza targhetta aggiunta. La home apre con un titolo chiaro sulla trattoria, una descrizione breve, due azioni e una fotografia dell’interno: le informazioni pratiche restano fuori dal blocco introduttivo.
+La direzione approvata è quella editoriale e materica descritta in `DESIGN.md`: avorio caldo come superficie principale, carbone e noce per i blocchi profondi, terracotta per azioni e orientamento. EB Garamond è riservato ai titoli editoriali; Manrope resta il carattere funzionale per testi, navigazione, prezzi e controlli. Si usa esclusivamente il logo orizzontale fornito dal committente, senza targhetta aggiunta. La home apre con un titolo chiaro sulla trattoria, una descrizione breve, due azioni e una fotografia reale dell’interno.
 
 Plate è un riferimento concettuale di qualità, non una fonte da copiare. I dettagli del sistema implementato sono in `DESIGN.md`.
 
-Le fotografie fornite si usano una volta ciascuna nel percorso di ogni lingua: `interno2.jpg` nel blocco introduttivo della home, `interno.jpg` nel suo modulo narrativo, orecchiette/fave/entrecôte nel carosello, insalata nella pagina Chi siamo e `vino.webp` nell’intestazione del menu. Non si usano `home.webp`, fotografie generate o stock esterno.
+Le fotografie reali fornite dal committente hanno priorità sul resto dell’interfaccia e mantengono ritagli credibili, dimensioni dichiarate e testi alternativi pertinenti. Non si usano fotografie generate o stock esterno per riempire sezioni prive di contenuto.
 
 ## Vincoli duraturi
 
 - Preservare i contatti reali e i percorsi nelle cinque lingue; non inventare storia, premi, recensioni, prezzi o dati aziendali.
 - Mantenere tutte le proposte nell’HTML iniziale, con categorie accessibili da tastiera e senza conteggi promozionali.
 - Conservare testi e attribuzioni delle recensioni nella lingua originale.
-- Caricare l’iframe Google Maps solo dopo consenso esplicito, revocabile e non memorizzato.
+- Usare collegamenti diretti a Google Maps; non incorporare mappe o altri contenuti di terze parti nella pagina.
 - Usare font locali, immagini dimensionate e dissolvenze leggere disattivabili tramite movimento ridotto.
 - Completare e verificare i dati legali mancanti prima della pubblicazione: le bozze esistenti non attestano conformità.
 
