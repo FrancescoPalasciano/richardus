@@ -36,10 +36,10 @@ export function Hero({ locale = "it" }: LocaleProps = {}) {
       />
       <div className={styles.heroShade} aria-hidden="true" />
       <div className={`container ${styles.heroCopy}`}>
-        <p className={styles.heroPlace}>Francavilla Fontana · Puglia</p>
         <h1 id="home-title">
           <span>Richardus,</span>
-          Trattoria a<br />Francavilla Fontana
+          Trattoria a<br />
+          Francavilla Fontana
         </h1>
         <p className={styles.heroDescription}>
           Cucina pugliese, brace e tavole da condividere tra le volte in pietra
@@ -61,7 +61,6 @@ export function Hero({ locale = "it" }: LocaleProps = {}) {
           </Link>
         </div>
       </div>
-      <p className={styles.heroNote}>Pietra · Tavola · Puglia · Calore</p>
     </section>,
     locale,
     t,
@@ -219,7 +218,6 @@ export function SignatureDishes({ locale = "it" }: LocaleProps = {}) {
         />
       </div>
       <div className={styles.tableCopy}>
-        <p className={styles.tableScript}>Mangia, ridi, resta.</p>
         <h2 id="table-title">La tavola prima di tutto.</h2>
         <p>
           Una sala raccolta, la pietra chiara, i piatti al centro e il tempo
@@ -268,7 +266,7 @@ export function BentoGrid({ locale = "it" }: LocaleProps = {}) {
             sizes="(min-width: 900px) 52vw, 100vw"
           />
         </figure>
-        <article className={styles.storyStatement} data-tone="terracotta">
+        <article className={styles.storyStatement}>
           <h3>La brace parla la lingua del territorio.</h3>
           <p>Bombette, capocollo, salsiccia e fegatini, senza formalismi.</p>
         </article>

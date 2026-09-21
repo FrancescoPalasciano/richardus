@@ -30,17 +30,6 @@
   padding-top: 150px;
   padding-bottom: clamp(70px, 9vw, 126px);
 }
-.heroPlace,
-.heroNote {
-  font-size: 0.68rem;
-  font-weight: 650;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-}
-.heroPlace {
-  margin-bottom: 18px;
-  color: rgb(255 250 240 / 78%);
-}
 .heroCopy h1 {
   max-width: 12ch;
   font-family: var(--font-display);
@@ -86,14 +75,6 @@
 .heroMenuLink:hover {
   text-decoration: underline;
   text-underline-offset: 6px;
-}
-.heroNote {
-  position: absolute;
-  z-index: 1;
-  right: var(--gutter);
-  bottom: 26px;
-  display: none;
-  color: rgb(255 250 240 / 64%);
 }
 .infoStripWrap {
   background: var(--background);
@@ -252,15 +233,8 @@
 .tableCopy {
   padding: 50px var(--gutter) 64px;
 }
-.tableScript {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  font-style: italic;
-  color: var(--terracotta-soft);
-}
 .tableCopy h2 {
   max-width: 9ch;
-  margin-top: 16px;
   font-size: clamp(2.9rem, 6vw, 5.8rem);
 }
 .tableCopy > p:last-child {
@@ -295,39 +269,26 @@
 }
 .storyGrid {
   display: grid;
-  gap: 14px;
+  gap: 32px;
   margin-top: clamp(58px, 8vw, 104px);
 }
 .storyStatement,
 .storyLink {
-  min-height: 270px;
-  padding: 30px;
-  border-radius: var(--radius-md);
-}
-.storyStatement {
-  display: flex;
-  flex-direction: column;
-  background: var(--charcoal);
-  color: var(--ivory);
-}
-.storyStatement[data-tone="terracotta"] {
-  background: var(--terracotta);
-  color: #fff9ef;
+  padding-block: 24px;
+  border-top: 1px solid var(--border);
 }
 .storyStatement h3 {
-  max-width: 12ch;
-  margin-top: auto;
+  max-width: 20ch;
   font-family: var(--font-display);
-  font-size: clamp(2rem, 3.7vw, 3.6rem);
+  font-size: clamp(2rem, 3vw, 3rem);
   font-weight: 500;
   line-height: 1;
 }
 .storyStatement > p:last-child {
   max-width: 38ch;
   margin-top: 18px;
-  color: inherit;
-  font-size: 0.82rem;
-  opacity: 0.74;
+  color: var(--muted-foreground);
+  font-size: 1rem;
 }
 .storyPhoto {
   position: relative;
@@ -342,8 +303,7 @@
 .storyLink {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  background: var(--stone);
+  gap: 20px;
 }
 .storyLink p {
   max-width: 18ch;
@@ -442,9 +402,6 @@
   }
 }
 @media (min-width: 720px) {
-  .heroNote {
-    display: block;
-  }
   .infoStrip {
     grid-template-columns: 1.15fr 1fr 0.8fr auto;
     align-items: center;
@@ -487,14 +444,18 @@
     grid-template-columns: 1.45fr 0.55fr;
   }
   .storyGrid {
-    grid-template-columns: 0.74fr 1.26fr;
+    grid-template-columns: 0.85fr 1.15fr;
+    column-gap: clamp(32px, 6vw, 88px);
+    row-gap: 0;
   }
   .storyPhoto {
-    grid-row: span 2;
-    min-height: 720px;
+    grid-column: 2;
+    grid-row: 1 / 4;
+    min-height: 620px;
   }
+  .storyStatement,
   .storyLink {
-    min-height: 220px;
+    grid-column: 1;
   }
 }
 @media (min-width: 1100px) {
@@ -507,19 +468,6 @@
   .dishArrow {
     right: 34px;
     bottom: 37px;
-  }
-  .storyGrid {
-    grid-template-columns: 0.65fr 1.35fr 0.65fr;
-  }
-  .storyPhoto {
-    grid-row: span 2;
-  }
-  .storyStatement[data-tone="terracotta"] {
-    grid-column: 3;
-    grid-row: 1;
-  }
-  .storyLink {
-    grid-column: 1 / 2;
   }
 }
 @media (max-width: 420px) {

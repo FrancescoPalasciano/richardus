@@ -54,10 +54,7 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  padding: 4px;
-  background: rgb(255 250 240 / 7%);
-  border: 1px solid rgb(255 250 240 / 10%);
-  border-radius: 12px;
+  padding: 4px 0;
 }
 .header .mobileToggle {
   color: var(--ivory);
@@ -112,14 +109,18 @@
   left: 50%;
   transform: translateX(-50%);
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
   gap: 4px;
   width: min(360px, calc(100% - 32px));
-  padding: 6px;
+  padding: 8px;
   background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-soft);
+}
+.dock > :global(.ui-button) {
+  min-width: 0;
+  padding-inline: 12px;
+  border-radius: calc(var(--radius-lg) - 8px);
 }
 .dock[hidden] {
   display: none;
