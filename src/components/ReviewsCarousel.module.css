@@ -11,7 +11,7 @@
 }
 .heading h2 {
   max-width: 12ch;
-  font-size: clamp(2.8rem, 6vw, 5.8rem);
+  font-size: clamp(2.75rem, 5vw, 4.5rem);
 }
 .heading p {
   max-width: 44ch;
@@ -23,7 +23,7 @@
   min-height: 44px;
   align-items: center;
   gap: 10px;
-  font-size: 0.78rem;
+  font-size: 0.875rem;
   font-weight: 650;
 }
 .grid {
@@ -39,17 +39,6 @@
   border-radius: var(--radius-md);
   background: var(--surface);
 }
-.card::before {
-  position: absolute;
-  top: 64px;
-  left: 26px;
-  content: "“";
-  color: var(--terracotta);
-  font-family: var(--font-display);
-  font-size: 5rem;
-  line-height: 1;
-  opacity: 0.18;
-}
 .topline {
   display: flex;
   align-items: center;
@@ -64,19 +53,19 @@
 }
 .google {
   color: var(--muted-foreground);
-  font-size: 0.68rem;
+  font-size: 0.8125rem;
   font-weight: 650;
 }
 .card blockquote {
   position: relative;
-  margin-block: 52px 32px;
+  margin-block: 28px 32px;
   font-family: var(--font-display);
   font-size: clamp(1.4rem, 2.2vw, 2rem);
   line-height: 1.25;
 }
 .card figcaption {
   margin-top: auto;
-  font-size: 0.72rem;
+  font-size: 0.8125rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -94,8 +83,5 @@
 @media (min-width: 840px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
-  }
-  .card:nth-child(2) {
-    translate: 0 28px;
   }
 }

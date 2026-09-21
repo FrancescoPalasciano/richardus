@@ -22,7 +22,6 @@ export default function MenuInfo() {
       data-reveal
     >
       <div>
-        <p className="eyebrow">Prima di ordinare</p>
         <h2 id="menu-info-title">Le cose da sapere.</h2>
         <p>Per qualsiasi esigenza, parlane con noi.</p>
       </div>

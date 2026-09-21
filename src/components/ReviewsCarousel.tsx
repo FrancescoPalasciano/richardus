@@ -14,7 +14,12 @@ export default function ReviewsCarousel({ locale = "it" }: LocaleProps = {}) {
           <div className={styles.topline}>
             <div className={styles.stars} role="img" aria-label="5 stelle su 5">
               {Array.from({ length: 5 }, (_, i) => (
-                <Star key={i} size={14} fill="currentColor" aria-hidden="true" />
+                <Star
+                  key={i}
+                  size={14}
+                  fill="currentColor"
+                  aria-hidden="true"
+                />
               ))}
             </div>
             <span className={styles.google}>Google</span>
