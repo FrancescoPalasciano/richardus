@@ -82,6 +82,11 @@ for (const [route, html] of Object.entries(pages)) {
     /home\.[a-f0-9]+\.webp|home\.webp/,
     `${route}: old food photo removed`,
   );
+  assert.doesNotMatch(
+    html,
+    /<iframe\b/i,
+    `${route}: no embedded third-party content`,
+  );
   assert.equal(
     (html.match(/<h1(?:\s|>)/g) ?? []).length,
     1,
@@ -259,10 +264,6 @@ for (const section of menu.hasMenuSection) {
       assert.equal(dish.offers.price ?? dish.offers.lowPrice, original.prezzo);
   }
 }
-assert.ok(
-  !pages["/"].includes("<iframe"),
-  "Google Maps makes no request before consent",
-);
 for (const [index, locale] of locales.slice(1).entries()) {
   const html = pages[`/${locale}/menu`];
   const schema = json(html).find((item) => item["@type"] === "Menu");
@@ -306,5 +307,5 @@ assert.equal(
   "Original logo renders as tab icon",
 );
 console.log(
-  `Verified ${Object.keys(pages).length} routes, ${links} internal links, ${visible.length} dishes, canonical/metadata, JSON-LD, consent, sitemap, robots and social image.`,
+  `Verified ${Object.keys(pages).length} routes, ${links} internal links, ${visible.length} dishes, canonical/metadata, JSON-LD, external embeds, sitemap, robots and social image.`,
 );
