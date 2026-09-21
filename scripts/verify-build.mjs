@@ -11,6 +11,7 @@ const paths = {
   "/cookie-policy": "cookie-policy",
 };
 const locales = ["it", "en", "fr", "de", "es"];
+const alternateLocales = [...locales, "x-default"];
 const spanish = JSON.parse(
   await readFile("src/data/translations.es.json", "utf8"),
 );
@@ -90,12 +91,26 @@ for (const [route, html] of Object.entries(pages)) {
     new RegExp(`<html[^>]* lang="${locale}"`).test(html),
     `${route}: correct document language`,
   );
-  for (const language of locales)
-    assert.ok(
-      html.includes(`hrefLang="${language}"`) ||
-        html.includes(`hreflang="${language}"`),
-      `${route}: language alternate ${language}`,
+  const plainRoute = route.replace(/^\/(en|fr|de|es)(?=\/|$)/, "") || "/";
+  const alternateLinks = [...html.matchAll(/<link[^>]*>/g)]
+    .map(([tag]) => attributes(tag))
+    .filter((attr) => attr.rel === "alternate");
+  for (const language of alternateLocales) {
+    const targetLocale = language === "x-default" ? "it" : language;
+    const expectedPath =
+      targetLocale === "it"
+        ? plainRoute
+        : `/${targetLocale}${plainRoute === "/" ? "" : plainRoute}`;
+    const alternate = alternateLinks.find(
+      (attr) => (attr.hreflang ?? attr.hrefLang) === language,
     );
+    assert.equal(
+      new URL(alternate?.href).href,
+      `https://richardus.it${expectedPath}`,
+      `${route}: reciprocal language alternate ${language}`,
+    );
+    assert.ok(pages[expectedPath], `${route}: alternate target ${expectedPath}`);
+  }
   assert.match(
     html,
     /rel="icon"[^>]+href="\/icon/,
@@ -130,7 +145,23 @@ for (const [route, html] of Object.entries(pages)) {
   else assert.ok(!meta.robots?.includes("noindex"), `${route}: indexable`);
   const restaurant = json(html).find((item) => item["@type"] === "Restaurant");
   assert.equal(restaurant.telephone, "+393290090918");
-  assert.equal(restaurant.hasMenu, "https://richardus.it/menu");
+  assert.equal(
+    restaurant.url,
+    `https://richardus.it${locale === "it" ? "/" : `/${locale}`}`,
+  );
+  assert.equal(
+    restaurant.hasMenu,
+    `https://richardus.it${locale === "it" ? "" : `/${locale}`}/menu`,
+  );
+  const schemaDescription =
+    "Trattoria a Francavilla Fontana, in provincia di Brindisi, Puglia. Cucina italiana e pugliese, pasta e piatti alla brace.";
+  const localizedDescription =
+    locale === "it"
+      ? schemaDescription
+      : locale === "es"
+        ? spanish[schemaDescription]
+        : translations[schemaDescription][["en", "fr", "de"].indexOf(locale)];
+  assert.equal(restaurant.description, localizedDescription);
   assert.equal(restaurant.address.streetAddress, "Via San Giovanni 15");
   assert.equal(restaurant.openingHoursSpecification.length, 2);
   for (const [tag] of html.matchAll(/<a\b[^>]*>/g)) {

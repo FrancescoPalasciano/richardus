@@ -11,17 +11,21 @@
 
 .heroCopy {
   display: flex;
+  min-width: 0;
   align-items: center;
   padding: clamp(48px, 6vw, 88px) var(--gutter);
+  text-align: center;
 }
 
 .heroCopyInner {
   width: min(100%, 640px);
+  min-width: 0;
   margin-inline: auto;
 }
 
 .heroCopy h1 {
   max-width: 9ch;
+  margin-inline: auto;
   font-size: clamp(3rem, 7vw, 5.25rem);
   line-height: 1;
 }
@@ -29,21 +33,26 @@
 .heroLead {
   max-width: 52ch;
   margin-top: 34px;
+  margin-inline: auto;
   color: rgb(255 250 240 / 76%);
   font-size: clamp(1rem, 0.96rem + 0.25vw, 1.14rem);
 }
 
 .heroActions {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   gap: 14px 24px;
+  justify-content: center;
   margin-top: 34px;
 }
 
 .locationLink {
   display: inline-flex;
+  max-width: 100%;
   align-items: center;
+  justify-content: center;
   gap: 9px;
   min-height: 48px;
   color: rgb(255 250 240 / 80%);
@@ -88,10 +97,12 @@
 .cuisineIntro {
   display: grid;
   gap: 28px;
+  text-align: center;
 }
 
 .cuisineIntro h2 {
   max-width: 15ch;
+  margin-inline: auto;
   font-size: clamp(2.5rem, 5vw, 4.5rem);
   line-height: 1;
 }
@@ -99,24 +110,30 @@
 .cuisineIntro > p {
   align-self: end;
   max-width: 58ch;
+  margin-inline: auto;
   color: var(--muted-foreground);
 }
 
 .menuLink {
+  justify-content: center;
   margin-top: 32px;
 }
 
 .visit {
   display: grid;
+  width: min(calc(100% - var(--gutter) * 2), 980px);
   gap: 44px;
+  margin-inline: auto;
   margin-bottom: var(--section-space);
-  padding-block: clamp(58px, 8vw, 96px);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  padding: clamp(32px, 8vw, 72px) clamp(22px, 7vw, 64px);
+  border-radius: var(--radius-md);
+  background: var(--stone);
+  text-align: center;
 }
 
 .visitHeading h2 {
   max-width: 10ch;
+  margin-inline: auto;
   font-size: clamp(2.5rem, 5vw, 4.5rem);
   line-height: 1;
 }
@@ -133,6 +150,7 @@
 .visitFacts dt {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 9px;
   font-size: 0.8125rem;
   font-weight: 700;
@@ -167,24 +185,58 @@
 }
 
 .directions {
-  justify-self: start;
+  justify-self: center;
 }
 
 @media (min-width: 720px) {
   .heroCopy {
     padding-inline: clamp(42px, 6vw, 96px);
+    text-align: left;
+  }
+
+  .heroCopy h1,
+  .heroLead {
+    margin-inline: 0;
+  }
+
+  .heroActions {
+    flex-direction: row;
+    justify-content: flex-start;
   }
 
   .cuisineIntro {
     grid-template-columns: 1.15fr 0.85fr;
+    text-align: left;
+  }
+
+  .cuisineIntro h2,
+  .cuisineIntro > p {
+    margin-inline: 0;
+  }
+
+  .menuLink {
+    justify-content: flex-start;
   }
 
   .visit {
     grid-template-columns: 1.1fr 0.9fr;
+    text-align: left;
+  }
+
+  .visitHeading h2 {
+    margin-inline: 0;
+  }
+
+  .visitFacts dt {
+    justify-content: flex-start;
   }
 
   .visitFacts {
     grid-row: span 2;
+  }
+
+  .directions {
+    justify-self: start;
   }
 }
 

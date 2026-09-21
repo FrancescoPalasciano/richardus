@@ -9,6 +9,7 @@ import {
   resolveLocale,
   localizeHref,
   languageAlternates,
+  type Locale,
   type RouteProps,
 } from "@/lib/locale";
 import { LocaleProvider } from "@/components/LocaleProvider";
@@ -22,6 +23,14 @@ const manrope = localFont({
   display: "swap",
   adjustFontFallback: "Arial",
 });
+const cuisineByLocale = {
+  it: ["Cucina italiana", "Cucina pugliese"],
+  en: ["Italian cuisine", "Puglian cuisine"],
+  fr: ["Cuisine italienne", "Cuisine des Pouilles"],
+  de: ["Italienische Küche", "Apulische Küche"],
+  es: ["Cocina italiana", "Cocina de Apulia"],
+} satisfies Record<Locale, string[]>;
+
 const baseMetadata: Metadata = {
   icons: {
     icon: { url: "/icon", type: "image/png", sizes: "256x256" },
@@ -107,6 +116,8 @@ export default async function RootLayout({
 }: RouteProps & { children: React.ReactNode }) {
   const locale = resolveLocale((await params).locale);
   const t = getTranslator(locale);
+  const localeRoot = `https://richardus.it${localizeHref("/", locale)}`;
+  const localeMenu = `https://richardus.it${localizeHref("/menu", locale)}`;
   return (
     <html
       data-scroll-behavior="smooth"
@@ -131,14 +142,15 @@ export default async function RootLayout({
               "@type": "Restaurant",
               "@id": "https://richardus.it/#ristorante",
               name: "Richardus",
-              url: "https://richardus.it",
+              url: localeRoot,
               image: "https://richardus.it/opengraph-image",
-              hasMenu: "https://richardus.it/menu",
+              hasMenu: localeMenu,
               hasMap: restaurant.maps,
               sameAs: ["https://www.instagram.com/richardus_mangia_e_bevi/"],
               acceptsReservations: true,
-              description:
+              description: t(
                 "Trattoria a Francavilla Fontana, in provincia di Brindisi, Puglia. Cucina italiana e pugliese, pasta e piatti alla brace.",
+              ),
               telephone: restaurant.phone,
               address: {
                 "@type": "PostalAddress",
@@ -147,7 +159,7 @@ export default async function RootLayout({
                 addressRegion: "Puglia",
                 addressCountry: "IT",
               },
-              servesCuisine: ["Italiana", "Pugliese"],
+              servesCuisine: cuisineByLocale[locale],
               openingHoursSpecification: [
                 {
                   "@type": "OpeningHoursSpecification",

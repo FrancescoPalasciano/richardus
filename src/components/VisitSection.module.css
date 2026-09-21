@@ -27,7 +27,9 @@
 }
 .locationCard {
   display: grid;
+  width: min(100%, 720px);
   min-width: 0;
+  margin-inline: auto;
   overflow: hidden;
   border-radius: var(--radius-md);
   background: var(--stone);
@@ -143,6 +145,7 @@
     grid-template-columns: 1.3fr 0.7fr;
   }
   .locationCard {
+    width: 100%;
     grid-template-columns: 0.74fr 1.26fr;
   }
   .mapPanel {

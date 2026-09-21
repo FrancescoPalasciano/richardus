@@ -21,10 +21,14 @@ export function localizeHref(path: string, locale: Locale) {
   return locale === "it" ? plain : `/${locale}${plain === "/" ? "" : plain}`;
 }
 export function languageAlternates(path: string) {
-  return Object.fromEntries(
+  const localized = Object.fromEntries(
     locales.map((locale) => [
       locale,
       `https://richardus.it${localizeHref(path, locale)}`,
     ]),
   );
+  return {
+    ...localized,
+    "x-default": `https://richardus.it${localizeHref(path, "it")}`,
+  };
 }
