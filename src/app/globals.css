@@ -406,8 +406,8 @@
   background: var(--surface-secondary);
 }
 .ui-tab[data-state="active"] {
-  background: var(--foreground);
-  color: var(--surface);
+  background: var(--primary);
+  color: var(--primary-foreground);
 }
 .ui-accordion-item {
   border-bottom: 1px solid var(--border);

@@ -2,7 +2,7 @@
   --ring: var(--ivory);
   position: relative;
   display: flex;
-  min-height: 92svh;
+  min-height: min(92svh, 900px);
   overflow: hidden;
   align-items: flex-end;
   background: #211a15;
@@ -90,7 +90,7 @@
   text-underline-offset: 6px;
 }
 .infoStripWrap {
-  background: var(--background);
+  background: var(--surface);
   border-bottom: 1px solid var(--border);
 }
 .infoStrip {
@@ -128,6 +128,7 @@
   align-items: center;
   gap: 10px;
   align-self: center;
+  color: var(--primary);
   font-size: 0.875rem;
   font-weight: 650;
 }
@@ -158,11 +159,14 @@
 }
 .dishCard {
   position: relative;
-  min-height: 430px;
+  min-height: 320px;
   overflow: hidden;
   border-radius: var(--radius-md);
   color: #fffaf0;
   background: #2a2019;
+}
+.dishCard[data-size="wide"] {
+  min-height: 420px;
 }
 .dishCard > img {
   object-fit: cover;

@@ -99,16 +99,18 @@ export default async function AboutPage({ params }: RouteProps) {
           <div className="container">
             <div className={styles.cuisineIntro}>
               <h2 id="cuisine-title">La cucina pugliese.</h2>
-              <p>
-                Orecchiette con cime di rapa, cortecce al grano arso, fave e
-                verdura di stagione. Alla brace, un arrosto misto con bombette,
-                capocollo, salsiccia e fegatini.
-              </p>
+              <div className={styles.cuisineCopy}>
+                <p>
+                  Orecchiette con cime di rapa, cortecce al grano arso, fave e
+                  verdura di stagione. Alla brace, un arrosto misto con
+                  bombette, capocollo, salsiccia e fegatini.
+                </p>
+                <Link className={`text-link ${styles.menuLink}`} href="/menu">
+                  Scopri piatti, ingredienti e prezzi
+                  <ArrowRight size={18} aria-hidden="true" />
+                </Link>
+              </div>
             </div>
-            <Link className={`text-link ${styles.menuLink}`} href="/menu">
-              Scopri piatti, ingredienti e prezzi
-              <ArrowRight size={18} aria-hidden="true" />
-            </Link>
           </div>
         </section>
 

@@ -92,6 +92,7 @@
 
 .cuisine {
   padding-block: var(--section-space);
+  background: var(--surface);
 }
 
 .cuisineIntro {
@@ -107,17 +108,21 @@
   line-height: 1;
 }
 
-.cuisineIntro > p {
+.cuisineCopy {
   align-self: end;
   max-width: 58ch;
   margin-inline: auto;
+}
+
+.cuisineCopy > p {
   color: var(--muted-foreground);
 }
 
 .cuisine .menuLink {
   display: flex;
   width: fit-content;
-  margin: 32px auto 0;
+  margin: 24px auto 0;
+  color: var(--primary);
 }
 
 .visit {
@@ -213,7 +218,11 @@
   }
 
   .cuisineIntro h2,
-  .cuisineIntro > p {
+  .cuisineCopy {
+    margin-inline: 0;
+  }
+
+  .cuisine .menuLink {
     margin-inline: 0;
   }
 
