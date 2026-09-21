@@ -38,8 +38,9 @@
 .address {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   padding: clamp(30px, 5vw, 64px);
+  text-align: center;
 }
 .address > svg {
   color: var(--terracotta);
@@ -71,7 +72,7 @@
   overflow: hidden;
   place-items: center;
   padding: 24px;
-  background: #d0bea5;
+  background: var(--stone);
 }
 .mapConsent {
   position: relative;
