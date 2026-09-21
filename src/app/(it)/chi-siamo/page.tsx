@@ -16,7 +16,7 @@ import { restaurant } from "@/lib/restaurant";
 import styles from "./About.module.css";
 
 const description =
-  "Richardus, trattoria a Francavilla Fontana. Pasta, pizza e piatti alla brace in Via San Giovanni 15, in provincia di Brindisi.";
+  "Richardus, trattoria a Francavilla Fontana: cucina pugliese, pasta e carne alla brace in Via San Giovanni 15. Scopri il menu e prenota il tuo tavolo.";
 
 export const metadata: Metadata = {
   title: "La nostra trattoria a Francavilla Fontana",
@@ -59,10 +59,7 @@ export default async function AboutPage({ params }: RouteProps) {
         <header className={styles.hero}>
           <div className={styles.heroCopy}>
             <div className={styles.heroCopyInner}>
-              <h1>
-                La nostra trattoria.
-                <span>Il gusto di stare bene.</span>
-              </h1>
+              <h1>La nostra trattoria.</h1>
               <p className={styles.heroLead}>
                 Una trattoria a Francavilla Fontana, in Via San Giovanni 15. La
                 cucina pugliese, le pareti in pietra e il piacere di ritrovarsi
@@ -84,7 +81,6 @@ export default async function AboutPage({ params }: RouteProps) {
                   <ArrowUpRight size={17} aria-hidden="true" />
                 </a>
               </div>
-              <p className={styles.cuisineLine}>Pasta · Brace · Pizza</p>
             </div>
           </div>
           <figure className={styles.heroPhoto}>
@@ -99,51 +95,15 @@ export default async function AboutPage({ params }: RouteProps) {
           </figure>
         </header>
 
-        <section className={styles.manifesto}>
-          <div className={`container ${styles.manifestoGrid}`}>
-            <h2>
-              Un ristorante,
-              <span>non un concetto.</span>
-            </h2>
-            <div className={styles.manifestoCopy}>
-              <p className={styles.manifestoLead}>
-                Richardus nasce dalla voglia di fare ristorazione semplice e
-                onesta: materie prime italiane, cotture curate e porzioni da
-                trattoria.
-              </p>
-              <p>
-                Dagli antipasti ai primi, dalla carne alle insalate in coppa di
-                pane: una cucina da scegliere con calma, un piatto dopo l’altro.
-              </p>
-            </div>
-          </div>
-        </section>
-
         <section className={styles.cuisine} aria-labelledby="cuisine-title">
           <div className="container">
             <div className={styles.cuisineIntro}>
-              <h2 id="cuisine-title">Il territorio si legge nel menu.</h2>
+              <h2 id="cuisine-title">La cucina pugliese.</h2>
               <p>
                 Orecchiette con cime di rapa, cortecce al grano arso, fave e
                 verdura di stagione. Alla brace, un arrosto misto con bombette,
                 capocollo, salsiccia e fegatini.
               </p>
-            </div>
-            <div className={styles.cuisineIndex}>
-              <div>
-                <h3>Pasta</h3>
-                <p>Orecchiette, cortecce al grano arso, sapori di stagione.</p>
-              </div>
-              <div>
-                <h3>Brace</h3>
-                <p>
-                  Bombette, capocollo, salsiccia e fegatini, senza formalismi.
-                </p>
-              </div>
-              <div>
-                <h3>Pizza</h3>
-                <p>La mamma mea · La Richardus · Nu Scigghiu</p>
-              </div>
             </div>
             <Link className={`text-link ${styles.menuLink}`} href="/menu">
               Scopri piatti, ingredienti e prezzi
@@ -155,10 +115,6 @@ export default async function AboutPage({ params }: RouteProps) {
         <section className={`container ${styles.visit}`}>
           <div className={styles.visitHeading}>
             <h2>Nel cuore di Francavilla.</h2>
-            <p>
-              Richardus è in Via San Giovanni 15, tra le strade del centro di
-              Francavilla Fontana. La tavola è a pochi passi dalla città.
-            </p>
           </div>
           <dl className={styles.visitFacts}>
             <div>

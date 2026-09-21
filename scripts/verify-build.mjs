@@ -68,6 +68,11 @@ for (const [route, html] of Object.entries(pages)) {
   const locale = route.match(/^\/(en|fr|de|es)(?:\/|$)/)?.[1] ?? "it";
   assert.doesNotMatch(
     html,
+    /pizza|pizze|pizzeria|mamma mea|scigghiu/i,
+    `${route}: removed products are absent from content and metadata`,
+  );
+  assert.doesNotMatch(
+    html,
     /trattoria storica|historic trattoria|trattoria historique|traditionsreiche trattoria/i,
     `${route}: no unsupported historic claim`,
   );
@@ -169,6 +174,30 @@ for (const locale of locales) {
 }
 assert.doesNotMatch(pages["/menu"], /\d+ proposte|Informazioni sui prodotti/);
 assert.match(pages["/"], /Trattoria/);
+assert.doesNotMatch(
+  pages["/"],
+  /id="story-title"/,
+  "No duplicate home manifesto",
+);
+assert.doesNotMatch(
+  pages["/menu"],
+  /categoryBadge/,
+  "No redundant dish badges",
+);
+for (const locale of locales) {
+  const route = locale === "it" ? "/" : `/${locale}`;
+  const note = "Scrivici su WhatsApp. Ti confermiamo noi la disponibilità.";
+  const expected =
+    locale === "it"
+      ? note
+      : locale === "es"
+        ? spanish[note]
+        : translations[note][["en", "fr", "de"].indexOf(locale)];
+  assert.ok(
+    pages[route].includes(expected),
+    `${locale}: booking confirmation explained`,
+  );
+}
 const menu = json(pages["/menu"]).find((item) => item["@type"] === "Menu");
 const visible = Object.values(source.prodotti).filter((dish) => dish.visibile);
 assert.equal(

@@ -1210,14 +1210,24 @@
     "Richardus est né de l’envie de proposer une restauration simple et sincère : des matières premières italiennes, des cuissons soignées et de vraies portions de trattoria.",
     "Richardus entstand aus dem Wunsch nach ehrlicher, unkomplizierter Gastronomie: italienische Zutaten, sorgfältige Garstufen und echte Trattoria-Portionen."
   ],
-  "Pasta · Brace · Pizza": [
-    "Pasta · Grill · Pizza",
-    "Pâtes · Braise · Pizza",
-    "Pasta · Grill · Pizza"
-  ],
   "Insalata in coppa di pane": [
     "Salad in a bread bowl",
     "Salade en coupe de pain",
     "Salat in einer Brotschale"
+  ],
+  "Scrivici su WhatsApp. Ti confermiamo noi la disponibilità.": [
+    "Message us on WhatsApp. We’ll confirm availability with you.",
+    "Écrivez-nous sur WhatsApp. Nous vous confirmerons les disponibilités.",
+    "Schreiben Sie uns auf WhatsApp. Wir bestätigen Ihnen die Verfügbarkeit."
+  ],
+  "La cucina pugliese.": [
+    "Apulian cooking.",
+    "La cuisine des Pouilles.",
+    "Apulische Küche."
+  ],
+  "Un piatto di pasta servito da Richardus": [
+    "A pasta dish served at Richardus",
+    "Un plat de pâtes servi chez Richardus",
+    "Ein Pastagericht bei Richardus"
   ]
 }

@@ -98,7 +98,7 @@ export default function Header() {
               rel="noopener noreferrer"
               aria-label="Prenota un tavolo su WhatsApp"
             >
-              Prenota <ArrowUpRight size={16} aria-hidden="true" />
+              WhatsApp <ArrowUpRight size={16} aria-hidden="true" />
             </a>
           </Button>
           <Sheet open={open} onOpenChange={setOpen}>
@@ -158,11 +158,12 @@ export default function Header() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Prenota un tavolo{" "}
+                    Prenota su WhatsApp{" "}
                     <ArrowUpRight size={18} aria-hidden="true" />
                   </a>
                 </Button>
               </SheetClose>
+              <p>Scrivici su WhatsApp. Ti confermiamo noi la disponibilità.</p>
             </SheetContent>
           </Sheet>
         </div>
@@ -184,7 +185,7 @@ export default function Header() {
             rel="noopener noreferrer"
             aria-label="Prenota su WhatsApp"
           >
-            Prenota <ArrowUpRight size={17} aria-hidden="true" />
+            WhatsApp <ArrowUpRight size={17} aria-hidden="true" />
           </a>
         </Button>
       </nav>
