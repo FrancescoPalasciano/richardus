@@ -17,7 +17,7 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/disclosure";
-import { restaurant } from "@/lib/restaurant";
+import { restaurant, whatsappForLocale } from "@/lib/restaurant";
 import styles from "./Header.module.css";
 import Brand from "./Brand";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -93,7 +93,7 @@ export default function Header() {
           <LanguageSwitcher />
           <Button asChild className={styles.desktopBooking}>
             <a
-              href={restaurant.whatsapp}
+              href={whatsappForLocale(locale)}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Prenota un tavolo su WhatsApp"
@@ -154,7 +154,7 @@ export default function Header() {
               <SheetClose asChild>
                 <Button asChild>
                   <a
-                    href={restaurant.whatsapp}
+                    href={whatsappForLocale(locale)}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -180,7 +180,7 @@ export default function Header() {
         </Button>
         <Button asChild>
           <a
-            href={restaurant.whatsapp}
+            href={whatsappForLocale(locale)}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Prenota su WhatsApp"

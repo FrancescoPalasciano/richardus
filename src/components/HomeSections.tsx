@@ -10,7 +10,7 @@ import beansPhoto from "@/app/images/foto2.webp";
 import pastaPhoto from "@/app/images/foto6.webp";
 import meatPhoto from "@/app/images/foto1.webp";
 import menu from "@/data/menu.json";
-import { restaurant } from "@/lib/restaurant";
+import { restaurant, whatsappForLocale } from "@/lib/restaurant";
 import { Button } from "@/components/ui/button";
 import { TodayHours } from "./OpeningHoursCard";
 import styles from "@/app/Home.module.css";
@@ -46,7 +46,7 @@ export function Hero({ locale = "it" }: LocaleProps = {}) {
         <div className={styles.heroActions} data-booking-visibility>
           <Button asChild>
             <a
-              href={restaurant.whatsapp}
+              href={whatsappForLocale(locale)}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Prenota un tavolo su WhatsApp"

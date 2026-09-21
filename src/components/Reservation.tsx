@@ -4,7 +4,7 @@ import type { Locale, LocaleProps } from "@/lib/locale";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { restaurant } from "@/lib/restaurant";
+import { restaurant, whatsappForLocale } from "@/lib/restaurant";
 import styles from "./Reservation.module.css";
 
 export function BookingActions({
@@ -21,7 +21,7 @@ export function BookingActions({
     <div className={styles.actions} data-tone={tone}>
       <Button asChild variant={tone === "inverse" ? "light" : "default"}>
         <a
-          href={restaurant.whatsapp}
+          href={whatsappForLocale(locale)}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Prenota un tavolo su WhatsApp"
