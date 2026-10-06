@@ -79,6 +79,23 @@
   object-position: center;
 }
 
+@keyframes table-arrive {
+  from {
+    opacity: 0.8;
+    transform: scale(1.035);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (min-width: 900px) and (prefers-reduced-motion: no-preference) {
+  .heroPhoto img {
+    animation: table-arrive var(--motion-focal) var(--ease-out-expo) both;
+  }
+}
+
 .heroPhoto figcaption {
   position: absolute;
   right: 18px;

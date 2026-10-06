@@ -83,7 +83,11 @@ export default async function AboutPage({ params }: RouteProps) {
               </div>
             </div>
           </div>
-          <figure className={styles.heroPhoto}>
+          <figure
+            className={styles.heroPhoto}
+            data-reveal
+            data-reveal-kind="photo"
+          >
             <Image
               src={saladPhoto}
               alt="Insalata con tonno e verdure in una coppa di pane casereccio da Richardus"
@@ -97,7 +101,11 @@ export default async function AboutPage({ params }: RouteProps) {
 
         <section className={styles.cuisine} aria-labelledby="cuisine-title">
           <div className="container">
-            <div className={styles.cuisineIntro}>
+            <div
+              className={styles.cuisineIntro}
+              data-reveal
+              data-reveal-kind="copy"
+            >
               <h2 id="cuisine-title">La cucina pugliese.</h2>
               <div className={styles.cuisineCopy}>
                 <p>
@@ -114,8 +122,8 @@ export default async function AboutPage({ params }: RouteProps) {
           </div>
         </section>
 
-        <section className={`container ${styles.visit}`}>
-          <div className={styles.visitHeading}>
+        <section className={`container ${styles.visit}`} data-reveal>
+          <div className={styles.visitHeading} data-reveal-kind="copy">
             <h2>Nel cuore di Francavilla.</h2>
           </div>
           <dl className={styles.visitFacts}>

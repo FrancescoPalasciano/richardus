@@ -114,7 +114,10 @@ for (const [route, html] of Object.entries(pages)) {
       `https://richardus.it${expectedPath}`,
       `${route}: reciprocal language alternate ${language}`,
     );
-    assert.ok(pages[expectedPath], `${route}: alternate target ${expectedPath}`);
+    assert.ok(
+      pages[expectedPath],
+      `${route}: alternate target ${expectedPath}`,
+    );
   }
   assert.match(
     html,
@@ -221,6 +224,28 @@ assert.doesNotMatch(
   "No redundant dish badges",
 );
 for (const locale of locales) {
+  const menuRoute = locale === "it" ? "/menu" : `/${locale}/menu`;
+  for (const id of Object.keys(source.categorie)) {
+    if (
+      !Object.values(source.prodotti).some(
+        (dish) => dish.visibile && dish.categoria === id,
+      )
+    )
+      continue;
+    const section = pages[menuRoute].match(
+      new RegExp(`<section[^>]+id="${id}"[^>]*>`),
+    )?.[0];
+    assert.ok(section, `${menuRoute}: category anchor ${id}`);
+    assert.doesNotMatch(
+      section,
+      /hidden|data-reveal/,
+      `${menuRoute}: category stays visible without reveal or filtering`,
+    );
+    assert.ok(
+      pages[menuRoute].includes(`href="#${id}"`),
+      `${menuRoute}: category navigation uses a native anchor`,
+    );
+  }
   const route = locale === "it" ? "/" : `/${locale}`;
   const note = "Scrivici su WhatsApp. Ti confermiamo noi la disponibilità.";
   const expected =

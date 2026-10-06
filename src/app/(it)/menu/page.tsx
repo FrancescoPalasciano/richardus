@@ -64,8 +64,8 @@ export default async function MenuPage({ params }: RouteProps) {
         <section
           id={id}
           aria-labelledby={`${id}-title`}
+          tabIndex={-1}
           className={styles.menuCategory}
-          data-reveal
         >
           <div className={styles.categoryHeading}>
             <h2 id={`${id}-title`}>{category.nome}</h2>

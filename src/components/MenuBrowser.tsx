@@ -5,6 +5,7 @@ import { useLocale } from "@/components/LocaleProvider";
 
 import {
   useCallback,
+  useEffect,
   useRef,
   useSyncExternalStore,
   type ReactNode,
@@ -43,6 +44,20 @@ export default function MenuBrowser({
     : "tutto";
   const reduce = useReducedMotion();
   const categories = useRef<HTMLElement>(null);
+  // Keep a linked category in reach without changing the page's anchor scroll.
+  useEffect(() => {
+    const list = categories.current;
+    const link = list?.querySelector<HTMLElement>('[aria-current="location"]');
+    if (!list || !link) return;
+    const bounds = list.getBoundingClientRect();
+    const item = link.getBoundingClientRect();
+    if (item.left < bounds.left || item.right > bounds.right) {
+      list.scrollBy({
+        left: item.left - bounds.left - (bounds.width - item.width) / 2,
+        behavior: reduce ? "instant" : "smooth",
+      });
+    }
+  }, [selected, reduce]);
   const subscribeCategories = useCallback((update: () => void) => {
     const list = categories.current;
     if (!list) return () => {};
